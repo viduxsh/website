@@ -1,184 +1,185 @@
 /* Author: vidux.sh */
 
 /* Main */
-html, body{
-    height: 100%;
-    width: 100%;
+html,
+body {
+  height: 100%;
+  width: 100%;
 }
 
 /* Start Intro Animation */
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
-header{
-    position: relative;
-    left: 0;
-    top: 0;
-    width: 1005;
-    height: 80px;
+header {
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 1005;
+  height: 80px;
 }
 
-header h4{
-    position: absolute;
-    left: 10%;
-    bottom: 1rem;
-    font-size: 1.6rem;
+header h4 {
+  position: absolute;
+  left: 10%;
+  bottom: 1rem;
+  font-size: 1.6rem;
 }
 
 /* Splash screen */
-.intro{
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: #161616;
-    transition: 1s;
+.intro {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #161616;
+  transition: 1s;
 }
 
-.logo-header{
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #ffffff;
+.logo-header {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
 }
 
-.logo{
-    position: relative;
-    display: inline-block;
-    bottom: -20px;
-    opacity: 0;
+.logo {
+  position: relative;
+  display: inline-block;
+  bottom: -20px;
+  opacity: 0;
 }
 
-.logo.active{
-    bottom: 0;
-    opacity: 1;
-    transition: ease-in-out 0.5s;
+.logo.active {
+  bottom: 0;
+  opacity: 1;
+  transition: ease-in-out 0.5s;
 }
 
-.logo.fade{
-    bottom: 150px;
-    opacity: 0;
-    transition: ease-in-out 0.5s;
+.logo.fade {
+  bottom: 150px;
+  opacity: 0;
+  transition: ease-in-out 0.5s;
 }
 /* End Intro Animation */
 
 /* Start Theme Selector */
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-body{
-    font-family: 'Roboto', sans-serif;
-    color: var(--color-4);
+body {
+  font-family: "Roboto", sans-serif;
+  color: var(--color-4);
 }
 
 /* Light Theme colors */
-body[data-theme="light"]{
-    --color-1: rgb(196, 220, 240);
-    --color-2: white;
-    --color-3: white;
-    --color-4: rgb(80, 82, 110);
+body[data-theme="light"] {
+  --color-1: rgb(196, 220, 240);
+  --color-2: white;
+  --color-3: white;
+  --color-4: rgb(80, 82, 110);
 }
 
 /* Dark Theme colors */
-body[data-theme="dark"]{
-    --color-1: #1e1f26;
-    --color-2: #292c33;
-    --color-3: rgb(40, 40, 42);
-    --color-4: rgb(186, 186, 202);
+body[data-theme="dark"] {
+  --color-1: #1e1f26;
+  --color-2: #292c33;
+  --color-3: rgb(40, 40, 42);
+  --color-4: rgb(186, 186, 202);
 }
 
-section{
-    background-color: var(--color-1);
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+section {
+  background-color: var(--color-1);
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.container{
-    width: 90%;
-    margin: 0 auto;
-    background-color: var(--color-2);
-    border-radius: 8px;
-    padding: 20px;
-    max-width: 500px;
+.container {
+  width: 90%;
+  margin: 0 auto;
+  background-color: var(--color-2);
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 500px;
 }
 
-p{
-    margin-top: 10px;
-    font-size: 16px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    line-height: 25px;
+p {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 25px;
 }
 
-button{
-    background-color: var(--color-4);
-    padding: 10px 30px;
-    border: none;
-    font-size: 24px;
-    text-transform: uppercase;
-    color: var(--color-3);
-    border-radius: 4px;
-    margin-top: 20px;
-    cursor: pointer;
+button {
+  background-color: var(--color-4);
+  padding: 10px 30px;
+  border: none;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: var(--color-3);
+  border-radius: 4px;
+  margin-top: 20px;
+  cursor: pointer;
 }
 
-.theme-switcher{
-    position: absolute;
-    right: 30px;
-    top: 10px;
+.theme-switcher {
+  position: absolute;
+  right: 30px;
+  top: 10px;
 }
 
-input{
-    width: 0;
-    height: 0;
-    display: none;
-    visibility: hidden;
+input {
+  width: 0;
+  height: 0;
+  display: none;
+  visibility: hidden;
 }
 
-label{
-    cursor: pointer;
-    display: block;
-    text-indent: -9999px;
-    height: 30px;
-    width: 60px;
-    border-radius: 50px;
-    background-color: rgb(255, 255, 255);
-    transition: 0.5s ease background-color;
+label {
+  cursor: pointer;
+  display: block;
+  text-indent: -9999px;
+  height: 30px;
+  width: 60px;
+  border-radius: 50px;
+  background-color: rgb(255, 255, 255);
+  transition: 0.5s ease background-color;
 }
 
-label::after{
-    position: absolute;
-    content: "";
-    width: 20px;
-    height: 20px;
-    border-radius: 50px;
-    top: 50%;
-    left: 5px;
-    transform: translateY(-50%);
-    background-color: rgb(46, 42, 68);
-    transition: 0.5s ease;
+label::after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  background-color: rgb(46, 42, 68);
+  transition: 0.5s ease;
 }
 
-input:checked+label::after{
-    left: calc(100% - 25px);
-    background-color: aliceblue;
+input:checked + label::after {
+  left: calc(100% - 25px);
+  background-color: aliceblue;
 }
 
-input:checked+label{
-    background-color: rgb(25, 26, 37);
-    border: 2px solid whitesmoke;
+input:checked + label {
+  background-color: rgb(25, 26, 37);
+  border: 2px solid whitesmoke;
 }
 /* Start Theme Selector */
