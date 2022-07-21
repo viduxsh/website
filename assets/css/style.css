@@ -77,7 +77,7 @@ header h4 {
   box-sizing: border-box;
 }
 
-body {
+body{
   font-family: "Roboto", sans-serif;
   color: var(--color-4);
 }
@@ -182,4 +182,10 @@ input:checked + label {
   background-color: rgb(25, 26, 37);
   border: 2px solid whitesmoke;
 }
-/* Start Theme Selector */
+/* End Theme Selector */
+
+footer{
+  width: 100%;
+  position: bottom;
+  bottom: 0px;
+}

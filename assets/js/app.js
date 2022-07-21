@@ -24,7 +24,9 @@ window.addEventListener('DOMContentLoaded', ()=>{
        }, 2400)
     })
 
+    /*
     setTimeout(()=>{
-        //location.href='./home.php';
+        location.href='./home.php';
     }, 4000)
+    */
 })
