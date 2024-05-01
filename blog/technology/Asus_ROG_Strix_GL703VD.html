@@ -45,7 +45,10 @@
                     <table class="styled-table">
                         <thead>
                             <tr>
-                                <th>Specifications</th>
+                                <th id="specifications">
+                                    <a href="#specifications"><i class="fa-solid fa-link"></i></a>
+                                    Specifications
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -491,7 +494,10 @@
                     <table class="styled-table">
                         <thead>
                             <tr>
-                                <th><a href="https://www.antutu.com/en/index.htm" target="_blank">Benchmark v1.0.0.819(Beta 1)</a></th>
+                                <th id="benchmark">
+                                    <a href="#benchmark"><i class="fa-solid fa-link"></i></a>
+                                    <a href="https://www.antutu.com/en/index.htm" target="_blank">Benchmark v1.0.0.819(Beta 1)</a>
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -742,6 +748,22 @@
         </div>
         <!-- ***** JS script ***** -->
         <script src="../../assets/js/script.js"></script>
+        <script>
+            function copyLink() {
+                // Get the text field
+                var copyText = document.getElementById("linkToClipboard");
+              
+                // Select the text field
+                copyText.select();
+                copyText.setSelectionRange(0, 99999); // For mobile devices
+              
+                 // Copy the text inside the text field
+                navigator.clipboard.writeText(window.location.href);
+              
+                // Alert the copied text
+                alert("Copied to clipboard: " + window.location.href);
+            }
+        </script>
         <script>
             let d=new Date();
             document.getElementById("my-age").innerHTML="I'm a programmer and I'm "+(d.getFullYear()-2001)+" years old.";
