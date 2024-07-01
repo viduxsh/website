@@ -40,25 +40,65 @@
             <!-- ***** Main ***** -->
             <section>
                 <div class="container">
-                    <h1>My devices</h1>
+                    <h1>My 1RM table</h1>
                     <br>
-                    <hr>
-                    <div>
-                        <button>
-                            <a title="AsusROGStrixGL703VD" href="Asus_ROG_Strix_GL703VD.html">Asus ROG Strix GL703VD</a>
-                        </button>
-                        <button>
-                            <a title="XiaomiMiA1" href="Xiaomi_Mi_A1.html">Xiaomi Mi A1</a>
-                        </button>
-                        <button>
-                            <a title="XiaomiRedmiNote9S" href="Xiaomi_Redmi_Note_9S.html">Xiaomi Redmi Note 9S</a>
-                        </button>
-                        <button>
-                            <a title="XiaomiRedmiNote10Pro" href="Xiaomi_Redmi_Note_10_Pro.html">Xiaomi Redmi Note 10 Pro</a>
-                        </button>
-                    </div>
-                    <br>
-                    <hr>
+                    <table>
+                        <caption>1RM<a href="https://conditioning.gymshark.com/share/Tih78TFwQV2wiAw7UNL4Vk" target="_blank"><i class="fa-regular fa-clone"></i></a></caption>
+                        <tr>
+                            <th>Select All<input type="checkbox" id="selectAll" class="noHidden"></th>
+                            <th>Exercise</th>
+                            <th>1RM - 15/06/2024</th>
+                            <th>1RM - All time</th>
+                        </tr>
+                        <tr>
+                            <td class="checkbox-cell"><input type="checkbox" class="checkbox"></td>
+                            <td><a href="https://musclewiki.com/barbell/male/glutes/barbell-squat" target="_blank">Barbell Back Squat</a></td>
+                            <td id="weight-1rm-1">110kg</td>
+                            <td id="total-weight-all-time-1">110kg</td>
+                        </tr>
+                        <tr>
+                            <td class="checkbox-cell"><input type="checkbox" class="checkbox"></td>
+                            <td><a href="https://musclewiki.com/barbell/male/chest/barbell-bench-press" target="_blank">Barbell Bench Press</a></td>
+                            <td id="weight-1rm-2">85kg</td>
+                            <td id="total-weight-all-time-2">85kg</td>
+                        </tr>
+                        <tr>
+                            <td class="checkbox-cell"><input type="checkbox" class="checkbox"></td>
+                            <td><a href="https://musclewiki.com/barbell/male/traps-middle/barbell-deadlift" target="_blank">Barbell Deadlift</a></td>
+                            <td id="weight-1rm-3">150kg</td>
+                            <td id="total-weight-all-time-3">150kg</td>
+                        </tr>
+                        <tr>
+                            <td class="checkbox-cell"><input type="checkbox" class="checkbox"></td>
+                            <td><a href="https://musclewiki.com/barbell/male/shoulders/barbell-overhead-press" target="_blank">Military Press</a></td>
+                            <td id="weight-1rm-4">50kg</td>
+                            <td id="total-weight-all-time-4">55kg</td>
+                        </tr>
+                        <tr>
+                            <td class="checkbox-cell"><input type="checkbox" class="checkbox"></td>
+                            <td><a href="https://musclewiki.com/bodyweight/male/traps-middle/pull-ups" target="_blank">Pull Up</a></td>
+                            <td id="weight-1rm-5">35kg</td>
+                            <td id="total-weight-all-time-5">35kg</td>
+                        </tr>
+                        <tr>
+                            <td class="checkbox-cell"><input type="checkbox" class="checkbox"></td>
+                            <td><a href="https://musclewiki.com/bodyweight/male/triceps/parralel-bar-dips" target="_blank">Dip</a></td>
+                            <td id="weight-1rm-6">55kg</td>
+                            <td id="total-weight-all-time-6">55kg</td>
+                        </tr>
+                        <tr>
+                            <td class="checkbox-cell"><input type="checkbox" class="checkbox"></td>
+                            <td><a href="https://musclewiki.com/barbell/male/biceps/barbell-curl" target="_blank">Barbell Bicep Curl</a></td>
+                            <td id="weight-1rm-7">45kg</td>
+                            <td id="total-weight-all-time-7">45kg</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1"></td>
+                            <td id="total-cell">Total:</td>
+                            <td id="total-weight-1rm">0kg</td>
+                            <td id="total-weight-all-time">0kg</td>
+                        </tr>
+                    </table>
                 </div>
             </section>
             <!-- ***** Footer ***** -->
@@ -170,6 +210,39 @@
         </script>
         <script>
             document.getElementById("copyright-year").innerHTML="Copyright © "+d.getFullYear()+" vidux.sh. All Rights Reserved.";
+        </script>
+        <script>
+            const selectAllCheckbox = document.getElementById('selectAll');
+            const checkboxes = document.querySelectorAll('.checkbox');
+            const totalWeightCell_1rm = document.getElementById('total-weight-1rm');
+            const totalWeightCell_alltime = document.getElementById('total-weight-all-time');
+
+            selectAllCheckbox.addEventListener('change', () => {
+                const isChecked = selectAllCheckbox.checked;
+                checkboxes.forEach(checkbox => checkbox.checked = isChecked);
+                updateTotalWeight();
+            });
+
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', updateTotalWeight);
+            });
+
+            function updateTotalWeight() {
+                let totalWeight_1rm = 0;
+                let totalWeight_alltime = 0;
+                checkboxes.forEach((checkbox, index) => {
+                    if (checkbox.checked) {
+                        const weightCell_1rm = document.getElementById(`weight-1rm-${index + 1}`);
+                        const weight_1rm = parseInt(weightCell_1rm.textContent.replace(/kg$/, ''));
+                        const weightCell_alltime = document.getElementById(`total-weight-all-time-${index + 1}`);
+                        const weight_alltime = parseInt(weightCell_alltime.textContent.replace(/kg$/, ''));
+                        totalWeight_1rm += weight_1rm;
+                        totalWeight_alltime += weight_alltime;
+                    }
+                });
+                totalWeightCell_1rm.textContent = `${totalWeight_1rm}kg`;
+                totalWeightCell_alltime.textContent = `${totalWeight_alltime}kg`;
+            }
         </script>
     </body>
 </html>

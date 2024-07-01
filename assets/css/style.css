@@ -156,6 +156,27 @@ input {
   visibility: hidden;
 }
 
+.noHidden {
+  width: auto;
+  height: auto;
+  display: block;
+  visibility: visible;
+}
+
+.checkbox {
+  width: auto;
+  height: auto;
+  display: block;
+  visibility: visible;
+}
+
+th, td {
+  padding: 8px;
+  border: 4px solid #ddd;
+  text-align: left;
+  border-radius: 4%;
+}
+
 label {
   cursor: pointer;
   display: block;
