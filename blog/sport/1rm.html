@@ -56,49 +56,61 @@
                             <td class="checkbox-cell"><input type="checkbox" class="checkbox"></td>
                             <td><a href="https://musclewiki.com/barbell/male/glutes/barbell-squat" target="_blank">Barbell Back Squat</a></td>
                             <td id="weight-1rm-1">125kg</td>
-                            <td id="total-weight-all-time-1">125kg</td>
+                            <td id="weight-all-time-1">125kg</td>
                         </tr>
                         <tr>
                             <td class="checkbox-cell"><input type="checkbox" class="checkbox"></td>
                             <td><a href="https://musclewiki.com/barbell/male/chest/barbell-bench-press" target="_blank">Barbell Bench Press</a></td>
                             <td id="weight-1rm-2">80kg</td>
-                            <td id="total-weight-all-time-2">90kg</td>
+                            <td id="weight-all-time-2">90kg</td>
                         </tr>
                         <tr>
                             <td class="checkbox-cell"><input type="checkbox" class="checkbox"></td>
                             <td><a href="https://musclewiki.com/barbell/male/traps-middle/barbell-deadlift" target="_blank">Barbell Deadlift</a></td>
                             <td id="weight-1rm-3">160kg</td>
-                            <td id="total-weight-all-time-3">160kg</td>
+                            <td id="weight-all-time-3">160kg</td>
                         </tr>
                         <tr>
                             <td class="checkbox-cell"><input type="checkbox" class="checkbox"></td>
                             <td><a href="https://musclewiki.com/barbell/male/shoulders/barbell-overhead-press" target="_blank">Military Press</a></td>
                             <td id="weight-1rm-4">55kg</td>
-                            <td id="total-weight-all-time-4">55kg</td>
+                            <td id="weight-all-time-4">55kg</td>
                         </tr>
                         <tr>
                             <td class="checkbox-cell"><input type="checkbox" class="checkbox"></td>
                             <td><a href="https://musclewiki.com/bodyweight/male/traps-middle/pull-ups" target="_blank">Pull Up</a></td>
                             <td id="weight-1rm-5">35kg</td>
-                            <td id="total-weight-all-time-5">37.5kg</td>
+                            <td id="weight-all-time-5">37.5kg</td>
                         </tr>
                         <tr>
                             <td class="checkbox-cell"><input type="checkbox" class="checkbox"></td>
                             <td><a href="https://musclewiki.com/bodyweight/male/triceps/parralel-bar-dips" target="_blank">Dip</a></td>
                             <td id="weight-1rm-6">60kg</td>
-                            <td id="total-weight-all-time-6">60kg</td>
+                            <td id="weight-all-time-6">60kg</td>
                         </tr>
                         <tr>
                             <td class="checkbox-cell"><input type="checkbox" class="checkbox"></td>
                             <td><a href="https://musclewiki.com/barbell/male/biceps/barbell-curl" target="_blank">Barbell Bicep Curl</a></td>
-                            <td id="weight-1rm-7">47.5kg</td>
-                            <td id="total-weight-all-time-7">47.5kg</td>
+                            <td id="weight-1rm-7" value="47.5">47.5kg</td>
+                            <td id="weight-all-time-7" value="47.5">47.5kg</td>
                         </tr>
                         <tr>
                             <td colspan="1"></td>
                             <td id="total-cell">Total:</td>
                             <td id="total-weight-1rm">0kg</td>
                             <td id="total-weight-all-time">0kg</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1"></td>
+                            <td id="ipfpoints-1rm">IPF Points:</td>
+                            <td id="display-glp-1rm"></td>
+                            <td id="display-glp-all-time"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="1"></td>
+                            <td id="ipfpoints-all-time">IPF Points Dots:</td>
+                            <td id="display-dots-1rm"></td>
+                            <td id="display-dots-all-time"></td>
                         </tr>
                     </table>
                 </div>
@@ -229,7 +241,7 @@
                     if (checkbox.checked) {
                         const weightCell_1rm = document.getElementById(`weight-1rm-${index + 1}`);
                         const weight_1rm = parseFloat(weightCell_1rm.textContent.replace(/kg$/, ''));
-                        const weightCell_alltime = document.getElementById(`total-weight-all-time-${index + 1}`);
+                        const weightCell_alltime = document.getElementById(`weight-all-time-${index + 1}`);
                         const weight_alltime = parseFloat(weightCell_alltime.textContent.replace(/kg$/, ''));
                         totalWeight_1rm += weight_1rm;
                         totalWeight_alltime += weight_alltime;
@@ -239,5 +251,60 @@
                 totalWeightCell_alltime.textContent = `${totalWeight_alltime}kg`;
             }
         </script>
+		<script>
+			function dots_poly(a,b,c,d,e,x) {
+    			var x2=x*x,x3=x2*x,x4=x3*x;
+    			return 500.0 / (a*x4+b*x3+c*x2+d*x+e);
+  			}
+
+			function dots_men(bw) {
+				bw = Math.min(Math.max(bw, 40.0), 210.0);
+				return dots_poly(-0.0000010930,0.0007391293,-0.1918759221,24.0900756,-307.75076,bw);
+  			}
+
+  			var PARAMETERS = {
+    			"M": {
+      				"Raw": {
+        				"SBD": [1199.72839, 1025.18162, 0.009210],
+        				"B": [320.98041, 281.40258, 0.01008]
+      				},
+      				"Single-ply": {
+        				"SBD": [1236.25115, 1449.21864, 0.01644],
+        				"B": [381.22073, 733.79378, 0.02398]
+      				}
+    			}
+  			};
+
+			function calc() {
+    			var units = "kg";
+				var sex = "M";
+				var equipment = "Raw";
+				var event = "SBD";
+				var bw = Number("70.0");
+				var total1rm = Number(document.getElementById("weight-1rm-1").innerHTML.replace("kg", "")) + Number(document.getElementById("weight-1rm-2").innerHTML.replace("kg", "")) + Number(document.getElementById("weight-1rm-3").innerHTML.replace("kg", ""));
+				var totalalltime = Number(document.getElementById("weight-all-time-1").innerHTML.replace("kg", "")) + Number(document.getElementById("weight-all-time-2").innerHTML.replace("kg", "")) + Number(document.getElementById("weight-all-time-3").innerHTML.replace("kg", ""));
+				var dots1rm = total1rm * dots_men(bw);
+				var dotsalltime = total1rm * dots_men(bw);
+				var params = PARAMETERS[sex][equipment][event];
+				var denom = params[0] - (params[1] * Math.exp(-1.0 * params[2] * bw))
+				var glp1rm = (denom === 0) ? 0 : Math.max(0, total1rm * 100.0 / denom)
+				var glpalltime = (denom === 0) ? 0 : Math.max(0, totalalltime * 100.0 / denom)
+
+				if (isNaN(glp1rm) || bw < 35) {
+					glp1rm = 0;
+				}
+
+				if (isNaN(glpalltime) || bw < 35) {
+					glpalltime = 0;
+				}
+
+				document.getElementById("display-glp-1rm").innerHTML = glp1rm.toFixed(2);
+				document.getElementById("display-dots-1rm").innerHTML = dots1rm.toFixed(2) + " Dots";
+				document.getElementById("display-glp-all-time").innerHTML = glpalltime.toFixed(2);
+				document.getElementById("display-dots-all-time").innerHTML = dotsalltime.toFixed(2) + " Dots";
+  			}
+ 			
+			document.addEventListener("DOMContentLoaded", function(e){calc()});
+		</script>
     </body>
 </html>
