@@ -280,28 +280,30 @@
 				var sex = "M";
 				var equipment = "Raw";
 				var event = "SBD";
-				var bw = Number("70.0");
-				var total1rm = Number(document.getElementById("weight-1rm-1").innerHTML.replace("kg", "")) + Number(document.getElementById("weight-1rm-2").innerHTML.replace("kg", "")) + Number(document.getElementById("weight-1rm-3").innerHTML.replace("kg", ""));
-				var totalalltime = Number(document.getElementById("weight-all-time-1").innerHTML.replace("kg", "")) + Number(document.getElementById("weight-all-time-2").innerHTML.replace("kg", "")) + Number(document.getElementById("weight-all-time-3").innerHTML.replace("kg", ""));
-				var dots1rm = total1rm * dots_men(bw);
-				var dotsalltime = total1rm * dots_men(bw);
+				var bw_1rm = Number("70.0");
+                var bw_alltime = Number("70.0");
+				var total_1rm = Number(document.getElementById("weight-1rm-1").innerHTML.replace("kg", "")) + Number(document.getElementById("weight-1rm-2").innerHTML.replace("kg", "")) + Number(document.getElementById("weight-1rm-3").innerHTML.replace("kg", ""));
+				var total_alltime = Number(document.getElementById("weight-all-time-1").innerHTML.replace("kg", "")) + Number(document.getElementById("weight-all-time-2").innerHTML.replace("kg", "")) + Number(document.getElementById("weight-all-time-3").innerHTML.replace("kg", ""));
+				var dots_1rm = total_1rm * dots_men(bw_1rm);
+				var dots_alltime = total_alltime * dots_men(bw_alltime);
 				var params = PARAMETERS[sex][equipment][event];
-				var denom = params[0] - (params[1] * Math.exp(-1.0 * params[2] * bw))
-				var glp1rm = (denom === 0) ? 0 : Math.max(0, total1rm * 100.0 / denom)
-				var glpalltime = (denom === 0) ? 0 : Math.max(0, totalalltime * 100.0 / denom)
+				var denom_1rm = params[0] - (params[1] * Math.exp(-1.0 * params[2] * bw_1rm))
+				var denom_alltime = params[0] - (params[1] * Math.exp(-1.0 * params[2] * bw_alltime))
+				var glp_1rm = (denom_1rm === 0) ? 0 : Math.max(0, total_1rm * 100.0 / denom_1rm)
+				var glp_alltime = (denom_alltime === 0) ? 0 : Math.max(0, total_alltime * 100.0 / denom_alltime)
 
-				if (isNaN(glp1rm) || bw < 35) {
-					glp1rm = 0;
+				if (isNaN(glp_1rm) || bw_1rm < 35) {
+					glp_1rm = 0;
 				}
 
-				if (isNaN(glpalltime) || bw < 35) {
-					glpalltime = 0;
+				if (isNaN(glp_alltime) || bw_alltime < 35) {
+					glp_alltime = 0;
 				}
 
-				document.getElementById("display-glp-1rm").innerHTML = glp1rm.toFixed(2);
-				document.getElementById("display-dots-1rm").innerHTML = dots1rm.toFixed(2) + " Dots";
-				document.getElementById("display-glp-all-time").innerHTML = glpalltime.toFixed(2);
-				document.getElementById("display-dots-all-time").innerHTML = dotsalltime.toFixed(2) + " Dots";
+				document.getElementById("display-glp-1rm").innerHTML = glp_1rm.toFixed(2);
+				document.getElementById("display-dots-1rm").innerHTML = dots_1rm.toFixed(2) + " Dots";
+				document.getElementById("display-glp-all-time").innerHTML = glp_alltime.toFixed(2);
+				document.getElementById("display-dots-all-time").innerHTML = dots_alltime.toFixed(2) + " Dots";
   			}
  			
 			document.addEventListener("DOMContentLoaded", function(e){calc()});
