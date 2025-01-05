@@ -57,9 +57,11 @@
                             <th>2022</th>
                             <th>2023</th>
                             <th>2024</th>
+                            <th>2025</th>
                         </tr>
                         <tr>
                             <th>Height</th>
+                            <th>174cm</th>
                             <th>174cm</th>
                             <th>174cm</th>
                             <th>174cm</th>
@@ -77,6 +79,7 @@
                             <th>66.4Kg</th>
                             <th>67Kg</th>
                             <th>68.6Kg</th>
+                            <th>73.8Kg</th>
                         </tr>
                         <tr>
                             <th>BMI</th>
@@ -87,9 +90,11 @@
                             <th>21.93</th>
                             <th>22.13</th>
                             <th>22.66</th>
+                            <th>24.38</th>
                         </tr>
                         <tr>
                             <th>Fat</th>
+                            <th>/</th>
                             <th>/</th>
                             <th>/</th>
                             <th>/</th>
@@ -107,16 +112,18 @@
                             <th>/</th>
                             <th>/</th>
                             <th>/</th>
+                            <th>/</th>
                         </tr>
                         <tr>
                             <th>Chest</th>
                             <th>/</th>
-                            <th>88cm</th>
+                            <th>90cm</th>
                             <th>92cm</th>
                             <th>/</th>
                             <th>96cm</th>
                             <th>97cm</th>
                             <th>100.5cm</th>
+                            <th>100cm</th>
                         </tr>
                         <tr>
                             <th>Shoulders</th>
@@ -127,6 +134,7 @@
                             <th>106cm</th>
                             <th>110cm</th>
                             <th>114cm</th>
+                            <th>120cm</th>
                         </tr>
                         <tr>
                             <th>Left biceps</th>
@@ -137,6 +145,7 @@
                             <th>35cm</th>
                             <th>36cm</th>
                             <th>37cm</th>
+                            <th>37.5cm</th>
                         </tr>
                         <tr>
                             <th>Right biceps</th>
@@ -147,6 +156,7 @@
                             <th>35cm</th>
                             <th>36cm</th>
                             <th>37cm</th>
+                            <th>37.5cm</th>
                         </tr>
                         <tr>
                             <th>Left Forearm</th>
@@ -156,6 +166,7 @@
                             <th>/</th>
                             <th>30cm</th>
                             <th>30cm</th>
+                            <th>30.5cm</th>
                             <th>30.5cm</th>
                         </tr>
                         <tr>
@@ -167,6 +178,7 @@
                             <th>30cm</th>
                             <th>30cm</th>
                             <th>30.5cm</th>
+                            <th>30.5cm</th>
                         </tr>
                         <tr>
                             <th>Left Thigh</th>
@@ -177,6 +189,7 @@
                             <th>53.5cm</th>
                             <th>55.5cm</th>
                             <th>56cm</th>
+                            <th>57.5cm</th>
                         </tr>
                         <tr>
                             <th>Right Thigh</th>
@@ -187,6 +200,7 @@
                             <th>53.5cm</th>
                             <th>55.5cm</th>
                             <th>56cm</th>
+                            <th>57.5cm</th>
                         </tr>
                         <tr>
                             <th>Left Calf</th>
@@ -197,6 +211,7 @@
                             <th>34cm</th>
                             <th>35cm</th>
                             <th>36cm</th>
+                            <th>36.5cm</th>
                         </tr>
                         <tr>
                             <th>Right Calf</th>
@@ -207,6 +222,7 @@
                             <th>34cm</th>
                             <th>35cm</th>
                             <th>36cm</th>
+                            <th>36.5cm</th>
                         </tr>
                         <tr>
                             <th>Waist</th>
@@ -217,6 +233,29 @@
                             <th>82cm</th>
                             <th>80cm</th>
                             <th>78cm</th>
+                            <th>79cm</th>
+                        </tr>
+                        <tr>
+                            <th>Hip</th>
+                            <th>/</th>
+                            <th>/</th>
+                            <th>/</th>
+                            <th>/</th>
+                            <th>/</th>
+                            <th>/</th>
+                            <th>85cm</th>
+                            <th>88cm</th>
+                        </tr>
+                        <tr>
+                            <th>Buttocks</th>
+                            <th>/</th>
+                            <th>/</th>
+                            <th>/</th>
+                            <th>/</th>
+                            <th>/</th>
+                            <th>/</th>
+                            <th>93cm</th>
+                            <th>95cm</th>
                         </tr>
                     </table>
                     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -224,87 +263,97 @@
                         new Chart(document.getElementById("line-chart"), {
                             type: 'line',
                             data: {
-                                labels: [2018, 2019, 2020, 2021, 2022, 2023, 2024],
+                                labels: [2018, 2019, 2020, 2021, 2022, 2023, 2024,2025],
                                 datasets: [
                                     {
-                                        data: [174,174,174,174,174,174,174],
+                                        data: [174,174,174,174,174,174,174,174],
                                         label: "Height (cm)",
                                         borderColor: "#f44336",
                                         fill: false
                                     }, {
-                                        data: [60,62,64.4,66,66.4,67,68.6],
+                                        data: [60,62,64.4,66,66.4,67,68.6,73.8],
                                         label: "Weight (kg)",
                                         borderColor: "#e81e63",
                                         fill: false
                                     }, {
-                                        data: [19.82,20.48,21.27,21.8,21.93,22.13,22.66],
+                                        data: [19.82,20.48,21.27,21.8,21.93,22.13,22.66,24.38],
                                         label: "BMI",
                                         borderColor: "#9c27b0",
                                         fill: false
                                     }, {
-                                        data: [NaN,NaN,NaN,NaN,NaN,NaN,NaN],
+                                        data: [NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN],
                                         label: "Fat",
                                         borderColor: "#673ab7",
                                         fill: false
                                     }, {
-                                        data: [NaN,NaN,NaN,NaN,NaN,NaN,NaN],
+                                        data: [NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN],
                                         label: "Muscle",
                                         borderColor: "#3f51b5",
                                         fill: false
                                     }, {
-                                        data: [NaN,98,100,NaN,106,110,114],
+                                        data: [NaN,90,92,NaN,96,97,100.5,100],
                                         label: "Chest (cm)",
                                         borderColor: "#2196f3",
                                         fill: false
                                     }, {
-                                        data: [NaN,60,62,NaN,66,68,70],
+                                        data: [NaN,98,100,NaN,106,110,114,120],
                                         label: "Shoulders (cm)",
                                         borderColor: "#03a9f4",
                                         fill: false
                                     }, {
-                                        data: [NaN,29,31,NaN,35,36,37],
+                                        data: [NaN,29,31,NaN,35,36,37,37.5],
                                         label: "Left biceps (cm)",
                                         borderColor: "#00bcd4",
                                         fill: false
                                     }, {
-                                        data: [NaN,29,31,NaN,35,36,37],
+                                        data: [NaN,29,31,NaN,35,36,37,37.5],
                                         label: "Right biceps (cm)",
                                         borderColor: "#009688",
                                         fill: false
                                     }, {
-                                        data: [NaN,28.5,29,NaN,30,30,30.5],
+                                        data: [NaN,28.5,29,NaN,30,30,30.5,30.5],
                                         label: "Left Forearm (cm)",
                                         borderColor: "#4caf50",
                                         fill: false
                                     }, {
-                                        data: [NaN,28.5,29,NaN,30,30,30.5],
+                                        data: [NaN,28.5,29,NaN,30,30,30.5,30.5],
                                         label: "Right Forearm (cm)",
                                         borderColor: "#8bc34a",
                                         fill: false
                                     }, {
-                                        data: [NaN,49,51,NaN,53.5,55.5,56],
+                                        data: [NaN,49,51,NaN,53.5,55.5,56,57.5],
                                         label: "Left Thigh (cm)",
                                         borderColor: "#cddc39",
                                         fill: false
                                     }, {
-                                        data: [NaN,49,51,NaN,53.5,55.5,56],
+                                        data: [NaN,49,51,NaN,53.5,55.5,56,57.5],
                                         label: "Right Thigh (cm)",
                                         borderColor: "#ffeb3b",
                                         fill: false
                                     }, {
-                                        data: [NaN,NaN,NaN,NaN,34,35,36],
+                                        data: [NaN,NaN,NaN,NaN,34,35,36,36.5],
                                         label: "Left Calf (cm)",
                                         borderColor: "#ffc107",
                                         fill: false
                                     }, {
-                                        data: [NaN,NaN,NaN,NaN,34,35,36],
+                                        data: [NaN,NaN,NaN,NaN,34,35,36,36.5],
                                         label: "Right Calf (cm)",
                                         borderColor: "#ff9800",
                                         fill: false
                                     }, {
-                                        data: [NaN,72,76,NaN,82,80,78],
+                                        data: [NaN,72,76,NaN,82,80,78,79],
                                         label: "Waist (cm)",
                                         borderColor: "#ff5722",
+                                        fill: false
+                                    }, {
+                                        data: [NaN,NaN,NaN,NaN,NaN,NaN,85,88],
+                                        label: "Hip (cm)",
+                                        borderColor: "#af7539",
+                                        fill: false
+                                    }, {
+                                        data: [NaN,NaN,NaN,NaN,NaN,NaN,93,95],
+                                        label: "Buttocks (cm)",
+                                        borderColor: "#37f79a3",
                                         fill: false
                                     }
                                 ]
