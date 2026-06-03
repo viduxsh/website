@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="My Body Measurements and Progress Tracking">
+        <meta name="author" content="vidux.sh">
+        <title>vidux.sh - Body measurements</title>
+        <link rel="shortcut icon" href="../../assets/images/viduxsh_icon.png" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="../../assets/css/style.css">
+        <style>
+            :root, body[data-theme="light"] {
+                --bg-tabella: #ffffff;
+                --testo-tabella: #333333;
+                --bordo-tabella: #dddddd;
+                --header-bg: #f4f4f4;
+                --riga-alternata: #f9f9f9;
+            }
+
+            body[data-theme="dark"] {
+                --bg-tabella: #1e1e1e;
+                --testo-tabella: #f5f5f5;
+                --bordo-tabella: #444444;
+                --header-bg: #2d2d2d;
+                --riga-alternata: #252525;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                background-color: var(--bg-tabella);
+                color: var(--testo-tabella);
+            }
+
+            th, td {
+                border: 1px solid var(--bordo-tabella);
+                padding: 12px;
+            }
+
+            th {
+                background-color: var(--header-bg);
+            }
+
+            tr:nth-child(even) {
+                background-color: var(--riga-alternata);
+            }
+
+            .table-responsive {
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                margin-bottom: 25px;
+                border-radius: 8px;
+                border: 1px solid var(--bordo-tabella);
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                background-color: var(--bg-tabella);
+                color: var(--testo-tabella);
+                min-width: 500px;
+            }
+
+            th, td {
+                border: none;
+                border-bottom: 1px solid var(--bordo-tabella);
+                border-right: 1px solid var(--bordo-tabella);
+                padding: 12px;
+            }
+
+            th:last-child, td:last-child {
+                border-right: none;
+            }
+        </style>
+    </head>
+    <body data-theme="light">
+        <div class="main-wrapper">
+            <header>
+                <div class="header-container">
+                    <div class="logo-area">
+                        <img src="../../assets/images/viduxsh_logo_full.png" alt="Logo" class="nav-logo">
+                    </div>
+                    <nav class="nav-links">
+                        <a title="Home" href="../../index.html" class="nav-btn"><i class="fa-solid fa-house"></i><span>Home</span></a>
+                        <a title="Projects" href="../../projects.html" class="nav-btn"><i class="fa-solid fa-diagram-project"></i><span>Projects</span></a>
+                        <a title="Social" href="../../social.html" class="nav-btn"><i class="fa-solid fa-hashtag"></i><span>Social</span></a>
+                        <a title="About Me" href="../../aboutme.html" class="nav-btn"><i class="fa-solid fa-address-card"></i><span>About Me</span></a>
+                    </nav>
+                    <div class="theme-switcher">
+                        <input type="checkbox" id="switcher">
+                        <label for="switcher" title="Toggle Theme">Switch</label>
+                    </div>
+                </div>
+            </header>
+            <main class="px-4 py-8 max-w-6xl mx-auto">
+                <section class="hero-section">
+                    <div class="card-container">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+                            <div>
+                                <h1 class="text-2xl font-bold tracking-tight text-gray-900 m-0">Body measurements</h1>
+                                <p class="text-sm text-gray-500 mt-1">My body measurements over the years.</p>
+                            </div>
+                            <a title="Blog" href="../blog.html" class="cta-btn flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg transition-all">
+                                <i class="fa-solid fa-arrow-left"></i> Back to Blog
+                            </a>
+                            <a title="Blog" href="sport.html" class="cta-btn flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg transition-all">
+                                <i class="fa-solid fa-arrow-left"></i> Back to Sport
+                            </a>
+                        </div>
+                        <div class="divider mb-6"></div>
+                        <canvas id="line-chart"></canvas>
+                        <div style="display: flex; flex-direction: column; width: 100%; gap: 16px; margin-top: 20px;">
+                            <div class="table-responsive">
+                                <table>
+                                    <tr>
+                                        <th></th>
+                                        <th>2018</th>
+                                        <th>2019</th>
+                                        <th>2020</th>
+                                        <th>2021</th>
+                                        <th>2022</th>
+                                        <th>2023</th>
+                                        <th>2024</th>
+                                        <th>2025</th>
+                                        <th>2026</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Height</th>
+                                        <th>174cm</th>
+                                        <th>174cm</th>
+                                        <th>174cm</th>
+                                        <th>174cm</th>
+                                        <th>174cm</th>
+                                        <th>174cm</th>
+                                        <th>174cm</th>
+                                        <th>174cm</th>
+                                        <th>174cm</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Weight</th>
+                                        <th>60Kg</th>
+                                        <th>62Kg</th>
+                                        <th>64.4Kg</th>
+                                        <th>66Kg</th>
+                                        <th>66.4Kg</th>
+                                        <th>67Kg</th>
+                                        <th>68.6Kg</th>
+                                        <th>73.8Kg</th>
+                                        <th>76.4Kg</th>
+                                    </tr>
+                                    <tr>
+                                        <th>BMI</th>
+                                        <th>19.82</th>
+                                        <th>20.48</th>
+                                        <th>21.27</th>
+                                        <th>21.8</th>
+                                        <th>21.93</th>
+                                        <th>22.13</th>
+                                        <th>22.66</th>
+                                        <th>24.38</th>
+                                        <th>25.23</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Fat</th>
+                                        <th>/</th>
+                                        <th>/</th>
+                                        <th>/</th>
+                                        <th>/</th>
+                                        <th>/</th>
+                                        <th>/</th>
+                                        <th>/</th>
+                                        <th>/</th>
+                                        <th>22.3%</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Water</th>
+                                        <th>/</th>
+                                        <th>/</th>
+                                        <th>/</th>
+                                        <th>/</th>
+                                        <th>/</th>
+                                        <th>/</th>
+                                        <th>/</th>
+                                        <th>/</th>
+                                        <th>55.4%</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Muscle</th>
+                                        <th>/</th>
+                                        <th>/</th>
+                                        <th>/</th>
+                                        <th>/</th>
+                                        <th>/</th>
+                                        <th>/</th>
+                                        <th>/</th>
+                                        <th>/</th>
+                                        <th>73.6%</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Chest</th>
+                                        <th>/</th>
+                                        <th>90cm</th>
+                                        <th>92cm</th>
+                                        <th>/</th>
+                                        <th>96cm</th>
+                                        <th>97cm</th>
+                                        <th>100.5cm</th>
+                                        <th>100cm</th>
+                                        <th>100cm</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Shoulders</th>
+                                        <th>/</th>
+                                        <th>98cm</th>
+                                        <th>100cm</th>
+                                        <th>/</th>
+                                        <th>106cm</th>
+                                        <th>110cm</th>
+                                        <th>114cm</th>
+                                        <th>120cm</th>
+                                        <th>120cm</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Left biceps</th>
+                                        <th>/</th>
+                                        <th>29cm</th>
+                                        <th>31cm</th>
+                                        <th>/</th>
+                                        <th>35cm</th>
+                                        <th>36cm</th>
+                                        <th>37cm</th>
+                                        <th>37.5cm</th>
+                                        <th>37cm</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Right biceps</th>
+                                        <th>/</th>
+                                        <th>29cm</th>
+                                        <th>31cm</th>
+                                        <th>/</th>
+                                        <th>35cm</th>
+                                        <th>36cm</th>
+                                        <th>37cm</th>
+                                        <th>37.5cm</th>
+                                        <th>37cm</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Left Forearm</th>
+                                        <th>/</th>
+                                        <th>28.5cm</th>
+                                        <th>29cm</th>
+                                        <th>/</th>
+                                        <th>30cm</th>
+                                        <th>30cm</th>
+                                        <th>30.5cm</th>
+                                        <th>30.5cm</th>
+                                        <th>32cm</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Right Forearm</th>
+                                        <th>/</th>
+                                        <th>28.5cm</th>
+                                        <th>29cm</th>
+                                        <th>/</th>
+                                        <th>30cm</th>
+                                        <th>30cm</th>
+                                        <th>30.5cm</th>
+                                        <th>30.5cm</th>
+                                        <th>32cm</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Left Thigh</th>
+                                        <th>/</th>
+                                        <th>49cm</th>
+                                        <th>51cm</th>
+                                        <th>/</th>
+                                        <th>53.5cm</th>
+                                        <th>55.5cm</th>
+                                        <th>56cm</th>
+                                        <th>57.5cm</th>
+                                        <th>59cm</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Right Thigh</th>
+                                        <th>/</th>
+                                        <th>49cm</th>
+                                        <th>51cm</th>
+                                        <th>/</th>
+                                        <th>53.5cm</th>
+                                        <th>55.5cm</th>
+                                        <th>56cm</th>
+                                        <th>57.5cm</th>
+                                        <th>59cm</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Left Calf</th>
+                                        <th>/</th>
+                                        <th>/</th>
+                                        <th>/</th>
+                                        <th>/</th>
+                                        <th>34cm</th>
+                                        <th>35cm</th>
+                                        <th>36cm</th>
+                                        <th>36.5cm</th>
+                                        <th>38cm</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Right Calf</th>
+                                        <th>/</th>
+                                        <th>/</th>
+                                        <th>/</th>
+                                        <th>/</th>
+                                        <th>34cm</th>
+                                        <th>35cm</th>
+                                        <th>36cm</th>
+                                        <th>36.5cm</th>
+                                        <th>38cm</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Waist</th>
+                                        <th>/</th>
+                                        <th>72cm</th>
+                                        <th>76cm</th>
+                                        <th>/</th>
+                                        <th>82cm</th>
+                                        <th>80cm</th>
+                                        <th>78cm</th>
+                                        <th>79cm</th>
+                                        <th>84cm</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Hip</th>
+                                        <th>/</th>
+                                        <th>/</th>
+                                        <th>/</th>
+                                        <th>/</th>
+                                        <th>/</th>
+                                        <th>/</th>
+                                        <th>85cm</th>
+                                        <th>88cm</th>
+                                        <th>87cm</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Buttocks</th>
+                                        <th>/</th>
+                                        <th>/</th>
+                                        <th>/</th>
+                                        <th>/</th>
+                                        <th>/</th>
+                                        <th>/</th>
+                                        <th>93cm</th>
+                                        <th>88cm</th>
+                                        <th>98cm</th>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                    <script>
+                        new Chart(document.getElementById("line-chart"), {
+                            type: 'line',
+                            data: {
+                                labels: [2018, 2019, 2020, 2021, 2022, 2023, 2024,2025,2026],
+                                datasets: [
+                                    {
+                                        data: [174,174,174,174,174,174,174,174,174],
+                                        label: "Height (cm)",
+                                        borderColor: "#f44336",
+                                        fill: false
+                                    }, {
+                                        data: [60,62,64.4,66,66.4,67,68.6,73.8,76.4],
+                                        label: "Weight (kg)",
+                                        borderColor: "#e81e63",
+                                        fill: false
+                                    }, {
+                                        data: [19.82,20.48,21.27,21.8,21.93,22.13,22.66,24.38,25.23],
+                                        label: "BMI",
+                                        borderColor: "#9c27b0",
+                                        fill: false
+                                    }, {
+                                        data: [NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,22.3],
+                                        label: "Fat",
+                                        borderColor: "#673ab7",
+                                        fill: false
+                                    }, {
+                                        data: [NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,55.4],
+                                        label: "Water",
+                                        borderColor: "#3f71c5",
+                                        fill: false
+                                    }, {
+                                        data: [NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,73.6],
+                                        label: "Muscle",
+                                        borderColor: "#3f51b5",
+                                        fill: false
+                                    }, {
+                                        data: [NaN,90,92,NaN,96,97,100.5,100,100],
+                                        label: "Chest (cm)",
+                                        borderColor: "#2196f3",
+                                        fill: false
+                                    }, {
+                                        data: [NaN,98,100,NaN,106,110,114,120,120],
+                                        label: "Shoulders (cm)",
+                                        borderColor: "#03a9f4",
+                                        fill: false
+                                    }, {
+                                        data: [NaN,29,31,NaN,35,36,37,37.5,37],
+                                        label: "Left biceps (cm)",
+                                        borderColor: "#00bcd4",
+                                        fill: false
+                                    }, {
+                                        data: [NaN,29,31,NaN,35,36,37,37.5,37],
+                                        label: "Right biceps (cm)",
+                                        borderColor: "#009688",
+                                        fill: false
+                                    }, {
+                                        data: [NaN,28.5,29,NaN,30,30,30.5,30.5,32],
+                                        label: "Left Forearm (cm)",
+                                        borderColor: "#4caf50",
+                                        fill: false
+                                    }, {
+                                        data: [NaN,28.5,29,NaN,30,30,30.5,30.5,32],
+                                        label: "Right Forearm (cm)",
+                                        borderColor: "#8bc34a",
+                                        fill: false
+                                    }, {
+                                        data: [NaN,49,51,NaN,53.5,55.5,56,57.5,59],
+                                        label: "Left Thigh (cm)",
+                                        borderColor: "#cddc39",
+                                        fill: false
+                                    }, {
+                                        data: [NaN,49,51,NaN,53.5,55.5,56,57.5,59],
+                                        label: "Right Thigh (cm)",
+                                        borderColor: "#ffeb3b",
+                                        fill: false
+                                    }, {
+                                        data: [NaN,NaN,NaN,NaN,34,35,36,36.5,38],
+                                        label: "Left Calf (cm)",
+                                        borderColor: "#ffc107",
+                                        fill: false
+                                    }, {
+                                        data: [NaN,NaN,NaN,NaN,34,35,36,36.5,38],
+                                        label: "Right Calf (cm)",
+                                        borderColor: "#ff9800",
+                                        fill: false
+                                    }, {
+                                        data: [NaN,72,76,NaN,82,80,78,79,84],
+                                        label: "Waist (cm)",
+                                        borderColor: "#ff5722",
+                                        fill: false
+                                    }, {
+                                        data: [NaN,NaN,NaN,NaN,NaN,NaN,85,88,87],
+                                        label: "Hip (cm)",
+                                        borderColor: "#af7539",
+                                        fill: false
+                                    }, {
+                                        data: [NaN,NaN,NaN,NaN,NaN,NaN,93,95,98],
+                                        label: "Buttocks (cm)",
+                                        borderColor: "#37f79a3",
+                                        fill: false
+                                    }
+                                ]
+                            },
+                            options: {
+                                responsive: true,
+                                plugins: {
+                                    title: {
+                                        display: true,
+                                        text: 'Body measurements'
+                                    },
+                                },
+                                interaction: {
+                                    intersect: false,
+                                },
+                                scales: {
+                                    x: {
+                                        display: true,
+                                        title: {
+                                            display: true
+                                        }
+                                    },
+                                    y: {
+                                        display: true,
+                                        title: {
+                                            display: true,
+                                            text: 'Value'
+                                        }
+                                    }
+                                }
+                            },
+                        });
+                    </script>
+                </section>
+            </main>
+            <footer>
+                <div class="footer-container">
+                    <div class="footer-grid">
+                        <div class="footer-widget">
+                            <h3><img width="20" height="20" src="https://img.icons8.com/3d-fluency/94/topic.png" alt="Contact"/>Contact</h3>
+                            <ul class="contact-list">
+                                <li><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/location.png" alt="Location"/>Udine, Italy</li>
+                                <li><a href="https://t.me/viduxsh" target="_blank"><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/telegram.png" alt="Telegram"/>Telegram</a></li>
+                                <li><a href="mailto:ivanvidux@gmail.com"><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/email.png" alt="Email"/>Email</a></li>
+                                <li><a href="https://paypal.me/ivanvidux" target="_blank"><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/paypal.png" alt="PayPal"/>PayPal</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-widget profile-widget">
+                            <h3>About Me</h3>
+                            <div class="footer-profile-box">
+                                <img src="../../assets/images/viduxsh_logo_full.png" alt="Profile Logo" class="footer-avatar">
+                                <p id="my-age"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <p id="copyright-year"></p>
+                        <p class="credits">Design by <a href="https://github.com/viduxsh" target="_blank">vidux.sh</a></p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script src="../../assets/js/script.js"></script>
+    </body>
+</html>

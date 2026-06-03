@@ -1,13 +1,7 @@
 # Ignore folders
 private
-assets/images/technology
-assets/images/coding
-blog/coding
-blog/cooking
-blog/gaming
-blog/motor
 # Ignore files
 *.url
-blog/sport/bodymeasurements.html
-blog/sport/military.html
-blog/technology/Xiaomi_Redmi_Note_14_Pro_5G.html
+*.lnk
+*.tmp
+*.log

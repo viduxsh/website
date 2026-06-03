@@ -2,155 +2,81 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Index of Site">
         <meta name="author" content="vidux.sh">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <title>vidux.sh - Home</title>
         <link rel="shortcut icon" href="assets/images/viduxsh_icon.png" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="assets/css/style.css">
     </head>
     <body data-theme="light">
-        <!-- ***** Intro ***** -->
         <div class="intro">
             <h1 class="logo-header">
                 <span class="logo">vidux</span><span class="logo">.sh</span>
             </h1>
         </div>
-        <!-- ***** Main ***** -->
-        <div class="main">
-            <!-- ***** Header ***** -->
+        <div class="main-wrapper">
             <header>
-                <!-- ***** Theme Switcher ***** -->
-                <div class="theme-switcher">
-                    <input type="checkbox" id="switcher" value="true">
-                    <label for="switcher">Switch</label>
-                </div>
-                <!--- ***** Logo ***** -->
-                <div style="margin-left: 20px;">
-                    <img src="assets/images/viduxsh_logo_full.png" alt="" height="100%" width="80px%" style="border-radius: 24%;">
-                </div>
-                <!--- ***** Header Buttons *****-->
-                <div>
-                    <button>
-                        <a title="Home" href="index.html"><i class="fa-solid fa-house"></i>Home</a>
-                    </button>
-                    <button>
-                        <a title="Projects" href="projects.html"><i class="fa-solid fa-diagram-project"></i>Projects</a>
-                    </button>
-                    <button>
-                        <a title="Social" href="social.html"><i class="fa-solid fa-hashtag"></i>Social</a>
-                    </button>
-                    <button>
-                        <a title="About Me" href="aboutme.html"><i class="fa-solid fa-address-card"></i>About Me</a>
-                    </button>
+                <div class="header-container">
+                    <div class="logo-area">
+                        <img src="assets/images/viduxsh_logo_full.png" alt="Logo" class="nav-logo">
+                    </div>
+                    <nav class="nav-links">
+                        <a title="Home" href="index.html" class="nav-btn active"><i class="fa-solid fa-house"></i><span>Home</span></a>
+                        <a title="Projects" href="projects.html" class="nav-btn"><i class="fa-solid fa-diagram-project"></i><span>Projects</span></a>
+                        <a title="Social" href="social.html" class="nav-btn"><i class="fa-solid fa-hashtag"></i><span>Social</span></a>
+                        <a title="About Me" href="aboutme.html" class="nav-btn"><i class="fa-solid fa-address-card"></i><span>About Me</span></a>
+                    </nav>
+                    <div class="theme-switcher">
+                        <input type="checkbox" id="switcher">
+                        <label for="switcher" title="Toggle Theme">Switch</label>
+                    </div>
                 </div>
             </header>
-            <!-- ***** Main ***** -->
-            <section>
-                <div class="container">
-
-
-
-
-                    <!--
-                    <h1>La tua lingua preferita:</h1>
-                    <p id="lingua"></p>
-                    <h1>Le tue lingue preferite:</h1>
-                    <p id="lingue"></p>
-
-                    <script>
-                        // Ottiene la lingua principale preferita dal browser/sistema
-                        const linguaPreferita = navigator.language;
-
-                        // Visualizza il risultato nell'elemento con id="lingua"
-                        document.getElementById('lingua').textContent = linguaPreferita;
-
-                        console.log("Lingua Preferita (navigator.language): " + linguaPreferita);
-                    </script>
-
-                    <script>
-                        // Ottiene l'array di tutte le lingue preferite
-                        const tutteLeLingue = navigator.languages;
-
-                        // Visualizza il risultato (unendo l'array in una stringa per semplicità)
-                        document.getElementById('lingue').textContent = tutteLeLingue.join(', ');
-
-                        console.log("Tutte le Lingue Preferite (navigator.languages): " + tutteLeLingue.join(', '));
-                    </script>
-                    -->
-
-
-
-
-                    <h1>Hi, I'm Ivan</h1>
-                    <p>I'm a developer based in Italy.</p>
-                    <br>
-                    <h1 id="-github-stats-">📊 GitHub Stats:</h1>
-                    <p>
-                        <img src="https://github-readme-stats.vercel.app/api?username=viduxsh&amp;theme=nord&amp;hide_border=false&amp;include_all_commits=true&amp;count_private=true" alt="">
-                        <br/>
-                        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=viduxsh&amp;theme=nord&amp;hide_border=false&amp;include_all_commits=true&amp;count_private=true&amp;layout=compact" alt="">
-                    </p>
-                    <p>
-                        <a href="https://visitcount.itsvg.in">
-                            <img src="https://visitcount.itsvg.in/api?id=viduxsh&amp;icon=0&amp;color=0" alt="">
+            <main>
+                <section class="hero-section">
+                    <div class="card-container">
+                        <h1>Hi, I'm Ivan.</h1>
+                        <p class="subtitle">I'm a developer based in Italy.</p>
+                        <div class="divider"></div>
+                        <a title="GitHub Repo" href="https://github.com/viduxsh" target="_blank" class="cta-btn">
+                            <i class="fa-brands fa-github"></i> GitHub Profile
                         </a>
-                    </p>
-                    <!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
-                    <hr>
-                    <button>
-                        <a title="GitHub Repo" href="https://github.com/viduxsh" target="_blank">GitHub</a>
-                    </button>
-                </div>
-            </section>
-            <!-- ***** Footer ***** -->
+                    </div>
+                </section>
+            </main>
             <footer>
-                <!-- ***** Content ***** -->
-                <div id="newsletter">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-3">
-                                <div class="footer-widget">
-                                    <h4><img width="24" height="24" src="https://img.icons8.com/3d-fluency/94/topic.png" alt="topic"/>Contact</h4>
-                                    <p><img width="24" height="24" src="https://img.icons8.com/3d-fluency/94/location.png" alt="location"/>Udine - UD, 33100, Italy</p>
-                                    <p><a href="https://t.me/viduxsh" target="_blank"><img width="24" height="24" src="https://img.icons8.com/3d-fluency/94/telegram.png" alt="telegram"/>Telegram</a></p>
-                                    <p><a href="mailto:ivanvidux@gmail.com" target="_blank"><img width="24" height="24" src="https://img.icons8.com/3d-fluency/94/email.png" alt="email"/>ivanvidux@gmail.com</a></p>
-                                    <p><a href="https://paypal.me/ivanvidux" target="_blank"><img width="24" height="24" src="https://img.icons8.com/3d-fluency/94/paypal.png" alt="paypal"/>PayPal</a></p>
-                                </div>
+                <div class="footer-container">
+                    <div class="footer-grid">
+                        <div class="footer-widget">
+                            <h3><img width="20" height="20" src="https://img.icons8.com/3d-fluency/94/topic.png" alt="Contact"/>Contact</h3>
+                            <ul class="contact-list">
+                                <li><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/location.png" alt="Location"/>Udine, Italy</li>
+                                <li><a href="https://t.me/viduxsh" target="_blank"><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/telegram.png" alt="Telegram"/>Telegram</a></li>
+                                <li><a href="mailto:ivanvidux@gmail.com"><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/email.png" alt="Email"/>Email</a></li>
+                                <li><a href="https://paypal.me/ivanvidux" target="_blank"><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/paypal.png" alt="PayPal"/>PayPal</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-widget profile-widget">
+                            <h3>About Me</h3>
+                            <div class="footer-profile-box">
+                                <img src="assets/images/viduxsh_logo_full.png" alt="Profile Logo" class="footer-avatar">
+                                <p id="my-age"></p>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-3">
-                                <div class="footer-widget">
-                                    <h4>About Me</h4>
-                                    <img src="assets/images/viduxsh_logo_full.png" alt="" height="80px" width="80px" style="border-radius: 24%;">
-                                    <p id="my-age"></p>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="copyright-text">
-                                    <p id="copyright-year"></p>
-                                    <br>
-                                    Design: <a href="https://github.com/viduxsh" target="_blank" title="viduxsh">vidux.sh</a>
-                                </div>
-                            </div>
-                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <p id="copyright-year"></p>
+                        <p class="credits">Design by <a href="https://github.com/viduxsh" target="_blank">vidux.sh</a></p>
                     </div>
                 </div>
             </footer>
         </div>
-        <!-- ***** JS script ***** -->
         <script src="assets/js/app.js"></script>
         <script src="assets/js/script.js"></script>
-        <script>
-            let d=new Date();
-            document.getElementById("my-age").innerHTML="I'm a programmer and I'm "+(d.getFullYear()-2001)+" years old.";
-        </script>
-        <script>
-            document.getElementById("copyright-year").innerHTML="Copyright © "+d.getFullYear()+" vidux.sh. All Rights Reserved.";
-        </script>
     </body>
 </html>
