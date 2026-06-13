@@ -1,3 +1,14 @@
+(function() {
+    if (document.querySelector('script[data-goatcounter]')) return;
+    
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = '//gc.zgo.at/count.js';
+    script.setAttribute('data-goatcounter', 'https://viduxsh.goatcounter.com/count');
+    
+    document.head.appendChild(script);
+})();
+
 const themeToggle = document.querySelector("#switcher");
 const currentTheme = localStorage.getItem("theme") || "light";
 
