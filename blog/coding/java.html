@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Java beginner tutorial — learn variables, data types, conditionals, loops, OOP basics, and collections with ready-to-use code snippets.">
+        <meta name="author" content="vidux.sh">
+        <title>vidux.sh - Java</title>
+        <link rel="shortcut icon" href="../../assets/images/viduxsh_icon.png" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="../../assets/css/style.css">
+    </head>
+    <body data-theme="light">
+        <div class="main-wrapper">
+            <header>
+                <div class="header-container">
+                    <div class="logo-area">
+                        <img src="../../assets/images/viduxsh_logo_full.png" alt="Logo" class="nav-logo">
+                    </div>
+                    <nav class="nav-links">
+                        <a title="Home"     href="../../index.html"    class="nav-btn"><i class="fa-solid fa-house"></i><span>Home</span></a>
+                        <a title="Projects" href="../../projects.html" class="nav-btn"><i class="fa-solid fa-diagram-project"></i><span>Projects</span></a>
+                        <a title="Social"   href="../../social.html"   class="nav-btn"><i class="fa-solid fa-hashtag"></i><span>Social</span></a>
+                        <a title="About Me" href="../../aboutme.html"  class="nav-btn"><i class="fa-solid fa-address-card"></i><span>About Me</span></a>
+                    </nav>
+                    <div class="theme-switcher">
+                        <input type="checkbox" id="switcher">
+                        <label for="switcher" title="Toggle Theme">Switch</label>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <section class="hero-section" style="padding: 40px 20px 60px;">
+                    <div class="card-container wide">
+                        <div class="guide-topbar">
+                            <a title="Back to Coding" href="coding.html" class="cta-btn ghost sm">
+                                <i class="fa-solid fa-arrow-left"></i> Coding Guides
+                            </a>
+                            <span class="guide-topbar-label">
+                                <i class="fa-solid fa-book-open"></i> Beginner Tutorial
+                            </span>
+                        </div>
+                        <div class="lang-header">
+                            <img src="../../assets/images/coding/logo/java.png" alt="Java logo">
+                            <div>
+                                <h1>Java <span class="lang-badge">Beginner</span></h1>
+                                <p class="lang-subtitle">Write once, run anywhere — a robust, object-oriented, and class-based ecosystem.</p>
+                            </div>
+                        </div>
+                        <div class="tutorial-progress" id="tutorial-progress">
+                            <div class="tutorial-progress-step done"></div>
+                            <div class="tutorial-progress-step"></div>
+                            <div class="tutorial-progress-step"></div>
+                            <div class="tutorial-progress-step"></div>
+                            <div class="tutorial-progress-step"></div>
+                            <div class="tutorial-progress-step"></div>
+                            <div class="tutorial-progress-step"></div>
+                            <div class="tutorial-progress-step"></div>
+                        </div>
+                        <div class="divider" style="margin-top: 0;"></div>
+                        <div class="toc">
+                            <h3><i class="fa-solid fa-list"></i> Table of Contents</h3>
+                            <ol>
+                                <li><a href="#s1">Structure &amp; Output</a></li>
+                                <li><a href="#s2">Variables &amp; Data Types</a></li>
+                                <li><a href="#s3">Operators</a></li>
+                                <li><a href="#s4">Strings &amp; User Input</a></li>
+                                <li><a href="#s5">Conditionals</a></li>
+                                <li><a href="#s6">Loops</a></li>
+                                <li><a href="#s7">Arrays &amp; ArrayList</a></li>
+                                <li><a href="#s8">Methods &amp; Classes Basics</a></li>
+                            </ol>
+                        </div>
+
+                        <div class="tutorial-section" id="s1">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-1);">1</span>
+                                Structure &amp; Output
+                            </h2>
+                            <p>Java is a strictly object-oriented language. Every sequence of executable logic must reside inside a <code>class</code>, and execution matches the signature of the <code>main</code> method.</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">java · Main.java</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre><span class="kw">public class</span> <span class="cl">Main</span> {
+    <span class="cm">// This is a single-line comment</span>
+
+    <span class="cm">/* This is a 
+       multi-line comment */</span>
+
+    <span class="kw">public static void</span> <span class="fn">main</span>(<span class="cl">String</span>[] <span class="va">args</span>) {
+        <span class="cl">System</span>.<span class="va">out</span>.<span class="fn">println</span>(<span class="st">"Hello, World!"</span>);
+    }
+}</pre>
+                            </div>
+                            <div class="info-box tip">
+                                <i class="fa-solid fa-lightbulb"></i>
+                                <span>The file name <strong>must exact-match</strong> the name of the public class inside it (e.g., <code>Main.java</code> for <code>public class Main</code>).</span>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+
+                        <div class="tutorial-section" id="s2">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-2);">2</span>
+                                Variables &amp; Data Types
+                            </h2>
+                            <p>Java relies on strong, static type verification. Variables are separated into low-level <strong>primitives</strong> and reference <strong>objects</strong>.</p>
+                            <div class="type-grid">
+                                <div class="type-pill">
+                                    <span class="type-name">int</span>
+                                    <span class="type-desc">32-bit Integer</span>
+                                    <span class="type-example">10, -500, 0</span>
+                                </div>
+                                <div class="type-pill">
+                                    <span class="type-name">double</span>
+                                    <span class="type-desc">64-bit Float</span>
+                                    <span class="type-example">3.14, -0.05</span>
+                                </div>
+                                <div class="type-pill">
+                                    <span class="type-name">boolean</span>
+                                    <span class="type-desc">Logical state</span>
+                                    <span class="type-example">true, false</span>
+                                </div>
+                                <div class="type-pill">
+                                    <span class="type-name">char</span>
+                                    <span class="type-desc">16-bit Unicode</span>
+                                    <span class="type-example">'A', '7', '$'</span>
+                                </div>
+                                <div class="type-pill">
+                                    <span class="type-name">String</span>
+                                    <span class="type-desc">Object literal</span>
+                                    <span class="type-example">"Text block"</span>
+                                </div>
+                                <div class="type-pill">
+                                    <span class="type-name">var</span>
+                                    <span class="type-desc">Local inference</span>
+                                    <span class="type-example">Java 10+ only</span>
+                                </div>
+                            </div>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">java · Variables.java</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre><span class="kw">int</span> <span class="va">age</span> = <span class="nm">25</span>;
+<span class="kw">double</span> <span class="va">price</span> = <span class="nm">19.99</span>;
+<span class="kw">boolean</span> <span class="va">isPremium</span> = <span class="kw">true</span>;
+<span class="kw">char</span> <span class="va">letter</span> = <span class="st">'V'</span>;
+
+<span class="cm">// Immutable variables use 'final'</span>
+<span class="kw">final double</span> <span class="va">TAX_RATE</span> = <span class="nm">0.22</span>;
+
+<span class="cm">// Local Variable Type Inference (Java 10+)</span>
+<span class="kw">var</span> <span class="va">message</span> = <span class="st">"Type inferred as String"</span>;</pre>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+
+                        <div class="tutorial-section" id="s3">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
+                                Operators
+                            </h2>
+                            <p>Java supports standard operations for evaluating mathematics, chaining conditionals, and manipulating variables inline.</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">java · Operators.java</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre><span class="cm">// Arithmetic Operators</span>
+<span class="kw">int</span> <span class="va">result</span> = <span class="nm">10</span> / <span class="nm">3</span>;       <span class="cm">// 3 (Integer division discards remainder)</span>
+<span class="kw">double</span> <span class="va">precise</span> = <span class="nm">10.0</span> / <span class="nm">3</span>; <span class="cm">// 3.3333333333333335</span>
+
+<span class="cm">// Comparison &amp; Logic</span>
+<span class="kw">boolean</span> <span class="va">canAccess</span> = (<span class="va">age</span> &gt;= <span class="nm">18</span>) &amp;&amp; <span class="va">isPremium</span>;
+
+<span class="cm">// Shorthand increments</span>
+<span class="kw">int</span> <span class="va">score</span> = <span class="nm">10</span>;
+<span class="va">score</span>++;                   <span class="cm">// 11</span>
+<span class="va">score</span> += <span class="nm">5</span>;                <span class="cm">// 16</span></pre>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+
+                        <div class="tutorial-section" id="s4">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
+                                Strings &amp; User Input
+                            </h2>
+                            <p>Strings are non-primitive objects equipped with built-in utility methods. Capturing human terminal input relies on the <code>Scanner</code> utility.</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">java · InputOutput.java</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre><span class="kw">import</span> <span class="cl">java.util.Scanner</span>;
+
+<span class="cl">String</span> <span class="va">txt</span> = <span class="st">"Developer"</span>;
+<span class="cl">System</span>.<span class="va">out</span>.<span class="fn">println</span>(<span class="va">txt</span>.<span class="fn">length</span>());      <span class="cm">// 9</span>
+<span class="cl">System</span>.<span class="va">out</span>.<span class="fn">println</span>(<span class="va">txt</span>.<span class="fn">toUpperCase</span>()); <span class="cm">// DEVELOPER</span>
+
+<span class="cm">// Initializing terminal Scanner stream</span>
+<span class="cl">Scanner</span> <span class="va">input</span> = <span class="kw">new</span> <span class="cl">Scanner</span>(<span class="cl">System</span>.<span class="va">in</span>);
+<span class="cl">System</span>.<span class="va">out</span>.<span class="fn">print</span>(<span class="st">"Enter nickname: "</span>);
+<span class="cl">String</span> <span class="va">nickname</span> = <span class="va">input</span>.<span class="fn">nextLine</span>();     <span class="cm">// reads user text block</span>
+
+<span class="va">input</span>.<span class="fn">close</span>(); <span class="cm">// close stream resource</span></pre>
+                            </div>
+                            <div class="info-box danger">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                                <span>Always compare String objects using <code>.equals()</code> (e.g., <code>str1.equals(str2)</code>). Using <code>==</code> evaluates memory addresses instead of text literal equity!</span>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+
+                        <div class="tutorial-section" id="s5">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
+                                Conditionals
+                            </h2>
+                            <p>Direct the code path using clean branching structures like <code>if-else</code> structures or structural <code>switch</code> evaluations.</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">java · Branching.java</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre><span class="kw">int</span> <span class="va">speed</span> = <span class="nm">75</span>;
+
+<span class="kw">if</span> (<span class="va">speed</span> &gt; <span class="nm">90</span>) {
+    <span class="cl">System</span>.<span class="va">out</span>.<span class="fn">println</span>(<span class="st">"Fast"</span>);
+} <span class="kw">else if</span> (<span class="va">speed</span> &gt; <span class="nm">60</span>) {
+    <span class="cl">System</span>.<span class="va">out</span>.<span class="fn">println</span>(<span class="st">"Moderate"</span>); <span class="cm">// ← executes</span>
+} <span class="kw">else</span> {
+    <span class="cl">System</span>.<span class="va">out</span>.<span class="fn">println</span>(<span class="st">"Slow"</span>);
+}
+
+<span class="cm">// Modern Switch Expression (Java 14+)</span>
+<span class="cl">String</span> <span class="va">direction</span> = <span class="st">"R"</span>;
+<span class="cl">String</span> <span class="va">action</span> = <span class="kw">switch</span> (<span class="va">direction</span>) {
+    <span class="kw">case</span> <span class="st">"L"</span> -&gt; <span class="st">"Turn Left"</span>;
+    <span class="kw">case</span> <span class="st">"R"</span> -&gt; <span class="st">"Turn Right"</span>; <span class="cm">// ← evaluates</span>
+    <span class="kw">default</span>  -&gt; <span class="st">"Stay Straight"</span>;
+};</pre>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+
+                        <div class="tutorial-section" id="s6">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
+                                Loops
+                            </h2>
+                            <p>Process repeated code segments using deterministic index-based counters or dynamically evaluated logical boundaries.</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">java · Loops.java</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre><span class="cm">// Incremental for loop</span>
+<span class="kw">for</span> (<span class="kw">int</span> <span class="va">i</span> = <span class="nm">1</span>; <span class="va">i</span> &lt;= <span class="nm">3</span>; <span class="va">i</span>++) {
+    <span class="cl">System</span>.<span class="va">out</span>.<span class="fn">print</span>(<span class="va">i</span> + <span class="st">" "</span>); <span class="cm">// 1 2 3</span>
+}
+
+<span class="cm">// Conditional while loop</span>
+<span class="kw">int</span> <span class="va">energy</span> = <span class="nm">3</span>;
+<span class="kw">while</span> (<span class="va">energy</span> &gt; <span class="nm">0</span>) {
+    <span class="cl">System</span>.<span class="va">out</span>.<span class="fn">println</span>(<span class="st">"Running..."</span>);
+    <span class="va">energy</span>--;
+}</pre>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+
+                        <div class="tutorial-section" id="s7">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
+                                Arrays &amp; ArrayList
+                            </h2>
+                            <p>Native <strong>arrays</strong> preserve fixed bounds. Dynamic collections that grow dynamically leverage the <code>ArrayList</code> entity class from <code>java.util</code>.</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">java · Collections.java</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre><span class="kw">import</span> <span class="cl">java.util.ArrayList</span>;
+
+<span class="cm">// Fixed Native Array</span>
+<span class="kw">int</span>[] <span class="va">primeNumbers</span> = {<span class="nm">2</span>, <span class="nm">3</span>, <span class="nm">5</span>, <span class="nm">7</span>};
+
+<span class="cm">// Dynamic ArrayList (Requires Object wrappers like Integer, not int)</span>
+<span class="cl">ArrayList</span>&lt;<span class="cl">Integer</span>&gt; <span class="va">scores</span> = <span class="kw">new</span> <span class="cl">ArrayList</span>&lt;&gt;();
+<span class="va">scores</span>.<span class="fn">add</span>(<span class="nm">90</span>);
+<span class="va">scores</span>.<span class="fn">add</span>(<span class="nm">85</span>);
+<span class="va">scores</span>.<span class="fn">remove</span>(<span class="nm">0</span>); <span class="cm">// removes element at position 0</span>
+
+<span class="cm">// Enhanced For-Each Loop</span>
+<span class="kw">for</span> (<span class="kw">int</span> <span class="va">s</span> : <span class="va">scores</span>) {
+    <span class="cl">System</span>.<span class="va">out</span>.<span class="fn">println</span>(<span class="va">s</span>);
+}</pre>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+
+                        <div class="tutorial-section" id="s8">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
+                                Methods &amp; Classes Basics
+                            </h2>
+                            <p>Methods control behavioral parameters inside objects. Structures orchestrate initialization arguments via precise <code>constructor</code> functions.</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">java · UserTemplate.java</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre><span class="kw">class</span> <span class="cl">Player</span> {
+    <span class="cl">String</span> <span class="va">username</span>;
+    <span class="kw">int</span> <span class="va">rank</span>;
+
+    <span class="cm">// Constructor function</span>
+    <span class="cl">Player</span>(<span class="cl">String</span> <span class="va">username</span>, <span class="kw">int</span> <span class="va">rank</span>) {
+        <span class="kw">this</span>.<span class="va">username</span> = <span class="va">username</span>;
+        <span class="kw">this</span>.<span class="va">rank</span> = <span class="va">rank</span>;
+    }
+
+    <span class="cm">// Object Instance Method</span>
+    <span class="kw">void</span> <span class="fn">displaySpecs</span>() {
+        <span class="cl">System</span>.<span class="va">out</span>.<span class="fn">println</span>(<span class="va">username</span> + <span class="st">" level: "</span> + <span class="va">rank</span>);
+    }
+}
+
+<span class="kw">public class</span> <span class="cl">MainApp</span> {
+    <span class="kw">public static void</span> <span class="fn">main</span>(<span class="cl">String</span>[] <span class="va">args</span>) {
+        <span class="cl">Player</span> <span class="va">p1</span> = <span class="kw">new</span> <span class="cl">Player</span>(<span class="st">"Vidux"</span>, <span class="nm">99</span>);
+        <span class="va">p1</span>.<span class="fn">displaySpecs</span>(); <span class="cm">// Vidux level: 99</span>
+    }
+}</pre>
+                            </div>
+                            <div class="info-box tip">
+                                <i class="fa-solid fa-lightbulb"></i>
+                                <span>Now that you have mastered procedural components, deep dive into robust corporate architectures studying <strong>Inheritance</strong>, <strong>Interfaces</strong>, and <strong>Polymorphism</strong>.</span>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+
+                        <div class="guide-footer-nav">
+                            <a href="coding.html" class="cta-btn ghost sm">
+                                <i class="fa-solid fa-arrow-left"></i> Back to Coding
+                            </a>
+                            <a href="#s1" class="cta-btn sm">
+                                <i class="fa-solid fa-arrow-up"></i> Back to Top
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer>
+                <div class="footer-container">
+                    <div class="footer-grid">
+                        <div class="footer-widget">
+                            <h3><img width="20" height="20" src="https://img.icons8.com/3d-fluency/94/topic.png" alt="Contact"/>Contact</h3>
+                            <ul class="contact-list">
+                                <li><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/location.png" alt="Location"/>Udine, Italy</li>
+                                <li><a href="https://t.me/viduxsh" target="_blank"><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/telegram.png" alt="Telegram"/>Telegram</a></li>
+                                <li><a href="mailto:ivanvidux@gmail.com"><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/email.png" alt="Email"/>Email</a></li>
+                                <li><a href="https://paypal.me/ivanvidux" target="_blank"><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/paypal.png" alt="PayPal"/>PayPal</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-widget profile-widget">
+                            <h3>About Me</h3>
+                            <div class="footer-profile-box">
+                                <img src="../../assets/images/viduxsh_logo_full.png" alt="Profile Logo" class="footer-avatar">
+                                <p id="my-age"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <p id="copyright-year"></p>
+                        <p class="credits">Design by <a href="https://github.com/viduxsh" target="_blank">vidux.sh</a></p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script src="../../assets/js/script.js"></script>
+        <script>
+            function copyCode(btn) {
+                const pre  = btn.closest('.code-block').querySelector('pre');
+                const text = pre.innerText;
+                navigator.clipboard.writeText(text).then(() => {
+                    btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                    btn.classList.add('copied');
+                    setTimeout(() => {
+                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy';
+                        btn.classList.remove('copied');
+                    }, 2000);
+                });
+            }
+
+            const sections = document.querySelectorAll('.tutorial-section');
+            const steps    = document.querySelectorAll('.tutorial-progress-step');
+
+            function updateProgress() {
+                let active = 0;
+                sections.forEach((sec, i) => {
+                    if (sec.getBoundingClientRect().top < window.innerHeight * 0.6) active = i + 1;
+                });
+                steps.forEach((s, i) => s.classList.toggle('done', i < active));
+            }
+
+            window.addEventListener('scroll', updateProgress, { passive: true });
+            updateProgress();
+        </script>
+    </body>
+</html>

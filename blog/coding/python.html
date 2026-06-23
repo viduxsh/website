@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Python beginner tutorial — learn variables, data types, conditionals, loops, functions and more with ready-to-use code snippets.">
+        <meta name="author" content="vidux.sh">
+        <title>vidux.sh - Python</title>
+        <link rel="shortcut icon" href="../../assets/images/viduxsh_icon.png" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="../../assets/css/style.css">
+    </head>
+    <body data-theme="light">
+        <div class="main-wrapper">
+            <header>
+                <div class="header-container">
+                    <div class="logo-area">
+                        <img src="../../assets/images/viduxsh_logo_full.png" alt="Logo" class="nav-logo">
+                    </div>
+                    <nav class="nav-links">
+                        <a title="Home"     href="../../index.html"    class="nav-btn"><i class="fa-solid fa-house"></i><span>Home</span></a>
+                        <a title="Projects" href="../../projects.html" class="nav-btn"><i class="fa-solid fa-diagram-project"></i><span>Projects</span></a>
+                        <a title="Social"   href="../../social.html"   class="nav-btn"><i class="fa-solid fa-hashtag"></i><span>Social</span></a>
+                        <a title="About Me" href="../../aboutme.html"  class="nav-btn"><i class="fa-solid fa-address-card"></i><span>About Me</span></a>
+                    </nav>
+                    <div class="theme-switcher">
+                        <input type="checkbox" id="switcher">
+                        <label for="switcher" title="Toggle Theme">Switch</label>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <section class="hero-section" style="padding: 40px 20px 60px;">
+                    <div class="card-container wide">
+                        <div class="guide-topbar">
+                            <a title="Back to Coding" href="coding.html" class="cta-btn ghost sm">
+                                <i class="fa-solid fa-arrow-left"></i> Coding Guides
+                            </a>
+                            <span class="guide-topbar-label">
+                                <i class="fa-solid fa-book-open"></i> Beginner Tutorial
+                            </span>
+                        </div>
+                        <div class="lang-header">
+                            <img src="../../assets/images/coding/logo/python.png" alt="Python logo">
+                            <div>
+                                <h1>Python <span class="lang-badge">Beginner</span></h1>
+                                <p class="lang-subtitle">Simple, readable, and powerful — the perfect first language.</p>
+                            </div>
+                        </div>
+                        <div class="tutorial-progress" id="tutorial-progress">
+                            <div class="tutorial-progress-step done"></div>
+                            <div class="tutorial-progress-step"></div>
+                            <div class="tutorial-progress-step"></div>
+                            <div class="tutorial-progress-step"></div>
+                            <div class="tutorial-progress-step"></div>
+                            <div class="tutorial-progress-step"></div>
+                            <div class="tutorial-progress-step"></div>
+                            <div class="tutorial-progress-step"></div>
+                        </div>
+                        <div class="divider" style="margin-top: 0;"></div>
+                        <div class="toc">
+                            <h3><i class="fa-solid fa-list"></i> Table of Contents</h3>
+                            <ol>
+                                <li><a href="#s1">Hello World &amp; Comments</a></li>
+                                <li><a href="#s2">Variables &amp; Data Types</a></li>
+                                <li><a href="#s3">Operators</a></li>
+                                <li><a href="#s4">String Methods</a></li>
+                                <li><a href="#s5">Conditionals</a></li>
+                                <li><a href="#s6">Loops</a></li>
+                                <li><a href="#s7">Lists &amp; Tuples</a></li>
+                                <li><a href="#s8">Functions</a></li>
+                            </ol>
+                        </div>
+                        <div class="tutorial-section" id="s1">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-1);">1</span>
+                                Hello World &amp; Comments
+                            </h2>
+                            <p>Every Python program starts with a simple print statement. No semicolons, no curly braces — just clean, indented code.</p>
+
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">python · hello.py</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre><span class="cm"># This is a single-line comment</span>
+
+<span class="fn">print</span>(<span class="st">"Hello, World!"</span>)  <span class="cm"># inline comment</span>
+
+<span class="cm">"""
+This is a multi-line comment
+(also called a docstring).
+"""</span>
+
+<span class="fn">print</span>(<span class="st">"Python is awesome!"</span>)</pre>
+                            </div>
+                            <div class="info-box tip">
+                                <i class="fa-solid fa-lightbulb"></i>
+                                <span>Run Python scripts from the terminal with <code>python hello.py</code>. You can also open an interactive shell by typing <code>python</code> alone.</span>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="tutorial-section" id="s2">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-2);">2</span>
+                                Variables &amp; Data Types
+                            </h2>
+                            <p>Python is <strong>dynamically typed</strong>: you don't declare a type — Python figures it out from the value. You can check the type of any variable with <code>type()</code>.</p>
+                            <div class="type-grid">
+                                <div class="type-pill">
+                                    <span class="type-name">int</span>
+                                    <span class="type-desc">Whole numbers</span>
+                                    <span class="type-example">42, -7, 0</span>
+                                </div>
+                                <div class="type-pill">
+                                    <span class="type-name">float</span>
+                                    <span class="type-desc">Decimal numbers</span>
+                                    <span class="type-example">3.14, -0.5</span>
+                                </div>
+                                <div class="type-pill">
+                                    <span class="type-name">str</span>
+                                    <span class="type-desc">Text / strings</span>
+                                    <span class="type-example">"hello"</span>
+                                </div>
+                                <div class="type-pill">
+                                    <span class="type-name">bool</span>
+                                    <span class="type-desc">True or False</span>
+                                    <span class="type-example">True, False</span>
+                                </div>
+                                <div class="type-pill">
+                                    <span class="type-name">list</span>
+                                    <span class="type-desc">Ordered collection</span>
+                                    <span class="type-example">[1, 2, 3]</span>
+                                </div>
+                                <div class="type-pill">
+                                    <span class="type-name">dict</span>
+                                    <span class="type-desc">Key-value pairs</span>
+                                    <span class="type-example">{"k": "v"}</span>
+                                </div>
+                            </div>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">python · variables.py</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre><span class="va">name</span>   <span class="op">=</span> <span class="st">"Alice"</span>          <span class="cm"># str</span>
+<span class="va">age</span>    <span class="op">=</span> <span class="nm">25</span>               <span class="cm"># int</span>
+<span class="va">height</span> <span class="op">=</span> <span class="nm">1.68</span>             <span class="cm"># float</span>
+<span class="va">active</span> <span class="op">=</span> <span class="kw">True</span>             <span class="cm"># bool</span>
+
+<span class="cm"># f-strings: embed variables inside strings</span>
+<span class="fn">print</span>(<span class="st">f"Name: <span class="op">{</span><span class="va">name</span><span class="op">}</span>, Age: <span class="op">{</span><span class="va">age</span><span class="op">}</span>"</span>)
+
+<span class="cm"># Check type</span>
+<span class="fn">print</span>(<span class="fn">type</span>(<span class="va">height</span>))   <span class="cm"># &lt;class 'float'&gt;</span>
+
+<span class="cm"># Multiple assignment</span>
+<span class="va">x</span>, <span class="va">y</span>, <span class="va">z</span> <span class="op">=</span> <span class="nm">1</span>, <span class="nm">2</span>, <span class="nm">3</span></pre>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="tutorial-section" id="s3">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
+                                Operators
+                            </h2>
+                            <p>Python supports all standard arithmetic, comparison, and logical operators.</p>
+
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">python · operators.py</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre><span class="cm"># Arithmetic</span>
+<span class="fn">print</span>(<span class="nm">10</span> <span class="op">+</span> <span class="nm">3</span>)    <span class="cm"># 13  — addition</span>
+<span class="fn">print</span>(<span class="nm">10</span> <span class="op">-</span> <span class="nm">3</span>)    <span class="cm"># 7   — subtraction</span>
+<span class="fn">print</span>(<span class="nm">10</span> <span class="op">*</span> <span class="nm">3</span>)    <span class="cm"># 30  — multiplication</span>
+<span class="fn">print</span>(<span class="nm">10</span> <span class="op">/</span> <span class="nm">3</span>)    <span class="cm"># 3.33.. — division</span>
+<span class="fn">print</span>(<span class="nm">10</span> <span class="op">//</span> <span class="nm">3</span>)   <span class="cm"># 3   — integer division</span>
+<span class="fn">print</span>(<span class="nm">10</span> <span class="op">%</span> <span class="nm">3</span>)    <span class="cm"># 1   — modulo (remainder)</span>
+<span class="fn">print</span>(<span class="nm">2</span> <span class="op">**</span> <span class="nm">8</span>)    <span class="cm"># 256 — exponentiation</span>
+
+<span class="cm"># Comparison  →  returns bool</span>
+<span class="fn">print</span>(<span class="nm">5</span> <span class="op">==</span> <span class="nm">5</span>)    <span class="cm"># True</span>
+<span class="fn">print</span>(<span class="nm">5</span> <span class="op">!=</span> <span class="nm">3</span>)    <span class="cm"># True</span>
+<span class="fn">print</span>(<span class="nm">5</span> <span class="op">&gt;</span>  <span class="nm">3</span>)    <span class="cm"># True</span>
+
+<span class="cm"># Logical</span>
+<span class="fn">print</span>(<span class="kw">True</span> <span class="kw">and</span> <span class="kw">False</span>)   <span class="cm"># False</span>
+<span class="fn">print</span>(<span class="kw">True</span> <span class="kw">or</span>  <span class="kw">False</span>)   <span class="cm"># True</span>
+<span class="fn">print</span>(<span class="kw">not</span> <span class="kw">True</span>)          <span class="cm"># False</span></pre>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="tutorial-section" id="s4">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
+                                String Methods
+                            </h2>
+                            <p>Strings in Python are objects with many built-in methods. They are <strong>immutable</strong> — methods always return a new string.</p>
+
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">python · strings.py</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre><span class="va">s</span> <span class="op">=</span> <span class="st">"  Hello, Python!  "</span>
+
+<span class="fn">print</span>(<span class="va">s</span><span class="op">.</span><span class="fn">strip</span>())           <span class="cm"># "Hello, Python!"</span>
+<span class="fn">print</span>(<span class="va">s</span><span class="op">.</span><span class="fn">lower</span>())           <span class="cm"># "  hello, python!  "</span>
+<span class="fn">print</span>(<span class="va">s</span><span class="op">.</span><span class="fn">upper</span>())           <span class="cm"># "  HELLO, PYTHON!  "</span>
+<span class="fn">print</span>(<span class="va">s</span><span class="op">.</span><span class="fn">replace</span>(<span class="st">"Python"</span>, <span class="st">"World"</span>))
+
+<span class="cm"># Slicing</span>
+<span class="va">word</span> <span class="op">=</span> <span class="st">"Python"</span>
+<span class="fn">print</span>(<span class="va">word</span>[<span class="nm">0</span>])       <span class="cm"># P</span>
+<span class="fn">print</span>(<span class="va">word</span>[<span class="nm">1</span><span class="op">:</span><span class="nm">4</span>])     <span class="cm"># yth</span>
+<span class="fn">print</span>(<span class="va">word</span>[<span class="op">::</span><span class="op">-</span><span class="nm">1</span>])    <span class="cm"># nohtyP  (reversed)</span>
+
+<span class="cm"># f-string formatting</span>
+<span class="va">pi</span> <span class="op">=</span> <span class="nm">3.14159</span>
+<span class="fn">print</span>(<span class="st">f"Pi is approximately <span class="op">{</span><span class="va">pi</span><span class="op">:.2f</span><span class="op">}</span>"</span>)  <span class="cm"># 3.14</span></pre>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="tutorial-section" id="s5">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
+                                Conditionals
+                            </h2>
+                            <p>Python uses <code>if</code>, <code>elif</code>, and <code>else</code> for decision-making. Indentation (4 spaces) is mandatory — it replaces the curly braces of other languages.</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">python · conditionals.py</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre><span class="va">score</span> <span class="op">=</span> <span class="nm">72</span>
+
+<span class="kw">if</span> <span class="va">score</span> <span class="op">&gt;=</span> <span class="nm">90</span><span class="op">:</span>
+    <span class="fn">print</span>(<span class="st">"Grade: A"</span>)
+<span class="kw">elif</span> <span class="va">score</span> <span class="op">&gt;=</span> <span class="nm">75</span><span class="op">:</span>
+    <span class="fn">print</span>(<span class="st">"Grade: B"</span>)
+<span class="kw">elif</span> <span class="va">score</span> <span class="op">&gt;=</span> <span class="nm">60</span><span class="op">:</span>
+    <span class="fn">print</span>(<span class="st">"Grade: C"</span>)   <span class="cm"># ← this runs</span>
+<span class="kw">else</span><span class="op">:</span>
+    <span class="fn">print</span>(<span class="st">"Grade: F"</span>)
+
+<span class="cm"># Ternary (one-line) conditional</span>
+<span class="va">status</span> <span class="op">=</span> <span class="st">"Pass"</span> <span class="kw">if</span> <span class="va">score</span> <span class="op">&gt;=</span> <span class="nm">60</span> <span class="kw">else</span> <span class="st">"Fail"</span>
+<span class="fn">print</span>(<span class="va">status</span>)   <span class="cm"># Pass</span></pre>
+                            </div>
+                            <div class="info-box note">
+                                <i class="fa-solid fa-circle-info"></i>
+                                <span>Python does not have a <code>switch</code> statement, but from Python 3.10+ you can use <code>match</code> / <code>case</code> for the same purpose.</span>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="tutorial-section" id="s6">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
+                                Loops
+                            </h2>
+                            <p>Python has two loop types: <code>for</code> (iterate over a sequence) and <code>while</code> (repeat while a condition is true).</p>
+
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">python · loops.py</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre><span class="cm"># for loop with range()</span>
+<span class="kw">for</span> <span class="va">i</span> <span class="kw">in</span> <span class="fn">range</span>(<span class="nm">5</span>)<span class="op">:</span>       <span class="cm"># 0, 1, 2, 3, 4</span>
+    <span class="fn">print</span>(<span class="va">i</span>)
+
+<span class="cm"># for loop over a list</span>
+<span class="va">fruits</span> <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]
+<span class="kw">for</span> <span class="va">fruit</span> <span class="kw">in</span> <span class="va">fruits</span><span class="op">:</span>
+    <span class="fn">print</span>(<span class="st">f"I like <span class="op">{</span><span class="va">fruit</span><span class="op">}</span>"</span>)
+
+<span class="cm"># while loop</span>
+<span class="va">count</span> <span class="op">=</span> <span class="nm">0</span>
+<span class="kw">while</span> <span class="va">count</span> <span class="op">&lt;</span> <span class="nm">3</span><span class="op">:</span>
+    <span class="fn">print</span>(<span class="st">f"count = <span class="op">{</span><span class="va">count</span><span class="op">}</span>"</span>)
+    <span class="va">count</span> <span class="op">+=</span> <span class="nm">1</span>
+
+<span class="cm"># break and continue</span>
+<span class="kw">for</span> <span class="va">n</span> <span class="kw">in</span> <span class="fn">range</span>(<span class="nm">10</span>)<span class="op">:</span>
+    <span class="kw">if</span> <span class="va">n</span> <span class="op">==</span> <span class="nm">3</span><span class="op">:</span> <span class="kw">continue</span>   <span class="cm"># skip 3</span>
+    <span class="kw">if</span> <span class="va">n</span> <span class="op">==</span> <span class="nm">6</span><span class="op">:</span> <span class="kw">break</span>      <span class="cm"># stop at 6</span>
+    <span class="fn">print</span>(<span class="va">n</span>)               <span class="cm"># 0 1 2 4 5</span></pre>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="tutorial-section" id="s7">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
+                                Lists &amp; Tuples
+                            </h2>
+                            <p>A <strong>list</strong> is mutable (changeable), while a <strong>tuple</strong> is immutable. Both are ordered sequences.</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">python · collections.py</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre><span class="cm"># List — mutable</span>
+<span class="va">nums</span> <span class="op">=</span> [<span class="nm">10</span>, <span class="nm">20</span>, <span class="nm">30</span>, <span class="nm">40</span>]
+<span class="va">nums</span><span class="op">.</span><span class="fn">append</span>(<span class="nm">50</span>)          <span class="cm"># add to end</span>
+<span class="va">nums</span><span class="op">.</span><span class="fn">remove</span>(<span class="nm">20</span>)          <span class="cm"># remove by value</span>
+<span class="fn">print</span>(<span class="va">nums</span>[<span class="nm">0</span>])            <span class="cm"># 10 (indexing)</span>
+<span class="fn">print</span>(<span class="fn">len</span>(<span class="va">nums</span>))           <span class="cm"># 3</span>
+
+<span class="cm"># List comprehension</span>
+<span class="va">squares</span> <span class="op">=</span> [<span class="va">x</span><span class="op">**</span><span class="nm">2</span> <span class="kw">for</span> <span class="va">x</span> <span class="kw">in</span> <span class="fn">range</span>(<span class="nm">1</span>, <span class="nm">6</span>)]
+<span class="fn">print</span>(<span class="va">squares</span>)   <span class="cm"># [1, 4, 9, 16, 25]</span>
+
+<span class="cm"># Tuple — immutable</span>
+<span class="va">coords</span> <span class="op">=</span> (<span class="nm">48.8566</span>, <span class="nm">2.3522</span>)  <span class="cm"># lat/lon Paris</span>
+<span class="va">lat</span>, <span class="va">lon</span> <span class="op">=</span> <span class="va">coords</span>            <span class="cm"># unpacking</span>
+<span class="fn">print</span>(<span class="va">lat</span>, <span class="va">lon</span>)</pre>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="tutorial-section" id="s8">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
+                                Functions
+                            </h2>
+                            <p>Functions let you package reusable logic. Define them with <code>def</code>, call them by name, and optionally return a value with <code>return</code>.</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">python · functions.py</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre><span class="cm"># Basic function with default parameter</span>
+<span class="kw">def</span> <span class="fn">greet</span>(<span class="va">name</span><span class="op">=</span><span class="st">"stranger"</span>)<span class="op">:</span>
+    <span class="kw">return</span> <span class="st">f"Hello, <span class="op">{</span><span class="va">name</span><span class="op">}</span>!"</span>
+
+<span class="fn">print</span>(<span class="fn">greet</span>())             <span class="cm"># Hello, stranger!</span>
+<span class="fn">print</span>(<span class="fn">greet</span>(<span class="st">"Alice"</span>))     <span class="cm"># Hello, Alice!</span>
+
+<span class="cm"># Multiple return values</span>
+<span class="kw">def</span> <span class="fn">min_max</span>(<span class="va">numbers</span>)<span class="op">:</span>
+    <span class="kw">return</span> <span class="fn">min</span>(<span class="va">numbers</span>), <span class="fn">max</span>(<span class="va">numbers</span>)
+
+<span class="va">lo</span>, <span class="va">hi</span> <span class="op">=</span> <span class="fn">min_max</span>([<span class="nm">3</span>, <span class="nm">1</span>, <span class="nm">9</span>, <span class="nm">4</span>])
+<span class="fn">print</span>(<span class="va">lo</span>, <span class="va">hi</span>)   <span class="cm"># 1 9</span>
+
+<span class="cm"># Lambda — anonymous one-liner function</span>
+<span class="va">square</span> <span class="op">=</span> <span class="kw">lambda</span> <span class="va">x</span><span class="op">:</span> <span class="va">x</span> <span class="op">**</span> <span class="nm">2</span>
+<span class="fn">print</span>(<span class="fn">square</span>(<span class="nm">7</span>))   <span class="cm"># 49</span></pre>
+                            </div>
+                            <div class="info-box tip">
+                                <i class="fa-solid fa-lightbulb"></i>
+                                <span>This covers the foundations of Python. Next steps: explore <strong>dictionaries</strong>, <strong>classes</strong>, <strong>file I/O</strong>, and the rich <strong>standard library</strong> (e.g. <code>os</code>, <code>json</code>, <code>math</code>).</span>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="guide-footer-nav">
+                            <a href="coding.html" class="cta-btn ghost sm">
+                                <i class="fa-solid fa-arrow-left"></i> Back to Coding
+                            </a>
+                            <a href="#s1" class="cta-btn sm">
+                                <i class="fa-solid fa-arrow-up"></i> Back to Top
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer>
+                <div class="footer-container">
+                    <div class="footer-grid">
+                        <div class="footer-widget">
+                            <h3><img width="20" height="20" src="https://img.icons8.com/3d-fluency/94/topic.png" alt="Contact"/>Contact</h3>
+                            <ul class="contact-list">
+                                <li><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/location.png" alt="Location"/>Udine, Italy</li>
+                                <li><a href="https://t.me/viduxsh" target="_blank"><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/telegram.png" alt="Telegram"/>Telegram</a></li>
+                                <li><a href="mailto:ivanvidux@gmail.com"><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/email.png" alt="Email"/>Email</a></li>
+                                <li><a href="https://paypal.me/ivanvidux" target="_blank"><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/paypal.png" alt="PayPal"/>PayPal</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-widget profile-widget">
+                            <h3>About Me</h3>
+                            <div class="footer-profile-box">
+                                <img src="../../assets/images/viduxsh_logo_full.png" alt="Profile Logo" class="footer-avatar">
+                                <p id="my-age"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <p id="copyright-year"></p>
+                        <p class="credits">Design by <a href="https://github.com/viduxsh" target="_blank">vidux.sh</a></p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script src="../../assets/js/script.js"></script>
+        <script>
+            function copyCode(btn) {
+                const pre  = btn.closest('.code-block').querySelector('pre');
+                const text = pre.innerText;
+                navigator.clipboard.writeText(text).then(() => {
+                    btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                    btn.classList.add('copied');
+                    setTimeout(() => {
+                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy';
+                        btn.classList.remove('copied');
+                    }, 2000);
+                });
+            }
+
+            const sections = document.querySelectorAll('.tutorial-section');
+            const steps    = document.querySelectorAll('.tutorial-progress-step');
+
+            function updateProgress() {
+                let active = 0;
+                sections.forEach((sec, i) => {
+                    if (sec.getBoundingClientRect().top < window.innerHeight * 0.6) active = i + 1;
+                });
+                steps.forEach((s, i) => s.classList.toggle('done', i < active));
+            }
+
+            window.addEventListener('scroll', updateProgress, { passive: true });
+            updateProgress();
+        </script>
+    </body>
+</html>

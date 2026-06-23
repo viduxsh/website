@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="JavaScript beginner tutorial — learn variables, data types, functions, DOM manipulation and more with ready-to-use code snippets.">
+        <meta name="author" content="vidux.sh">
+        <title>vidux.sh - JavaScript</title>
+        <link rel="shortcut icon" href="../../assets/images/viduxsh_icon.png" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="../../assets/css/style.css">
+    </head>
+    <body data-theme="light">
+        <div class="main-wrapper">
+            <header>
+                <div class="header-container">
+                    <div class="logo-area">
+                        <img src="../../assets/images/viduxsh_logo_full.png" alt="Logo" class="nav-logo">
+                    </div>
+                    <nav class="nav-links">
+                        <a title="Home"     href="../../index.html"    class="nav-btn"><i class="fa-solid fa-house"></i><span>Home</span></a>
+                        <a title="Projects" href="../../projects.html" class="nav-btn"><i class="fa-solid fa-diagram-project"></i><span>Projects</span></a>
+                        <a title="Social"   href="../../social.html"   class="nav-btn"><i class="fa-solid fa-hashtag"></i><span>Social</span></a>
+                        <a title="About Me" href="../../aboutme.html"  class="nav-btn"><i class="fa-solid fa-address-card"></i><span>About Me</span></a>
+                    </nav>
+                    <div class="theme-switcher">
+                        <input type="checkbox" id="switcher">
+                        <label for="switcher" title="Toggle Theme">Switch</label>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <section class="hero-section" style="padding: 40px 20px 60px;">
+                    <div class="card-container wide">
+                        <div class="guide-topbar">
+                            <a title="Back to Coding" href="coding.html" class="cta-btn ghost sm">
+                                <i class="fa-solid fa-arrow-left"></i> Coding Guides
+                            </a>
+                            <span class="guide-topbar-label">
+                                <i class="fa-solid fa-book-open"></i> Beginner Tutorial
+                            </span>
+                        </div>
+                        <div class="lang-header">
+                            <img src="../../assets/images/coding/logo/javascript.png" alt="JavaScript logo">
+                            <div>
+                                <h1>JavaScript <span class="lang-badge">Beginner</span></h1>
+                                <p class="lang-subtitle">The language of the web — runs in every browser, no setup required.</p>
+                            </div>
+                        </div>
+                        <div class="tutorial-progress" id="tutorial-progress">
+                            <div class="tutorial-progress-step done"></div>
+                            <div class="tutorial-progress-step"></div>
+                            <div class="tutorial-progress-step"></div>
+                            <div class="tutorial-progress-step"></div>
+                            <div class="tutorial-progress-step"></div>
+                            <div class="tutorial-progress-step"></div>
+                            <div class="tutorial-progress-step"></div>
+                            <div class="tutorial-progress-step"></div>
+                        </div>
+                        <div class="divider" style="margin-top: 0;"></div>
+                        <div class="toc">
+                            <h3><i class="fa-solid fa-list"></i> Table of Contents</h3>
+                            <ol>
+                                <li><a href="#s1">Output &amp; Comments</a></li>
+                                <li><a href="#s2">Variables &amp; Data Types</a></li>
+                                <li><a href="#s3">Operators</a></li>
+                                <li><a href="#s4">Strings &amp; Template Literals</a></li>
+                                <li><a href="#s5">Conditionals</a></li>
+                                <li><a href="#s6">Loops</a></li>
+                                <li><a href="#s7">Arrays &amp; Objects</a></li>
+                                <li><a href="#s8">Functions</a></li>
+                            </ol>
+                        </div>
+                        <div class="tutorial-section" id="s1">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-2);">1</span>
+                                Output &amp; Comments
+                            </h2>
+                            <p>JavaScript runs inside the browser. Use <code>console.log()</code> to print output to the developer console (open it with <kbd>F12</kbd>), or <code>alert()</code> to show a pop-up.</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">javascript · output.js</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre><span class="cm">// Single-line comment</span>
+
+<span class="cm">/* Multi-line comment
+   spanning multiple lines */</span>
+
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="st">"Hello, World!"</span>)      <span class="cm">// → printed in the console</span>
+<span class="fn">alert</span>(<span class="st">"Hello from a popup!"</span>)      <span class="cm">// → browser dialog box</span>
+
+<span class="cm">// Output multiple values at once</span>
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="st">"Name:"</span>, <span class="st">"Alice"</span>, <span class="st">"Age:"</span>, <span class="nm">25</span>)</pre>
+                            </div>
+                            <div class="info-box tip">
+                                <i class="fa-solid fa-lightbulb"></i>
+                                <span>You can run JavaScript directly in the browser console without any file — just open DevTools (<kbd>F12</kbd>), go to the <strong>Console</strong> tab, and type code.</span>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="tutorial-section" id="s2">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-1);">2</span>
+                                Variables &amp; Data Types
+                            </h2>
+                            <p>JavaScript has three ways to declare variables: <code>let</code> (reassignable), <code>const</code> (constant), and the older <code>var</code> (avoid in modern code). Types are determined at runtime.</p>
+                            <div class="type-grid">
+                                <div class="type-pill">
+                                    <span class="type-name">Number</span>
+                                    <span class="type-desc">Integers &amp; floats</span>
+                                    <span class="type-example">42, 3.14, -7</span>
+                                </div>
+                                <div class="type-pill">
+                                    <span class="type-name">String</span>
+                                    <span class="type-desc">Text</span>
+                                    <span class="type-example">"hello", 'hi'</span>
+                                </div>
+                                <div class="type-pill">
+                                    <span class="type-name">Boolean</span>
+                                    <span class="type-desc">True or False</span>
+                                    <span class="type-example">true, false</span>
+                                </div>
+                                <div class="type-pill">
+                                    <span class="type-name">null</span>
+                                    <span class="type-desc">Intentional empty</span>
+                                    <span class="type-example">null</span>
+                                </div>
+                                <div class="type-pill">
+                                    <span class="type-name">undefined</span>
+                                    <span class="type-desc">Not yet assigned</span>
+                                    <span class="type-example">undefined</span>
+                                </div>
+                                <div class="type-pill">
+                                    <span class="type-name">Object</span>
+                                    <span class="type-desc">Key-value pairs</span>
+                                    <span class="type-example">{ key: val }</span>
+                                </div>
+                            </div>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">javascript · variables.js</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre><span class="kw">let</span>   <span class="va">name</span>   <span class="op">=</span> <span class="st">"Alice"</span>    <span class="cm">// String  — can be reassigned</span>
+<span class="kw">const</span> <span class="va">age</span>    <span class="op">=</span> <span class="nm">25</span>         <span class="cm">// Number  — constant</span>
+<span class="kw">let</span>   <span class="va">active</span> <span class="op">=</span> <span class="kw">true</span>       <span class="cm">// Boolean</span>
+<span class="kw">let</span>   <span class="va">score</span>  <span class="op">=</span> <span class="kw">null</span>       <span class="cm">// null (no value yet)</span>
+
+<span class="cm">// Check type at runtime</span>
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="kw">typeof</span> <span class="va">name</span>)   <span class="cm">// "string"</span>
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="kw">typeof</span> <span class="va">age</span>)    <span class="cm">// "number"</span>
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="kw">typeof</span> <span class="va">active</span>) <span class="cm">// "boolean"</span>
+
+<span class="cm">// Reassign let (const would throw an error)</span>
+<span class="va">name</span> <span class="op">=</span> <span class="st">"Bob"</span>
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="va">name</span>)   <span class="cm">// "Bob"</span></pre>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="tutorial-section" id="s3">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
+                                Operators
+                            </h2>
+                            <p>JavaScript operators work similarly to other languages. Pay attention to <code>==</code> vs <code>===</code> — always prefer <strong>strict equality</strong> (<code>===</code>) to avoid unexpected type coercion.</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">javascript · operators.js</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre><span class="cm">// Arithmetic</span>
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="nm">10</span> <span class="op">+</span> <span class="nm">3</span>)    <span class="cm">// 13  — addition</span>
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="nm">10</span> <span class="op">-</span> <span class="nm">3</span>)    <span class="cm">// 7   — subtraction</span>
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="nm">10</span> <span class="op">*</span> <span class="nm">3</span>)    <span class="cm">// 30  — multiplication</span>
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="nm">10</span> <span class="op">/</span> <span class="nm">3</span>)    <span class="cm">// 3.333…</span>
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="nm">10</span> <span class="op">%</span> <span class="nm">3</span>)    <span class="cm">// 1   — modulo</span>
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="nm">2</span>  <span class="op">**</span> <span class="nm">8</span>)   <span class="cm">// 256 — exponent</span>
+
+<span class="cm">// Loose vs strict equality</span>
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="nm">5</span> <span class="op">==</span>  <span class="st">"5"</span>)   <span class="cm">// true  ← type coercion!</span>
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="nm">5</span> <span class="op">===</span> <span class="st">"5"</span>)   <span class="cm">// false ← always use this</span>
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="nm">5</span> <span class="op">!==</span> <span class="nm">3</span>)     <span class="cm">// true</span>
+
+<span class="cm">// Logical</span>
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="kw">true</span> <span class="op">&amp;&amp;</span> <span class="kw">false</span>)  <span class="cm">// false — AND</span>
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="kw">true</span> <span class="op">||</span> <span class="kw">false</span>)  <span class="cm">// true  — OR</span>
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="op">!</span><span class="kw">true</span>)           <span class="cm">// false — NOT</span></pre>
+                            </div>
+                            <div class="info-box warn">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                                <span>Always use <code>===</code> and <code>!==</code> in JavaScript. The loose operators (<code>==</code>, <code>!=</code>) perform type coercion which leads to subtle bugs.</span>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="tutorial-section" id="s4">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
+                                Strings &amp; Template Literals
+                            </h2>
+                            <p>Strings can be written with single quotes, double quotes, or backticks. Backtick strings (template literals) let you embed expressions with <code>${ }</code> and span multiple lines.</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">javascript · strings.js</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre><span class="kw">const</span> <span class="va">s</span> <span class="op">=</span> <span class="st">"  Hello, JavaScript!  "</span>
+
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="va">s</span><span class="op">.</span><span class="fn">trim</span>())              <span class="cm">// "Hello, JavaScript!"</span>
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="va">s</span><span class="op">.</span><span class="fn">toLowerCase</span>())       <span class="cm">// "  hello, javascript!  "</span>
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="va">s</span><span class="op">.</span><span class="fn">toUpperCase</span>())       <span class="cm">// "  HELLO, JAVASCRIPT!  "</span>
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="va">s</span><span class="op">.</span><span class="fn">includes</span>(<span class="st">"Java"</span>))    <span class="cm">// true</span>
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="va">s</span><span class="op">.</span><span class="fn">replace</span>(<span class="st">"JavaScript"</span>, <span class="st">"World"</span>))
+
+<span class="cm">// Slicing</span>
+<span class="kw">const</span> <span class="va">word</span> <span class="op">=</span> <span class="st">"JavaScript"</span>
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="va">word</span><span class="op">.</span><span class="fn">slice</span>(<span class="nm">0</span>, <span class="nm">4</span>))       <span class="cm">// "Java"</span>
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="va">word</span><span class="op">.</span><span class="fn">slice</span>(<span class="op">-</span><span class="nm">6</span>))         <span class="cm">// "Script"</span>
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="va">word</span><span class="op">.</span><span class="va">length</span>)           <span class="cm">// 10</span>
+
+<span class="cm">// Template literals (backticks)</span>
+<span class="kw">const</span> <span class="va">name</span> <span class="op">=</span> <span class="st">"Alice"</span>
+<span class="kw">const</span> <span class="va">age</span>  <span class="op">=</span> <span class="nm">25</span>
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="st">`Name: <span class="op">${</span><span class="va">name</span><span class="op">}</span>, Age: <span class="op">${</span><span class="va">age</span><span class="op">}</span>`</span>)
+
+<span class="cm">// Multi-line string</span>
+<span class="kw">const</span> <span class="va">msg</span> <span class="op">=</span> <span class="st">`Line one
+Line two
+Line three`</span>
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="va">msg</span>)</pre>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="tutorial-section" id="s5">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
+                                Conditionals
+                            </h2>
+                            <p>JavaScript supports <code>if / else if / else</code>, the ternary operator, and <code>switch</code> for multi-branch logic.</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">javascript · conditionals.js</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre><span class="kw">const</span> <span class="va">score</span> <span class="op">=</span> <span class="nm">72</span>
+
+<span class="kw">if</span> (<span class="va">score</span> <span class="op">&gt;=</span> <span class="nm">90</span>) {
+    <span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="st">"Grade: A"</span>)
+} <span class="kw">else if</span> (<span class="va">score</span> <span class="op">&gt;=</span> <span class="nm">75</span>) {
+    <span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="st">"Grade: B"</span>)
+} <span class="kw">else if</span> (<span class="va">score</span> <span class="op">&gt;=</span> <span class="nm">60</span>) {
+    <span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="st">"Grade: C"</span>)   <span class="cm">// ← this runs</span>
+} <span class="kw">else</span> {
+    <span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="st">"Grade: F"</span>)
+}
+
+<span class="cm">// Ternary operator</span>
+<span class="kw">const</span> <span class="va">status</span> <span class="op">=</span> <span class="va">score</span> <span class="op">&gt;=</span> <span class="nm">60</span> <span class="op">?</span> <span class="st">"Pass"</span> <span class="op">:</span> <span class="st">"Fail"</span>
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="va">status</span>)   <span class="cm">// "Pass"</span>
+
+<span class="cm">// switch statement</span>
+<span class="kw">const</span> <span class="va">day</span> <span class="op">=</span> <span class="st">"Monday"</span>
+<span class="kw">switch</span> (<span class="va">day</span>) {
+    <span class="kw">case</span> <span class="st">"Saturday"</span><span class="op">:</span>
+    <span class="kw">case</span> <span class="st">"Sunday"</span><span class="op">:</span>
+        <span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="st">"Weekend!"</span>); <span class="kw">break</span>
+    <span class="kw">default</span><span class="op">:</span>
+        <span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="st">"Weekday"</span>)   <span class="cm">// ← this runs</span>
+}</pre>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="tutorial-section" id="s6">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
+                                Loops
+                            </h2>
+                            <p>JavaScript offers <code>for</code>, <code>while</code>, <code>for...of</code> (iterating values) and <code>for...in</code> (iterating object keys).</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">javascript · loops.js</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre><span class="cm">// Classic for loop</span>
+<span class="kw">for</span> (<span class="kw">let</span> <span class="va">i</span> <span class="op">=</span> <span class="nm">0</span>; <span class="va">i</span> <span class="op">&lt;</span> <span class="nm">5</span>; <span class="va">i</span><span class="op">++</span>) {
+    <span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="va">i</span>)   <span class="cm">// 0 1 2 3 4</span>
+}
+
+<span class="cm">// for...of — iterate array values</span>
+<span class="kw">const</span> <span class="va">fruits</span> <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]
+<span class="kw">for</span> (<span class="kw">const</span> <span class="va">fruit</span> <span class="kw">of</span> <span class="va">fruits</span>) {
+    <span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="st">`I like <span class="op">${</span><span class="va">fruit</span><span class="op">}</span>`</span>)
+}
+
+<span class="cm">// while loop</span>
+<span class="kw">let</span> <span class="va">count</span> <span class="op">=</span> <span class="nm">0</span>
+<span class="kw">while</span> (<span class="va">count</span> <span class="op">&lt;</span> <span class="nm">3</span>) {
+    <span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="st">`count = <span class="op">${</span><span class="va">count</span><span class="op">}</span>`</span>)
+    <span class="va">count</span><span class="op">++</span>
+}
+
+<span class="cm">// break and continue</span>
+<span class="kw">for</span> (<span class="kw">let</span> <span class="va">n</span> <span class="op">=</span> <span class="nm">0</span>; <span class="va">n</span> <span class="op">&lt;</span> <span class="nm">10</span>; <span class="va">n</span><span class="op">++</span>) {
+    <span class="kw">if</span> (<span class="va">n</span> <span class="op">===</span> <span class="nm">3</span>) <span class="kw">continue</span>   <span class="cm">// skip 3</span>
+    <span class="kw">if</span> (<span class="va">n</span> <span class="op">===</span> <span class="nm">6</span>) <span class="kw">break</span>      <span class="cm">// stop at 6</span>
+    <span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="va">n</span>)           <span class="cm">// 0 1 2 4 5</span>
+}</pre>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="tutorial-section" id="s7">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
+                                Arrays &amp; Objects
+                            </h2>
+                            <p><strong>Arrays</strong> store ordered lists of values. <strong>Objects</strong> store key-value pairs and are the backbone of JavaScript data structures.</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">javascript · collections.js</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre><span class="cm">// ── Arrays ──────────────────────────────</span>
+<span class="kw">const</span> <span class="va">nums</span> <span class="op">=</span> [<span class="nm">10</span>, <span class="nm">20</span>, <span class="nm">30</span>, <span class="nm">40</span>]
+<span class="va">nums</span><span class="op">.</span><span class="fn">push</span>(<span class="nm">50</span>)               <span class="cm">// add to end  → [10,20,30,40,50]</span>
+<span class="va">nums</span><span class="op">.</span><span class="fn">pop</span>()                  <span class="cm">// remove last → [10,20,30,40]</span>
+<span class="va">nums</span><span class="op">.</span><span class="fn">splice</span>(<span class="nm">1</span>, <span class="nm">1</span>)           <span class="cm">// remove index 1 → [10,30,40]</span>
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="va">nums</span><span class="op">.</span><span class="va">length</span>)   <span class="cm">// 3</span>
+
+<span class="cm">// Array methods</span>
+<span class="kw">const</span> <span class="va">squares</span> <span class="op">=</span> [<span class="nm">1</span>, <span class="nm">2</span>, <span class="nm">3</span>, <span class="nm">4</span>, <span class="nm">5</span>]<span class="op">.</span><span class="fn">map</span>(<span class="va">x</span> <span class="op">=&gt;</span> <span class="va">x</span> <span class="op">**</span> <span class="nm">2</span>)
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="va">squares</span>)   <span class="cm">// [1, 4, 9, 16, 25]</span>
+
+<span class="kw">const</span> <span class="va">evens</span> <span class="op">=</span> <span class="va">squares</span><span class="op">.</span><span class="fn">filter</span>(<span class="va">x</span> <span class="op">=&gt;</span> <span class="va">x</span> <span class="op">%</span> <span class="nm">2</span> <span class="op">===</span> <span class="nm">0</span>)
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="va">evens</span>)    <span class="cm">// [4, 16]</span>
+
+<span class="cm">// ── Objects ─────────────────────────────</span>
+<span class="kw">const</span> <span class="va">person</span> <span class="op">=</span> {
+    <span class="va">name</span><span class="op">:</span>   <span class="st">"Alice"</span>,
+    <span class="va">age</span><span class="op">:</span>    <span class="nm">25</span>,
+    <span class="va">active</span><span class="op">:</span> <span class="kw">true</span>
+}
+
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="va">person</span><span class="op">.</span><span class="va">name</span>)        <span class="cm">// "Alice"</span>
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="va">person</span>[<span class="st">"age"</span>])      <span class="cm">// 25</span>
+<span class="va">person</span><span class="op">.</span><span class="va">city</span> <span class="op">=</span> <span class="st">"Udine"</span>           <span class="cm">// add new property</span>
+
+<span class="cm">// Destructuring</span>
+<span class="kw">const</span> { <span class="va">name</span>, <span class="va">age</span> } <span class="op">=</span> <span class="va">person</span>
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="st">`<span class="op">${</span><span class="va">name</span><span class="op">}</span> is <span class="op">${</span><span class="va">age</span><span class="op">}</span>`</span>)   <span class="cm">// "Alice is 25"</span></pre>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="tutorial-section" id="s8">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
+                                Functions
+                            </h2>
+                            <p>JavaScript has three common ways to define functions: <strong>function declarations</strong>, <strong>function expressions</strong>, and the modern <strong>arrow functions</strong> (<code>=&gt;</code>).</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">javascript · functions.js</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre><span class="cm">// ── Function declaration ─────────────────</span>
+<span class="kw">function</span> <span class="fn">greet</span>(<span class="va">name</span> <span class="op">=</span> <span class="st">"stranger"</span>) {
+    <span class="kw">return</span> <span class="st">`Hello, <span class="op">${</span><span class="va">name</span><span class="op">}</span>!`</span>
+}
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="fn">greet</span>())           <span class="cm">// "Hello, stranger!"</span>
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="fn">greet</span>(<span class="st">"Alice"</span>))   <span class="cm">// "Hello, Alice!"</span>
+
+<span class="cm">// ── Arrow function ───────────────────────</span>
+<span class="kw">const</span> <span class="fn">square</span> <span class="op">=</span> (<span class="va">x</span>) <span class="op">=&gt;</span> <span class="va">x</span> <span class="op">**</span> <span class="nm">2</span>
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="fn">square</span>(<span class="nm">7</span>))          <span class="cm">// 49</span>
+
+<span class="cm">// Arrow with a block body (multiple statements)</span>
+<span class="kw">const</span> <span class="fn">minMax</span> <span class="op">=</span> (<span class="va">arr</span>) <span class="op">=&gt;</span> {
+    <span class="kw">const</span> <span class="va">lo</span> <span class="op">=</span> <span class="va">Math</span><span class="op">.</span><span class="fn">min</span>(<span class="op">...</span><span class="va">arr</span>)
+    <span class="kw">const</span> <span class="va">hi</span> <span class="op">=</span> <span class="va">Math</span><span class="op">.</span><span class="fn">max</span>(<span class="op">...</span><span class="va">arr</span>)
+    <span class="kw">return</span> { <span class="va">lo</span>, <span class="va">hi</span> }
+}
+<span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="fn">minMax</span>([<span class="nm">3</span>, <span class="nm">1</span>, <span class="nm">9</span>, <span class="nm">4</span>]))   <span class="cm">// { lo: 1, hi: 9 }</span>
+
+<span class="cm">// ── Callback example ────────────────────</span>
+[<span class="nm">1</span>, <span class="nm">2</span>, <span class="nm">3</span>]<span class="op">.</span><span class="fn">forEach</span>(<span class="va">n</span> <span class="op">=&gt;</span> <span class="va">console</span><span class="op">.</span><span class="fn">log</span>(<span class="va">n</span> <span class="op">*</span> <span class="nm">10</span>))  <span class="cm">// 10 20 30</span></pre>
+                            </div>
+                            <div class="info-box tip">
+                                <i class="fa-solid fa-lightbulb"></i>
+                                <span>This covers the fundamentals of JavaScript. Next steps: explore <strong>DOM manipulation</strong>, <strong>Events</strong>, <strong>Promises &amp; async/await</strong>, and <strong>Fetch API</strong> for working with web pages and APIs.</span>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="guide-footer-nav">
+                            <a href="coding.html" class="cta-btn ghost sm">
+                                <i class="fa-solid fa-arrow-left"></i> Back to Coding
+                            </a>
+                            <a href="#s1" class="cta-btn sm">
+                                <i class="fa-solid fa-arrow-up"></i> Back to Top
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer>
+                <div class="footer-container">
+                    <div class="footer-grid">
+                        <div class="footer-widget">
+                            <h3><img width="20" height="20" src="https://img.icons8.com/3d-fluency/94/topic.png" alt="Contact"/>Contact</h3>
+                            <ul class="contact-list">
+                                <li><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/location.png" alt="Location"/>Udine, Italy</li>
+                                <li><a href="https://t.me/viduxsh" target="_blank"><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/telegram.png" alt="Telegram"/>Telegram</a></li>
+                                <li><a href="mailto:ivanvidux@gmail.com"><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/email.png" alt="Email"/>Email</a></li>
+                                <li><a href="https://paypal.me/ivanvidux" target="_blank"><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/paypal.png" alt="PayPal"/>PayPal</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-widget profile-widget">
+                            <h3>About Me</h3>
+                            <div class="footer-profile-box">
+                                <img src="../../assets/images/viduxsh_logo_full.png" alt="Profile Logo" class="footer-avatar">
+                                <p id="my-age"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <p id="copyright-year"></p>
+                        <p class="credits">Design by <a href="https://github.com/viduxsh" target="_blank">vidux.sh</a></p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script src="../../assets/js/script.js"></script>
+        <script>
+            function copyCode(btn) {
+                const pre  = btn.closest('.code-block').querySelector('pre');
+                const text = pre.innerText;
+                navigator.clipboard.writeText(text).then(() => {
+                    btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                    btn.classList.add('copied');
+                    setTimeout(() => {
+                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy';
+                        btn.classList.remove('copied');
+                    }, 2000);
+                });
+            }
+
+            const sections = document.querySelectorAll('.tutorial-section');
+            const steps    = document.querySelectorAll('.tutorial-progress-step');
+
+            function updateProgress() {
+                let active = 0;
+                sections.forEach((sec, i) => {
+                    if (sec.getBoundingClientRect().top < window.innerHeight * 0.6) active = i + 1;
+                });
+                steps.forEach((s, i) => s.classList.toggle('done', i < active));
+            }
+
+            window.addEventListener('scroll', updateProgress, { passive: true });
+            updateProgress();
+        </script>
+    </body>
+</html>

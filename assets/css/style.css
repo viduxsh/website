@@ -637,3 +637,384 @@ footer {
      padding: 10px 14px;
   }
 }
+
+/* ═══════════════════════════════════════════════════
+   CODING GUIDE / TUTORIAL PAGES
+   Used by: python.html, javascript.html, bash.html …
+   ═══════════════════════════════════════════════════ */
+
+/* Accent palette — can be overridden per-language with a body class */
+:root {
+  --guide-accent-1: #3B82F6;
+  --guide-accent-2: #F59E0B;
+  --guide-accent-3: #10B981;
+  --guide-accent-4: #EF4444;
+  --guide-accent-5: #8B5CF6;
+}
+
+/* Wider card for tutorial content */
+.card-container.wide {
+  max-width: 860px;
+}
+
+/* ── Page top-bar ── */
+.guide-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.guide-topbar-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Ghost / secondary CTA variant */
+.cta-btn.ghost {
+  background: var(--bg-main);
+  color: var(--text-main);
+  border: 1px solid var(--border);
+  margin-top: 0;
+}
+
+.cta-btn.ghost:hover {
+  background: var(--accent-light);
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.cta-btn.sm {
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  margin-top: 0;
+}
+
+/* ── Language header ── */
+.lang-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.lang-header img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.lang-header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.lang-header .lang-subtitle {
+  margin: 4px 0 0;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.lang-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--guide-accent-1), var(--guide-accent-2));
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+/* ── Progress indicator ── */
+.tutorial-progress {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.tutorial-progress-step {
+  flex: 1;
+  min-width: 40px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--border);
+  transition: background 0.3s ease;
+}
+
+.tutorial-progress-step.done {
+  background: linear-gradient(90deg, var(--guide-accent-1), var(--guide-accent-2));
+}
+
+/* ── Table of contents ── */
+.toc {
+  background: var(--accent-light);
+  border-left: 4px solid var(--guide-accent-1);
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin-bottom: 28px;
+}
+
+.toc h3 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.toc ol {
+  padding-left: 18px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 4px 24px;
+}
+
+.toc ol li {
+  margin-bottom: 4px;
+}
+
+.toc a {
+  color: var(--guide-accent-1);
+  text-decoration: none;
+  font-size: 0.93rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.toc a:hover {
+  color: var(--text-main);
+  text-decoration: underline;
+}
+
+/* ── Tutorial sections ── */
+.tutorial-section {
+  margin-top: 36px;
+}
+
+.tutorial-section h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  scroll-margin-top: 90px;
+}
+
+.section-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.tutorial-section > p,
+.tutorial-section .section-desc {
+  color: var(--text-muted);
+  font-size: 0.97rem;
+  line-height: 1.75;
+  margin-bottom: 14px;
+}
+
+/* ── Code blocks ── */
+.code-block {
+  position: relative;
+  background: #0f1115;
+  border-radius: 10px;
+  margin: 14px 0 20px;
+  border: 1px solid #2d3748;
+  overflow: hidden;
+}
+
+.code-block-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background: #181a20;
+  border-bottom: 1px solid #2d3748;
+}
+
+.code-block-label {
+  font-family: 'Fira Code', 'Consolas', monospace;
+  font-size: 0.75rem;
+  color: #a0aec0;
+  letter-spacing: 0.5px;
+}
+
+.code-block pre {
+  margin: 0;
+  padding: 18px 20px;
+  overflow-x: auto;
+  font-family: 'Fira Code', 'Consolas', monospace;
+  font-size: 0.87rem;
+  line-height: 1.75;
+  color: #e2e8f0;
+}
+
+/* Copy button */
+.copy-btn {
+  background: none;
+  border: 1px solid #4a5568;
+  color: #a0aec0;
+  font-size: 0.75rem;
+  padding: 3px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: var(--font-main);
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.copy-btn:hover {
+  background: #2d3748;
+  color: #e2e8f0;
+}
+
+.copy-btn.copied {
+  border-color: var(--guide-accent-3);
+  color: var(--guide-accent-3);
+}
+
+/* ── Syntax highlight spans (language-agnostic) ── */
+.kw  { color: #C792EA; }                     /* keyword */
+.fn  { color: #82AAFF; }                     /* function / builtin */
+.st  { color: #C3E88D; }                     /* string */
+.cm  { color: #546E7A; font-style: italic; } /* comment */
+.nm  { color: #F78C6C; }                     /* number */
+.op  { color: #89DDFF; }                     /* operator / punctuation */
+.va  { color: #e2e8f0; }                     /* variable / default */
+.ty  { color: #FFCB6B; }                     /* type annotation */
+
+/* ── Inline code ── */
+code {
+  font-family: 'Fira Code', 'Consolas', monospace;
+  font-size: 0.85em;
+  background: var(--accent-light);
+  color: var(--guide-accent-1);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* ── Info / tip boxes ── */
+.info-box {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin: 16px 0;
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.info-box.tip {
+  background: rgba(16, 185, 129, 0.07);
+  border-left: 4px solid var(--guide-accent-3);
+  color: var(--text-main);
+}
+
+.info-box.note {
+  background: rgba(59, 130, 246, 0.07);
+  border-left: 4px solid var(--guide-accent-1);
+  color: var(--text-main);
+}
+
+.info-box.warn {
+  background: rgba(239, 68, 68, 0.07);
+  border-left: 4px solid var(--guide-accent-4);
+  color: var(--text-main);
+}
+
+.info-box i {
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.info-box.tip  i { color: var(--guide-accent-3); }
+.info-box.note i { color: var(--guide-accent-1); }
+.info-box.warn i { color: var(--guide-accent-4); }
+
+/* ── Type / concept pills grid ── */
+.type-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+  margin: 14px 0 20px;
+}
+
+.type-pill {
+  background: var(--accent-light);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  text-align: center;
+  transition: var(--transition-smooth);
+}
+
+.type-pill:hover {
+  border-color: var(--guide-accent-1);
+  transform: translateY(-2px);
+}
+
+.type-pill .type-name {
+  font-family: 'Fira Code', 'Consolas', monospace;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--guide-accent-1);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.type-pill .type-desc {
+  font-size: 0.77rem;
+  color: var(--text-muted);
+}
+
+.type-pill .type-example {
+  font-family: 'Fira Code', 'Consolas', monospace;
+  font-size: 0.73rem;
+  color: var(--guide-accent-3);
+  display: block;
+  margin-top: 4px;
+}
+
+/* ── Guide footer nav ── */
+.guide-footer-nav {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+/* ── Responsive tweaks for guide pages ── */
+@media (max-width: 600px) {
+  .lang-header h1   { font-size: 1.5rem; }
+  .toc ol           { grid-template-columns: 1fr; }
+  .type-grid        { grid-template-columns: repeat(2, 1fr); }
+  .card-container.wide { padding: 20px; }
+}

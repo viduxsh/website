@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="HTML beginner tutorial — learn semantic tags, attributes, lists, links, images, tables, and forms with ready-to-use code snippets.">
+        <meta name="author" content="vidux.sh">
+        <title>vidux.sh - HTML</title>
+        <link rel="shortcut icon" href="../../assets/images/viduxsh_icon.png" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="../../assets/css/style.css">
+    </head>
+    <body data-theme="light">
+        <div class="main-wrapper">
+            <header>
+                <div class="header-container">
+                    <div class="logo-area">
+                        <img src="../../assets/images/viduxsh_logo_full.png" alt="Logo" class="nav-logo">
+                    </div>
+                    <nav class="nav-links">
+                        <a title="Home"     href="../../index.html"    class="nav-btn"><i class="fa-solid fa-house"></i><span>Home</span></a>
+                        <a title="Projects" href="../../projects.html" class="nav-btn"><i class="fa-solid fa-diagram-project"></i><span>Projects</span></a>
+                        <a title="Social"   href="../../social.html"   class="nav-btn"><i class="fa-solid fa-hashtag"></i><span>Social</span></a>
+                        <a title="About Me" href="../../aboutme.html"  class="nav-btn"><i class="fa-solid fa-address-card"></i><span>About Me</span></a>
+                    </nav>
+                    <div class="theme-switcher">
+                        <input type="checkbox" id="switcher">
+                        <label for="switcher" title="Toggle Theme">Switch</label>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <section class="hero-section" style="padding: 40px 20px 60px;">
+                    <div class="card-container wide">
+                        <div class="guide-topbar">
+                            <a title="Back to Coding" href="coding.html" class="cta-btn ghost sm">
+                                <i class="fa-solid fa-arrow-left"></i> Coding Guides
+                            </a>
+                            <span class="guide-topbar-label">
+                                <i class="fa-solid fa-book-open"></i> Beginner Tutorial
+                            </span>
+                        </div>
+                        <div class="lang-header">
+                            <img src="../../assets/images/coding/logo/html.png" alt="HTML logo">
+                            <div>
+                                <h1>HTML <span class="lang-badge">Beginner</span></h1>
+                                <p class="lang-subtitle">HyperText Markup Language — the structural skeleton and foundational blueprint of the web.</p>
+                            </div>
+                        </div>
+                        <div class="tutorial-progress" id="tutorial-progress">
+                            <div class="tutorial-progress-step done"></div>
+                            <div class="tutorial-progress-step"></div>
+                            <div class="tutorial-progress-step"></div>
+                            <div class="tutorial-progress-step"></div>
+                            <div class="tutorial-progress-step"></div>
+                            <div class="tutorial-progress-step"></div>
+                            <div class="tutorial-progress-step"></div>
+                            <div class="tutorial-progress-step"></div>
+                        </div>
+                        <div class="divider" style="margin-top: 0;"></div>
+                        <div class="toc">
+                            <h3><i class="fa-solid fa-list"></i> Table of Contents</h3>
+                            <ol>
+                                <li><a href="#s1">Document Structure</a></li>
+                                <li><a href="#s2">Common Element Types</a></li>
+                                <li><a href="#s3">Text Formatting</a></li>
+                                <li><a href="#s4">Links &amp; Attributes</a></li>
+                                <li><a href="#s5">Images &amp; Void Elements</a></li>
+                                <li><a href="#s6">Lists</a></li>
+                                <li><a href="#s7">Tables</a></li>
+                                <li><a href="#s8">Forms &amp; Inputs</a></li>
+                            </ol>
+                        </div>
+
+                        <div class="tutorial-section" id="s1">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-1);">1</span>
+                                Document Structure
+                            </h2>
+                            <p>Every HTML5 document requires a standard declarative skeleton so web browsers can parse and render layout parameters accurately.</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">html · index.html</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre><span class="kw">&lt;!DOCTYPE <span class="va">html</span>&gt;</span>
+<span class="kw">&lt;<span class="cl">html</span> <span class="va">lang</span>=<span class="st">"en"</span>&gt;</span>
+<span class="kw">&lt;<span class="cl">head</span>&gt;</span>
+    <span class="kw">&lt;<span class="cl">meta</span> <span class="va">charset</span>=<span class="st">"UTF-8"</span>&gt;</span>
+    <span class="kw">&lt;<span class="cl">title</span>&gt;</span>Page Title<span class="kw">&lt;/<span class="cl">title</span>&gt;</span>
+<span class="kw">&lt;/<span class="cl">head</span>&gt;</span>
+<span class="kw">&lt;<span class="cl">body</span>&gt;</span>
+    <span class="cm">&lt;!-- Visible page content goes here --&gt;</span>
+    <span class="kw">&lt;<span class="cl">h1</span>&gt;</span>Hello, Web!<span class="kw">&lt;/<span class="cl">h1</span>&gt;</span>
+<span class="kw">&lt;/<span class="cl">body</span>&gt;</span>
+<span class="kw">&lt;/<span class="cl">html</span>&gt;</span></pre>
+                            </div>
+                            <div class="info-box tip">
+                                <i class="fa-solid fa-lightbulb"></i>
+                                <span>The <code>&lt;head&gt;</code> contains metadata, styles, and configurations not visible to users, while the <code>&lt;body&gt;</code> contains everything rendered on screen.</span>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+
+                        <div class="tutorial-section" id="s2">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-2);">2</span>
+                                Common Element Types
+                            </h2>
+                            <p>HTML utilizes specific tags to identify structural blocks. Modern code should favor <strong>semantic tags</strong> over generic structural wrappers.</p>
+                            <div class="type-grid">
+                                <div class="type-pill">
+                                    <span class="type-name">&lt;header&gt;</span>
+                                    <span class="type-desc">Introductory content</span>
+                                    <span class="type-example">Navbars, logos</span>
+                                </div>
+                                <div class="type-pill">
+                                    <span class="type-name">&lt;main&gt;</span>
+                                    <span class="type-desc">Dominant core area</span>
+                                    <span class="type-example">Unique page content</span>
+                                </div>
+                                <div class="type-pill">
+                                    <span class="type-name">&lt;section&gt;</span>
+                                    <span class="type-desc">Thematic block</span>
+                                    <span class="type-example">Chapters, tab groups</span>
+                                </div>
+                                <div class="type-pill">
+                                    <span class="type-name">&lt;article&gt;</span>
+                                    <span class="type-desc">Self-contained unit</span>
+                                    <span class="type-example">Blog posts, news articles</span>
+                                </div>
+                                <div class="type-pill">
+                                    <span class="type-name">&lt;div&gt;</span>
+                                    <span class="type-desc">Generic block wrapper</span>
+                                    <span class="type-example">Used purely for styling</span>
+                                </div>
+                                <div class="type-pill">
+                                    <span class="type-name">&lt;span&gt;</span>
+                                    <span class="type-desc">Generic inline container</span>
+                                    <span class="type-example">Targeting specific words</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+
+                        <div class="tutorial-section" id="s3">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
+                                Text Formatting
+                            </h2>
+                            <p>HTML provides hierarchical heading elements (<code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>) and descriptive paragraphs to structure written copy semantically.</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">html · text.html</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre><span class="kw">&lt;<span class="cl">h1</span>&gt;</span>Main Heading (One per page)<span class="kw">&lt;/<span class="cl">h1</span>&gt;</span>
+<span class="kw">&lt;<span class="cl">h2</span>&gt;</span>Sub-section Heading<span class="kw">&lt;/<span class="cl">h2</span>&gt;</span>
+
+<span class="kw">&lt;<span class="cl">p</span>&gt;</span>This is a standard paragraph containing <span class="kw">&lt;<span class="cl">strong</span>&gt;</span>bold text<span class="kw">&lt;/<span class="cl">strong</span>&gt;</span> for structural emphasis and <span class="kw">&lt;<span class="cl">em</span>&gt;</span>italicized text<span class="kw">&lt;/<span class="cl">em</span>&gt;</span> for conversational stress.<span class="kw">&lt;/<span class="cl">p</span>&gt;</span>
+
+<span class="kw">&lt;<span class="cl">p</span>&gt;</span>Use <span class="kw">&lt;<span class="cl">code</span>&gt;</span>console.log()<span class="kw">&lt;/<span class="cl">code</span>&gt;</span> inline to show monospaced tech terms.<span class="kw">&lt;/<span class="cl">p</span>&gt;</span></pre>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+
+                        <div class="tutorial-section" id="s4">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
+                                Links &amp; Attributes
+                            </h2>
+                            <p>Attributes provide configuration details inside the opening tag of an element. Anchors (<code>&lt;a&gt;</code>) require an <code>href</code> target attribute to construct hyperlinks.</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">html · links.html</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre><span class="cm">&lt;!-- Internal reference hyperlink --&gt;</span>
+<span class="kw">&lt;<span class="cl">a</span> <span class="va">href</span>=<span class="st">"about.html"</span>&gt;</span>Visit About Page<span class="kw">&lt;/<span class="cl">a</span>&gt;</span>
+
+<span class="cm">&lt;!-- External target in a fresh sandbox tab --&gt;</span>
+<span class="kw">&lt;<span class="cl">a</span> <span class="va">href</span>=<span class="st">"https://github.com"</span> <span class="va">target</span>=<span class="st">"_blank"</span> <span class="va">rel</span>=<span class="st">"noopener"</span>&gt;</span>GitHub<span class="kw">&lt;/<span class="cl">a</span>&gt;</span>
+
+<span class="cm">&lt;!-- Section jump link using unique ID selectors --&gt;</span>
+<span class="kw">&lt;<span class="cl">a</span> <span class="va">href</span>=<span class="st">"#s8"</span>&gt;</span>Jump to Forms Section<span class="kw">&lt;/<span class="cl">a</span>&gt;</span></pre>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+
+                        <div class="tutorial-section" id="s5">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
+                                Images &amp; Void Elements
+                            </h2>
+                            <p>Some nodes are <strong>void elements</strong> (self-closing) and do not wrap text blocks. The <code>&lt;img&gt;</code> element uses <code>src</code> paths and requires an informative <code>alt</code> description.</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">html · media.html</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre><span class="cm">&lt;!-- Self-contained graphic reference asset --&gt;</span>
+<span class="kw">&lt;<span class="cl">img</span> <span class="va">src</span>=<span class="st">"assets/images/logo.png"</span> <span class="va">alt</span>=<span class="st">"Corporate branding emblem"</span>&gt;</span>
+
+<span class="cm">&lt;!-- Structural break lines --&gt;</span>
+<span class="kw">&lt;<span class="cl">p</span>&gt;</span>First line statement.<span class="kw">&lt;<span class="cl">br</span>&gt;</span>Forced newline break line inside paragraph.<span class="kw">&lt;/<span class="cl">p</span>&gt;</span></pre>
+                            </div>
+                            <div class="info-box danger">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                                <span>Never omit the <code>alt</code> attribute. It is crucial for web accessibility (screen readers) and acts as fallback text if the image asset fails to load.</span>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+
+                        <div class="tutorial-section" id="s6">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
+                                Lists
+                            </h2>
+                            <p>Organize sequential data items using ordered indexes (<code>&lt;ol&gt;</code>) or unordered bullet layouts (<code>&lt;ul&gt;</code>). Children must consist strictly of list item nodes (<code>&lt;li&gt;</code>).</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">html · lists.html</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre><span class="cm">&lt;!-- Unordered Bullet List Layout --&gt;</span>
+<span class="kw">&lt;<span class="cl">ul</span>&gt;</span>
+    <span class="kw">&lt;<span class="cl">li</span>&gt;</span>HTML5 Structure<span class="kw">&lt;/<span class="cl">li</span>&gt;</span>
+    <span class="kw">&lt;<span class="cl">li</span>&gt;</span>CSS3 Architecture<span class="kw">&lt;/<span class="cl">li</span>&gt;</span>
+<span class="kw">&lt;/<span class="cl">ul</span>&gt;</span>
+
+<span class="cm">&lt;!-- Ordered Numbered List Layout --&gt;</span>
+<span class="kw">&lt;<span class="cl">ol</span>&gt;</span>
+    <span class="kw">&lt;<span class="cl">li</span>&gt;</span>Write Code Template<span class="kw">&lt;/<span class="cl">li</span>&gt;</span>
+    <span class="kw">&lt;<span class="cl">li</span>&gt;</span>Validate W3C Standard<span class="kw">&lt;/<span class="cl">li</span>&gt;</span>
+<span class="kw">&lt;/<span class="cl">ol</span>&gt;</span></pre>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+
+                        <div class="tutorial-section" id="s7">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
+                                Tables
+                            </h2>
+                            <p>Tables manage multi-column tabular data matrices cleanly using a structural sequence of rows (<code>&lt;tr&gt;</code>), headers (<code>&lt;th&gt;</code>), and data cells (<code>&lt;td&gt;</code>).</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">html · tables.html</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre><span class="kw">&lt;<span class="cl">table</span>&gt;</span>
+    <span class="kw">&lt;<span class="cl">thead</span>&gt;</span>
+        <span class="kw">&lt;<span class="cl">tr</span>&gt;</span>
+            <span class="kw">&lt;<span class="cl">th</span>&gt;</span>Language<span class="kw">&lt;/<span class="cl">th</span>&gt;</span>
+            <span class="kw">&lt;<span class="cl">th</span>&gt;</span>Extension<span class="kw">&lt;/<span class="cl">th</span>&gt;</span>
+        <span class="kw">&lt;/<span class="cl">tr</span>&gt;</span>
+    <span class="kw">&lt;/<span class="cl">thead</span>&gt;</span>
+    <span class="kw">&lt;<span class="cl">tbody</span>&gt;</span>
+        <span class="kw">&lt;<span class="cl">tr</span>&gt;</span>
+            <span class="kw">&lt;<span class="cl">td</span>&gt;</span>HTML5<span class="kw">&lt;/<span class="cl">td</span>&gt;</span>
+            <span class="kw">&lt;<span class="cl">td</span>&gt;</span>.html<span class="kw">&lt;/<span class="cl">td</span>&gt;</span>
+        <span class="kw">&lt;/<span class="cl">tr</span>&gt;</span>
+    <span class="kw">&lt;/<span class="cl">tbody</span>&gt;</span>
+<span class="kw">&lt;/<span class="cl">table</span>&gt;</span></pre>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+
+                        <div class="tutorial-section" id="s8">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
+                                Forms &amp; Inputs
+                            </h2>
+                            <p>Forms parse and capture interactive user dataset inputs. Explicitly couple text labels to inputs using matching <code>id</code> and <code>for</code> attributes.</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">html · forms.html</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre><span class="kw">&lt;<span class="cl">form</span> <span class="va">action</span>=<span class="st">"/submit-data"</span> <span class="va">method</span>=<span class="st">"POST"</span>&gt;</span>
+    <span class="cm">&lt;!-- Linked Text Label and Input Element --&gt;</span>
+    <span class="kw">&lt;<span class="cl">label</span> <span class="va">for</span>=<span class="st">"username"</span>&gt;</span>User Profile Name:<span class="kw">&lt;/<span class="cl">label</span>&gt;</span>
+    <span class="kw">&lt;<span class="cl">input</span> <span class="va">type</span>=<span class="st">"text"</span> <span class="va">id</span>=<span class="st">"username"</span> <span class="va">name</span>=<span class="st">"username"</span> <span class="va">required</span>&gt;</span>
+
+    <span class="cm">&lt;!-- Password Variant Masking Mask --&gt;</span>
+    <span class="kw">&lt;<span class="cl">label</span> <span class="va">for</span>=<span class="st">"pass"</span>&gt;</span>Security Access Key:<span class="kw">&lt;/<span class="cl">label</span>&gt;</span>
+    <span class="kw">&lt;<span class="cl">input</span> <span class="va">type</span>=<span class="st">"password"</span> <span class="va">id</span>=<span class="st">"pass"</span> <span class="va">name</span>=<span class="st">"password"</span>&gt;</span>
+
+    <span class="cm">&lt;!-- Action Confirmation Button Submit --&gt;</span>
+    <span class="kw">&lt;<span class="cl">button</span> <span class="va">type</span>=<span class="st">"submit"</span>&gt;</span>Dispatch Payload<span class="kw">&lt;/<span class="cl">button</span>&gt;</span>
+<span class="kw">&lt;/<span class="cl">form</span>&gt;</span></pre>
+                            </div>
+                            <div class="info-box tip">
+                                <i class="fa-solid fa-lightbulb"></i>
+                                <span>With structural markup mastered, dive into <strong>CSS3 Architecture Grid Modules</strong> and <strong>Flexbox Context Engines</strong> to apply visual layouts over elements.</span>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+
+                        <div class="guide-footer-nav">
+                            <a href="coding.html" class="cta-btn ghost sm">
+                                <i class="fa-solid fa-arrow-left"></i> Back to Coding
+                            </a>
+                            <a href="#s1" class="cta-btn sm">
+                                <i class="fa-solid fa-arrow-up"></i> Back to Top
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer>
+                <div class="footer-container">
+                    <div class="footer-grid">
+                        <div class="footer-widget">
+                            <h3><img width="20" height="20" src="https://img.icons8.com/3d-fluency/94/topic.png" alt="Contact"/>Contact</h3>
+                            <ul class="contact-list">
+                                <li><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/location.png" alt="Location"/>Udine, Italy</li>
+                                <li><a href="https://t.me/viduxsh" target="_blank"><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/telegram.png" alt="Telegram"/>Telegram</a></li>
+                                <li><a href="mailto:ivanvidux@gmail.com"><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/email.png" alt="Email"/>Email</a></li>
+                                <li><a href="https://paypal.me/ivanvidux" target="_blank"><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/paypal.png" alt="PayPal"/>PayPal</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-widget profile-widget">
+                            <h3>About Me</h3>
+                            <div class="footer-profile-box">
+                                <img src="../../assets/images/viduxsh_logo_full.png" alt="Profile Logo" class="footer-avatar">
+                                <p id="my-age"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <p id="copyright-year"></p>
+                        <p class="credits">Design by <a href="https://github.com/viduxsh" target="_blank">vidux.sh</a></p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script src="../../assets/js/script.js"></script>
+        <script>
+            function copyCode(btn) {
+                const pre  = btn.closest('.code-block').querySelector('pre');
+                const text = pre.innerText;
+                navigator.clipboard.writeText(text).then(() => {
+                    btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                    btn.classList.add('copied');
+                    setTimeout(() => {
+                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy';
+                        btn.classList.remove('copied');
+                    }, 2000);
+                });
+            }
+
+            const sections = document.querySelectorAll('.tutorial-section');
+            const steps    = document.querySelectorAll('.tutorial-progress-step');
+
+            function updateProgress() {
+                let active = 0;
+                sections.forEach((sec, i) => {
+                    if (sec.getBoundingClientRect().top < window.innerHeight * 0.6) active = i + 1;
+                });
+                steps.forEach((s, i) => s.classList.toggle('done', i < active));
+            }
+
+            window.addEventListener('scroll', updateProgress, { passive: true });
+            updateProgress();
+        </script>
+    </body>
+</html>
