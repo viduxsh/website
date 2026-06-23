@@ -3,9 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="CSS beginner tutorial — learn selectors, the box model, positioning, flexbox, grid, and responsiveness with ready-to-use code snippets.">
+        <meta name="description" content="Windows CMD and Batch scripting tutorial — Learn legacy command-line automation, environment variables, error levels, file system manipulation, and network diagnostics.">
         <meta name="author" content="vidux.sh">
-        <title>vidux.sh - CSS</title>
+        <title>vidux.sh - Windows CMD Automation</title>
         <link rel="shortcut icon" href="../../assets/images/viduxsh_icon.png" type="image/x-icon">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,10 +41,10 @@
                             </a>
                         </div>
                         <div class="lang-header">
-                            <img src="../../assets/images/coding/logo/css.png" alt="CSS logo">
+                            <img src="../../assets/images/coding/logo/cmd.png" alt="Windows CMD logo">
                             <div>
-                                <h1>CSS <span class="lang-badge">Beginner</span></h1>
-                                <p class="lang-subtitle">Cascading Style Sheets — style, layout rules, and presentation layers painter for semantic markup.</p>
+                                <h1>Windows CMD <span class="lang-badge">Beginner</span></h1>
+                                <p class="lang-subtitle">Legacy Command Line Engine — mastering Batch scripting, environment configurations, errorlevel routing, file handling, and core Windows system sub-utilities.</p>
                             </div>
                         </div>
                         <div class="tutorial-progress" id="tutorial-progress">
@@ -61,82 +61,59 @@
                         <div class="toc">
                             <h3><i class="fa-solid fa-list"></i> Table of Contents</h3>
                             <ol>
-                                <li><a href="#s1">Inclusion &amp; Syntax</a></li>
-                                <li><a href="#s2">Core Selectors</a></li>
-                                <li><a href="#s3">Colors &amp; Typography</a></li>
-                                <li><a href="#s4">The Box Model</a></li>
-                                <li><a href="#s5">Display &amp; Positioning</a></li>
-                                <li><a href="#s6">Flexbox Context</a></li>
-                                <li><a href="#s7">Grid Layout</a></li>
-                                <li><a href="#s8">Media Queries</a></li>
+                                <li><a href="#s1">Batch Script Entry &amp; Echo Control</a></li>
+                                <li><a href="#s2">File System Navigation (Drives &amp; Paths)</a></li>
+                                <li><a href="#s3">File Management &amp; Directory Operations</a></li>
+                                <li><a href="#s4">Environment Variables (%VAR%)</a></li>
+                                <li><a href="#s5">Conditional Flow &amp; Errorlevels</a></li>
+                                <li><a href="#s6">The Batch Loop Paradigm (FOR)</a></li>
+                                <li><a href="#s7">Standard Redirections &amp; Piping</a></li>
+                                <li><a href="#s8">Network Diagnostics &amp; Administration Utilities</a></li>
                             </ol>
                         </div>
                         <div class="tutorial-section" id="s1">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-1);">1</span>
-                                Inclusion &amp; Syntax
+                                Batch Script Entry &amp; Echo Control
                             </h2>
-                            <p>CSS rules link to HTML documents via the <code>&lt;link&gt;</code> element inside the head container. Rules target nodes to declare key-value style pairs.</p>
+                            <p>Windows Command Prompt automation relies on text files saved with the <code>.bat</code> or <code>.cmd</code> extensions. By default, the terminal echoes back every instruction line before executing it. To suppress this visual clutter and clean up the viewport console output, scripts open with an explicit directive.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · style.css</span>
+                                    <span class="code-block-label">bat · script.bat</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cm">/* This is a CSS comment */</span>
-
-<span class="kw">selector</span> {
-    <span class="va">property</span>: <span class="st">value</span>;
-    <span class="va">another-property</span>: <span class="st">value</span>;
-}
-
-<span class="cm">/* Example: styling all paragraphs */</span>
-<span class="cl">p</span> {
-    <span class="va">color</span>: <span class="st">#333333</span>;
-    <span class="va">line-height</span>: <span class="st">1.6</span>;
-}</pre>
-                            </div>
-                            <div class="info-box tip">
-                                <i class="fa-solid fa-lightbulb"></i>
-                                <span>Link your external stylesheet file inside the HTML <code>&lt;head&gt;</code> template using: <code>&lt;link rel="stylesheet" href="style.css"&gt;</code>.</span>
+                                <pre><span class="cm">@echo off</span>
+<span class="cm">:: The double colon serves as a standard comment line entry in batch scripts</span>
+<span class="kw">echo</span> Command Prompt execution interface ready.</pre>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s2">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-2);">2</span>
-                                Core Selectors
+                                File System Navigation (Drives &amp; Paths)
                             </h2>
-                            <p>Target precise document fragments using elements directly, custom class configurations, unique string ID handles, or structural states.</p>
+                            <p>CMD utilizes backslashes (<code>\</code>) for system paths. Unlike modern systems, typing <code>cd</code> to shift directories across different hardware or partition volumes will fail unless you include a specific flag to unlock cross-volume stepping.</p>
                             <div class="type-grid">
                                 <div class="type-pill">
-                                    <span class="type-name">Element</span>
-                                    <span class="type-desc">Targets all tags</span>
-                                    <span class="type-example">h1 { color: red; }</span>
+                                    <span class="type-name">cd</span>
+                                    <span class="type-desc">Prints the current operational path location when called standalone without arguments.</span>
+                                    <span class="type-example">C:\Users\Ivan</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">.class</span>
-                                    <span class="type-desc">Reusable instances</span>
-                                    <span class="type-example">.card { padding: 20px; }</span>
+                                    <span class="type-name">cd /d D:\data</span>
+                                    <span class="type-desc">The essential /d switch shifts both the targeted active directory path and the physical volume tier simultaneously.</span>
+                                    <span class="type-example">Changes Drive &amp; Folder</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">#id</span>
-                                    <span class="type-desc">Unique single node</span>
-                                    <span class="type-example">#main-nav { top: 0; }</span>
+                                    <span class="type-name">dir</span>
+                                    <span class="type-desc">Exposes structural contents of the current directory. Include /a to view hidden assets.</span>
+                                    <span class="type-example">Prints current directory matrix</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">:hover</span>
-                                    <span class="type-desc">Interactive state</span>
-                                    <span class="type-example">a:hover { opacity: 0.8; }</span>
-                                </div>
-                                <div class="type-pill">
-                                    <span class="type-name">Combined</span>
-                                    <span class="type-desc">Child nesting paths</span>
-                                    <span class="type-example">.wrapper p { margin: 0; }</span>
-                                </div>
-                                <div class="type-pill">
-                                    <span class="type-name">*</span>
-                                    <span class="type-desc">Universal resetting</span>
-                                    <span class="type-example">* { box-sizing: border-box; }</span>
+                                    <span class="type-name">cls</span>
+                                    <span class="type-desc">Flushes out all text records from the console window instantly, restoring a blank workspace grid.</span>
+                                    <span class="type-example">Clears terminal buffer</span>
                                 </div>
                             </div>
                         </div>
@@ -144,157 +121,134 @@
                         <div class="tutorial-section" id="s3">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
-                                Colors &amp; Typography
+                                File Management &amp; Directory Operations
                             </h2>
-                            <p>Control visual branding layers utilizing structured palette values alongside explicit scaling fonts metrics.</p>
+                            <p>CMD provides dedicated tools for copying, moving, and removing operational file payloads. For robust, enterprise-grade file replication tasks, Windows includes a powerful sub-engine called **Robocopy**.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · typography.css</span>
+                                    <span class="code-block-label">bat · file_ops.bat</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.custom-text</span> {
-    <span class="cm">/* Color Formats */</span>
-    <span class="va">color</span>: <span class="st">#4a90e2</span>;                    <span class="cm">/* Hex Format */</span>
-    <span class="va">background-color</span>: <span class="st">rgba(0, 0, 0, 0.05)</span>; <span class="cm">/* RGBA (with Alpha) */</span>
+                                <pre><span class="kw">mkdir</span> <span class="st">"D:\ProjectData\Logs"</span>        <span class="cm">:: Instantiates new structural folder pathways</span>
+<span class="kw">copy</span> log.txt D:\ProjectData\Logs\   <span class="cm">:: Copies standard file components to targets</span>
+<span class="kw">del</span> /f /q old_cache.tmp             <span class="cm">:: Force fully deletes files silently without prompt loops</span>
+<span class="kw">rmdir</span> /s /q D:\ProjectData\Logs     <span class="cm">:: Recursively wipes out entire directory subtrees</span>
 
-    <span class="cm">/* Typography Rules */</span>
-    <span class="va">font-family</span>: <span class="st">'Roboto'</span>, <span class="st">sans-serif</span>;
-    <span class="va">font-size</span>: <span class="st">1.2rem</span>;                 <span class="cm">/* Relative to root HTML size */</span>
-    <span class="va">font-weight</span>: <span class="st">500</span>;                  <span class="cm">/* Medium weight */</span>
-    <span class="va">text-align</span>: <span class="st">center</span>;
-}</pre>
+<span class="cm">:: High-performance mirror synchronization using Robocopy:</span>
+<span class="kw">robocopy</span> C:\Src D:\Backup /mir /mt:32</pre>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s4">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
-                                The Box Model
+                                Environment Variables (%VAR%)
                             </h2>
-                            <p>Every element behaves as a rectangular container box. Total dimensional real estate calculation includes layers of margins, borders, padding bounds, and core content boundaries.</p>
+                            <p>Variables are allocated using the `set` command and referenced by wrapping the token name inside percentage symbols (<code>%VAR%</code>). **CRITICAL ALLOCATION RULE:** You must never add trailing or leading spaces around the equation operator (<code>=</code>), as CMD will literally append those whitespaces directly into the key or value string.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · boxmodel.css</span>
+                                    <span class="code-block-label">bat · variables.bat</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.box-element</span> {
-    <span class="va">width</span>: <span class="st">300px</span>;
-    <span class="va">padding</span>: <span class="st">20px</span>;          <span class="cm">/* Space inside the border envelope */</span>
-    <span class="va">border</span>: <span class="st">2px solid #000</span>; <span class="cm">/* Edge boundary stroke line */</span>
-    <span class="va">margin</span>: <span class="st">15px auto</span>;      <span class="cm">/* Outer buffer space (centered horizontally) */</span>
+                                <pre><span class="cl">set</span> <span class="cl">DEVELOPER_NAME</span>=IvanVidussi
+<span class="kw">echo</span> Active engineer node: <span class="cl">%DEVELOPER_NAME%</span>
 
-    <span class="cm">/* Force dimensions to include padding and borders */</span>
-    <span class="va">box-sizing</span>: <span class="st">border-box</span>;
-}</pre>
-                            </div>
-                            <div class="info-box danger">
-                                <i class="fa-solid fa-triangle-exclamation"></i>
-                                <span>Always declare <code>box-sizing: border-box;</code> globally. Without it, adding padding will expand your element beyond its declared width, breaking structural layouts!</span>
+<span class="cm">:: Halts console execution flow to explicitly capture arbitrary keyboard input fields:</span>
+<span class="cl">set</span> <span class="cl">/p</span> <span class="cl">USER_TOKEN</span>=Input security hash connection string: 
+<span class="kw">echo</span> Token recorded: <span class="cl">%USER_TOKEN%</span></pre>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s5">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
-                                Display &amp; Positioning
+                                Conditional Flow &amp; Errorlevels
                             </h2>
-                            <p>Alter how elements sit within the document layout using structural <code>display</code> properties or override normal document sorting flows using explicit positioning coordinates.</p>
+                            <p>Conditional structures evaluate runtime equations. Upon completing execution, every system application leaves an integer exit code called an **ERRORLEVEL** (where <code>0</code> signifies successful execution, and any non-zero value indicates an error).</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · layout.css</span>
+                                    <span class="code-block-label">bat · process_control.bat</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.block-item</span>  { <span class="va">display</span>: <span class="st">block</span>; }        <span class="cm">/* Takes full line width */</span>
-<span class="cl">.inline-item</span> { <span class="va">display</span>: <span class="st">inline</span>; }       <span class="cm">/* Inline context (ignores width) */</span>
+                                <pre><span class="kw">ping</span> -n 1 127.0.0.1 &gt;nul
 
-<span class="cm">/* Positioning Contexts */</span>
-<span class="cl">.parent-container</span> {
-    <span class="va">position</span>: <span class="st">relative</span>;              <span class="cm">/* Establishes boundary anchor */</span>
-}
+<span class="kw">if</span> <span class="cl">%errorlevel%</span> <span class="kw">equ</span> 0 (
+    <span class="kw">echo</span> Loopback link evaluation returned stable matrix metrics.
+) <span class="kw">else</span> (
+    <span class="kw">echo</span> Link validation tracking failed.
+)
 
-<span class="cl">.floating-badge</span> {
-    <span class="va">position</span>: <span class="st">absolute</span>;
-    <span class="va">top</span>: <span class="st">10px</span>;
-    <span class="va">right</span>: <span class="st">10px</span>;                     <span class="cm">/* Locks inside relative parent container */</span>
-}</pre>
+<span class="cm">:: Operator tokens: EQU (Equal) · NEQ (Not Equal) · GTR (Greater Than) · LEQ (Less or Equal)</span></pre>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s6">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
-                                Flexbox Context
+                                The Batch Loop Paradigm (FOR)
                             </h2>
-                            <p>Flexbox provides an efficient, one-dimensional layout engine to handle alignment, distribution, and content alignment inside flexible parent boxes.</p>
+                            <p>The <code>FOR</code> construct inside CMD uses a specialized syntax. When evaluated directly within an active terminal console shell line, loop variables use a single percent symbol (<code>%i</code>). However, inside a reusable batch script file (<code>.bat</code>), they require a double prefix (<code>%%i</code>).</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · flexbox.css</span>
+                                    <span class="code-block-label">bat · loops.bat</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.flex-container</span> {
-    <span class="va">display</span>: <span class="st">flex</span>;
-    <span class="va">flex-direction</span>: <span class="st">row</span>;            <span class="cm">/* Arrange children side-by-side horizontally */</span>
-    <span class="va">justify-content</span>: <span class="st">space-between</span>; <span class="cm">/* Distribute spacing along main axis */</span>
-    <span class="va">align-items</span>: <span class="st">center</span>;            <span class="cm">/* Align items across cross axis vertically */</span>
-    <span class="va">gap</span>: <span class="st">15px</span>;                      <span class="cm">/* Fixed spacer gutter between inner rows */</span>
-}
+                                <pre><span class="cm">:: Loops through a sequential scalar configuration progression index range:</span>
+<span class="kw">for</span> <span class="cl">/L</span> <span class="cl">%%i</span> <span class="kw">in</span> (1,1,3) <span class="kw">do</span> (
+    <span class="kw">echo</span> Executing backup sync task sequence number: <span class="cl">%%i</span>
+)
 
-<span class="cl">.flex-child</span> {
-    <span class="va">flex</span>: <span class="st">1</span>;                        <span class="cm">/* Grow evenly to take up empty space */</span>
-}</pre>
+<span class="cm">:: Scans directory targets matching explicit file extension arrays:</span>
+<span class="kw">for</span> <span class="cl">%%f</span> <span class="kw">in</span> (*.txt) <span class="kw">do</span> (
+    <span class="kw">echo</span> Target active logs cataloged: <span class="cl">%%f</span>
+)</pre>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s7">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
-                                Grid Layout
+                                Standard Redirections &amp; Piping
                             </h2>
-                            <p>CSS Grid handles complex, two-dimensional user interfaces by splitting a container into explicit matrix columns and row tracks.</p>
+                            <p>Output streams can be suppressed or captured. You can append text blocks to logs, redirect output streams, or isolate specific matches within unstructured string arrays using the **findstr** engine.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · grid.css</span>
+                                    <span class="code-block-label">bat · stream_pipes.bat</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.grid-container</span> {
-    <span class="va">display</span>: <span class="st">grid</span>;
-    
-    <span class="cm">/* Construct 3 explicit columns utilizing fraction distribution tracks */</span>
-    <span class="va">grid-template-columns</span>: <span class="st">1fr 1fr 1fr</span>;
-    <span class="va">gap</span>: <span class="st">20px</span>;                      <span class="cm">/* Matrix intersection gutters */</span>
-}
+                                <pre><span class="kw">echo</span> Initial deployment tracking line allocation. &gt; system.log  <span class="cm">:: Overwrites target completely</span>
+<span class="kw">echo</span> Append auxiliary runtime monitoring track. &gt;&gt; system.log <span class="cm">:: Appends data line entries</span>
 
-<span class="cl">.wide-grid-item</span> {
-    <span class="va">grid-column</span>: <span class="st">span 2</span>;            <span class="cm">/* Force item to span over two columns */</span>
-}</pre>
+<span class="cm">:: Intercepts active process list streams and filters exclusively for specific application tasks:</span>
+<span class="kw">tasklist</span> | <span class="kw">findstr</span> /i <span class="st">"node.exe"</span></pre>
+                            </div>
+                            <div class="info-box danger">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                                <span>**The Null Device naming convention differs from Unix!** When you want to completely suppress stdout or error outputs so they don't print to the console interface, you cannot redirect to <code>/dev/null</code>. Instead, Windows uses a special, dedicated internal pseudo-device keyword named <code>nul</code> (e.g., <code>command &gt;nul 2&gt;&amp;1</code>).</span>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s8">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
-                                Media Queries
+                                Network Diagnostics &amp; Administration Utilities
                             </h2>
-                            <p>Media queries allow you to build responsive layouts by conditionally applying style parameters based on target viewport width triggers.</p>
+                            <p>Despite its age, the Command Prompt remains an effective tool for running low-level network diagnostic utilities and manipulating advanced system configurations directly via specialized administrative utilities.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · responsive.css</span>
+                                    <span class="code-block-label">bat · diagnostics.bat</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cm">/* Standard Desktop Baseline Styles */</span>
-<span class="cl">.sidebar</span> { <span class="va">width</span>: <span class="st">300px</span>; <span class="va">display</span>: <span class="st">block</span>; }
+                                <pre><span class="kw">ipconfig</span> /flushdns             <span class="cm">:: Purges the active Windows DNS resolver cache instantly</span>
+<span class="kw">netstat</span> -ano                   <span class="cm">:: Lists active network sockets along with their owning process PIDs</span>
 
-<span class="cm">/* Responsive Mobile Viewport Trigger */</span>
-<span class="kw">@media</span> (<span class="va">max-width</span>: <span class="st">768px</span>) {
-    <span class="cl">.sidebar</span> {
-        <span class="va">width</span>: <span class="st">100%</span>;
-        <span class="va">display</span>: <span class="st">none</span>; <span class="cm">/* Hides component container on smartphone devices */</span>
-    }
-}</pre>
+<span class="cm">:: Advanced execution configuration contexts (Requires Elevated Administrator Privileges):</span>
+<span class="cm">:: netsh interface ipv4 show addresses</span>
+<span class="cm">:: diskpart</span></pre>
                             </div>
                             <div class="info-box tip">
                                 <i class="fa-solid fa-lightbulb"></i>
-                                <span>Now that your presentation layers match standard conventions, study advanced preprocessor syntax workflows like **Sass/SCSS** or utility engines like **Tailwind CSS**.</span>
+                                <span>While CMD is excellent for working with legacy system setups, your modern automation projects on Windows should leverage **PowerShell** or **WSL** to build robust, cross-platform environments.</span>
                             </div>
                         </div>
                         <div class="divider"></div>

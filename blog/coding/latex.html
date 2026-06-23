@@ -3,9 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="CSS beginner tutorial — learn selectors, the box model, positioning, flexbox, grid, and responsiveness with ready-to-use code snippets.">
+        <meta name="description" content="LaTeX beginner tutorial — learn document preambles, mathematical typesetting, text formatting, floating environments, and BibTeX bibliographies.">
         <meta name="author" content="vidux.sh">
-        <title>vidux.sh - CSS</title>
+        <title>vidux.sh - LaTeX</title>
         <link rel="shortcut icon" href="../../assets/images/viduxsh_icon.png" type="image/x-icon">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,10 +41,10 @@
                             </a>
                         </div>
                         <div class="lang-header">
-                            <img src="../../assets/images/coding/logo/css.png" alt="CSS logo">
+                            <img src="../../assets/images/coding/logo/latex.png" alt="LaTeX logo">
                             <div>
-                                <h1>CSS <span class="lang-badge">Beginner</span></h1>
-                                <p class="lang-subtitle">Cascading Style Sheets — style, layout rules, and presentation layers painter for semantic markup.</p>
+                                <h1>LaTeX <span class="lang-badge">Beginner</span></h1>
+                                <p class="lang-subtitle">Document typesetting system — logical markup structures, advanced mathematical engine, professional bibliographic control, and precise vector layout rendering.</p>
                             </div>
                         </div>
                         <div class="tutorial-progress" id="tutorial-progress">
@@ -61,82 +61,77 @@
                         <div class="toc">
                             <h3><i class="fa-solid fa-list"></i> Table of Contents</h3>
                             <ol>
-                                <li><a href="#s1">Inclusion &amp; Syntax</a></li>
-                                <li><a href="#s2">Core Selectors</a></li>
-                                <li><a href="#s3">Colors &amp; Typography</a></li>
-                                <li><a href="#s4">The Box Model</a></li>
-                                <li><a href="#s5">Display &amp; Positioning</a></li>
-                                <li><a href="#s6">Flexbox Context</a></li>
-                                <li><a href="#s7">Grid Layout</a></li>
-                                <li><a href="#s8">Media Queries</a></li>
+                                <li><a href="#s1">Document Structure &amp; Preambles</a></li>
+                                <li><a href="#s2">Core Text Layout &amp; Formatting</a></li>
+                                <li><a href="#s3">Sections &amp; Hierarchy Management</a></li>
+                                <li><a href="#s4">Mathematical Typesetting Modes</a></li>
+                                <li><a href="#s5">Lists &amp; Enumeration Environments</a></li>
+                                <li><a href="#s6">Floating Figures &amp; Image Assets</a></li>
+                                <li><a href="#s7">Tables &amp; Alignment Grids</a></li>
+                                <li><a href="#s8">Citations &amp; BibTeX Bibliographies</a></li>
                             </ol>
                         </div>
                         <div class="tutorial-section" id="s1">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-1);">1</span>
-                                Inclusion &amp; Syntax
+                                Document Structure &amp; Preambles
                             </h2>
-                            <p>CSS rules link to HTML documents via the <code>&lt;link&gt;</code> element inside the head container. Rules target nodes to declare key-value style pairs.</p>
+                            <p>Unlike standard text processors, LaTeX works on a compiled markup structure. The **Preamble** configures packages, margins, and document dimensions before the actual body layout block initiates.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · style.css</span>
+                                    <span class="code-block-label">tex · document.tex</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cm">/* This is a CSS comment */</span>
+                                <pre><span class="cm">% Define the base layout class and geometry parameters</span>
+<span class="kw">\documentclass</span>[12pt, a4paper]{article}
 
-<span class="kw">selector</span> {
-    <span class="va">property</span>: <span class="st">value</span>;
-    <span class="va">another-property</span>: <span class="st">value</span>;
-}
+<span class="cm">% Import macro packages into the document compilation context</span>
+<span class="kw">\usepackage</span>{graphicx}
+<span class="kw">\usepackage</span>{amsmath}
 
-<span class="cm">/* Example: styling all paragraphs */</span>
-<span class="cl">p</span> {
-    <span class="va">color</span>: <span class="st">#333333</span>;
-    <span class="va">line-height</span>: <span class="st">1.6</span>;
-}</pre>
-                            </div>
-                            <div class="info-box tip">
-                                <i class="fa-solid fa-lightbulb"></i>
-                                <span>Link your external stylesheet file inside the HTML <code>&lt;head&gt;</code> template using: <code>&lt;link rel="stylesheet" href="style.css"&gt;</code>.</span>
+<span class="cm">% Main environment wrapper containing text content</span>
+<span class="kw">\begin</span>{document}
+Hello world! This is a minimal compiled PDF output document.
+<span class="kw">\end</span>{document}</pre>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s2">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-2);">2</span>
-                                Core Selectors
+                                Core Text Layout &amp; Formatting
                             </h2>
-                            <p>Target precise document fragments using elements directly, custom class configurations, unique string ID handles, or structural states.</p>
+                            <p>Text properties rely on structural commands. Empty lines separate target paragraphs automatically, while specific operators apply typographic styles without breaking base font rules.</p>
                             <div class="type-grid">
                                 <div class="type-pill">
-                                    <span class="type-name">Element</span>
-                                    <span class="type-desc">Targets all tags</span>
-                                    <span class="type-example">h1 { color: red; }</span>
+                                    <span class="type-name">\textbf{text}</span>
+                                    <span class="type-desc">Bold weight font face modification</span>
+                                    <span class="type-example">\textbf{Bold text}</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">.class</span>
-                                    <span class="type-desc">Reusable instances</span>
-                                    <span class="type-example">.card { padding: 20px; }</span>
+                                    <span class="type-name">\textit{text}</span>
+                                    <span class="type-desc">Italicized emphasis font transformation</span>
+                                    <span class="type-example">\textit{Italic text}</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">#id</span>
-                                    <span class="type-desc">Unique single node</span>
-                                    <span class="type-example">#main-nav { top: 0; }</span>
+                                    <span class="type-name">\texttt{text}</span>
+                                    <span class="type-desc">Monospaced font execution environment</span>
+                                    <span class="type-example">\texttt{code_block}</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">:hover</span>
-                                    <span class="type-desc">Interactive state</span>
-                                    <span class="type-example">a:hover { opacity: 0.8; }</span>
+                                    <span class="type-name">\underline{text}</span>
+                                    <span class="type-desc">Explicit base-level text underline track</span>
+                                    <span class="type-example">\underline{Important}</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">Combined</span>
-                                    <span class="type-desc">Child nesting paths</span>
-                                    <span class="type-example">.wrapper p { margin: 0; }</span>
+                                    <span class="type-name">\\</span>
+                                    <span class="type-desc">Forces an immediate hard line break</span>
+                                    <span class="type-example">Line 1 \\ Line 2</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">*</span>
-                                    <span class="type-desc">Universal resetting</span>
-                                    <span class="type-example">* { box-sizing: border-box; }</span>
+                                    <span class="type-name">\%</span>
+                                    <span class="type-desc">Escapes the native comment parameter token</span>
+                                    <span class="type-example">Value: 100\%</span>
                                 </div>
                             </div>
                         </div>
@@ -144,157 +139,154 @@
                         <div class="tutorial-section" id="s3">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
-                                Colors &amp; Typography
+                                Sections &amp; Hierarchy Management
                             </h2>
-                            <p>Control visual branding layers utilizing structured palette values alongside explicit scaling fonts metrics.</p>
+                            <p>Organize long manuals or engineering blueprints using structural nodes. The engine keeps track of numbering automatically and compiles indexed matrices natively.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · typography.css</span>
+                                    <span class="code-block-label">tex · structure.tex</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.custom-text</span> {
-    <span class="cm">/* Color Formats */</span>
-    <span class="va">color</span>: <span class="st">#4a90e2</span>;                    <span class="cm">/* Hex Format */</span>
-    <span class="va">background-color</span>: <span class="st">rgba(0, 0, 0, 0.05)</span>; <span class="cm">/* RGBA (with Alpha) */</span>
+                                <pre><span class="kw">\section</span>{Introduction to Systems}
+This text resides within the root primary section layer block.
 
-    <span class="cm">/* Typography Rules */</span>
-    <span class="va">font-family</span>: <span class="st">'Roboto'</span>, <span class="st">sans-serif</span>;
-    <span class="va">font-size</span>: <span class="st">1.2rem</span>;                 <span class="cm">/* Relative to root HTML size */</span>
-    <span class="va">font-weight</span>: <span class="st">500</span>;                  <span class="cm">/* Medium weight */</span>
-    <span class="va">text-align</span>: <span class="st">center</span>;
-}</pre>
+<span class="kw">\subsection</span>{Subsystem Architecture}
+A nested subcategory node handling explicit structural breakdowns.
+
+<span class="kw">\subsubsection</span>{Low-Level Operations}
+Deep block layout detailing concrete programmatic instruction parameters.
+
+<span class="cm">% Renders the full indexing map instantly based on current layers</span>
+<span class="kw">\tableofcontents</span></pre>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s4">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
-                                The Box Model
+                                Mathematical Typesetting Modes
                             </h2>
-                            <p>Every element behaves as a rectangular container box. Total dimensional real estate calculation includes layers of margins, borders, padding bounds, and core content boundaries.</p>
+                            <p>LaTeX excels at mathematical notation. You can render equations inline using single dollar delimiters or display them as centered, standalone blocks using double dollar boundaries.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · boxmodel.css</span>
+                                    <span class="code-block-label">tex · math.tex</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.box-element</span> {
-    <span class="va">width</span>: <span class="st">300px</span>;
-    <span class="va">padding</span>: <span class="st">20px</span>;          <span class="cm">/* Space inside the border envelope */</span>
-    <span class="va">border</span>: <span class="st">2px solid #000</span>; <span class="cm">/* Edge boundary stroke line */</span>
-    <span class="va">margin</span>: <span class="st">15px auto</span>;      <span class="cm">/* Outer buffer space (centered horizontally) */</span>
+                                <pre>The inline expression $f(x) = x^2 + \frac{1}{x}$ renders directly within this sentence.
 
-    <span class="cm">/* Force dimensions to include padding and borders */</span>
-    <span class="va">box-sizing</span>: <span class="st">border-box</span>;
-}</pre>
-                            </div>
-                            <div class="info-box danger">
-                                <i class="fa-solid fa-triangle-exclamation"></i>
-                                <span>Always declare <code>box-sizing: border-box;</code> globally. Without it, adding padding will expand your element beyond its declared width, breaking structural layouts!</span>
+Alternatively, large structures process inside standalone blocks:
+$$ E = mc^2 $$
+
+You can also use numbered environments for reference mapping:
+<span class="kw">\begin</span>{equation}
+    \int_{a}^{b} f(x) \, dx = F(b) - F(a)
+<span class="kw">\end</span>{equation}</pre>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s5">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
-                                Display &amp; Positioning
+                                Lists &amp; Enumeration Environments
                             </h2>
-                            <p>Alter how elements sit within the document layout using structural <code>display</code> properties or override normal document sorting flows using explicit positioning coordinates.</p>
+                            <p>Lists manage grouped items. Use the <code>itemize</code> environment for bulleted logs or <code>enumerate</code> to build sequenced, numbered hierarchies.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · layout.css</span>
+                                    <span class="code-block-label">tex · lists.tex</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.block-item</span>  { <span class="va">display</span>: <span class="st">block</span>; }        <span class="cm">/* Takes full line width */</span>
-<span class="cl">.inline-item</span> { <span class="va">display</span>: <span class="st">inline</span>; }       <span class="cm">/* Inline context (ignores width) */</span>
-
-<span class="cm">/* Positioning Contexts */</span>
-<span class="cl">.parent-container</span> {
-    <span class="va">position</span>: <span class="st">relative</span>;              <span class="cm">/* Establishes boundary anchor */</span>
-}
-
-<span class="cl">.floating-badge</span> {
-    <span class="va">position</span>: <span class="st">absolute</span>;
-    <span class="va">top</span>: <span class="st">10px</span>;
-    <span class="va">right</span>: <span class="st">10px</span>;                     <span class="cm">/* Locks inside relative parent container */</span>
-}</pre>
+                                <pre><span class="kw">\begin</span>{enumerate}
+    <span class="kw">\item</span> Initialize structural database entities.
+    <span class="kw">\item</span> Route API network gateway endpoints.
+    <span class="kw">\begin</span>{itemize}
+        <span class="kw">\item</span> Verify payload parsing signatures.
+        <span class="kw">\item</span> Sanitize memory block arrays.
+    <span class="kw">\end</span>{itemize}
+<span class="kw">\end</span>{enumerate}</pre>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s6">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
-                                Flexbox Context
+                                Floating Figures &amp; Image Assets
                             </h2>
-                            <p>Flexbox provides an efficient, one-dimensional layout engine to handle alignment, distribution, and content alignment inside flexible parent boxes.</p>
+                            <p>Images use floating containers. LaTeX calculates where to place them dynamically based on spatial optimization parameters, avoiding awkward layout breaks across pages.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · flexbox.css</span>
+                                    <span class="code-block-label">tex · figures.tex</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.flex-container</span> {
-    <span class="va">display</span>: <span class="st">flex</span>;
-    <span class="va">flex-direction</span>: <span class="st">row</span>;            <span class="cm">/* Arrange children side-by-side horizontally */</span>
-    <span class="va">justify-content</span>: <span class="st">space-between</span>; <span class="cm">/* Distribute spacing along main axis */</span>
-    <span class="va">align-items</span>: <span class="st">center</span>;            <span class="cm">/* Align items across cross axis vertically */</span>
-    <span class="va">gap</span>: <span class="st">15px</span>;                      <span class="cm">/* Fixed spacer gutter between inner rows */</span>
-}
+                                <pre><span class="kw">\begin</span>{figure}[h] <span class="cm">% [h] requests placement close to the surrounding text</span>
+    <span class="kw">\centering</span>
+    <span class="kw">\includegraphics</span>[width=0.8<span class="kw">\textwidth</span>]{diagram.png}
+    <span class="kw">\caption</span>{System processing architecture pipeline overview blueprint.}
+    <span class="kw">\label</span>{fig:sys_diag} <span class="cm">% Unique key tag used for cross-reference calls</span>
+<span class="kw">\end</span>{figure}
 
-<span class="cl">.flex-child</span> {
-    <span class="va">flex</span>: <span class="st">1</span>;                        <span class="cm">/* Grow evenly to take up empty space */</span>
-}</pre>
+As visualized in Figure~<span class="kw">\ref</span>{fig:sys_diag}, the execution flow begins...</pre>
+                            </div>
+                            <div class="info-box danger">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                                <span>Always declare <code>\label</code> parameters **after the caption command**. Swapping this order breaks the cross-reference indexing chain, causing misnumbered link tracks.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s7">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
-                                Grid Layout
+                                Tables &amp; Alignment Grids
                             </h2>
-                            <p>CSS Grid handles complex, two-dimensional user interfaces by splitting a container into explicit matrix columns and row tracks.</p>
+                            <p>Tables use the <code>tabular</code> block environment. You define explicit column count boundaries and structural alignment flags using pipe tokens and ampersands.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · grid.css</span>
+                                    <span class="code-block-label">tex · tables.tex</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.grid-container</span> {
-    <span class="va">display</span>: <span class="st">grid</span>;
-    
-    <span class="cm">/* Construct 3 explicit columns utilizing fraction distribution tracks */</span>
-    <span class="va">grid-template-columns</span>: <span class="st">1fr 1fr 1fr</span>;
-    <span class="va">gap</span>: <span class="st">20px</span>;                      <span class="cm">/* Matrix intersection gutters */</span>
-}
-
-<span class="cl">.wide-grid-item</span> {
-    <span class="va">grid-column</span>: <span class="st">span 2</span>;            <span class="cm">/* Force item to span over two columns */</span>
-}</pre>
+                                <pre><span class="kw">\begin</span>{tabular}{| l | c | r |}
+    <span class="kw">\hline</span>
+    <span class="kw">\textbf</span>{Module ID} &amp; <span class="kw">\textbf</span>{Cluster Status} &amp; <span class="kw">\textbf</span>{Nodes Active} \\
+    <span class="kw">\hline</span>
+    0x00F1             &amp; Operational            &amp; 128 \\
+    0x00F4             &amp; Maintenance            &amp; 0   \\
+    <span class="kw">\hline</span>
+<span class="kw">\end</span>{tabular}</pre>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s8">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
-                                Media Queries
+                                Citations &amp; BibTeX Bibliographies
                             </h2>
-                            <p>Media queries allow you to build responsive layouts by conditionally applying style parameters based on target viewport width triggers.</p>
+                            <p>Separate bibliographic data records from your text layouts. Using standard **BibTeX files**, you can inject citation nodes that assemble, format, and alphabetize references automatically.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · responsive.css</span>
+                                    <span class="code-block-label">bib · references.bib</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cm">/* Standard Desktop Baseline Styles */</span>
-<span class="cl">.sidebar</span> { <span class="va">width</span>: <span class="st">300px</span>; <span class="va">display</span>: <span class="st">block</span>; }
-
-<span class="cm">/* Responsive Mobile Viewport Trigger */</span>
-<span class="kw">@media</span> (<span class="va">max-width</span>: <span class="st">768px</span>) {
-    <span class="cl">.sidebar</span> {
-        <span class="va">width</span>: <span class="st">100%</span>;
-        <span class="va">display</span>: <span class="st">none</span>; <span class="cm">/* Hides component container on smartphone devices */</span>
-    }
+                                <pre><span class="kw">@article</span>{vidux2026,
+    author  = {Ivan Vidussi},
+    title   = {Architectural Patterns in Financial Microservices},
+    journal = {Journal of Systems Software},
+    year    = {2026},
+    volume  = {42}
 }</pre>
+                            </div>
+                            <p style="margin-top: 15px;">Then map references inside the main document body using the following setup script:</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">tex · citations.tex</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre>Microservice patterns require distributed logs~<span class="kw">\cite</span>{vidux2026}.
+
+<span class="kw">\bibliographystyle</span>{plain}
+<span class="kw">\bibliography</span>{references}</pre>
                             </div>
                             <div class="info-box tip">
                                 <i class="fa-solid fa-lightbulb"></i>
-                                <span>Now that your presentation layers match standard conventions, study advanced preprocessor syntax workflows like **Sass/SCSS** or utility engines like **Tailwind CSS**.</span>
+                                <span>With fundamental document blocks mastered, your next evolutionary steps cover custom macro creation via <code>\newcommand</code> and multi-file tracking layouts.</span>
                             </div>
                         </div>
                         <div class="divider"></div>

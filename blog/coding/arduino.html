@@ -3,9 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="CSS beginner tutorial — learn selectors, the box model, positioning, flexbox, grid, and responsiveness with ready-to-use code snippets.">
+        <meta name="description" content="Arduino beginner tutorial — learn sketch structure, digital and analog I/O, serial communication, non-blocking delays, and hardware interrupts.">
         <meta name="author" content="vidux.sh">
-        <title>vidux.sh - CSS</title>
+        <title>vidux.sh - Arduino</title>
         <link rel="shortcut icon" href="../../assets/images/viduxsh_icon.png" type="image/x-icon">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,10 +41,10 @@
                             </a>
                         </div>
                         <div class="lang-header">
-                            <img src="../../assets/images/coding/logo/css.png" alt="CSS logo">
+                            <img src="../../assets/images/coding/logo/arduino.png" alt="Arduino logo">
                             <div>
-                                <h1>CSS <span class="lang-badge">Beginner</span></h1>
-                                <p class="lang-subtitle">Cascading Style Sheets — style, layout rules, and presentation layers painter for semantic markup.</p>
+                                <h1>Arduino <span class="lang-badge">Beginner</span></h1>
+                                <p class="lang-subtitle">Physical computing framework — bare-metal C/C++ flavor, microchip architecture, register controls, and real-world hardware interfacing.</p>
                             </div>
                         </div>
                         <div class="tutorial-progress" id="tutorial-progress">
@@ -61,82 +61,75 @@
                         <div class="toc">
                             <h3><i class="fa-solid fa-list"></i> Table of Contents</h3>
                             <ol>
-                                <li><a href="#s1">Inclusion &amp; Syntax</a></li>
-                                <li><a href="#s2">Core Selectors</a></li>
-                                <li><a href="#s3">Colors &amp; Typography</a></li>
-                                <li><a href="#s4">The Box Model</a></li>
-                                <li><a href="#s5">Display &amp; Positioning</a></li>
-                                <li><a href="#s6">Flexbox Context</a></li>
-                                <li><a href="#s7">Grid Layout</a></li>
-                                <li><a href="#s8">Media Queries</a></li>
+                                <li><a href="#s1">Sketch Structure (Setup vs Loop)</a></li>
+                                <li><a href="#s2">Data Types &amp; Pin Architecture</a></li>
+                                <li><a href="#s3">Digital Output &amp; Input Pins</a></li>
+                                <li><a href="#s4">Analog Reading &amp; PWM Control</a></li>
+                                <li><a href="#s5">Serial Monitor Communication</a></li>
+                                <li><a href="#s6">Non-Blocking Code via Millis()</a></li>
+                                <li><a href="#s7">Servo Motor Control API</a></li>
+                                <li><a href="#s8">Hardware Asynchronous Interrupts</a></li>
                             </ol>
                         </div>
                         <div class="tutorial-section" id="s1">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-1);">1</span>
-                                Inclusion &amp; Syntax
+                                Sketch Structure (Setup vs Loop)
                             </h2>
-                            <p>CSS rules link to HTML documents via the <code>&lt;link&gt;</code> element inside the head container. Rules target nodes to declare key-value style pairs.</p>
+                            <p>An Arduino program is called a *sketch*. Instead of a standard C <code>main()</code> entry point, it requires exactly two main wrapper structures that dictate initialization and sequential infinite cycling.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · style.css</span>
+                                    <span class="code-block-label">ino · main.ino</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cm">/* This is a CSS comment */</span>
-
-<span class="kw">selector</span> {
-    <span class="va">property</span>: <span class="st">value</span>;
-    <span class="va">another-property</span>: <span class="st">value</span>;
+                                <pre><span class="cm">// Runs exactly once when the microcontoller powers on or resets</span>
+<span class="kw">void</span> <span class="cl">setup</span>() {
+  <span class="cm">// Setup system parameters, configure pin layouts, or init serial lines</span>
 }
 
-<span class="cm">/* Example: styling all paragraphs */</span>
-<span class="cl">p</span> {
-    <span class="va">color</span>: <span class="st">#333333</span>;
-    <span class="va">line-height</span>: <span class="st">1.6</span>;
+<span class="cm">// Runs continuously in an infinite sequential loop right after setup() finishes</span>
+<span class="kw">void</span> <span class="cl">loop</span>() {
+  <span class="cm">// Read sensor data, evaluate states, drive outputs indefinitely</span>
 }</pre>
-                            </div>
-                            <div class="info-box tip">
-                                <i class="fa-solid fa-lightbulb"></i>
-                                <span>Link your external stylesheet file inside the HTML <code>&lt;head&gt;</code> template using: <code>&lt;link rel="stylesheet" href="style.css"&gt;</code>.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s2">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-2);">2</span>
-                                Core Selectors
+                                Data Types &amp; Pin Architecture
                             </h2>
-                            <p>Target precise document fragments using elements directly, custom class configurations, unique string ID handles, or structural states.</p>
+                            <p>Since microcontrollers like the ATmega328P have highly constrained SRAM (often just 2KB), memory optimization is vital. Choosing the right primitive data type prevents overflows.</p>
                             <div class="type-grid">
                                 <div class="type-pill">
-                                    <span class="type-name">Element</span>
-                                    <span class="type-desc">Targets all tags</span>
-                                    <span class="type-example">h1 { color: red; }</span>
+                                    <span class="type-name">boolean / bool</span>
+                                    <span class="type-desc">1-byte logical state value</span>
+                                    <span class="type-example">bool state = false;</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">.class</span>
-                                    <span class="type-desc">Reusable instances</span>
-                                    <span class="type-example">.card { padding: 20px; }</span>
+                                    <span class="type-name">byte / uint8_t</span>
+                                    <span class="type-desc">1-byte unsigned number (0 to 255)</span>
+                                    <span class="type-example">byte pinNumber = 13;</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">#id</span>
-                                    <span class="type-desc">Unique single node</span>
-                                    <span class="type-example">#main-nav { top: 0; }</span>
+                                    <span class="type-name">int / int16_t</span>
+                                    <span class="type-desc">2-byte signed integer on 8-bit AVR</span>
+                                    <span class="type-example">int sensorValue = -450;</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">:hover</span>
-                                    <span class="type-desc">Interactive state</span>
-                                    <span class="type-example">a:hover { opacity: 0.8; }</span>
+                                    <span class="type-name">unsigned long</span>
+                                    <span class="type-desc">4-byte large positive number</span>
+                                    <span class="type-example">unsigned long time = 0;</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">Combined</span>
-                                    <span class="type-desc">Child nesting paths</span>
-                                    <span class="type-example">.wrapper p { margin: 0; }</span>
+                                    <span class="type-name">float / double</span>
+                                    <span class="type-desc">4-byte standard precision decimal</span>
+                                    <span class="type-example">float voltage = 4.75;</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">*</span>
-                                    <span class="type-desc">Universal resetting</span>
-                                    <span class="type-example">* { box-sizing: border-box; }</span>
+                                    <span class="type-name">char</span>
+                                    <span class="type-desc">1-byte text character literal</span>
+                                    <span class="type-example">char command = 'S';</span>
                                 </div>
                             </div>
                         </div>
@@ -144,24 +137,30 @@
                         <div class="tutorial-section" id="s3">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
-                                Colors &amp; Typography
+                                Digital Output &amp; Input Pins
                             </h2>
-                            <p>Control visual branding layers utilizing structured palette values alongside explicit scaling fonts metrics.</p>
+                            <p>Digital pins operate strictly on binary states: <code>HIGH</code> (5V or 3.3V) or <code>LOW</code> (0V). You must initialize their mode before interacting with them.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · typography.css</span>
+                                    <span class="code-block-label">ino · digital.ino</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.custom-text</span> {
-    <span class="cm">/* Color Formats */</span>
-    <span class="va">color</span>: <span class="st">#4a90e2</span>;                    <span class="cm">/* Hex Format */</span>
-    <span class="va">background-color</span>: <span class="st">rgba(0, 0, 0, 0.05)</span>; <span class="cm">/* RGBA (with Alpha) */</span>
+                                <pre><span class="kw">const int</span> ledPin = <span class="st">13</span>;    <span class="cm">// External LED indicator pin</span>
+<span class="kw">const int</span> buttonPin = <span class="st">2</span>; <span class="cm">// Button switch pin input</span>
 
-    <span class="cm">/* Typography Rules */</span>
-    <span class="va">font-family</span>: <span class="st">'Roboto'</span>, <span class="st">sans-serif</span>;
-    <span class="va">font-size</span>: <span class="st">1.2rem</span>;                 <span class="cm">/* Relative to root HTML size */</span>
-    <span class="va">font-weight</span>: <span class="st">500</span>;                  <span class="cm">/* Medium weight */</span>
-    <span class="va">text-align</span>: <span class="st">center</span>;
+<span class="kw">void</span> <span class="cl">setup</span>() {
+  <span class="cl">pinMode</span>(ledPin, <span class="kw">OUTPUT</span>);
+  <span class="cl">pinMode</span>(buttonPin, <span class="kw">INPUT_PULLUP</span>); <span class="cm">// Enables internal resistor to avoid floating states</span>
+}
+
+<span class="kw">void</span> <span class="cl">loop</span>() {
+  <span class="kw">int</span> buttonState = <span class="cl">digitalRead</span>(buttonPin);
+  
+  <span class="kw">if</span> (buttonState == <span class="kw">LOW</span>) { <span class="cm">// Active-low syntax when using INPUT_PULLUP</span>
+    <span class="cl">digitalWrite</span>(ledPin, <span class="kw">HIGH</span>);
+  } <span class="kw">else</span> {
+    <span class="cl">digitalWrite</span>(ledPin, <span class="kw">LOW</span>);
+  }
 }</pre>
                             </div>
                         </div>
@@ -169,53 +168,50 @@
                         <div class="tutorial-section" id="s4">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
-                                The Box Model
+                                Analog Reading &amp; PWM Control
                             </h2>
-                            <p>Every element behaves as a rectangular container box. Total dimensional real estate calculation includes layers of margins, borders, padding bounds, and core content boundaries.</p>
+                            <p>Analog inputs translate voltages (0V-5V) into a 10-bit integer range (0 to 1023). Analog outputs emulate variable voltages using Pulse Width Modulation (PWM) with an 8-bit scale (0 to 255).</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · boxmodel.css</span>
+                                    <span class="code-block-label">ino · analog.ino</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.box-element</span> {
-    <span class="va">width</span>: <span class="st">300px</span>;
-    <span class="va">padding</span>: <span class="st">20px</span>;          <span class="cm">/* Space inside the border envelope */</span>
-    <span class="va">border</span>: <span class="st">2px solid #000</span>; <span class="cm">/* Edge boundary stroke line */</span>
-    <span class="va">margin</span>: <span class="st">15px auto</span>;      <span class="cm">/* Outer buffer space (centered horizontally) */</span>
+                                <pre><span class="kw">const int</span> potPin = A0;  <span class="cm">// Potentiometer input line</span>
+<span class="kw">const int</span> pwmPin = <span class="st">9</span>;   <span class="cm">// PWM capable pin descriptor (marked with ~)</span>
 
-    <span class="cm">/* Force dimensions to include padding and borders */</span>
-    <span class="va">box-sizing</span>: <span class="st">border-box</span>;
+<span class="kw">void</span> <span class="cl">loop</span>() {
+  <span class="kw">int</span> rawInput = <span class="cl">analogRead</span>(potPin); <span class="cm">// Returns a value between 0 and 1023</span>
+  
+  <span class="cm">// Remap the 10-bit resolution down to an 8-bit PWM scale</span>
+  <span class="kw">int</span> brightness = <span class="cl">map</span>(rawInput, <span class="st">0</span>, <span class="st">1023</span>, <span class="st">0</span>, <span class="st">255</span>);
+  
+  <span class="cl">analogWrite</span>(pwmPin, brightness); <span class="cm">// Modulates pulse width frequency</span>
 }</pre>
-                            </div>
-                            <div class="info-box danger">
-                                <i class="fa-solid fa-triangle-exclamation"></i>
-                                <span>Always declare <code>box-sizing: border-box;</code> globally. Without it, adding padding will expand your element beyond its declared width, breaking structural layouts!</span>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s5">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
-                                Display &amp; Positioning
+                                Serial Monitor Communication
                             </h2>
-                            <p>Alter how elements sit within the document layout using structural <code>display</code> properties or override normal document sorting flows using explicit positioning coordinates.</p>
+                            <p>The Serial peripheral manages UART communication streams, enabling telemetry data transmission back to a host computer or connected module grids.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · layout.css</span>
+                                    <span class="code-block-label">ino · serial.ino</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.block-item</span>  { <span class="va">display</span>: <span class="st">block</span>; }        <span class="cm">/* Takes full line width */</span>
-<span class="cl">.inline-item</span> { <span class="va">display</span>: <span class="st">inline</span>; }       <span class="cm">/* Inline context (ignores width) */</span>
-
-<span class="cm">/* Positioning Contexts */</span>
-<span class="cl">.parent-container</span> {
-    <span class="va">position</span>: <span class="st">relative</span>;              <span class="cm">/* Establishes boundary anchor */</span>
+                                <pre><span class="kw">void</span> <span class="cl">setup</span>() {
+  <span class="cl">Serial</span>.<span class="cl">begin</span>(<span class="st">9600</span>); <span class="cm">// Establishes a connection channel at 9600 baud rate</span>
+  <span class="cl">Serial</span>.<span class="cl">println</span>(<span class="st">"Telemetry console online..."</span>);
 }
 
-<span class="cl">.floating-badge</span> {
-    <span class="va">position</span>: <span class="st">absolute</span>;
-    <span class="va">top</span>: <span class="st">10px</span>;
-    <span class="va">right</span>: <span class="st">10px</span>;                     <span class="cm">/* Locks inside relative parent container */</span>
+<span class="kw">void</span> <span class="cl">loop</span>() {
+  <span class="kw">if</span> (<span class="cl">Serial</span>.<span class="cl">available</span>() &gt; <span class="st">0</span>) {
+    <span class="kw">char</span> incomingByte = <span class="cl">Serial</span>.<span class="cl">read</span>();
+    <span class="cl">Serial</span>.<span class="cl">print</span>(<span class="st">"Echoing payload chunk: "</span>);
+    <span class="cl">Serial</span>.<span class="cl">println</span>(incomingByte);
+  }
 }</pre>
                             </div>
                         </div>
@@ -223,49 +219,57 @@
                         <div class="tutorial-section" id="s6">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
-                                Flexbox Context
+                                Non-Blocking Code via Millis()
                             </h2>
-                            <p>Flexbox provides an efficient, one-dimensional layout engine to handle alignment, distribution, and content alignment inside flexible parent boxes.</p>
+                            <p>The <code>delay()</code> function halts execution entirely, locking up the CPU core. Using <code>millis()</code> allows you to create non-blocking timers so multiple tasks can run concurrently.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · flexbox.css</span>
+                                    <span class="code-block-label">ino · nonblocking.ino</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.flex-container</span> {
-    <span class="va">display</span>: <span class="st">flex</span>;
-    <span class="va">flex-direction</span>: <span class="st">row</span>;            <span class="cm">/* Arrange children side-by-side horizontally */</span>
-    <span class="va">justify-content</span>: <span class="st">space-between</span>; <span class="cm">/* Distribute spacing along main axis */</span>
-    <span class="va">align-items</span>: <span class="st">center</span>;            <span class="cm">/* Align items across cross axis vertically */</span>
-    <span class="va">gap</span>: <span class="st">15px</span>;                      <span class="cm">/* Fixed spacer gutter between inner rows */</span>
-}
+                                <pre><span class="kw">unsigned long</span> previousTime = <span class="st">0</span>;
+<span class="kw">const long</span> taskInterval = <span class="st">1000</span>; <span class="cm">// Execute task every 1000ms</span>
 
-<span class="cl">.flex-child</span> {
-    <span class="va">flex</span>: <span class="st">1</span>;                        <span class="cm">/* Grow evenly to take up empty space */</span>
+<span class="kw">void</span> <span class="cl">loop</span>() {
+  <span class="kw">unsigned long</span> currentTime = <span class="cl">millis</span>(); <span class="cm">// Tracks time elapsed since boot</span>
+  
+  <span class="kw">if</span> (currentTime - previousTime &gt;= taskInterval) {
+    previousTime = currentTime; <span class="cm">// Save timestamp threshold</span>
+    
+    <span class="cm">// Perform scheduled hardware routine updates here safely</span>
+  }
 }</pre>
+                            </div>
+                            <div class="info-box danger">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                                <span>Always declare tracking variables for <code>millis()</code> as **unsigned long**. Using standard signed integers causes compilation mismatch faults and breaks timing calculations during counter wrap-arounds.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s7">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
-                                Grid Layout
+                                Servo Motor Control API
                             </h2>
-                            <p>CSS Grid handles complex, two-dimensional user interfaces by splitting a container into explicit matrix columns and row tracks.</p>
+                            <p>Arduino can easily incorporate structured software libraries. The <code>Servo.h</code> library wraps low-level PWM timing loops, exposing a clean API to position actuators directly by degree input.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · grid.css</span>
+                                    <span class="code-block-label">ino · servo.ino</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.grid-container</span> {
-    <span class="va">display</span>: <span class="st">grid</span>;
-    
-    <span class="cm">/* Construct 3 explicit columns utilizing fraction distribution tracks */</span>
-    <span class="va">grid-template-columns</span>: <span class="st">1fr 1fr 1fr</span>;
-    <span class="va">gap</span>: <span class="st">20px</span>;                      <span class="cm">/* Matrix intersection gutters */</span>
+                                <pre><span class="kw">#include</span> <span class="kw">&lt;Servo.h&gt;</span>
+
+Servo steeringActuator; <span class="cm">// Instantiate servo object tracking context</span>
+
+<span class="kw">void</span> <span class="cl">setup</span>() {
+  steeringActuator.attach(<span class="st">10</span>); <span class="cm">// Binds target control mapping line onto pin 10</span>
 }
 
-<span class="cl">.wide-grid-item</span> {
-    <span class="va">grid-column</span>: <span class="st">span 2</span>;            <span class="cm">/* Force item to span over two columns */</span>
+<span class="kw">void</span> <span class="cl">loop</span>() {
+  steeringActuator.write(<span class="st">90</span>);  <span class="cm">// Forces center sweep alignment angle directly</span>
+  <span class="cl">delay</span>(<span class="st">500</span>);
+  steeringActuator.write(<span class="st">180</span>); <span class="cm">// Rotates target edge array limit</span>
+  <span class="cl">delay</span>(<span class="st">500</span>);
 }</pre>
                             </div>
                         </div>
@@ -273,28 +277,38 @@
                         <div class="tutorial-section" id="s8">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
-                                Media Queries
+                                Hardware Asynchronous Interrupts
                             </h2>
-                            <p>Media queries allow you to build responsive layouts by conditionally applying style parameters based on target viewport width triggers.</p>
+                            <p>Interrupts monitor pin transitions asynchronously. When triggered, they instantly pause the main execution cycle to run an explicit Interrupt Service Routine (ISR) for high-priority events.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · responsive.css</span>
+                                    <span class="code-block-label">ino · interrupts.ino</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cm">/* Standard Desktop Baseline Styles */</span>
-<span class="cl">.sidebar</span> { <span class="va">width</span>: <span class="st">300px</span>; <span class="va">display</span>: <span class="st">block</span>; }
+                                <pre><span class="kw">const int</span> interruptPin = <span class="st">2</span>;
+<span class="kw">volatile bool</span> emergencySignal = <span class="kw">false</span>; <span class="cm">// volatile forces SRAM evaluation lookup</span>
 
-<span class="cm">/* Responsive Mobile Viewport Trigger */</span>
-<span class="kw">@media</span> (<span class="va">max-width</span>: <span class="st">768px</span>) {
-    <span class="cl">.sidebar</span> {
-        <span class="va">width</span>: <span class="st">100%</span>;
-        <span class="va">display</span>: <span class="st">none</span>; <span class="cm">/* Hides component container on smartphone devices */</span>
-    }
+<span class="kw">void</span> <span class="cl">setup</span>() {
+  <span class="cl">pinMode</span>(interruptPin, <span class="kw">INPUT_PULLUP</span>);
+  
+  <span class="cm">// Binds hardware event transitions directly to the ISR function handler</span>
+  <span class="cl">attachInterrupt</span>(<span class="cl">digitalPinToInterrupt</span>(interruptPin), triggerISR, <span class="kw">FALLING</span>);
+}
+
+<span class="kw">void</span> <span class="cl">loop</span>() {
+  <span class="kw">if</span> (emergencySignal) {
+    <span class="cm">// Instantly act upon urgent sensor changes or limit triggers</span>
+    emergencySignal = <span class="kw">false</span>;
+  }
+}
+
+<span class="kw">void</span> triggerISR() {
+  emergencySignal = <span class="kw">true</span>; <span class="cm">// ISR routine must be kept as fast and lean as possible</span>
 }</pre>
                             </div>
                             <div class="info-box tip">
                                 <i class="fa-solid fa-lightbulb"></i>
-                                <span>Now that your presentation layers match standard conventions, study advanced preprocessor syntax workflows like **Sass/SCSS** or utility engines like **Tailwind CSS**.</span>
+                                <span>With bare-metal fundamentals under control, you are ready to construct low-overhead IoT routines and map peripheral grids leveraging custom architectures.</span>
                             </div>
                         </div>
                         <div class="divider"></div>

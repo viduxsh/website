@@ -3,9 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="CSS beginner tutorial — learn selectors, the box model, positioning, flexbox, grid, and responsiveness with ready-to-use code snippets.">
+        <meta name="description" content="PowerShell scripting tutorial — Learn cmdlet anatomy, object-oriented pipelines, execution policies, variables, and system automation for Windows and cross-platform cores.">
         <meta name="author" content="vidux.sh">
-        <title>vidux.sh - CSS</title>
+        <title>vidux.sh - PowerShell Automation</title>
         <link rel="shortcut icon" href="../../assets/images/viduxsh_icon.png" type="image/x-icon">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,10 +41,10 @@
                             </a>
                         </div>
                         <div class="lang-header">
-                            <img src="../../assets/images/coding/logo/css.png" alt="CSS logo">
+                            <img src="../../assets/images/coding/logo/powershell.png" alt="PowerShell logo">
                             <div>
-                                <h1>CSS <span class="lang-badge">Beginner</span></h1>
-                                <p class="lang-subtitle">Cascading Style Sheets — style, layout rules, and presentation layers painter for semantic markup.</p>
+                                <h1>PowerShell Engine <span class="lang-badge">Beginner</span></h1>
+                                <p class="lang-subtitle">Object-Oriented Automation — mastering Cmdlets, pipeline object mapping, .NET runtime integrations, execution security policies, and cross-platform management hooks.</p>
                             </div>
                         </div>
                         <div class="tutorial-progress" id="tutorial-progress">
@@ -61,240 +61,199 @@
                         <div class="toc">
                             <h3><i class="fa-solid fa-list"></i> Table of Contents</h3>
                             <ol>
-                                <li><a href="#s1">Inclusion &amp; Syntax</a></li>
-                                <li><a href="#s2">Core Selectors</a></li>
-                                <li><a href="#s3">Colors &amp; Typography</a></li>
-                                <li><a href="#s4">The Box Model</a></li>
-                                <li><a href="#s5">Display &amp; Positioning</a></li>
-                                <li><a href="#s6">Flexbox Context</a></li>
-                                <li><a href="#s7">Grid Layout</a></li>
-                                <li><a href="#s8">Media Queries</a></li>
+                                <li><a href="#s1">The Core Architecture &amp; Cmdlets</a></li>
+                                <li><a href="#s2">Execution Policies &amp; Script Security</a></li>
+                                <li><a href="#s3">File System Provider Navigation</a></li>
+                                <li><a href="#s4">Strongly-Typed Variables &amp; Arrays</a></li>
+                                <li><a href="#s5">Logical Branching &amp; Operators</a></li>
+                                <li><a href="#s6">Loops &amp; Pipeline Iteration ($_)</a></li>
+                                <li><a href="#s7">The Object Pipeline vs Text Streams</a></li>
+                                <li><a href="#s8">WMI/CIM &amp; System Process Handling</a></li>
                             </ol>
                         </div>
                         <div class="tutorial-section" id="s1">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-1);">1</span>
-                                Inclusion &amp; Syntax
+                                The Core Architecture &amp; Cmdlets
                             </h2>
-                            <p>CSS rules link to HTML documents via the <code>&lt;link&gt;</code> element inside the head container. Rules target nodes to declare key-value style pairs.</p>
+                            <p>Unlike traditional text-based shells (such as Bash or CMD), PowerShell is an **object-oriented automation engine** built directly on top of the **.NET Common Language Runtime (CLR)**. Commands are structured natively as **Cmdlets** adhering to a standard, predictable <code>Verb-Noun</code> syntax design.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · style.css</span>
+                                    <span class="code-block-label">ps1 · overview.ps1</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cm">/* This is a CSS comment */</span>
-
-<span class="kw">selector</span> {
-    <span class="va">property</span>: <span class="st">value</span>;
-    <span class="va">another-property</span>: <span class="st">value</span>;
-}
-
-<span class="cm">/* Example: styling all paragraphs */</span>
-<span class="cl">p</span> {
-    <span class="va">color</span>: <span class="st">#333333</span>;
-    <span class="va">line-height</span>: <span class="st">1.6</span>;
-}</pre>
-                            </div>
-                            <div class="info-box tip">
-                                <i class="fa-solid fa-lightbulb"></i>
-                                <span>Link your external stylesheet file inside the HTML <code>&lt;head&gt;</code> template using: <code>&lt;link rel="stylesheet" href="style.css"&gt;</code>.</span>
+                                <pre><span class="cm"># Extension files use the .ps1 standard declaration entry</span>
+<span class="kw">Get-Command</span> -Verb Get      <span class="cm"># Discovers system built-in discovery cmdlet structures</span>
+<span class="kw">Get-Help</span> <span class="kw">Get-Process</span> -Full <span class="cm"># Fetches complete object schema usage manuals directly</span></pre>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s2">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-2);">2</span>
-                                Core Selectors
+                                Execution Policies &amp; Script Security
                             </h2>
-                            <p>Target precise document fragments using elements directly, custom class configurations, unique string ID handles, or structural states.</p>
+                            <p>By default, Windows blocks script executions to defend against malicious injections. PowerShell uses **Execution Policies** to determine whether untrusted configuration scripts can be processed inside your runtime thread.</p>
                             <div class="type-grid">
                                 <div class="type-pill">
-                                    <span class="type-name">Element</span>
-                                    <span class="type-desc">Targets all tags</span>
-                                    <span class="type-example">h1 { color: red; }</span>
+                                    <span class="type-name">Restricted</span>
+                                    <span class="type-desc">The default Windows client boundary mode. Permits raw interactive commands but locks down all file executions.</span>
+                                    <span class="type-example">Default Safe Layer</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">.class</span>
-                                    <span class="type-desc">Reusable instances</span>
-                                    <span class="type-example">.card { padding: 20px; }</span>
+                                    <span class="type-name">AllSigned</span>
+                                    <span class="type-desc">Allows scripts to run only if they carry an explicit, authentic signature from a trusted digital publisher.</span>
+                                    <span class="type-example">Requires Certs</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">#id</span>
-                                    <span class="type-desc">Unique single node</span>
-                                    <span class="type-example">#main-nav { top: 0; }</span>
+                                    <span class="type-name">RemoteSigned</span>
+                                    <span class="type-desc">Requires downloaded external scripts to be signed, but executes local, user-authored script trees freely.</span>
+                                    <span class="type-example">Standard Dev Choice</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">:hover</span>
-                                    <span class="type-desc">Interactive state</span>
-                                    <span class="type-example">a:hover { opacity: 0.8; }</span>
+                                    <span class="type-name">Unrestricted</span>
+                                    <span class="type-desc">Bypasses all signing restrictions. Runs any script file but warns you before evaluating internet assets.</span>
+                                    <span class="type-example">Risk Zone Node</span>
                                 </div>
-                                <div class="type-pill">
-                                    <span class="type-name">Combined</span>
-                                    <span class="type-desc">Child nesting paths</span>
-                                    <span class="type-example">.wrapper p { margin: 0; }</span>
+                            </div>
+                            <div class="code-block" style="margin-top: 15px;">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">powershell · Admin Console</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <div class="type-pill">
-                                    <span class="type-name">*</span>
-                                    <span class="type-desc">Universal resetting</span>
-                                    <span class="type-example">* { box-sizing: border-box; }</span>
-                                </div>
+                                <pre><span class="cm"># Changes active execution policy rules (Requires Elevated Administrator Context)</span>
+<span class="kw">Set-ExecutionPolicy</span> RemoteSigned -Scope CurrentUser</pre>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s3">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
-                                Colors &amp; Typography
+                                File System Provider Navigation
                             </h2>
-                            <p>Control visual branding layers utilizing structured palette values alongside explicit scaling fonts metrics.</p>
+                            <p>PowerShell uses abstraction layers called **Providers** to expose various data repositories—such as the Windows Registry, environment variables, or local certificate silos—as if they were standard file system drives.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · typography.css</span>
+                                    <span class="code-block-label">ps1 · paths.ps1</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.custom-text</span> {
-    <span class="cm">/* Color Formats */</span>
-    <span class="va">color</span>: <span class="st">#4a90e2</span>;                    <span class="cm">/* Hex Format */</span>
-    <span class="va">background-color</span>: <span class="st">rgba(0, 0, 0, 0.05)</span>; <span class="cm">/* RGBA (with Alpha) */</span>
+                                <pre><span class="kw">Get-ChildItem</span> C:\Windows    <span class="cm"># Traditional lookup target (Aliased as 'ls' or 'dir')</span>
+<span class="kw">New-Item</span> -Path <span class="st">".\log.txt"</span> -ItemType File -Force <span class="cm"># Instantiates new physical assets</span>
 
-    <span class="cm">/* Typography Rules */</span>
-    <span class="va">font-family</span>: <span class="st">'Roboto'</span>, <span class="st">sans-serif</span>;
-    <span class="va">font-size</span>: <span class="st">1.2rem</span>;                 <span class="cm">/* Relative to root HTML size */</span>
-    <span class="va">font-weight</span>: <span class="st">500</span>;                  <span class="cm">/* Medium weight */</span>
-    <span class="va">text-align</span>: <span class="st">center</span>;
-}</pre>
+<span class="cm"># Navigating the Registry database engine exactly like a standard drive tree:</span>
+<span class="kw">Set-Location</span> HKCU:\Software <span class="cm"># Aliased as 'cd' to step directly into Hive Keys</span></pre>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s4">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
-                                The Box Model
+                                Strongly-Typed Variables &amp; Arrays
                             </h2>
-                            <p>Every element behaves as a rectangular container box. Total dimensional real estate calculation includes layers of margins, borders, padding bounds, and core content boundaries.</p>
+                            <p>Variables are prefixed with the dollar symbol (<code>$</code>). Because they wrap full **.NET Objects**, you can dynamically query properties or pass variable payloads explicitly to typed constraint fields.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · boxmodel.css</span>
+                                    <span class="code-block-label">ps1 · data.ps1</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.box-element</span> {
-    <span class="va">width</span>: <span class="st">300px</span>;
-    <span class="va">padding</span>: <span class="st">20px</span>;          <span class="cm">/* Space inside the border envelope */</span>
-    <span class="va">border</span>: <span class="st">2px solid #000</span>; <span class="cm">/* Edge boundary stroke line */</span>
-    <span class="va">margin</span>: <span class="st">15px auto</span>;      <span class="cm">/* Outer buffer space (centered horizontally) */</span>
+                                <pre><span class="cl">$DeveloperName</span> = <span class="st">"Ivan"</span>                     <span class="cm"># Dynamically typed String object</span>
+<span class="cl">[int]</span><span class="cl">$BackupInterval</span> = 30                    <span class="cm"># Strongly typed Integer boundary assignment</span>
 
-    <span class="cm">/* Force dimensions to include padding and borders */</span>
-    <span class="va">box-sizing</span>: <span class="st">border-box</span>;
-}</pre>
-                            </div>
-                            <div class="info-box danger">
-                                <i class="fa-solid fa-triangle-exclamation"></i>
-                                <span>Always declare <code>box-sizing: border-box;</code> globally. Without it, adding padding will expand your element beyond its declared width, breaking structural layouts!</span>
+<span class="cl">$LogArray</span> = <span class="st">"error.log"</span>, <span class="st">"warn.log"</span>, <span class="st">"info.log"</span> <span class="cm"># Instantiates a clean array object matrix</span>
+<span class="kw">Write-Output</span> <span class="st">"Active node is </span><span class="cl">$DeveloperName</span><span class="st">"</span></pre>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s5">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
-                                Display &amp; Positioning
+                                Logical Branching &amp; Operators
                             </h2>
-                            <p>Alter how elements sit within the document layout using structural <code>display</code> properties or override normal document sorting flows using explicit positioning coordinates.</p>
+                            <p>PowerShell does not use standard symbols (like <code>&gt;</code> or <code>==</code>) for comparison logic, because those tokens are reserved for stream redirection. Instead, it relies on dedicated **dash-based operators**.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · layout.css</span>
+                                    <span class="code-block-label">ps1 · conditional.ps1</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.block-item</span>  { <span class="va">display</span>: <span class="st">block</span>; }        <span class="cm">/* Takes full line width */</span>
-<span class="cl">.inline-item</span> { <span class="va">display</span>: <span class="st">inline</span>; }       <span class="cm">/* Inline context (ignores width) */</span>
+                                <pre><span class="cl">$Threshold</span> = 85
 
-<span class="cm">/* Positioning Contexts */</span>
-<span class="cl">.parent-container</span> {
-    <span class="va">position</span>: <span class="st">relative</span>;              <span class="cm">/* Establishes boundary anchor */</span>
+<span class="kw">if</span> (<span class="cl">$Threshold</span> <span class="kw">-gt</span> 80) {
+    <span class="kw">Write-Warning</span> <span class="st">"Hardware alert triggered: Matrix exhaustion threshold exceeded."</span>
+} <span class="kw">else</span> {
+    <span class="kw">Write-Output</span> <span class="st">"System operational metrics within normal bounds."</span>
 }
 
-<span class="cl">.floating-badge</span> {
-    <span class="va">position</span>: <span class="st">absolute</span>;
-    <span class="va">top</span>: <span class="st">10px</span>;
-    <span class="va">right</span>: <span class="st">10px</span>;                     <span class="cm">/* Locks inside relative parent container */</span>
-}</pre>
+<span class="cm"># Operator Reference Matrix:</span>
+<span class="cm"># -eq (Equal) · -ne (Not Equal) · -lt (Less Than) · -le (Less or Equal) · -like (Wildcard match)</span></pre>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s6">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
-                                Flexbox Context
+                                Loops &amp; Pipeline Iteration ($_)
                             </h2>
-                            <p>Flexbox provides an efficient, one-dimensional layout engine to handle alignment, distribution, and content alignment inside flexible parent boxes.</p>
+                            <p>PowerShell provides classic control loops along with the highly optimized <code>ForEach-Object</code> pipeline cmdlet, which evaluates incoming elements sequentially via the automatic pipeline variable <code>$_</code>.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · flexbox.css</span>
+                                    <span class="code-block-label">ps1 · loops.ps1</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.flex-container</span> {
-    <span class="va">display</span>: <span class="st">flex</span>;
-    <span class="va">flex-direction</span>: <span class="st">row</span>;            <span class="cm">/* Arrange children side-by-side horizontally */</span>
-    <span class="va">justify-content</span>: <span class="st">space-between</span>; <span class="cm">/* Distribute spacing along main axis */</span>
-    <span class="va">align-items</span>: <span class="st">center</span>;            <span class="cm">/* Align items across cross axis vertically */</span>
-    <span class="va">gap</span>: <span class="st">15px</span>;                      <span class="cm">/* Fixed spacer gutter between inner rows */</span>
+                                <pre><span class="cm"># Standard procedural loop schema execution</span>
+<span class="kw">for</span> (<span class="cl">$i</span> = 1; <span class="cl">$i</span> -le 3; <span class="cl">$i</span>++) {
+    <span class="kw">Write-Output</span> <span class="st">"Database sync checkpoint sequence index #</span><span class="cl">$i</span><span class="st">"</span>
 }
 
-<span class="cl">.flex-child</span> {
-    <span class="va">flex</span>: <span class="st">1</span>;                        <span class="cm">/* Grow evenly to take up empty space */</span>
+<span class="cm"># Functional pipeline collection looping using the dynamic global index pointer: $_</span>
+<span class="kw">Get-ChildItem</span> *.txt | <span class="kw">ForEach-Object</span> {
+    <span class="kw">Write-Output</span> <span class="st">"Processing asset properties on: </span><span class="cl">$($_.FullName)</span><span class="st">"</span>
 }</pre>
+                            </div>
+                            <div class="info-box danger">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                                <span>**Sub-expression expansions require specific wrapping!** If you reference an object's sub-property inside double quotes, you must wrap it in the sub-expression syntax <code>$($Object.Property)</code>. Writing <code>"$_.FullName"</code> will simply print the object's base string representation followed by a literal ".FullName" suffix.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s7">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
-                                Grid Layout
+                                The Object Pipeline vs Text Streams
                             </h2>
-                            <p>CSS Grid handles complex, two-dimensional user interfaces by splitting a container into explicit matrix columns and row tracks.</p>
+                            <p>When you pipe data in PowerShell, you are passing full, structured objects rather than raw strings of text. This design avoids complex regex filtering or text splitting (like <code>awk</code> or <code>cut</code>), allowing you to filter, sort, or inspect fields directly by their property names.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · grid.css</span>
+                                    <span class="code-block-label">ps1 · pipeline.ps1</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.grid-container</span> {
-    <span class="va">display</span>: <span class="st">grid</span>;
-    
-    <span class="cm">/* Construct 3 explicit columns utilizing fraction distribution tracks */</span>
-    <span class="va">grid-template-columns</span>: <span class="st">1fr 1fr 1fr</span>;
-    <span class="va">gap</span>: <span class="st">20px</span>;                      <span class="cm">/* Matrix intersection gutters */</span>
-}
+                                <pre><span class="cm"># Pipelines pass rich structured object types instead of raw flat text buffers:</span>
+<span class="kw">Get-Service</span> | <span class="kw">Where-Object</span> { <span class="cl">$_.Status</span> -eq <span class="st">'Running'</span> } | <span class="kw">Select-Object</span> DisplayName -First 5
 
-<span class="cl">.wide-grid-item</span> {
-    <span class="va">grid-column</span>: <span class="st">span 2</span>;            <span class="cm">/* Force item to span over two columns */</span>
-}</pre>
+<span class="cm"># Exporting complex environment topologies cleanly into structured external schemas:</span>
+<span class="kw">Get-Process</span> | <span class="kw">Export-Csv</span> -Path <span class="st">".\active_snapshot.csv"</span> -NoTypeInformation</pre>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s8">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
-                                Media Queries
+                                WMI/CIM &amp; System Process Handling
                             </h2>
-                            <p>Media queries allow you to build responsive layouts by conditionally applying style parameters based on target viewport width triggers.</p>
+                            <p>PowerShell interfaces directly with the host operating system kernel using the **CIM (Common Information Model)** architecture, enabling comprehensive instrumentation and management of both local and remote nodes.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · responsive.css</span>
+                                    <span class="code-block-label">ps1 · system.ps1</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cm">/* Standard Desktop Baseline Styles */</span>
-<span class="cl">.sidebar</span> { <span class="va">width</span>: <span class="st">300px</span>; <span class="va">display</span>: <span class="st">block</span>; }
+                                <pre><span class="cm"># Queries low-level operating system configurations through CIM classes</span>
+<span class="kw">Get-CimInstance</span> -ClassName Win32_OperatingSystem | <span class="kw">Select-Object</span> FreePhysicalMemory, TotalVisibleMemorySize
 
-<span class="cm">/* Responsive Mobile Viewport Trigger */</span>
-<span class="kw">@media</span> (<span class="va">max-width</span>: <span class="st">768px</span>) {
-    <span class="cl">.sidebar</span> {
-        <span class="va">width</span>: <span class="st">100%</span>;
-        <span class="va">display</span>: <span class="st">none</span>; <span class="cm">/* Hides component container on smartphone devices */</span>
-    }
-}</pre>
+<span class="cm"># Instantly terminates an unstable application thread via its specific execution name</span>
+<span class="kw">Stop-Process</span> -Name <span class="st">"notepad"</span> -Force</pre>
                             </div>
                             <div class="info-box tip">
                                 <i class="fa-solid fa-lightbulb"></i>
-                                <span>Now that your presentation layers match standard conventions, study advanced preprocessor syntax workflows like **Sass/SCSS** or utility engines like **Tailwind CSS**.</span>
+                                <span>Now that you understand the object-oriented nature of PowerShell, you can build declarative infrastructure models using **DSC (Desired State Configuration)** or construct modular provisioning workflows.</span>
                             </div>
                         </div>
                         <div class="divider"></div>

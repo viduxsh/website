@@ -3,9 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="CSS beginner tutorial — learn selectors, the box model, positioning, flexbox, grid, and responsiveness with ready-to-use code snippets.">
+        <meta name="description" content="Kotlin beginner tutorial — learn variables, null safety, smart casts, data classes, loops, functions, and coroutines with ready-to-use code snippets.">
         <meta name="author" content="vidux.sh">
-        <title>vidux.sh - CSS</title>
+        <title>vidux.sh - Kotlin</title>
         <link rel="shortcut icon" href="../../assets/images/viduxsh_icon.png" type="image/x-icon">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,10 +41,10 @@
                             </a>
                         </div>
                         <div class="lang-header">
-                            <img src="../../assets/images/coding/logo/css.png" alt="CSS logo">
+                            <img src="../../assets/images/coding/logo/kotlin.png" alt="Kotlin logo">
                             <div>
-                                <h1>CSS <span class="lang-badge">Beginner</span></h1>
-                                <p class="lang-subtitle">Cascading Style Sheets — style, layout rules, and presentation layers painter for semantic markup.</p>
+                                <h1>Kotlin <span class="lang-badge">Beginner</span></h1>
+                                <p class="lang-subtitle">Statically typed cross-platform language — concise syntax, 100% Java interoperability, and compiler-level Null Safety.</p>
                             </div>
                         </div>
                         <div class="tutorial-progress" id="tutorial-progress">
@@ -61,82 +61,78 @@
                         <div class="toc">
                             <h3><i class="fa-solid fa-list"></i> Table of Contents</h3>
                             <ol>
-                                <li><a href="#s1">Inclusion &amp; Syntax</a></li>
-                                <li><a href="#s2">Core Selectors</a></li>
-                                <li><a href="#s3">Colors &amp; Typography</a></li>
-                                <li><a href="#s4">The Box Model</a></li>
-                                <li><a href="#s5">Display &amp; Positioning</a></li>
-                                <li><a href="#s6">Flexbox Context</a></li>
-                                <li><a href="#s7">Grid Layout</a></li>
-                                <li><a href="#s8">Media Queries</a></li>
+                                <li><a href="#s1">Variables &amp; Type Inference</a></li>
+                                <li><a href="#s2">Core Types Hierarchy</a></li>
+                                <li><a href="#s3">Control Flows &amp; Expressions</a></li>
+                                <li><a href="#s4">Loops &amp; Ranges</a></li>
+                                <li><a href="#s5">Functions &amp; Named Arguments</a></li>
+                                <li><a href="#s6">Classes &amp; Data Classes</a></li>
+                                <li><a href="#s7">Null Safety Ecosystem</a></li>
+                                <li><a href="#s8">Asynchronous Coroutines</a></li>
                             </ol>
                         </div>
                         <div class="tutorial-section" id="s1">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-1);">1</span>
-                                Inclusion &amp; Syntax
+                                Variables &amp; Type Inference
                             </h2>
-                            <p>CSS rules link to HTML documents via the <code>&lt;link&gt;</code> element inside the head container. Rules target nodes to declare key-value style pairs.</p>
+                            <p>Kotlin strictly separates read-only variables from mutable state storage. The compiler infers data types automatically from value declarations.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · style.css</span>
+                                    <span class="code-block-label">kotlin · variables.kt</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cm">/* This is a CSS comment */</span>
+                                <pre><span class="cm">// Single line comment</span>
+<span class="cm">/* Multi-line comment block */</span>
 
-<span class="kw">selector</span> {
-    <span class="va">property</span>: <span class="st">value</span>;
-    <span class="va">another-property</span>: <span class="st">value</span>;
-}
+<span class="kw">val</span> endpoint: String = <span class="st">"https://vidux.sh"</span> <span class="cm">// Immutable reference (read-only)</span>
+<span class="kw">var</span> activeConnections = <span class="st">10</span>               <span class="cm">// Mutable variable (type inferred as Int)</span>
 
-<span class="cm">/* Example: styling all paragraphs */</span>
-<span class="cl">p</span> {
-    <span class="va">color</span>: <span class="st">#333333</span>;
-    <span class="va">line-height</span>: <span class="st">1.6</span>;
-}</pre>
+<span class="cm">// endpoint = "new-url" -> Compiler Error! val cannot be reassigned</span>
+activeConnections += <span class="st">1</span></pre>
                             </div>
                             <div class="info-box tip">
                                 <i class="fa-solid fa-lightbulb"></i>
-                                <span>Link your external stylesheet file inside the HTML <code>&lt;head&gt;</code> template using: <code>&lt;link rel="stylesheet" href="style.css"&gt;</code>.</span>
+                                <span>Always default to declaring properties with <code>val</code>. Switch to <code>var</code> only when explicit state reassignment becomes necessary.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s2">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-2);">2</span>
-                                Core Selectors
+                                Core Types Hierarchy
                             </h2>
-                            <p>Target precise document fragments using elements directly, custom class configurations, unique string ID handles, or structural states.</p>
+                            <p>In Kotlin, everything behaves as an object. There are no built-in primitive types like in Java; numbers and characters are handled as uniform objects.</p>
                             <div class="type-grid">
                                 <div class="type-pill">
-                                    <span class="type-name">Element</span>
-                                    <span class="type-desc">Targets all tags</span>
-                                    <span class="type-example">h1 { color: red; }</span>
+                                    <span class="type-name">Int / Long</span>
+                                    <span class="type-desc">Standard integers</span>
+                                    <span class="type-example">val port = 8080</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">.class</span>
-                                    <span class="type-desc">Reusable instances</span>
-                                    <span class="type-example">.card { padding: 20px; }</span>
+                                    <span class="type-name">Double / Float</span>
+                                    <span class="type-desc">Floating-point values</span>
+                                    <span class="type-example">val latency = 12.45</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">#id</span>
-                                    <span class="type-desc">Unique single node</span>
-                                    <span class="type-example">#main-nav { top: 0; }</span>
+                                    <span class="type-name">Boolean</span>
+                                    <span class="type-desc">Logical state truths</span>
+                                    <span class="type-example">val isSecure = true</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">:hover</span>
-                                    <span class="type-desc">Interactive state</span>
-                                    <span class="type-example">a:hover { opacity: 0.8; }</span>
+                                    <span class="type-name">String</span>
+                                    <span class="type-desc">Character sequences</span>
+                                    <span class="type-example">val tag = "Kotlin"</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">Combined</span>
-                                    <span class="type-desc">Child nesting paths</span>
-                                    <span class="type-example">.wrapper p { margin: 0; }</span>
+                                    <span class="type-name">List / Set</span>
+                                    <span class="type-desc">Immutable collections</span>
+                                    <span class="type-example">listOf("A", "B")</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">*</span>
-                                    <span class="type-desc">Universal resetting</span>
-                                    <span class="type-example">* { box-sizing: border-box; }</span>
+                                    <span class="type-name">Any</span>
+                                    <span class="type-desc">The root of the hierarchy</span>
+                                    <span class="type-example">Equivalent to Object</span>
                                 </div>
                             </div>
                         </div>
@@ -144,24 +140,24 @@
                         <div class="tutorial-section" id="s3">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
-                                Colors &amp; Typography
+                                Control Flows &amp; Expressions
                             </h2>
-                            <p>Control visual branding layers utilizing structured palette values alongside explicit scaling fonts metrics.</p>
+                            <p>Conditionals function as expressions that return values. The structural <code>when</code> block acts as an optimized, powerful replacement for the classic <code>switch</code> construct.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · typography.css</span>
+                                    <span class="code-block-label">kotlin · controlflow.kt</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.custom-text</span> {
-    <span class="cm">/* Color Formats */</span>
-    <span class="va">color</span>: <span class="st">#4a90e2</span>;                    <span class="cm">/* Hex Format */</span>
-    <span class="va">background-color</span>: <span class="st">rgba(0, 0, 0, 0.05)</span>; <span class="cm">/* RGBA (with Alpha) */</span>
+                                <pre><span class="kw">val</span> statusCode = <span class="st">200</span>
 
-    <span class="cm">/* Typography Rules */</span>
-    <span class="va">font-family</span>: <span class="st">'Roboto'</span>, <span class="st">sans-serif</span>;
-    <span class="va">font-size</span>: <span class="st">1.2rem</span>;                 <span class="cm">/* Relative to root HTML size */</span>
-    <span class="va">font-weight</span>: <span class="st">500</span>;                  <span class="cm">/* Medium weight */</span>
-    <span class="va">text-align</span>: <span class="st">center</span>;
+<span class="cm">// 'if' used cleanly as an inline expression</span>
+<span class="kw">val</span> statusMessage = <span class="kw">if</span> (statusCode == <span class="st">200</span>) <span class="st">"Success"</span> <span class="kw">else</span> <span class="st">"Error"</span>
+
+<span class="cm">// 'when' matching block expression structure</span>
+<span class="kw">val</span> routingResult = <span class="kw">when</span> (statusCode) {
+    <span class="st">200</span>, <span class="st">201</span> -> <span class="st">"Payload Processed"</span>
+    <span class="kw">in</span> <span class="st">400</span>..<span class="st">499</span> -> <span class="st">"Client Malformed Request"</span>
+    <span class="kw">else</span> -> <span class="st">"Unknown Network State"</span>
 }</pre>
                             </div>
                         </div>
@@ -169,53 +165,54 @@
                         <div class="tutorial-section" id="s4">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
-                                The Box Model
+                                Loops &amp; Ranges
                             </h2>
-                            <p>Every element behaves as a rectangular container box. Total dimensional real estate calculation includes layers of margins, borders, padding bounds, and core content boundaries.</p>
+                            <p>Kotlin uses readable, expressive range constructs within its execution blocks to traverse sequences, arrays, and standard interval fields seamlessly.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · boxmodel.css</span>
+                                    <span class="code-block-label">kotlin · loops.kt</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.box-element</span> {
-    <span class="va">width</span>: <span class="st">300px</span>;
-    <span class="va">padding</span>: <span class="st">20px</span>;          <span class="cm">/* Space inside the border envelope */</span>
-    <span class="va">border</span>: <span class="st">2px solid #000</span>; <span class="cm">/* Edge boundary stroke line */</span>
-    <span class="va">margin</span>: <span class="st">15px auto</span>;      <span class="cm">/* Outer buffer space (centered horizontally) */</span>
+                                <pre><span class="cm">// Iteration over inclusive range sequences (1 to 3)</span>
+<span class="kw">for</span> (i <span class="kw">in</span> <span class="st">1</span>..<span class="st">3</span>) {
+    <span class="cl">println</span>(<span class="st">"Index metric: $i"</span>) <span class="cm">// String interpolation syntax</span>
+}
 
-    <span class="cm">/* Force dimensions to include padding and borders */</span>
-    <span class="va">box-sizing</span>: <span class="st">border-box</span>;
+<span class="cm">// Iterating down with explicit step sizing intervals</span>
+<span class="kw">for</span> (x <span class="kw">in</span> <span class="st">6</span> <span class="kw">downTo</span> <span class="st">2</span> <span class="kw">step</span> <span class="st">2</span>) {
+    <span class="cl">println</span>(<span class="st">"Step value: $x"</span>)
+}
+
+<span class="cm">// Standard collection tracking loops</span>
+<span class="kw">val</span> items = <span class="cl">listOf</span>(<span class="st">"prod-1"</span>, <span class="st">"prod-2"</span>)
+<span class="kw">for</span> (item <span class="kw">in</span> items) {
+    <span class="cl">println</span>(item)
 }</pre>
-                            </div>
-                            <div class="info-box danger">
-                                <i class="fa-solid fa-triangle-exclamation"></i>
-                                <span>Always declare <code>box-sizing: border-box;</code> globally. Without it, adding padding will expand your element beyond its declared width, breaking structural layouts!</span>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s5">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
-                                Display &amp; Positioning
+                                Functions &amp; Named Arguments
                             </h2>
-                            <p>Alter how elements sit within the document layout using structural <code>display</code> properties or override normal document sorting flows using explicit positioning coordinates.</p>
+                            <p>Functions support optional default argument values, which helps reduce boilerplates and prevents the need for overly nested method overloading.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · layout.css</span>
+                                    <span class="code-block-label">kotlin · functions.kt</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.block-item</span>  { <span class="va">display</span>: <span class="st">block</span>; }        <span class="cm">/* Takes full line width */</span>
-<span class="cl">.inline-item</span> { <span class="va">display</span>: <span class="st">inline</span>; }       <span class="cm">/* Inline context (ignores width) */</span>
-
-<span class="cm">/* Positioning Contexts */</span>
-<span class="cl">.parent-container</span> {
-    <span class="va">position</span>: <span class="st">relative</span>;              <span class="cm">/* Establishes boundary anchor */</span>
+                                <pre><span class="cm">// Standard function syntax with a default parameter fallback</span>
+<span class="kw">fun</span> initializeConfig(timeout: Int, verbose: Boolean = <span class="kw">false</span>): String {
+    <span class="kw">return</span> <span class="st">"Config targets: timeout=$timeout, debugging=$verbose"</span>
 }
 
-<span class="cl">.floating-badge</span> {
-    <span class="va">position</span>: <span class="st">absolute</span>;
-    <span class="va">top</span>: <span class="st">10px</span>;
-    <span class="va">right</span>: <span class="st">10px</span>;                     <span class="cm">/* Locks inside relative parent container */</span>
+<span class="cm">// Shorthand single-expression function representation</span>
+<span class="kw">fun</span> calculateSquare(n: Int) = n * n
+
+<span class="kw">fun</span> main() {
+    <span class="cm">// Invocation using clear named arguments out of order</span>
+    <span class="cl">initializeConfig</span>(verbose = <span class="kw">true</span>, timeout = <span class="st">5000</span>)
 }</pre>
                             </div>
                         </div>
@@ -223,78 +220,88 @@
                         <div class="tutorial-section" id="s6">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
-                                Flexbox Context
+                                Classes &amp; Data Classes
                             </h2>
-                            <p>Flexbox provides an efficient, one-dimensional layout engine to handle alignment, distribution, and content alignment inside flexible parent boxes.</p>
+                            <p>Classes are closed by default (not inheritable). The <code>data class</code> keyword automatically generates fields like <code>equals()</code>, <code>hashCode()</code>, and <code>toString()</code> for pure data holders.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · flexbox.css</span>
+                                    <span class="code-block-label">kotlin · classes.kt</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.flex-container</span> {
-    <span class="va">display</span>: <span class="st">flex</span>;
-    <span class="va">flex-direction</span>: <span class="st">row</span>;            <span class="cm">/* Arrange children side-by-side horizontally */</span>
-    <span class="va">justify-content</span>: <span class="st">space-between</span>; <span class="cm">/* Distribute spacing along main axis */</span>
-    <span class="va">align-items</span>: <span class="st">center</span>;            <span class="cm">/* Align items across cross axis vertically */</span>
-    <span class="va">gap</span>: <span class="st">15px</span>;                      <span class="cm">/* Fixed spacer gutter between inner rows */</span>
+                                <pre><span class="cm">// Immutable data model schema template</span>
+<span class="kw">data class</span> UserProfile(<span class="kw">val</span> id: Long, <span class="kw">val</span> username: String, <span class="kw">var</span> bio: String)
+
+<span class="kw">class</span> NetworkService(<span class="kw">val</span> baseUri: String) {
+    <span class="kw">fun</span> connect() {
+        <span class="cl">println</span>(<span class="st">"Connecting to $baseUri"</span>)
+    }
 }
 
-<span class="cl">.flex-child</span> {
-    <span class="va">flex</span>: <span class="st">1</span>;                        <span class="cm">/* Grow evenly to take up empty space */</span>
+<span class="kw">fun</span> main() {
+    <span class="kw">val</span> profile = <span class="cl">UserProfile</span>(<span class="st">1L</span>, <span class="st">"vidux"</span>, <span class="st">"Software dev"</span>)
+    <span class="kw">val</span> service = <span class="cl">NetworkService</span>(<span class="st">"https://vidux.sh"</span>) <span class="cm">// No 'new' keyword required!</span>
 }</pre>
+                            </div>
+                            <div class="info-box danger">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                                <span>Unlike Java, Kotlin classes are **open for extension only if explicitly marked with the <code>open</code> modifier keyword**. By default, inheritance structures are safely locked.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s7">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
-                                Grid Layout
+                                Null Safety Ecosystem
                             </h2>
-                            <p>CSS Grid handles complex, two-dimensional user interfaces by splitting a container into explicit matrix columns and row tracks.</p>
+                            <p>Kotlin addresses the infamous billion-dollar mistake by separating nullable types from non-nullable ones at the compiler level, effectively eliminating <code>NullPointerException</code> risks.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · grid.css</span>
+                                    <span class="code-block-label">kotlin · nullsafety.kt</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.grid-container</span> {
-    <span class="va">display</span>: <span class="st">grid</span>;
-    
-    <span class="cm">/* Construct 3 explicit columns utilizing fraction distribution tracks */</span>
-    <span class="va">grid-template-columns</span>: <span class="st">1fr 1fr 1fr</span>;
-    <span class="va">gap</span>: <span class="st">20px</span>;                      <span class="cm">/* Matrix intersection gutters */</span>
-}
+                                <pre><span class="kw">var</span> secureToken: String = <span class="st">"abc"</span>
+<span class="cm">// secureToken = null -> Compiler Error! Non-nullable types cannot hold null</span>
 
-<span class="cl">.wide-grid-item</span> {
-    <span class="va">grid-column</span>: <span class="st">span 2</span>;            <span class="cm">/* Force item to span over two columns */</span>
-}</pre>
+<span class="kw">var</span> sessionKey: String? = <span class="st">"xyz"</span> 
+sessionKey = <span class="kw">null</span> <span class="cm">// Valid configuration using the nullable flag operator '?'</span>
+
+<span class="cm">// Safe call navigation execution chain returning length or null</span>
+<span class="kw">val</span> keyLength = sessionKey?.length
+
+<span class="cm">// Elvis Operator validation providing a fallback value if expression is null</span>
+<span class="kw">val</span> definitiveLength = sessionKey?.length ?: <span class="st">0</span></pre>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s8">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
-                                Media Queries
+                                Asynchronous Coroutines
                             </h2>
-                            <p>Media queries allow you to build responsive layouts by conditionally applying style parameters based on target viewport width triggers.</p>
+                            <p>Kotlin manages non-blocking, asynchronous tasks using ultra-lightweight threads called Coroutines, which allow you to write clean, sequential-looking code for background routines.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · responsive.css</span>
+                                    <span class="code-block-label">kotlin · coroutines.kt</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cm">/* Standard Desktop Baseline Styles */</span>
-<span class="cl">.sidebar</span> { <span class="va">width</span>: <span class="st">300px</span>; <span class="va">display</span>: <span class="st">block</span>; }
+                                <pre><span class="kw">import</span> kotlinx.coroutines.*
 
-<span class="cm">/* Responsive Mobile Viewport Trigger */</span>
-<span class="kw">@media</span> (<span class="va">max-width</span>: <span class="st">768px</span>) {
-    <span class="cl">.sidebar</span> {
-        <span class="va">width</span>: <span class="st">100%</span>;
-        <span class="va">display</span>: <span class="st">none</span>; <span class="cm">/* Hides component container on smartphone devices */</span>
+<span class="cm">// 'suspend' marks asynchronous functions that can pause and resume execution</span>
+<span class="kw">suspend fun</span> fetchRemotePayload(): String {
+    <span class="cl">delay</span>(<span class="st">1000L</span>) <span class="cm">// Non-blocking delay thread block simulation</span>
+    <span class="kw">return</span> <span class="st">"Remote Dataset Response"</span>
+}
+
+<span class="kw">fun</span> main() = <span class="cl">runBlocking</span> {
+    <span class="cl">launch</span> {
+        <span class="kw">val</span> payload = <span class="cl">fetchRemotePayload</span>()
+        <span class="cl">println</span>(payload)
     }
 }</pre>
                             </div>
                             <div class="info-box tip">
                                 <i class="fa-solid fa-lightbulb"></i>
-                                <span>Now that your presentation layers match standard conventions, study advanced preprocessor syntax workflows like **Sass/SCSS** or utility engines like **Tailwind CSS**.</span>
+                                <span>With Kotlin syntax basics down, you are fully equipped to build modern native Android mobile applications with **Jetpack Compose** or cross-platform web layers using **Ktor**.</span>
                             </div>
                         </div>
                         <div class="divider"></div>

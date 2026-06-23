@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Android project structure tutorial — Learn the core architecture, app resources, AndroidManifest, Gradle build system, and components for Java and Kotlin.">
+        <meta name="author" content="vidux.sh">
+        <title>vidux.sh - Android Project Structure</title>
+        <link rel="shortcut icon" href="../../assets/images/viduxsh_icon.png" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="../../assets/css/style.css">
+    </head>
+    <body data-theme="light">
+        <div class="main-wrapper">
+            <header>
+                <div class="header-container">
+                    <div class="logo-area">
+                        <img src="../../assets/images/viduxsh_logo_full.png" alt="Logo" class="nav-logo">
+                    </div>
+                    <nav class="nav-links">
+                        <a title="Home"     href="../../index.html"    class="nav-btn"><i class="fa-solid fa-house"></i><span>Home</span></a>
+                        <a title="Projects" href="../../projects.html" class="nav-btn"><i class="fa-solid fa-diagram-project"></i><span>Projects</span></a>
+                        <a title="Social"   href="../../social.html"   class="nav-btn"><i class="fa-solid fa-hashtag"></i><span>Social</span></a>
+                        <a title="About Me" href="../../aboutme.html"  class="nav-btn"><i class="fa-solid fa-address-card"></i><span>About Me</span></a>
+                    </nav>
+                    <div class="theme-switcher">
+                        <input type="checkbox" id="switcher">
+                        <label for="switcher" title="Toggle Theme">Switch</label>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <section class="hero-section" style="padding: 40px 20px 60px;">
+                    <div class="card-container wide">
+                        <div class="guide-topbar">
+                            <a title="Back to Coding" href="coding.html" class="cta-btn ghost sm">
+                                <i class="fa-solid fa-arrow-left"></i> Coding Guides
+                            </a>
+                        </div>
+                        <div class="lang-header">
+                            <img src="../../assets/images/coding/logo/android.png" alt="Android logo">
+                            <div>
+                                <h1>Android Architecture <span class="lang-badge">Generic</span></h1>
+                                <p class="lang-subtitle">Universal Project Blueprint — understanding directories, system components, build lifecycles, and cross-runtime executions for both Java and Kotlin.</p>
+                            </div>
+                        </div>
+                        <div class="tutorial-progress" id="tutorial-progress">
+                            <div class="tutorial-progress-step done"></div>
+                            <div class="tutorial-progress-step"></div>
+                            <div class="tutorial-progress-step"></div>
+                            <div class="tutorial-progress-step"></div>
+                            <div class="tutorial-progress-step"></div>
+                            <div class="tutorial-progress-step"></div>
+                            <div class="tutorial-progress-step"></div>
+                            <div class="tutorial-progress-step"></div>
+                        </div>
+                        <div class="divider" style="margin-top: 0;"></div>
+                        <div class="toc">
+                            <h3><i class="fa-solid fa-list"></i> Table of Contents</h3>
+                            <ol>
+                                <li><a href="#s1">The App Module Directory Tree</a></li>
+                                <li><a href="#s2">The AndroidManifest.xml Entry</a></li>
+                                <li><a href="#s3">App Resources &amp; R.java Mapping</a></li>
+                                <li><a href="#s4">The Gradle Build System Matrix</a></li>
+                                <li><a href="#s5">Application &amp; Activity Lifecycles</a></li>
+                                <li><a href="#s6">Core System Components (The Big Four)</a></li>
+                                <li><a href="#s7">Main Thread vs Background Workers</a></li>
+                                <li><a href="#s8">Compilation Flow: Java/Kotlin to ART</a></li>
+                            </ol>
+                        </div>
+                        <div class="tutorial-section" id="s1">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-1);">1</span>
+                                The App Module Directory Tree
+                            </h2>
+                            <p>An Android project is divided into logical modules. In a standard single-module architecture, the default <code>app/</code> directory contains all the logic assets, source code targets, and deployment configuration parameters.</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">text · Project Structure</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre>MyAndroidApp/
+├── gradle/                     # Wrapper binaries for build execution
+├── app/                        # Main application container module
+│   ├── build.gradle.kts        # Module-specific configuration dependencies
+│   └── src/
+│       ├── main/
+│       │   ├── AndroidManifest.xml  # System declaration ledger
+│       │   ├── java/                # Source directories (Holds both .java and .kt files)
+│       │   └── res/                 # Static visual UI/UX layout resources
+└── build.gradle.kts            # Project-level generic configuration root</pre>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="tutorial-section" id="s2">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-2);">2</span>
+                                The AndroidManifest.xml Entry
+                            </h2>
+                            <p>The <code>AndroidManifest.xml</code> is the ultimate ledger file read by the Android OS before booting your software package. Regardless of language choice, you must register hardware permissions and structural views here.</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">xml · AndroidManifest.xml</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre><span class="kw">&lt;manifest</span> <span class="st">xmlns:android=</span><span class="st">"http://schemas.android.com/apk/res/android"</span><span class="kw">&gt;</span>
+    <span class="cm">&lt;!-- Hardware interaction declaration permissions --&gt;</span>
+    <span class="kw">&lt;uses-permission</span> <span class="st">android:name=</span><span class="st">"android.permission.INTERNET"</span> <span class="kw">/&gt;</span>
+
+    <span class="kw">&lt;application</span> <span class="st">android:label=</span><span class="st">"@string/app_name"</span> <span class="st">android:icon=</span><span class="st">"@mipmap/ic_launcher"</span><span class="kw">&gt;</span>
+        <span class="cm">&lt;!-- Entry point Activity view node declaration --&gt;</span>
+        <span class="kw">&lt;activity</span> <span class="st">android:name=</span><span class="st">".MainActivity"</span> <span class="st">android:exported=</span><span class="st">"true"</span><span class="kw">&gt;</span>
+            <span class="kw">&lt;intent-filter&gt;</span>
+                <span class="kw">&lt;action</span> <span class="st">android:name=</span><span class="st">"android.intent.action.MAIN"</span> <span class="kw">/&gt;</span>
+                <span class="kw">&lt;category</span> <span class="st">android:name=</span><span class="st">"android.intent.category.LAUNCHER"</span> <span class="kw">/&gt;</span>
+            <span class="kw">&lt;/intent-filter&gt;</span>
+        <span class="kw">&lt;/activity&gt;</span>
+    <span class="kw">&lt;/application&gt;</span>
+<span class="kw">&lt;/manifest&gt;</span></pre>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="tutorial-section" id="s3">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
+                                App Resources &amp; R.java Mapping
+                            </h2>
+                            <p>The <code>res/</code> directory houses non-code visual components. During the build workflow, the build system automatically generates a unique tracking file named <code>R.java</code>, turning asset pathways into static integer addresses referenced by your logic code.</p>
+                            <div class="type-grid">
+                                <div class="type-pill">
+                                    <span class="type-name">res/drawable/</span>
+                                    <span class="type-desc">Vector assets (XML path definitions) or bitmap image arrays</span>
+                                    <span class="type-example">Accessed via: R.drawable.ic_logo</span>
+                                </div>
+                                <div class="type-pill">
+                                    <span class="type-name">res/layout/</span>
+                                    <span class="type-desc">Traditional XML screen rendering matrix schemas (not used in pure Compose)</span>
+                                    <span class="type-example">Accessed via: R.layout.activity_main</span>
+                                </div>
+                                <div class="type-pill">
+                                    <span class="type-name">res/values/strings.xml</span>
+                                    <span class="type-desc">Localized textual strings to enable clean multi-language translation management</span>
+                                    <span class="type-example">Accessed via: R.string.welcome_msg</span>
+                                </div>
+                                <div class="type-pill">
+                                    <span class="type-name">res/values/themes.xml</span>
+                                    <span class="type-desc">Style parameter configurations mapping color flags and core typography attributes</span>
+                                    <span class="type-example">Accessed via: R.style.AppTheme</span>
+                                </div>
+                                <div class="type-pill">
+                                    <span class="type-name">res/mipmap/</span>
+                                    <span class="type-desc">Device application execution launcher icon matrices clipped per pixel densities</span>
+                                    <span class="type-example">Accessed via: R.mipmap.ic_launcher</span>
+                                </div>
+                                <div class="type-pill">
+                                    <span class="type-name">res/xml/</span>
+                                    <span class="type-desc">Arbitrary structural system configuration components (e.g., Network Security configs)</span>
+                                    <span class="type-example">Raw static system files</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="tutorial-section" id="s4">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
+                                The Gradle Build System Matrix
+                            </h2>
+                            <p>Android utilizes **Gradle** to orchestrate source code file compilation, dependency downloading, and final code signing processes. Modern configurations use Kotlin Script (<code>.gradle.kts</code>) or Groovy (<code>.gradle</code>).</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">kotlin · app/build.gradle.kts</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre>plugins {
+    id(<span class="st">"com.android.application"</span>)
+    id(<span class="st">"org.jetbrains.kotlin.android"</span>) <span class="cm">// Only declared if using Kotlin extensions</span>
+}
+
+android {
+    namespace = <span class="st">"sh.vidux.project"</span>
+    compileSdk = <span class="st">34</span>
+
+    defaultConfig {
+        applicationId = <span class="st">"sh.vidux.project"</span>
+        minSdk = <span class="st">26</span> <span class="cm">// Lowest Android version baseline requirement</span>
+        targetSdk = <span class="st">34</span>
+        versionCode = <span class="st">1</span>
+    }
+}
+
+dependencies {
+    <span class="cm">// External library resolution mapping hooks</span>
+    implementation(<span class="st">"androidx.core:core-ktx:1.12.0"</span>)
+}</pre>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="tutorial-section" id="s5">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
+                                Application &amp; Activity Lifecycles
+                            </h2>
+                            <p>Unlike standard desktop software execution loops, the Android system controls process memory allocations directly. Visual containers called **Activities** travel along a strict state path to adapt smoothly to device interruptions.</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">kt/java · Lifecycle hooks</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre><span class="cm">// Memory space allocation and setup context initialization layer</span>
+<span class="kw">onCreate</span>() ──&gt; <span class="kw">onStart</span>() ──&gt; <span class="kw">onResume</span>()   <span class="cm">// [ App UI is fully active and interactive ]</span>
+
+<span class="cm">// Interruption flow processing tracking triggers (e.g., incoming call, splitscreen)</span>
+<span class="kw">onPause</span>()  &lt;── Application yields system rendering focus
+<span class="kw">onStop</span>()   &lt;── Screen element layout is completely hidden out of view boundary
+
+<span class="cm">// Destruction loop sequence</span>
+<span class="kw">onDestroy</span>() &lt;── Memory space reference unlinked from active heap processing</pre>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="tutorial-section" id="s6">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
+                                Core System Components (The Big Four)
+                            </h2>
+                            <p>An application system interaction layer is constructed by utilizing varying combinations of the **Four Fundamental Component Elements** managed directly by the Android OS runtime layer.</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">System Structural Schema</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre>┌───────────────────────────────────────────────────────────────────────┐
+│                           ANDROID COMPONENTS                          │
+├───────────────────┬───────────────────┬───────────────────────────────┤
+│ Activities        │ Services          │ Broadcast Receivers           │
+│ Handles user      │ Background task   │ Listens for system alerts     │
+│ interaction and   │ processing without│ like battery depletion hooks  │
+│ interface layouts │ UI dependencies   │                               │
+└───────────────────┴───────────────────┴───────────────────────────────┘
+  * Linked seamlessly across application modules using asynchronous messaging: INTENTS
+  * Sharing database schemas across isolated storage bounds: CONTENT PROVIDERS</pre>
+                            </div>
+                            <div class="info-box danger">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                                <span>**Intents serve as the core structural binding adhesive.** They act as asynchronous communication tokens used to launch different Activities or dispatch messaging payloads across distinct sandboxed OS processes.</span>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="tutorial-section" id="s7">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
+                                Main Thread vs Background Workers
+                            </h2>
+                            <p>Android runs all interface drawing operations on a single, isolated execution track known as the **Main Thread** (or UI Thread). Forcing network requests or file modifications onto this track locks up the UI, triggering an immediate app freeze.</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">Execution Strategy</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre>┌─────────────────────────────────────────────────────────────┐
+│                       MAIN (UI) THREAD                      │
+│   Renders UI layout loops · Handles user touch interactions │
+└──────────────────────────────┬──────────────────────────────┘
+                               │ Offloads intensive tasks
+                               ▼
+┌─────────────────────────────────────────────────────────────┐
+│                    BACKGROUND WORKER POOL                   │
+│   Executes network API calls · Database I/O transactions   │
+├──────────────────────────────┼──────────────────────────────┤
+│ JAVA CONCURRENCY FRAMEWORK   │ KOTLIN COROUTINES PIPELINE   │
+│ ThreadPools / Executors      │ Dispatchers.IO Execution     │
+└─────────────────────────────────────────────────────────────┘</pre>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="tutorial-section" id="s8">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
+                                Compilation Flow: Java/Kotlin to ART
+                            </h2>
+                            <p>Whether you choose to write your app logic in Java or Kotlin, both toolchains emit standard JVM instructions. A secondary compilation phase then compresses these bytecode files into custom register configurations optimized for mobile devices.</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">Compilation Pipeline Diagram</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre>[ Source Files ] ────&gt; (.java / .kt source code sheets)
+       │
+       ▼ (javac / kotlinc tools compile source assets)
+[ JVM Bytecode ] ────&gt; (Standard intermediate .class structural packages)
+       │
+       ▼ (The R8/D8 compilers optimize and compress byte strings)
+[ Dex Bytecode ] ────&gt; (Unified classes.dex layout file payload)
+       │
+       ▼ (Assembled into final installation package file)
+[ APK Archive ]  ────&gt; Shipped directly onto the target user hardware
+       │
+       ▼ (Processed by the local on-device hardware virtual layer)
+[ Android Runtime (ART) ] Run using AOT/JIT native machine code execution loops</pre>
+                            </div>
+                            <div class="info-box tip">
+                                <i class="fa-solid fa-lightbulb"></i>
+                                <span>With the agnostic structural blueprint of an Android project clear, you can confidently delve into **Java view management systems** or master declarative UI trees using modern **Jetpack Compose in Kotlin**.</span>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="guide-footer-nav">
+                            <a href="coding.html" class="cta-btn ghost sm">
+                                <i class="fa-solid fa-arrow-left"></i> Back to Coding
+                            </a>
+                            <a href="#s1" class="cta-btn sm">
+                                <i class="fa-solid fa-arrow-up"></i> Back to Top
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer>
+                <div class="footer-container">
+                    <div class="footer-grid">
+                        <div class="footer-widget">
+                            <h3><img width="20" height="20" src="https://img.icons8.com/3d-fluency/94/topic.png" alt="Contact"/>Contact</h3>
+                            <ul class="contact-list">
+                                <li><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/location.png" alt="Location"/>Udine, Italy</li>
+                                <li><a href="https://t.me/viduxsh" target="_blank"><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/telegram.png" alt="Telegram"/>Telegram</a></li>
+                                <li><a href="mailto:ivanvidux@gmail.com"><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/email.png" alt="Email"/>Email</a></li>
+                                <li><a href="https://paypal.me/ivanvidux" target="_blank"><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/paypal.png" alt="PayPal"/>PayPal</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-widget profile-widget">
+                            <h3>About Me</h3>
+                            <div class="footer-profile-box">
+                                <img src="../../assets/images/viduxsh_logo_full.png" alt="Profile Logo" class="footer-avatar">
+                                <p id="my-age"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <p id="copyright-year"></p>
+                        <p class="credits">Design by <a href="https://github.com/viduxsh" target="_blank">vidux.sh</a></p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script src="../../assets/js/script.js"></script>
+        <script>
+            function copyCode(btn) {
+                const pre  = btn.closest('.code-block').querySelector('pre');
+                const text = pre.innerText;
+                navigator.clipboard.writeText(text).then(() => {
+                    btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                    btn.classList.add('copied');
+                    setTimeout(() => {
+                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy';
+                        btn.classList.remove('copied');
+                    }, 2000);
+                });
+            }
+
+            const sections = document.querySelectorAll('.tutorial-section');
+            const steps    = document.querySelectorAll('.tutorial-progress-step');
+
+            function updateProgress() {
+                let active = 0;
+                sections.forEach((sec, i) => {
+                    if (sec.getBoundingClientRect().top < window.innerHeight * 0.6) active = i + 1;
+                });
+                steps.forEach((s, i) => s.classList.toggle('done', i < active));
+            }
+
+            window.addEventListener('scroll', updateProgress, { passive: true });
+            updateProgress();
+        </script>
+    </body>
+</html>

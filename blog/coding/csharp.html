@@ -3,9 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="CSS beginner tutorial — learn selectors, the box model, positioning, flexbox, grid, and responsiveness with ready-to-use code snippets.">
+        <meta name="description" content="C# beginner tutorial — learn modern syntax, data types, OOP, pattern matching, LINQ, and exception handling with ready-to-use code snippets.">
         <meta name="author" content="vidux.sh">
-        <title>vidux.sh - CSS</title>
+        <title>vidux.sh - C#</title>
         <link rel="shortcut icon" href="../../assets/images/viduxsh_icon.png" type="image/x-icon">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,10 +41,10 @@
                             </a>
                         </div>
                         <div class="lang-header">
-                            <img src="../../assets/images/coding/logo/css.png" alt="CSS logo">
+                            <img src="../../assets/images/coding/logo/csharp.png" alt="C# logo">
                             <div>
-                                <h1>CSS <span class="lang-badge">Beginner</span></h1>
-                                <p class="lang-subtitle">Cascading Style Sheets — style, layout rules, and presentation layers painter for semantic markup.</p>
+                                <h1>C# <span class="lang-badge">Beginner</span></h1>
+                                <p class="lang-subtitle">Multi-paradigm language — enterprise-grade OOP, cross-platform performance via .NET, native garbage collection, and powerful type-safe queries.</p>
                             </div>
                         </div>
                         <div class="tutorial-progress" id="tutorial-progress">
@@ -61,82 +61,77 @@
                         <div class="toc">
                             <h3><i class="fa-solid fa-list"></i> Table of Contents</h3>
                             <ol>
-                                <li><a href="#s1">Inclusion &amp; Syntax</a></li>
-                                <li><a href="#s2">Core Selectors</a></li>
-                                <li><a href="#s3">Colors &amp; Typography</a></li>
-                                <li><a href="#s4">The Box Model</a></li>
-                                <li><a href="#s5">Display &amp; Positioning</a></li>
-                                <li><a href="#s6">Flexbox Context</a></li>
-                                <li><a href="#s7">Grid Layout</a></li>
-                                <li><a href="#s8">Media Queries</a></li>
+                                <li><a href="#s1">Entry Point &amp; Variables</a></li>
+                                <li><a href="#s2">Data Types &amp; Generics</a></li>
+                                <li><a href="#s3">Conditionals &amp; Logic Operations</a></li>
+                                <li><a href="#s4">Loops &amp; Advanced Switch Patterns</a></li>
+                                <li><a href="#s5">Methods &amp; Auto-Properties</a></li>
+                                <li><a href="#s6">OOP Architecture &amp; Records</a></li>
+                                <li><a href="#s7">Exceptions &amp; Safe Resource Management</a></li>
+                                <li><a href="#s8">Data Querying via LINQ Expressions</a></li>
                             </ol>
                         </div>
                         <div class="tutorial-section" id="s1">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-1);">1</span>
-                                Inclusion &amp; Syntax
+                                Entry Point &amp; Variables
                             </h2>
-                            <p>CSS rules link to HTML documents via the <code>&lt;link&gt;</code> element inside the head container. Rules target nodes to declare key-value style pairs.</p>
+                            <p>Modern C# implements **Top-Level Statements**, removing boilerplate code like namespaces and class declarations for entry files. Variables can use explicit types or infer them via the <code>var</code> keyword while maintaining strict type safety.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · style.css</span>
+                                    <span class="code-block-label">cs · Program.cs</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cm">/* This is a CSS comment */</span>
+                                <pre><span class="cm">// Single-line comment</span>
+<span class="cm">/* Multi-line comment block */</span>
 
-<span class="kw">selector</span> {
-    <span class="va">property</span>: <span class="st">value</span>;
-    <span class="va">another-property</span>: <span class="st">value</span>;
-}
+<span class="kw">using</span> System;
 
-<span class="cm">/* Example: styling all paragraphs */</span>
-<span class="cl">p</span> {
-    <span class="va">color</span>: <span class="st">#333333</span>;
-    <span class="va">line-height</span>: <span class="st">1.6</span>;
-}</pre>
-                            </div>
-                            <div class="info-box tip">
-                                <i class="fa-solid fa-lightbulb"></i>
-                                <span>Link your external stylesheet file inside the HTML <code>&lt;head&gt;</code> template using: <code>&lt;link rel="stylesheet" href="style.css"&gt;</code>.</span>
+<span class="kw">string</span> project = <span class="st">"testProject"</span>;
+<span class="kw">var</span> operationalState = <span class="st">"Active"</span>; <span class="cm">// Implicitly typed as string</span>
+
+<span class="cm">// String interpolation using the $ prefix</span>
+Console.WriteLine(<span class="st">$"System core: {project} is currently {operationalState}."</span>);</pre>
                             </div>
                         </div>
                         <div class="divider"></div>
+
                         <div class="tutorial-section" id="s2">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-2);">2</span>
-                                Core Selectors
+                                Data Types &amp; Generics
                             </h2>
-                            <p>Target precise document fragments using elements directly, custom class configurations, unique string ID handles, or structural states.</p>
+                            <p>C# distinguishes between Value Types (stored on the stack) and Reference Types (stored on the heap). Collections like <code>List&lt;T&gt;</code> enforce type safety through generics.</p>
                             <div class="type-grid">
                                 <div class="type-pill">
-                                    <span class="type-name">Element</span>
-                                    <span class="type-desc">Targets all tags</span>
-                                    <span class="type-example">h1 { color: red; }</span>
+                                    <span class="type-name">int / long</span>
+                                    <span class="type-desc">32-bit and 64-bit signed integers</span>
+                                    <span class="type-example">int userId = 404;</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">.class</span>
-                                    <span class="type-desc">Reusable instances</span>
-                                    <span class="type-example">.card { padding: 20px; }</span>
+                                    <span class="type-name">decimal</span>
+                                    <span class="type-desc">128-bit high precision financial type</span>
+                                    <span class="type-example">decimal balance = 1532.50m;</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">#id</span>
-                                    <span class="type-desc">Unique single node</span>
-                                    <span class="type-example">#main-nav { top: 0; }</span>
+                                    <span class="type-name">bool</span>
+                                    <span class="type-desc">Standard boolean true/false state</span>
+                                    <span class="type-example">bool isAuth = true;</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">:hover</span>
-                                    <span class="type-desc">Interactive state</span>
-                                    <span class="type-example">a:hover { opacity: 0.8; }</span>
+                                    <span class="type-name">string</span>
+                                    <span class="type-desc">Immutable sequence of UTF-16 characters</span>
+                                    <span class="type-example">string route = "/api/v1";</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">Combined</span>
-                                    <span class="type-desc">Child nesting paths</span>
-                                    <span class="type-example">.wrapper p { margin: 0; }</span>
+                                    <span class="type-name">List&lt;T&gt;</span>
+                                    <span class="type-desc">Strongly-typed dynamic array list</span>
+                                    <span class="type-example">var tags = new List&lt;string&gt;();</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">*</span>
-                                    <span class="type-desc">Universal resetting</span>
-                                    <span class="type-example">* { box-sizing: border-box; }</span>
+                                    <span class="type-name">Nullable&lt;T&gt; / T?</span>
+                                    <span class="type-desc">Wraps value types to allow null values</span>
+                                    <span class="type-example">int? index = null;</span>
                                 </div>
                             </div>
                         </div>
@@ -144,24 +139,22 @@
                         <div class="tutorial-section" id="s3">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
-                                Colors &amp; Typography
+                                Conditionals &amp; Logic Operations
                             </h2>
-                            <p>Control visual branding layers utilizing structured palette values alongside explicit scaling fonts metrics.</p>
+                            <p>Control application flow using standard <code>if</code>, <code>else if</code>, and <code>else</code> evaluation statements alongside explicit relational tracking operators.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · typography.css</span>
+                                    <span class="code-block-label">cs · ControlFlow.cs</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.custom-text</span> {
-    <span class="cm">/* Color Formats */</span>
-    <span class="va">color</span>: <span class="st">#4a90e2</span>;                    <span class="cm">/* Hex Format */</span>
-    <span class="va">background-color</span>: <span class="st">rgba(0, 0, 0, 0.05)</span>; <span class="cm">/* RGBA (with Alpha) */</span>
+                                <pre><span class="kw">int</span> statusCode = <span class="st">201</span>;
 
-    <span class="cm">/* Typography Rules */</span>
-    <span class="va">font-family</span>: <span class="st">'Roboto'</span>, <span class="st">sans-serif</span>;
-    <span class="va">font-size</span>: <span class="st">1.2rem</span>;                 <span class="cm">/* Relative to root HTML size */</span>
-    <span class="va">font-weight</span>: <span class="st">500</span>;                  <span class="cm">/* Medium weight */</span>
-    <span class="va">text-align</span>: <span class="st">center</span>;
+<span class="kw">if</span> (statusCode == <span class="st">200</span> || statusCode == <span class="st">201</span>) {
+    Console.WriteLine(<span class="st">"Request processed successfully."</span>);
+} <span class="kw">else</span> <span class="kw">if</span> (statusCode &gt;= <span class="st">400</span> &amp;&amp; statusCode &lt; <span class="st">500</span>) {
+    Console.WriteLine(<span class="st">"Client execution error handled."</span>);
+} <span class="kw">else</span> {
+    Console.WriteLine(<span class="st">"Server or network fallback triggered."</span>);
 }</pre>
                             </div>
                         </div>
@@ -169,53 +162,45 @@
                         <div class="tutorial-section" id="s4">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
-                                The Box Model
+                                Loops &amp; Advanced Switch Patterns
                             </h2>
-                            <p>Every element behaves as a rectangular container box. Total dimensional real estate calculation includes layers of margins, borders, padding bounds, and core content boundaries.</p>
+                            <p>Iterate over lists securely using <code>foreach</code> blocks. Modern C# also introduces powerful **Switch Expressions** that parse value configurations cleanly.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · boxmodel.css</span>
+                                    <span class="code-block-label">cs · LoopsAndSwitch.cs</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.box-element</span> {
-    <span class="va">width</span>: <span class="st">300px</span>;
-    <span class="va">padding</span>: <span class="st">20px</span>;          <span class="cm">/* Space inside the border envelope */</span>
-    <span class="va">border</span>: <span class="st">2px solid #000</span>; <span class="cm">/* Edge boundary stroke line */</span>
-    <span class="va">margin</span>: <span class="st">15px auto</span>;      <span class="cm">/* Outer buffer space (centered horizontally) */</span>
+                                <pre><span class="kw">var</span> platforms = <span class="kw">new</span>[] { <span class="st">"Web"</span>, <span class="st">"Android"</span>, <span class="st">"iOS"</span> };
 
-    <span class="cm">/* Force dimensions to include padding and borders */</span>
-    <span class="va">box-sizing</span>: <span class="st">border-box</span>;
+<span class="kw">foreach</span> (<span class="kw">var</span> platform <span class="kw">in</span> platforms) {
+    <span class="cm">// C# 8+ Switch expression pattern matching assignment</span>
+    <span class="kw">string</span> accessLayer = platform <span class="kw">switch</span> {
+        <span class="st">"Web"</span>     =&gt; <span class="st">"Browser runtime execution"</span>,
+        <span class="st">"Android"</span> =&gt; <span class="st">"Native APK bytecode environment"</span>,
+        _         =&gt; <span class="st">"Generic architectural layer"</span> <span class="cm">// Discard fallback</span>
+    };
+    Console.WriteLine(<span class="st">$"{platform}: {accessLayer}"</span>);
 }</pre>
-                            </div>
-                            <div class="info-box danger">
-                                <i class="fa-solid fa-triangle-exclamation"></i>
-                                <span>Always declare <code>box-sizing: border-box;</code> globally. Without it, adding padding will expand your element beyond its declared width, breaking structural layouts!</span>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s5">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
-                                Display &amp; Positioning
+                                Methods &amp; Auto-Properties
                             </h2>
-                            <p>Alter how elements sit within the document layout using structural <code>display</code> properties or override normal document sorting flows using explicit positioning coordinates.</p>
+                            <p>Methods declare parameters with strict visibility and return signatures. Use shorthand expressions (<code>=&gt;</code>) for simple operations, and leverage **Auto-Implemented Properties** to safely encapsulate state fields.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · layout.css</span>
+                                    <span class="code-block-label">cs · Encapsulation.cs</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.block-item</span>  { <span class="va">display</span>: <span class="st">block</span>; }        <span class="cm">/* Takes full line width */</span>
-<span class="cl">.inline-item</span> { <span class="va">display</span>: <span class="st">inline</span>; }       <span class="cm">/* Inline context (ignores width) */</span>
+                                <pre><span class="kw">public class</span> AccountMetric {
+    <span class="cm">// Auto-property with restricted write access modifier</span>
+    <span class="kw">public string</span> Currency { <span class="kw">get</span>; <span class="kw">private set</span>; } = <span class="st">"EUR"</span>;
 
-<span class="cm">/* Positioning Contexts */</span>
-<span class="cl">.parent-container</span> {
-    <span class="va">position</span>: <span class="st">relative</span>;              <span class="cm">/* Establishes boundary anchor */</span>
-}
-
-<span class="cl">.floating-badge</span> {
-    <span class="va">position</span>: <span class="st">absolute</span>;
-    <span class="va">top</span>: <span class="st">10px</span>;
-    <span class="va">right</span>: <span class="st">10px</span>;                     <span class="cm">/* Locks inside relative parent container */</span>
+    <span class="cm">// Expression-bodied method mapping signature</span>
+    <span class="kw">public bool</span> IsValidTransaction(<span class="kw">decimal</span> value) =&gt; value &gt; <span class="st">0.00m</span>;
 }</pre>
                             </div>
                         </div>
@@ -223,49 +208,53 @@
                         <div class="tutorial-section" id="s6">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
-                                Flexbox Context
+                                OOP Architecture &amp; Records
                             </h2>
-                            <p>Flexbox provides an efficient, one-dimensional layout engine to handle alignment, distribution, and content alignment inside flexible parent boxes.</p>
+                            <p>C# implements a classic Object-Oriented paradigm featuring single class inheritance and explicit interface contracts. It also supports **Records**, which provide lightweight, immutable data structures out of the box.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · flexbox.css</span>
+                                    <span class="code-block-label">cs · Inheritance.cs</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.flex-container</span> {
-    <span class="va">display</span>: <span class="st">flex</span>;
-    <span class="va">flex-direction</span>: <span class="st">row</span>;            <span class="cm">/* Arrange children side-by-side horizontally */</span>
-    <span class="va">justify-content</span>: <span class="st">space-between</span>; <span class="cm">/* Distribute spacing along main axis */</span>
-    <span class="va">align-items</span>: <span class="st">center</span>;            <span class="cm">/* Align items across cross axis vertically */</span>
-    <span class="va">gap</span>: <span class="st">15px</span>;                      <span class="cm">/* Fixed spacer gutter between inner rows */</span>
+                                <pre><span class="kw">public interface</span> IRepository {
+    <span class="kw">void</span> SaveState();
 }
 
-<span class="cl">.flex-child</span> {
-    <span class="va">flex</span>: <span class="st">1</span>;                        <span class="cm">/* Grow evenly to take up empty space */</span>
-}</pre>
+<span class="cm">// Class inheritance and explicit interface contract realization</span>
+<span class="kw">public class</span> DbContext : IRepository {
+    <span class="kw">public void</span> SaveState() =&gt; Console.WriteLine(<span class="st">"Database persistence executed."</span>);
+}
+
+<span class="cm">// Immutable positional record model definition (C# 9+)</span>
+<span class="kw">public record</span> UserProfile(<span class="kw">string</span> Username, <span class="kw">string</span> Email);</pre>
+                            </div>
+                            <div class="info-box danger">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                                <span>Classes use reference equality, whereas **Records implement value-based equality checking automatically**. Comparing two identical record instances with <code>==</code> evaluates to <code>true</code>.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s7">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
-                                Grid Layout
+                                Exceptions &amp; Safe Resource Management
                             </h2>
-                            <p>CSS Grid handles complex, two-dimensional user interfaces by splitting a container into explicit matrix columns and row tracks.</p>
+                            <p>Handle runtime faults gracefully using <code>try-catch-finally</code> blocks. For external resources like network links or file streams, always use the <code>using</code> declaration statement to guarantee memory cleanup through `IDisposable` execution blocks.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · grid.css</span>
+                                    <span class="code-block-label">cs · ExecutionSafety.cs</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.grid-container</span> {
-    <span class="va">display</span>: <span class="st">grid</span>;
-    
-    <span class="cm">/* Construct 3 explicit columns utilizing fraction distribution tracks */</span>
-    <span class="va">grid-template-columns</span>: <span class="st">1fr 1fr 1fr</span>;
-    <span class="va">gap</span>: <span class="st">20px</span>;                      <span class="cm">/* Matrix intersection gutters */</span>
-}
-
-<span class="cl">.wide-grid-item</span> {
-    <span class="va">grid-column</span>: <span class="st">span 2</span>;            <span class="cm">/* Force item to span over two columns */</span>
+                                <pre><span class="kw">try</span> {
+    <span class="cm">// Modern scope-bound using statement layout context</span>
+    <span class="kw">using var</span> stream = <span class="kw">new</span> System.IO.StreamWriter(<span class="st">"log.txt"</span>);
+    stream.WriteLine(<span class="st">"Appending structural metadata block."</span>);
+} 
+<span class="kw">catch</span> (System.IO.IOException ex) {
+    Console.WriteLine(<span class="st">$"Disk storage mutation fault recorded: {ex.Message}"</span>);
+} 
+<span class="kw">catch</span> (Exception ex) {
+    Console.WriteLine(<span class="st">$"Uncaught base execution error: {ex.Message}"</span>);
 }</pre>
                             </div>
                         </div>
@@ -273,28 +262,28 @@
                         <div class="tutorial-section" id="s8">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
-                                Media Queries
+                                Data Querying via LINQ Expressions
                             </h2>
-                            <p>Media queries allow you to build responsive layouts by conditionally applying style parameters based on target viewport width triggers.</p>
+                            <p>**Language Integrated Query (LINQ)** provides a powerful, type-safe syntax to filter, transform, and aggregate data collections cleanly—whether operating on arrays or remote database entities.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · responsive.css</span>
+                                    <span class="code-block-label">cs · LinqQueries.cs</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cm">/* Standard Desktop Baseline Styles */</span>
-<span class="cl">.sidebar</span> { <span class="va">width</span>: <span class="st">300px</span>; <span class="va">display</span>: <span class="st">block</span>; }
+                                <pre><span class="kw">var</span> transactions = <span class="kw">new</span> List&lt;<span class="kw">decimal</span>&gt; { <span class="st">120.50m</span>, <span class="st">-45.00m</span>, <span class="st">300.00m</span>, <span class="st">-12.30m</span> };
 
-<span class="cm">/* Responsive Mobile Viewport Trigger */</span>
-<span class="kw">@media</span> (<span class="va">max-width</span>: <span class="st">768px</span>) {
-    <span class="cl">.sidebar</span> {
-        <span class="va">width</span>: <span class="st">100%</span>;
-        <span class="va">display</span>: <span class="st">none</span>; <span class="cm">/* Hides component container on smartphone devices */</span>
-    }
+<span class="cm">// Clean method syntax query pipeline filtering values</span>
+<span class="kw">var</span> highProfits = transactions
+    .Where(tx =&gt; tx &gt; <span class="st">100.00m</span>)
+    .OrderByDescending(tx =&gt; tx);
+
+<span class="kw">foreach</span> (<span class="kw">var</span> profit <span class="kw">in</span> highProfits) {
+    Console.WriteLine(<span class="st">$"Filtered profit target node value: {profit}"</span>);
 }</pre>
                             </div>
                             <div class="info-box tip">
                                 <i class="fa-solid fa-lightbulb"></i>
-                                <span>Now that your presentation layers match standard conventions, study advanced preprocessor syntax workflows like **Sass/SCSS** or utility engines like **Tailwind CSS**.</span>
+                                <span>With C# fundamentals solidified, you are ready to build cross-platform APIs using **ASP.NET Core** frameworks or integrate performant entity mappers like **Entity Framework Core**.</span>
                             </div>
                         </div>
                         <div class="divider"></div>

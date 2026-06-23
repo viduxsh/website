@@ -3,9 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="CSS beginner tutorial — learn selectors, the box model, positioning, flexbox, grid, and responsiveness with ready-to-use code snippets.">
+        <meta name="description" content="Go beginner tutorial — learn syntax, structs, pointers, interfaces, goroutines, and channels with ready-to-use code snippets.">
         <meta name="author" content="vidux.sh">
-        <title>vidux.sh - CSS</title>
+        <title>vidux.sh - Go</title>
         <link rel="shortcut icon" href="../../assets/images/viduxsh_icon.png" type="image/x-icon">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,10 +41,10 @@
                             </a>
                         </div>
                         <div class="lang-header">
-                            <img src="../../assets/images/coding/logo/css.png" alt="CSS logo">
+                            <img src="../../assets/images/coding/logo/go.png" alt="Go logo">
                             <div>
-                                <h1>CSS <span class="lang-badge">Beginner</span></h1>
-                                <p class="lang-subtitle">Cascading Style Sheets — style, layout rules, and presentation layers painter for semantic markup.</p>
+                                <h1>Go <span class="lang-badge">Beginner</span></h1>
+                                <p class="lang-subtitle">Statically typed compiled language — minimalist syntax, structural typing, and high-performance concurrency models.</p>
                             </div>
                         </div>
                         <div class="tutorial-progress" id="tutorial-progress">
@@ -61,82 +61,82 @@
                         <div class="toc">
                             <h3><i class="fa-solid fa-list"></i> Table of Contents</h3>
                             <ol>
-                                <li><a href="#s1">Inclusion &amp; Syntax</a></li>
-                                <li><a href="#s2">Core Selectors</a></li>
-                                <li><a href="#s3">Colors &amp; Typography</a></li>
-                                <li><a href="#s4">The Box Model</a></li>
-                                <li><a href="#s5">Display &amp; Positioning</a></li>
-                                <li><a href="#s6">Flexbox Context</a></li>
-                                <li><a href="#s7">Grid Layout</a></li>
-                                <li><a href="#s8">Media Queries</a></li>
+                                <li><a href="#s1">Entry Point &amp; Variables</a></li>
+                                <li><a href="#s2">Data Types &amp; Zero Values</a></li>
+                                <li><a href="#s3">Conditionals &amp; Inlines</a></li>
+                                <li><a href="#s4">The Only Loop: For</a></li>
+                                <li><a href="#s5">Functions &amp; Multi-Returns</a></li>
+                                <li><a href="#s6">Pointers &amp; Structs</a></li>
+                                <li><a href="#s7">Implicit Interfaces</a></li>
+                                <li><a href="#s8">Goroutines &amp; Channels</a></li>
                             </ol>
                         </div>
                         <div class="tutorial-section" id="s1">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-1);">1</span>
-                                Inclusion &amp; Syntax
+                                Entry Point &amp; Variables
                             </h2>
-                            <p>CSS rules link to HTML documents via the <code>&lt;link&gt;</code> element inside the head container. Rules target nodes to declare key-value style pairs.</p>
+                            <p>Every execution file must declare its <code>package</code> context. Go utilizes explicit static type mapping or the short assignment operator (<code>:=</code>) for local type inference.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · style.css</span>
+                                    <span class="code-block-label">go · main.go</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cm">/* This is a CSS comment */</span>
+                                <pre><span class="kw">package</span> main
 
-<span class="kw">selector</span> {
-    <span class="va">property</span>: <span class="st">value</span>;
-    <span class="va">another-property</span>: <span class="st">value</span>;
-}
+<span class="kw">import</span> <span class="st">"fmt"</span>
 
-<span class="cm">/* Example: styling all paragraphs */</span>
-<span class="cl">p</span> {
-    <span class="va">color</span>: <span class="st">#333333</span>;
-    <span class="va">line-height</span>: <span class="st">1.6</span>;
+<span class="kw">func</span> main() {
+    <span class="cm">// Short assignment syntax (declares + infers automatically)</span>
+    hostUrl := <span class="st">"https://vidux.sh"</span>
+    
+    <span class="kw">var</span> port int = <span class="st">8080</span> <span class="cm">// Explicit standard declaration</span>
+    
+    fmt.Println(<span class="st">"Server running on:"</span>, hostUrl, port)
 }</pre>
                             </div>
                             <div class="info-box tip">
                                 <i class="fa-solid fa-lightbulb"></i>
-                                <span>Link your external stylesheet file inside the HTML <code>&lt;head&gt;</code> template using: <code>&lt;link rel="stylesheet" href="style.css"&gt;</code>.</span>
+                                <span>The Go compiler is uncompromising: **any declared variable or imported package that is not used will throw a compilation error.** No dead code allowed.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s2">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-2);">2</span>
-                                Core Selectors
+                                Data Types &amp; Zero Values
                             </h2>
-                            <p>Target precise document fragments using elements directly, custom class configurations, unique string ID handles, or structural states.</p>
+                            <p>Variables declared without an explicit initial value are automatically assigned their type-specific **Zero Value**, avoiding garbage memory pointers.</p>
                             <div class="type-grid">
                                 <div class="type-pill">
-                                    <span class="type-name">Element</span>
-                                    <span class="type-desc">Targets all tags</span>
-                                    <span class="type-example">h1 { color: red; }</span>
+                                    <span class="type-name">int / uint</span>
+                                    <span class="type-desc">Platform dependent sizes</span>
+                                    <span class="type-example">Zero value: 0</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">.class</span>
-                                    <span class="type-desc">Reusable instances</span>
-                                    <span class="type-example">.card { padding: 20px; }</span>
+                                    <span class="type-name">float32 / float64</span>
+                                    <span class="type-desc">Explicit precision floats</span>
+                                    <span class="type-example">Zero value: 0.0</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">#id</span>
-                                    <span class="type-desc">Unique single node</span>
-                                    <span class="type-example">#main-nav { top: 0; }</span>
+                                    <span class="type-name">bool</span>
+                                    <span class="type-desc">Logical true / false truths</span>
+                                    <span class="type-example">Zero value: false</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">:hover</span>
-                                    <span class="type-desc">Interactive state</span>
-                                    <span class="type-example">a:hover { opacity: 0.8; }</span>
+                                    <span class="type-name">string</span>
+                                    <span class="type-desc">Immutable byte sequences</span>
+                                    <span class="type-example">Zero value: ""</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">Combined</span>
-                                    <span class="type-desc">Child nesting paths</span>
-                                    <span class="type-example">.wrapper p { margin: 0; }</span>
+                                    <span class="type-name">slice []T</span>
+                                    <span class="type-desc">Dynamic wrapper for arrays</span>
+                                    <span class="type-example">Zero value: nil</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">*</span>
-                                    <span class="type-desc">Universal resetting</span>
-                                    <span class="type-example">* { box-sizing: border-box; }</span>
+                                    <span class="type-name">map[K]V</span>
+                                    <span class="type-desc">Hash map key-value dictionary</span>
+                                    <span class="type-example">Zero value: nil</span>
                                 </div>
                             </div>
                         </div>
@@ -144,78 +144,81 @@
                         <div class="tutorial-section" id="s3">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
-                                Colors &amp; Typography
+                                Conditionals &amp; Inlines
                             </h2>
-                            <p>Control visual branding layers utilizing structured palette values alongside explicit scaling fonts metrics.</p>
+                            <p>Conditionals do not wrap statements inside parentheses. They also support a compact initialization statement scope execution path prior to evaluating conditions.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · typography.css</span>
+                                    <span class="code-block-label">go · logic.go</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.custom-text</span> {
-    <span class="cm">/* Color Formats */</span>
-    <span class="va">color</span>: <span class="st">#4a90e2</span>;                    <span class="cm">/* Hex Format */</span>
-    <span class="va">background-color</span>: <span class="st">rgba(0, 0, 0, 0.05)</span>; <span class="cm">/* RGBA (with Alpha) */</span>
-
-    <span class="cm">/* Typography Rules */</span>
-    <span class="va">font-family</span>: <span class="st">'Roboto'</span>, <span class="st">sans-serif</span>;
-    <span class="va">font-size</span>: <span class="st">1.2rem</span>;                 <span class="cm">/* Relative to root HTML size */</span>
-    <span class="va">font-weight</span>: <span class="st">500</span>;                  <span class="cm">/* Medium weight */</span>
-    <span class="va">text-align</span>: <span class="st">center</span>;
-}</pre>
+                                <pre><span class="kw">if</span> score := <span class="cl">getMetric()</span>; score > <span class="st">90</span> {
+    fmt.Println(<span class="st">"Optimized pipeline execution"</span>)
+} <span class="kw">else</span> <span class="kw">if</span> score >= <span class="st">50</span> {
+    fmt.Println(<span class="st">"Stable system bounds"</span>)
+} <span class="kw">else</span> {
+    fmt.Println(<span class="st">"Alert: threshold drop"</span>)
+}
+<span class="cm">// 'score' is entirely out of scope here! Safely contained within the block.</span></pre>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s4">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
-                                The Box Model
+                                The Only Loop: For
                             </h2>
-                            <p>Every element behaves as a rectangular container box. Total dimensional real estate calculation includes layers of margins, borders, padding bounds, and core content boundaries.</p>
+                            <p>To avoid keyword overhead, Go leverages the <code>for</code> keyword to handle all looping behaviors, including standard loops, conditional while structures, and endless cycles.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · boxmodel.css</span>
+                                    <span class="code-block-label">go · loops.go</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.box-element</span> {
-    <span class="va">width</span>: <span class="st">300px</span>;
-    <span class="va">padding</span>: <span class="st">20px</span>;          <span class="cm">/* Space inside the border envelope */</span>
-    <span class="va">border</span>: <span class="st">2px solid #000</span>; <span class="cm">/* Edge boundary stroke line */</span>
-    <span class="va">margin</span>: <span class="st">15px auto</span>;      <span class="cm">/* Outer buffer space (centered horizontally) */</span>
+                                <pre><span class="cm">// 1. Classical initialization, condition, post-iteration</span>
+<span class="kw">for</span> i := <span class="st">0</span>; i &lt; <span class="st">3</span>; i++ {
+    fmt.Println(i)
+}
 
-    <span class="cm">/* Force dimensions to include padding and borders */</span>
-    <span class="va">box-sizing</span>: <span class="st">border-box</span>;
+<span class="cm">// 2. Evaluated condition loop (Replaces standard 'while' structures)</span>
+n := <span class="st">1</span>
+<span class="kw">for</span> n &lt; <span class="st">5</span> {
+    n *= <span class="st">2</span>
+}
+
+<span class="cm">// 3. Collections traversal using the range generator unpack loop</span>
+items := []string{<span class="st">"db"</span>, <span class="st">"cache"</span>}
+<span class="kw">for</span> index, value := <span class="kw">range</span> items {
+    fmt.Printf(<span class="st">"Idx: %d Val: %s\n"</span>, index, value)
 }</pre>
-                            </div>
-                            <div class="info-box danger">
-                                <i class="fa-solid fa-triangle-exclamation"></i>
-                                <span>Always declare <code>box-sizing: border-box;</code> globally. Without it, adding padding will expand your element beyond its declared width, breaking structural layouts!</span>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s5">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
-                                Display &amp; Positioning
+                                Functions &amp; Multi-Returns
                             </h2>
-                            <p>Alter how elements sit within the document layout using structural <code>display</code> properties or override normal document sorting flows using explicit positioning coordinates.</p>
+                            <p>Functions support passing multiple values as a tuple, a paradigm heavily integrated across the standard library for idiomatic error handling.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · layout.css</span>
+                                    <span class="code-block-label">go · functions.go</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.block-item</span>  { <span class="va">display</span>: <span class="st">block</span>; }        <span class="cm">/* Takes full line width */</span>
-<span class="cl">.inline-item</span> { <span class="va">display</span>: <span class="st">inline</span>; }       <span class="cm">/* Inline context (ignores width) */</span>
-
-<span class="cm">/* Positioning Contexts */</span>
-<span class="cl">.parent-container</span> {
-    <span class="va">position</span>: <span class="st">relative</span>;              <span class="cm">/* Establishes boundary anchor */</span>
+                                <pre><span class="cm">// Parameters group right-aligned types; returns are bundled at the end</span>
+<span class="kw">func</span> divide(a, b float64) (float64, error) {
+    <span class="kw">if</span> b == <span class="st">0</span> {
+        <span class="kw">return</span> <span class="st">0</span>, fmt.Errorf(<span class="st">"division by zero error trap"</span>)
+    }
+    <span class="kw">return</span> a / b, <span class="kw">nil</span>
 }
 
-<span class="cl">.floating-badge</span> {
-    <span class="va">position</span>: <span class="st">absolute</span>;
-    <span class="va">top</span>: <span class="st">10px</span>;
-    <span class="va">right</span>: <span class="st">10px</span>;                     <span class="cm">/* Locks inside relative parent container */</span>
+<span class="kw">func</span> main() {
+    result, err := divide(<span class="st">10.0</span>, <span class="st">0.0</span>)
+    <span class="kw">if</span> err != <span class="kw">nil</span> {
+        fmt.Println(<span class="st">"Operation failed:"</span>, err)
+        <span class="kw">return</span>
+    }
+    fmt.Println(<span class="st">"Success mathematical operation result:"</span>, result)
 }</pre>
                             </div>
                         </div>
@@ -223,49 +226,55 @@
                         <div class="tutorial-section" id="s6">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
-                                Flexbox Context
+                                Pointers &amp; Structs
                             </h2>
-                            <p>Flexbox provides an efficient, one-dimensional layout engine to handle alignment, distribution, and content alignment inside flexible parent boxes.</p>
+                            <p>Go lacks object-oriented <code>class</code> definitions. Custom data structures are defined using <code>struct</code> schemas, and behavior is attached using explicit method receivers.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · flexbox.css</span>
+                                    <span class="code-block-label">go · objects.go</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.flex-container</span> {
-    <span class="va">display</span>: <span class="st">flex</span>;
-    <span class="va">flex-direction</span>: <span class="st">row</span>;            <span class="cm">/* Arrange children side-by-side horizontally */</span>
-    <span class="va">justify-content</span>: <span class="st">space-between</span>; <span class="cm">/* Distribute spacing along main axis */</span>
-    <span class="va">align-items</span>: <span class="st">center</span>;            <span class="cm">/* Align items across cross axis vertically */</span>
-    <span class="va">gap</span>: <span class="st">15px</span>;                      <span class="cm">/* Fixed spacer gutter between inner rows */</span>
+                                <pre><span class="kw">type</span> Repository <span class="kw">struct</span> {
+    Name  string
+    Stars int
 }
 
-<span class="cl">.flex-child</span> {
-    <span class="va">flex</span>: <span class="st">1</span>;                        <span class="cm">/* Grow evenly to take up empty space */</span>
+<span class="cm">// Pointer receiver method (*). Allows mutations to the original caller memory</span>
+<span class="kw">func</span> (r *Repository) AddStar() {
+    r.Stars++ <span class="cm">// Automatically dereferenced by Go syntax engine sugar</span>
+}
+
+<span class="kw">func</span> main() {
+    repo := Repository{Name: <span class="st">"ScratchMap"</span>, Stars: <span class="st">42</span>}
+    repo.AddStar() <span class="cm">// original instance updated directly via reference pointer passing</span>
 }</pre>
+                            </div>
+                            <div class="info-box danger">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                                <span>Go has **no pointer arithmetic**. You can fetch memory addresses via the <code>&amp;</code> operator and read values using <code>*</code>, but you cannot manually shift pointer offsets.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s7">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
-                                Grid Layout
+                                Implicit Interfaces
                             </h2>
-                            <p>CSS Grid handles complex, two-dimensional user interfaces by splitting a container into explicit matrix columns and row tracks.</p>
+                            <p>Interfaces are satisfied **implicitly**. A concrete type does not need to explicitly implement an interface via a keyword; it simply needs to implement the matching method signatures.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · grid.css</span>
+                                    <span class="code-block-label">go · interfaces.go</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.grid-container</span> {
-    <span class="va">display</span>: <span class="st">grid</span>;
-    
-    <span class="cm">/* Construct 3 explicit columns utilizing fraction distribution tracks */</span>
-    <span class="va">grid-template-columns</span>: <span class="st">1fr 1fr 1fr</span>;
-    <span class="va">gap</span>: <span class="st">20px</span>;                      <span class="cm">/* Matrix intersection gutters */</span>
+                                <pre><span class="kw">type</span> Speaker <span class="kw">interface</span> {
+    Speak() string
 }
 
-<span class="cl">.wide-grid-item</span> {
-    <span class="va">grid-column</span>: <span class="st">span 2</span>;            <span class="cm">/* Force item to span over two columns */</span>
+<span class="kw">type</span> Developer <span class="kw">struct</span>{}
+
+<span class="cm">// Satisfies Speaker protocol naturally without implement signatures declarations</span>
+<span class="kw">func</span> (d Developer) Speak() string {
+    <span class="kw">return</span> <span class="st">"Compile routines completed successfully."</span>
 }</pre>
                             </div>
                         </div>
@@ -273,28 +282,31 @@
                         <div class="tutorial-section" id="s8">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
-                                Media Queries
+                                Goroutines &amp; Channels
                             </h2>
-                            <p>Media queries allow you to build responsive layouts by conditionally applying style parameters based on target viewport width triggers.</p>
+                            <p>Concurrency is baked into the language core. Prefixing a call with <code>go</code> executes it on an ultra-lightweight thread, while **Channels** orchestrate data transfers between them.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · responsive.css</span>
+                                    <span class="code-block-label">go · concurrency.go</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cm">/* Standard Desktop Baseline Styles */</span>
-<span class="cl">.sidebar</span> { <span class="va">width</span>: <span class="st">300px</span>; <span class="va">display</span>: <span class="st">block</span>; }
+                                <pre><span class="kw">func</span> fetchWorker(ch <span class="kw">chan</span> string) {
+    ch &lt;- <span class="st">"Data payload arrived securely!"</span> <span class="cm">// Send data into channel pipeline</span>
+}
 
-<span class="cm">/* Responsive Mobile Viewport Trigger */</span>
-<span class="kw">@media</span> (<span class="va">max-width</span>: <span class="st">768px</span>) {
-    <span class="cl">.sidebar</span> {
-        <span class="va">width</span>: <span class="st">100%</span>;
-        <span class="va">display</span>: <span class="st">none</span>; <span class="cm">/* Hides component container on smartphone devices */</span>
-    }
+<span class="kw">func</span> main() {
+    <span class="cm">// Allocate a synchronous communication channel pipeline string pipeline</span>
+    dataStream := make(<span class="kw">chan</span> string)
+    
+    <span class="kw">go</span> fetchWorker(dataStream) <span class="cm">// Launches asynchronous parallel task sequence</span>
+    
+    msg := &lt;-dataStream        <span class="cm">// Halts execution safely until worker resolves message</span>
+    fmt.Println(msg)
 }</pre>
                             </div>
                             <div class="info-box tip">
                                 <i class="fa-solid fa-lightbulb"></i>
-                                <span>Now that your presentation layers match standard conventions, study advanced preprocessor syntax workflows like **Sass/SCSS** or utility engines like **Tailwind CSS**.</span>
+                                <span>With Go fundamentals mastered, you are ready to construct scalable cloud infrastructures, microservices, and fast APIs using **Gin** or **Fiber**.</span>
                             </div>
                         </div>
                         <div class="divider"></div>

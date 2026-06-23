@@ -3,9 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="CSS beginner tutorial — learn selectors, the box model, positioning, flexbox, grid, and responsiveness with ready-to-use code snippets.">
+        <meta name="description" content="MySQL beginner tutorial — learn database schemas, CRUD operations, WHERE clauses, JOINs, aggregations, and query optimization with ready-to-use SQL snippets.">
         <meta name="author" content="vidux.sh">
-        <title>vidux.sh - CSS</title>
+        <title>vidux.sh - MySQL</title>
         <link rel="shortcut icon" href="../../assets/images/viduxsh_icon.png" type="image/x-icon">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,10 +41,10 @@
                             </a>
                         </div>
                         <div class="lang-header">
-                            <img src="../../assets/images/coding/logo/css.png" alt="CSS logo">
+                            <img src="../../assets/images/coding/logo/mysql.png" alt="MySQL logo">
                             <div>
-                                <h1>CSS <span class="lang-badge">Beginner</span></h1>
-                                <p class="lang-subtitle">Cascading Style Sheets — style, layout rules, and presentation layers painter for semantic markup.</p>
+                                <h1>MySQL <span class="lang-badge">Beginner</span></h1>
+                                <p class="lang-subtitle">Relational Database Management System — structured schemas, ACID transactional standard, indexing architectures, and rapid relational querying.</p>
                             </div>
                         </div>
                         <div class="tutorial-progress" id="tutorial-progress">
@@ -61,82 +61,76 @@
                         <div class="toc">
                             <h3><i class="fa-solid fa-list"></i> Table of Contents</h3>
                             <ol>
-                                <li><a href="#s1">Inclusion &amp; Syntax</a></li>
-                                <li><a href="#s2">Core Selectors</a></li>
-                                <li><a href="#s3">Colors &amp; Typography</a></li>
-                                <li><a href="#s4">The Box Model</a></li>
-                                <li><a href="#s5">Display &amp; Positioning</a></li>
-                                <li><a href="#s6">Flexbox Context</a></li>
-                                <li><a href="#s7">Grid Layout</a></li>
-                                <li><a href="#s8">Media Queries</a></li>
+                                <li><a href="#s1">Database &amp; Table Creation</a></li>
+                                <li><a href="#s2">Core Column Types</a></li>
+                                <li><a href="#s3">Data Manipulation (CRUD)</a></li>
+                                <li><a href="#s4">Filtering with WHERE Clauses</a></li>
+                                <li><a href="#s5">Relational JOIN Operations</a></li>
+                                <li><a href="#s6">Aggregation &amp; Grouping</a></li>
+                                <li><a href="#s7">Subqueries &amp; Nested Filters</a></li>
+                                <li><a href="#s8">Indexes &amp; Performance Control</a></li>
                             </ol>
                         </div>
                         <div class="tutorial-section" id="s1">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-1);">1</span>
-                                Inclusion &amp; Syntax
+                                Database &amp; Table Creation
                             </h2>
-                            <p>CSS rules link to HTML documents via the <code>&lt;link&gt;</code> element inside the head container. Rules target nodes to declare key-value style pairs.</p>
+                            <p>Structured Query Language (SQL) coordinates relational engines. DDL commands like <code>CREATE</code> set up strict target containers, defining keys and relationship requirements early.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · style.css</span>
+                                    <span class="code-block-label">sql · schema.sql</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cm">/* This is a CSS comment */</span>
+                                <pre><span class="kw">CREATE DATABASE</span> project_db;
+<span class="kw">USE</span> project_db;
 
-<span class="kw">selector</span> {
-    <span class="va">property</span>: <span class="st">value</span>;
-    <span class="va">another-property</span>: <span class="st">value</span>;
-}
-
-<span class="cm">/* Example: styling all paragraphs */</span>
-<span class="cl">p</span> {
-    <span class="va">color</span>: <span class="st">#333333</span>;
-    <span class="va">line-height</span>: <span class="st">1.6</span>;
-}</pre>
-                            </div>
-                            <div class="info-box tip">
-                                <i class="fa-solid fa-lightbulb"></i>
-                                <span>Link your external stylesheet file inside the HTML <code>&lt;head&gt;</code> template using: <code>&lt;link rel="stylesheet" href="style.css"&gt;</code>.</span>
+<span class="kw">CREATE TABLE</span> users (
+    id <span class="kw">INT</span> <span class="cl">AUTO_INCREMENT</span>,
+    username <span class="kw">VARCHAR</span>(<span class="st">50</span>) <span class="cl">NOT NULL</span>,
+    email <span class="kw">VARCHAR</span>(<span class="st">100</span>) <span class="cl">UNIQUE NOT NULL</span>,
+    created_at <span class="kw">TIMESTAMP DEFAULT CURRENT_TIMESTAMP</span>,
+    <span class="kw">PRIMARY KEY</span> (id)
+);</pre>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s2">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-2);">2</span>
-                                Core Selectors
+                                Core Column Types
                             </h2>
-                            <p>Target precise document fragments using elements directly, custom class configurations, unique string ID handles, or structural states.</p>
+                            <p>Fields require strict, upfront data allocation definitions to guarantee memory optimization and validate storage integrity across the storage engine blocks.</p>
                             <div class="type-grid">
                                 <div class="type-pill">
-                                    <span class="type-name">Element</span>
-                                    <span class="type-desc">Targets all tags</span>
-                                    <span class="type-example">h1 { color: red; }</span>
+                                    <span class="type-name">INT / BIGINT</span>
+                                    <span class="type-desc">Standard and large numerical values</span>
+                                    <span class="type-example">id INT</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">.class</span>
-                                    <span class="type-desc">Reusable instances</span>
-                                    <span class="type-example">.card { padding: 20px; }</span>
+                                    <span class="type-name">VARCHAR(N)</span>
+                                    <span class="type-desc">Variable-length string optimization</span>
+                                    <span class="type-example">title VARCHAR(255)</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">#id</span>
-                                    <span class="type-desc">Unique single node</span>
-                                    <span class="type-example">#main-nav { top: 0; }</span>
+                                    <span class="type-name">DECIMAL(P, S)</span>
+                                    <span class="type-desc">Exact fixed-point financial numbers</span>
+                                    <span class="type-example">amount DECIMAL(10, 2)</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">:hover</span>
-                                    <span class="type-desc">Interactive state</span>
-                                    <span class="type-example">a:hover { opacity: 0.8; }</span>
+                                    <span class="type-name">BOOLEAN / TINYINT</span>
+                                    <span class="type-desc">Logical true or false assertions</span>
+                                    <span class="type-example">is_active TINYINT(1)</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">Combined</span>
-                                    <span class="type-desc">Child nesting paths</span>
-                                    <span class="type-example">.wrapper p { margin: 0; }</span>
+                                    <span class="type-name">DATE / DATETIME</span>
+                                    <span class="type-desc">Calendar dates and precision clocks</span>
+                                    <span class="type-example">logged_at DATETIME</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">*</span>
-                                    <span class="type-desc">Universal resetting</span>
-                                    <span class="type-example">* { box-sizing: border-box; }</span>
+                                    <span class="type-name">TEXT / BLOB</span>
+                                    <span class="type-desc">Unstructured metadata body payloads</span>
+                                    <span class="type-example">description TEXT</span>
                                 </div>
                             </div>
                         </div>
@@ -144,157 +138,141 @@
                         <div class="tutorial-section" id="s3">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
-                                Colors &amp; Typography
+                                Data Manipulation (CRUD)
                             </h2>
-                            <p>Control visual branding layers utilizing structured palette values alongside explicit scaling fonts metrics.</p>
+                            <p>Data mutation operations utilize <code>INSERT</code>, <code>UPDATE</code>, and <code>DELETE</code>. These commands populate tables or alter record sets within safe transactional contexts.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · typography.css</span>
+                                    <span class="code-block-label">sql · manipulation.sql</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.custom-text</span> {
-    <span class="cm">/* Color Formats */</span>
-    <span class="va">color</span>: <span class="st">#4a90e2</span>;                    <span class="cm">/* Hex Format */</span>
-    <span class="va">background-color</span>: <span class="st">rgba(0, 0, 0, 0.05)</span>; <span class="cm">/* RGBA (with Alpha) */</span>
+                                <pre><span class="cm">-- 1. Create: Append values into targeted structural matrices</span>
+<span class="kw">INSERT INTO</span> users (username, email) 
+<span class="kw">VALUES</span> (<span class="st">'viduxsh'</span>, <span class="st">'ivanvidux@gmail.com'</span>);
 
-    <span class="cm">/* Typography Rules */</span>
-    <span class="va">font-family</span>: <span class="st">'Roboto'</span>, <span class="st">sans-serif</span>;
-    <span class="va">font-size</span>: <span class="st">1.2rem</span>;                 <span class="cm">/* Relative to root HTML size */</span>
-    <span class="va">font-weight</span>: <span class="st">500</span>;                  <span class="cm">/* Medium weight */</span>
-    <span class="va">text-align</span>: <span class="st">center</span>;
-}</pre>
+<span class="cm">-- 2. Update: Modify existing records based on specific filters</span>
+<span class="kw">UPDATE</span> users 
+<span class="kw">SET</span> username = <span class="st">'ivan_vidux'</span> 
+<span class="kw">WHERE</span> id = <span class="st">1</span>;
+
+<span class="cm">-- 3. Delete: Purge matching rows instantly from database blocks</span>
+<span class="kw">DELETE FROM</span> users 
+<span class="kw">WHERE</span> id = <span class="st">1</span>;</pre>
+                            </div>
+                            <div class="info-box danger">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                                <span>**Never omit the WHERE clause in UPDATE or DELETE statements!** Forgetting it applies the operation globally, updating or erasing all rows in the table.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s4">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
-                                The Box Model
+                                Filtering with WHERE Clauses
                             </h2>
-                            <p>Every element behaves as a rectangular container box. Total dimensional real estate calculation includes layers of margins, borders, padding bounds, and core content boundaries.</p>
+                            <p>Isolate and filter tracking metrics by using specific logic operators, string pattern match match mappings, and range boundaries inside your queries.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · boxmodel.css</span>
+                                    <span class="code-block-label">sql · queries.sql</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.box-element</span> {
-    <span class="va">width</span>: <span class="st">300px</span>;
-    <span class="va">padding</span>: <span class="st">20px</span>;          <span class="cm">/* Space inside the border envelope */</span>
-    <span class="va">border</span>: <span class="st">2px solid #000</span>; <span class="cm">/* Edge boundary stroke line */</span>
-    <span class="va">margin</span>: <span class="st">15px auto</span>;      <span class="cm">/* Outer buffer space (centered horizontally) */</span>
-
-    <span class="cm">/* Force dimensions to include padding and borders */</span>
-    <span class="va">box-sizing</span>: <span class="st">border-box</span>;
-}</pre>
-                            </div>
-                            <div class="info-box danger">
-                                <i class="fa-solid fa-triangle-exclamation"></i>
-                                <span>Always declare <code>box-sizing: border-box;</code> globally. Without it, adding padding will expand your element beyond its declared width, breaking structural layouts!</span>
+                                <pre><span class="cm">-- Extract records meeting advanced comparative parameters</span>
+<span class="kw">SELECT</span> id, username, email 
+<span class="kw">FROM</span> users 
+<span class="kw">WHERE</span> created_at &gt;= <span class="st">'2026-01-01 00:00:00'</span>
+  <span class="kw">AND</span> email <span class="kw">LIKE</span> <span class="st">'%@gmail.com'</span>
+<span class="kw">ORDER BY</span> created_at <span class="kw">DESC</span>
+<span class="kw">LIMIT</span> <span class="st">10</span>;</pre>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s5">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
-                                Display &amp; Positioning
+                                Relational JOIN Operations
                             </h2>
-                            <p>Alter how elements sit within the document layout using structural <code>display</code> properties or override normal document sorting flows using explicit positioning coordinates.</p>
+                            <p>Relational databases avoid data duplication by splitting metrics across tables. Use <code>JOIN</code> operations to cleanly link related rows back together on shared key boundaries.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · layout.css</span>
+                                    <span class="code-block-label">sql · joins.sql</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.block-item</span>  { <span class="va">display</span>: <span class="st">block</span>; }        <span class="cm">/* Takes full line width */</span>
-<span class="cl">.inline-item</span> { <span class="va">display</span>: <span class="st">inline</span>; }       <span class="cm">/* Inline context (ignores width) */</span>
-
-<span class="cm">/* Positioning Contexts */</span>
-<span class="cl">.parent-container</span> {
-    <span class="va">position</span>: <span class="st">relative</span>;              <span class="cm">/* Establishes boundary anchor */</span>
-}
-
-<span class="cl">.floating-badge</span> {
-    <span class="va">position</span>: <span class="st">absolute</span>;
-    <span class="va">top</span>: <span class="st">10px</span>;
-    <span class="va">right</span>: <span class="st">10px</span>;                     <span class="cm">/* Locks inside relative parent container */</span>
-}</pre>
+                                <pre><span class="cm">-- Correlate primary data fields and secondary structural vectors</span>
+<span class="kw">SELECT</span> u.username, t.amount, t.category 
+<span class="kw">FROM</span> users u
+<span class="kw">INNER JOIN</span> transactions t <span class="kw">ON</span> u.id = t.user_id
+<span class="kw">WHERE</span> t.status = <span class="st">'verified'</span>;</pre>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s6">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
-                                Flexbox Context
+                                Aggregation &amp; Grouping
                             </h2>
-                            <p>Flexbox provides an efficient, one-dimensional layout engine to handle alignment, distribution, and content alignment inside flexible parent boxes.</p>
+                            <p>Condense multiple matching rows into a single summary block. Group records by shared attributes, and use <code>HAVING</code> statements to filter those combined sets.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · flexbox.css</span>
+                                    <span class="code-block-label">sql · aggregation.sql</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.flex-container</span> {
-    <span class="va">display</span>: <span class="st">flex</span>;
-    <span class="va">flex-direction</span>: <span class="st">row</span>;            <span class="cm">/* Arrange children side-by-side horizontally */</span>
-    <span class="va">justify-content</span>: <span class="st">space-between</span>; <span class="cm">/* Distribute spacing along main axis */</span>
-    <span class="va">align-items</span>: <span class="st">center</span>;            <span class="cm">/* Align items across cross axis vertically */</span>
-    <span class="va">gap</span>: <span class="st">15px</span>;                      <span class="cm">/* Fixed spacer gutter between inner rows */</span>
-}
-
-<span class="cl">.flex-child</span> {
-    <span class="va">flex</span>: <span class="st">1</span>;                        <span class="cm">/* Grow evenly to take up empty space */</span>
-}</pre>
+                                <pre><span class="kw">SELECT</span> category, <span class="cl">SUM</span>(amount) <span class="kw">AS</span> total_spent, <span class="cl">COUNT</span>(id) <span class="kw">AS</span> txn_count
+<span class="kw">FROM</span> transactions
+<span class="kw">GROUP BY</span> category
+<span class="kw">HAVING</span> total_spent &gt; <span class="st">500.00</span>;</pre>
+                            </div>
+                            <div class="info-box tip">
+                                <i class="fa-solid fa-lightbulb"></i>
+                                <span>The <code>WHERE</code> clause filters raw input data rows **before any groupings compile**, whereas <code>HAVING</code> filters calculated metrics **after group aggregations finalize**.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s7">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
-                                Grid Layout
+                                Subqueries &amp; Nested Filters
                             </h2>
-                            <p>CSS Grid handles complex, two-dimensional user interfaces by splitting a container into explicit matrix columns and row tracks.</p>
+                            <p>You can embed queries inside other queries. This lets you construct dynamic criteria where a nested data search directly controls the main outer filter path.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · grid.css</span>
+                                    <span class="code-block-label">sql · subqueries.sql</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.grid-container</span> {
-    <span class="va">display</span>: <span class="st">grid</span>;
-    
-    <span class="cm">/* Construct 3 explicit columns utilizing fraction distribution tracks */</span>
-    <span class="va">grid-template-columns</span>: <span class="st">1fr 1fr 1fr</span>;
-    <span class="va">gap</span>: <span class="st">20px</span>;                      <span class="cm">/* Matrix intersection gutters */</span>
-}
-
-<span class="cl">.wide-grid-item</span> {
-    <span class="va">grid-column</span>: <span class="st">span 2</span>;            <span class="cm">/* Force item to span over two columns */</span>
-}</pre>
+                                <pre><span class="cm">-- Isolate user contexts whose ledger balances exceed global averages</span>
+<span class="kw">SELECT</span> username, email 
+<span class="kw">FROM</span> users 
+<span class="kw">WHERE</span> id <span class="kw">IN</span> (
+    <span class="kw">SELECT</span> user_id 
+    <span class="kw">FROM</span> transactions 
+    <span class="kw">WHERE</span> amount &gt; (
+        <span class="kw">SELECT</span> <span class="cl">AVG</span>(amount) <span class="kw">FROM</span> transactions
+    )
+);</pre>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s8">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
-                                Media Queries
+                                Indexes &amp; Performance Control
                             </h2>
-                            <p>Media queries allow you to build responsive layouts by conditionally applying style parameters based on target viewport width triggers.</p>
+                            <p>As tables scale up, looking up values sequentially can stall execution pipelines. Adding structural B-Tree **Indexes** lets the engine quickly map and locate records directly.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · responsive.css</span>
+                                    <span class="code-block-label">sql · optimization.sql</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cm">/* Standard Desktop Baseline Styles */</span>
-<span class="cl">.sidebar</span> { <span class="va">width</span>: <span class="st">300px</span>; <span class="va">display</span>: <span class="st">block</span>; }
+                                <pre><span class="cm">-- Generate specialized B-Tree indexing nodes over frequent search keys</span>
+<span class="kw">CREATE INDEX</span> idx_transactions_user_date 
+<span class="kw">ON</span> transactions (user_id, logged_at);
 
-<span class="cm">/* Responsive Mobile Viewport Trigger */</span>
-<span class="kw">@media</span> (<span class="va">max-width</span>: <span class="st">768px</span>) {
-    <span class="cl">.sidebar</span> {
-        <span class="va">width</span>: <span class="st">100%</span>;
-        <span class="va">display</span>: <span class="st">none</span>; <span class="cm">/* Hides component container on smartphone devices */</span>
-    }
-}</pre>
+<span class="cm">-- Append EXPLAIN prefix ahead of a statement to review engine parsing footprints</span>
+<span class="kw">EXPLAIN SELECT</span> * <span class="kw">FROM</span> transactions 
+<span class="kw">WHERE</span> user_id = <span class="st">42</span> <span class="kw">AND</span> logged_at &gt; <span class="st">'2026-06-01'</span>;</pre>
                             </div>
                             <div class="info-box tip">
                                 <i class="fa-solid fa-lightbulb"></i>
-                                <span>Now that your presentation layers match standard conventions, study advanced preprocessor syntax workflows like **Sass/SCSS** or utility engines like **Tailwind CSS**.</span>
+                                <span>With database architecture fundamentals clear, your next steps involve coordinating transactions via **ACID isolation isolation steps** and exploring asynchronous connection layers.</span>
                             </div>
                         </div>
                         <div class="divider"></div>

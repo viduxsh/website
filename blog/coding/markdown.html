@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Markdown beginner tutorial — learn headings, text formatting, lists, links, images, tables, and code block structures with ready-to-use snippets.">
+        <meta name="author" content="vidux.sh">
+        <title>vidux.sh - Markdown</title>
+        <link rel="shortcut icon" href="../../assets/images/viduxsh_icon.png" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="../../assets/css/style.css">
+    </head>
+    <body data-theme="light">
+        <div class="main-wrapper">
+            <header>
+                <div class="header-container">
+                    <div class="logo-area">
+                        <img src="../../assets/images/viduxsh_logo_full.png" alt="Logo" class="nav-logo">
+                    </div>
+                    <nav class="nav-links">
+                        <a title="Home"     href="../../index.html"    class="nav-btn"><i class="fa-solid fa-house"></i><span>Home</span></a>
+                        <a title="Projects" href="../../projects.html" class="nav-btn"><i class="fa-solid fa-diagram-project"></i><span>Projects</span></a>
+                        <a title="Social"   href="../../social.html"   class="nav-btn"><i class="fa-solid fa-hashtag"></i><span>Social</span></a>
+                        <a title="About Me" href="../../aboutme.html"  class="nav-btn"><i class="fa-solid fa-address-card"></i><span>About Me</span></a>
+                    </nav>
+                    <div class="theme-switcher">
+                        <input type="checkbox" id="switcher">
+                        <label for="switcher" title="Toggle Theme">Switch</label>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <section class="hero-section" style="padding: 40px 20px 60px;">
+                    <div class="card-container wide">
+                        <div class="guide-topbar">
+                            <a title="Back to Coding" href="coding.html" class="cta-btn ghost sm">
+                                <i class="fa-solid fa-arrow-left"></i> Coding Guides
+                            </a>
+                        </div>
+                        <div class="lang-header">
+                            <img src="../../assets/images/coding/logo/markdown.png" alt="Markdown logo">
+                            <div>
+                                <h1>Markdown <span class="lang-badge">Beginner</span></h1>
+                                <p class="lang-subtitle">Lightweight markup language — clean, plain-text formatting parsed into clean HTML structures.</p>
+                            </div>
+                        </div>
+                        <div class="tutorial-progress" id="tutorial-progress">
+                            <div class="tutorial-progress-step done"></div>
+                            <div class="tutorial-progress-step"></div>
+                            <div class="tutorial-progress-step"></div>
+                            <div class="tutorial-progress-step"></div>
+                            <div class="tutorial-progress-step"></div>
+                            <div class="tutorial-progress-step"></div>
+                            <div class="tutorial-progress-step"></div>
+                            <div class="tutorial-progress-step"></div>
+                        </div>
+                        <div class="divider" style="margin-top: 0;"></div>
+                        <div class="toc">
+                            <h3><i class="fa-solid fa-list"></i> Table of Contents</h3>
+                            <ol>
+                                <li><a href="#s1">Headings</a></li>
+                                <li><a href="#s2">Shorthand Inline Syntaxes</a></li>
+                                <li><a href="#s3">Text Styling</a></li>
+                                <li><a href="#s4">Lists Configuration</a></li>
+                                <li><a href="#s5">Links &amp; Autolinks</a></li>
+                                <li><a href="#s6">Images Embedded</a></li>
+                                <li><a href="#s7">Code Blocks &amp; Fencing</a></li>
+                                <li><a href="#s8">Tables &amp; Blockquotes</a></li>
+                            </ol>
+                        </div>
+                        <div class="tutorial-section" id="s1">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-1);">1</span>
+                                Headings
+                            </h2>
+                            <p>Intestations mirror standard HTML heading tags (<code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>) by prefixing text lines with the hash (<code>#</code>) symbol character.</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">markdown · headings.md</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre># Document Title (H1)
+## Main Chapter Section (H2)
+### Detailed Subsection Topic (H3)
+#### Deep Modular Header (H4)</pre>
+                            </div>
+                            <div class="info-box tip">
+                                <i class="fa-solid fa-lightbulb"></i>
+                                <span>Always separate the hash sequence from your heading string using a single space character to ensure cross-platform compatibility.</span>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="tutorial-section" id="s2">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-2);">2</span>
+                                Shorthand Inline Syntaxes
+                            </h2>
+                            <p>Markdown maps cleanly into fundamental document layout elements without typing wordy markup wrappers explicitly.</p>
+                            <div class="type-grid">
+                                <div class="type-pill">
+                                    <span class="type-name">**text**</span>
+                                    <span class="type-desc">Bold / Strong</span>
+                                    <span class="type-example">&lt;strong&gt;text&lt;/strong&gt;</span>
+                                </div>
+                                <div class="type-pill">
+                                    <span class="type-name">*text*</span>
+                                    <span class="type-desc">Italic / Emphasis</span>
+                                    <span class="type-example">&lt;em&gt;text&lt;/em&gt;</span>
+                                </div>
+                                <div class="type-pill">
+                                    <span class="type-name">`code`</span>
+                                    <span class="type-desc">Inline Monospace</span>
+                                    <span class="type-example">&lt;code&gt;code&lt;/code&gt;</span>
+                                </div>
+                                <div class="type-pill">
+                                    <span class="type-name">[txt](url)</span>
+                                    <span class="type-desc">Hyperlink anchor</span>
+                                    <span class="type-example">&lt;a href="url"&gt;txt&lt;/a&gt;</span>
+                                </div>
+                                <div class="type-pill">
+                                    <span class="type-name">![alt](src)</span>
+                                    <span class="type-desc">Embedded Image</span>
+                                    <span class="type-example">&lt;img src="src" alt="alt"&gt;</span>
+                                </div>
+                                <div class="type-pill">
+                                    <span class="type-name">---</span>
+                                    <span class="type-desc">Horizontal Rule</span>
+                                    <span class="type-example">&lt;hr&gt; break divider</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="tutorial-section" id="s3">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
+                                Text Styling
+                            </h2>
+                            <p>Format explicit keywords inline using clean bounding character decorators like asterisks, underscores, or tildes.</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">markdown · styling.md</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre>This statement displays **bold text formatting** cleanly.
+This keyword displays *italic emphasis formatting* smoothly.
+Combine them to produce ***bold and italicized*** structural phrases.
+
+~~This text string is struck through directly using GFM extensions.~~</pre>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="tutorial-section" id="s4">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
+                                Lists Configuration
+                            </h2>
+                            <p>Generate clean structured lists. Indenting sub-items under a parent line instantly generates deep nested tree scopes.</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">markdown · lists.md</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre>- Unordered bullet element point
+- Secondary bullet item point
+  - Nested inner sub-bullet item layer
+
+1. First indexed ordered item layer
+2. Secondary indexed ordered item layer
+   - Mix in an unordered nested element directly</pre>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="tutorial-section" id="s5">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
+                                Links &amp; Autolinks
+                            </h2>
+                            <p>To generate anchors, wrap the clickable text phrase within brackets, followed immediately by the URL destination wrapped inside parentheses.</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">markdown · links.md</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre>Visit the [GitHub Website Repository](https://github.com) target.
+
+[Link with explicit title text](https://vidux.sh "Vidux Portal Homepage")
+
+Direct URL address extraction conversion: &lt;https://vidux.sh&gt;</pre>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="tutorial-section" id="s6">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
+                                Images Embedded
+                            </h2>
+                            <p>Image references use the exact same structural signature as standard text anchors, but require an exclamation mark (<code>!</code>) prefix handle.</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">markdown · media.md</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre>![Alternative vector alt text descriptor](../../assets/images/viduxsh_icon.png)
+
+<!-- Linked Image Variant -->
+[![Clickable image banner](../../assets/images/viduxsh_logo_full.png)](https://vidux.sh)</pre>
+                            </div>
+                            <div class="info-box danger">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                                <span>Markdown lacks native layout attributes. If you need to scale image dimensions or apply specific CSS styling rules, you must write raw <code>&lt;img&gt;</code> HTML tags instead.</span>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="tutorial-section" id="s7">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
+                                Code Blocks &amp; Fencing
+                            </h2>
+                            <p>Wrap inline tech keywords inside solitary backticks. To display large multi-line snippets, wrap the entire block within triple backtick fences (<code>```</code>).</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">markdown · code.md</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre>Execute `npm run dev` inside terminal stream.
+
+```js
+// Fenced code blocks can specify a language tag for syntax highlights
+const logData = (msg) => {
+    console.log(`Payload: ${msg}`);
+};
+```</pre>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="tutorial-section" id="s8">
+                            <h2>
+                                <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
+                                Tables &amp; Blockquotes
+                            </h2>
+                            <p>Construct clear data rows separating cell structures using pipe barriers (<code>|</code>), or quote lines using the greater-than symbol (<code>&gt;</code>).</p>
+                            <div class="code-block">
+                                <div class="code-block-header">
+                                    <span class="code-block-label">markdown · advanced.md</span>
+                                    <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                                </div>
+                                <pre>| Language | File Extension | Speed Performance |
+| :--- | :---: | ---: |
+| C++ | .cpp | Ultimate / Native |
+| Markdown | .md | Document Parsing |
+
+&gt; This blockquote paragraph text emulates nested citation blocks.
+&gt; &gt; You can nest blockquotes recursively to mimic email chain histories.</pre>
+                            </div>
+                            <div class="info-box tip">
+                                <i class="fa-solid fa-lightbulb"></i>
+                                <span>With Markdown mastered, you can write rich document files for software repository README assets or build modern content pipelines using **Static Site Generators** like Hugo, Jekyll, or Astro.</span>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="guide-footer-nav">
+                            <a href="coding.html" class="cta-btn ghost sm">
+                                <i class="fa-solid fa-arrow-left"></i> Back to Coding
+                            </a>
+                            <a href="#s1" class="cta-btn sm">
+                                <i class="fa-solid fa-arrow-up"></i> Back to Top
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer>
+                <div class="footer-container">
+                    <div class="footer-grid">
+                        <div class="footer-widget">
+                            <h3><img width="20" height="20" src="[https://img.icons8.com/3d-fluency/94/topic.png](https://img.icons8.com/3d-fluency/94/topic.png)" alt="Contact"/>Contact</h3>
+                            <ul class="contact-list">
+                                <li><img width="18" height="18" src="[https://img.icons8.com/3d-fluency/94/location.png](https://img.icons8.com/3d-fluency/94/location.png)" alt="Location"/>Udine, Italy</li>
+                                <li><a href="[https://t.me/viduxsh](https://t.me/viduxsh)" target="_blank"><img width="18" height="18" src="[https://img.icons8.com/3d-fluency/94/telegram.png](https://img.icons8.com/3d-fluency/94/telegram.png)" alt="Telegram"/>Telegram</a></li>
+                                <li><a href="mailto:ivanvidux@gmail.com"><img width="18" height="18" src="[https://img.icons8.com/3d-fluency/94/email.png](https://img.icons8.com/3d-fluency/94/email.png)" alt="Email"/>Email</a></li>
+                                <li><a href="[https://paypal.me/ivanvidux](https://paypal.me/ivanvidux)" target="_blank"><img width="18" height="18" src="[https://img.icons8.com/3d-fluency/94/paypal.png](https://img.icons8.com/3d-fluency/94/paypal.png)" alt="PayPal"/>PayPal</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-widget profile-widget">
+                            <h3>About Me</h3>
+                            <div class="footer-profile-box">
+                                <img src="../../assets/images/viduxsh_logo_full.png" alt="Profile Logo" class="footer-avatar">
+                                <p id="my-age"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <p id="copyright-year"></p>
+                        <p class="credits">Design by <a href="[https://github.com/viduxsh](https://github.com/viduxsh)" target="_blank">vidux.sh</a></p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script src="../../assets/js/script.js"></script>
+        <script>
+            function copyCode(btn) {
+                const pre  = btn.closest('.code-block').querySelector('pre');
+                const text = pre.innerText;
+                navigator.clipboard.writeText(text).then(() => {
+                    btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                    btn.classList.add('copied');
+                    setTimeout(() => {
+                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy';
+                        btn.classList.remove('copied');
+                    }, 2000);
+                });
+            }
+
+            const sections = document.querySelectorAll('.tutorial-section');
+            const steps    = document.querySelectorAll('.tutorial-progress-step');
+
+            function updateProgress() {
+                let active = 0;
+                sections.forEach((sec, i) => {
+                    if (sec.getBoundingClientRect().top < window.innerHeight * 0.6) active = i + 1;
+                });
+                steps.forEach((s, i) => s.classList.toggle('done', i < active));
+            }
+
+            window.addEventListener('scroll', updateProgress, { passive: true });
+            updateProgress();
+        </script>
+    </body>
+</html>

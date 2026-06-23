@@ -3,9 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="CSS beginner tutorial — learn selectors, the box model, positioning, flexbox, grid, and responsiveness with ready-to-use code snippets.">
+        <meta name="description" content="x86_64 Assembly beginner tutorial — learn registers, data movement, arithmetic flags, stack control, and Linux system calls with ready-to-use snippets.">
         <meta name="author" content="vidux.sh">
-        <title>vidux.sh - CSS</title>
+        <title>vidux.sh - Assembly</title>
         <link rel="shortcut icon" href="../../assets/images/viduxsh_icon.png" type="image/x-icon">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,10 +41,10 @@
                             </a>
                         </div>
                         <div class="lang-header">
-                            <img src="../../assets/images/coding/logo/css.png" alt="CSS logo">
+                            <img src="../../assets/images/coding/logo/assembly.png" alt="Assembly logo">
                             <div>
-                                <h1>CSS <span class="lang-badge">Beginner</span></h1>
-                                <p class="lang-subtitle">Cascading Style Sheets — style, layout rules, and presentation layers painter for semantic markup.</p>
+                                <h1>Assembly <span class="lang-badge">Beginner</span></h1>
+                                <p class="lang-subtitle">x86_64 Architecture — low-overhead hardware manipulation, memory registers, stack layout orientation, and bare-metal execution control.</p>
                             </div>
                         </div>
                         <div class="tutorial-progress" id="tutorial-progress">
@@ -61,82 +61,78 @@
                         <div class="toc">
                             <h3><i class="fa-solid fa-list"></i> Table of Contents</h3>
                             <ol>
-                                <li><a href="#s1">Inclusion &amp; Syntax</a></li>
-                                <li><a href="#s2">Core Selectors</a></li>
-                                <li><a href="#s3">Colors &amp; Typography</a></li>
-                                <li><a href="#s4">The Box Model</a></li>
-                                <li><a href="#s5">Display &amp; Positioning</a></li>
-                                <li><a href="#s6">Flexbox Context</a></li>
-                                <li><a href="#s7">Grid Layout</a></li>
-                                <li><a href="#s8">Media Queries</a></li>
+                                <li><a href="#s1">Program Structure &amp; Segments</a></li>
+                                <li><a href="#s2">x86_64 Processor Registers</a></li>
+                                <li><a href="#s3">Data Movement Operations</a></li>
+                                <li><a href="#s4">Basic Arithmetic Instructions</a></li>
+                                <li><a href="#s5">Status Flags &amp; Conditional Jumps</a></li>
+                                <li><a href="#s6">The Stack Pointer (Push &amp; Pop)</a></li>
+                                <li><a href="#s7">Functions &amp; Subroutines</a></li>
+                                <li><a href="#s8">Linux System Calls (Syscalls)</a></li>
                             </ol>
                         </div>
                         <div class="tutorial-section" id="s1">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-1);">1</span>
-                                Inclusion &amp; Syntax
+                                Program Structure &amp; Segments
                             </h2>
-                            <p>CSS rules link to HTML documents via the <code>&lt;link&gt;</code> element inside the head container. Rules target nodes to declare key-value style pairs.</p>
+                            <p>An Assembly program (NASM syntax) maps directly into system memory blocks. Executable binaries separate binary parameters into structural subdivisions called **Segments** or **Sections**.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · style.css</span>
+                                    <span class="code-block-label">asm · program.asm</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cm">/* This is a CSS comment */</span>
+                                <pre><span class="kw">section</span> .data
+    <span class="cm">; Allocation block for initialized static variables</span>
+    msg db <span class="st">"Core online"</span>, <span class="st">10</span>
 
-<span class="kw">selector</span> {
-    <span class="va">property</span>: <span class="st">value</span>;
-    <span class="va">another-property</span>: <span class="st">value</span>;
-}
+<span class="kw">section</span> .bss
+    <span class="cm">; Allocation block for uninitialized runtime buffers</span>
+    buffer resb <span class="st">64</span>
 
-<span class="cm">/* Example: styling all paragraphs */</span>
-<span class="cl">p</span> {
-    <span class="va">color</span>: <span class="st">#333333</span>;
-    <span class="va">line-height</span>: <span class="st">1.6</span>;
-}</pre>
-                            </div>
-                            <div class="info-box tip">
-                                <i class="fa-solid fa-lightbulb"></i>
-                                <span>Link your external stylesheet file inside the HTML <code>&lt;head&gt;</code> template using: <code>&lt;link rel="stylesheet" href="style.css"&gt;</code>.</span>
+<span class="kw">section</span> .text
+    <span class="kw">global</span> _start
+_start:
+    <span class="cm">; Execution entry point (Required by the kernel linker)</span></pre>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s2">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-2);">2</span>
-                                Core Selectors
+                                x86_64 Processor Registers
                             </h2>
-                            <p>Target precise document fragments using elements directly, custom class configurations, unique string ID handles, or structural states.</p>
+                            <p>Registers are high-speed storage locations built directly inside the CPU core. Modern x86_64 chips host 64-bit general-purpose cells that remain backward-compatible with 32-bit, 16-bit, and 8-bit historical subdivisions.</p>
                             <div class="type-grid">
                                 <div class="type-pill">
-                                    <span class="type-name">Element</span>
-                                    <span class="type-desc">Targets all tags</span>
-                                    <span class="type-example">h1 { color: red; }</span>
+                                    <span class="type-name">RAX / EAX / AX</span>
+                                    <span class="type-desc">Primary accumulator used for math and system function return codes</span>
+                                    <span class="type-example">64-bit / 32-bit / 16-bit</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">.class</span>
-                                    <span class="type-desc">Reusable instances</span>
-                                    <span class="type-example">.card { padding: 20px; }</span>
+                                    <span class="type-name">R_X (RBX, RCX, RDX)</span>
+                                    <span class="type-desc">General usage nodes, loop counting parameters, and I/O tracking data</span>
+                                    <span class="type-example">Base, Counter, Data</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">#id</span>
-                                    <span class="type-desc">Unique single node</span>
-                                    <span class="type-example">#main-nav { top: 0; }</span>
+                                    <span class="type-name">RSI / RDI</span>
+                                    <span class="type-desc">Source and Destination Index elements reserved for string arrays</span>
+                                    <span class="type-example">Memory address pointers</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">:hover</span>
-                                    <span class="type-desc">Interactive state</span>
-                                    <span class="type-example">a:hover { opacity: 0.8; }</span>
+                                    <span class="type-name">R8 - R15</span>
+                                    <span class="type-desc">Modern expansion registers added to the 64-bit architecture specification</span>
+                                    <span class="type-example">General purpose storage</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">Combined</span>
-                                    <span class="type-desc">Child nesting paths</span>
-                                    <span class="type-example">.wrapper p { margin: 0; }</span>
+                                    <span class="type-name">RSP</span>
+                                    <span class="type-desc">Stack Pointer tracking the current boundary address of execution metrics</span>
+                                    <span class="type-example">Crucial call stack monitor</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">*</span>
-                                    <span class="type-desc">Universal resetting</span>
-                                    <span class="type-example">* { box-sizing: border-box; }</span>
+                                    <span class="type-name">RIP</span>
+                                    <span class="type-desc">Instruction Pointer holds the memory coordinates of the upcoming command</span>
+                                    <span class="type-example">Program counter tracker</span>
                                 </div>
                             </div>
                         </div>
@@ -144,157 +140,131 @@
                         <div class="tutorial-section" id="s3">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
-                                Colors &amp; Typography
+                                Data Movement Operations
                             </h2>
-                            <p>Control visual branding layers utilizing structured palette values alongside explicit scaling fonts metrics.</p>
+                            <p>The <code>mov</code> instruction transfers data payloads between registers, or between registers and system RAM cells. Note that Intel syntax maps arguments as <code>mov destination, source</code>.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · typography.css</span>
+                                    <span class="code-block-label">asm · movement.asm</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.custom-text</span> {
-    <span class="cm">/* Color Formats */</span>
-    <span class="va">color</span>: <span class="st">#4a90e2</span>;                    <span class="cm">/* Hex Format */</span>
-    <span class="va">background-color</span>: <span class="st">rgba(0, 0, 0, 0.05)</span>; <span class="cm">/* RGBA (with Alpha) */</span>
+                                <pre><span class="kw">mov</span> <span class="cl">rax</span>, <span class="st">100</span>        <span class="cm">; Load an immediate numeric constant into RAX</span>
+<span class="kw">mov</span> <span class="cl">rbx</span>, <span class="cl">rax</span>        <span class="cm">; Copy raw bit contents directly from RAX into RBX</span>
 
-    <span class="cm">/* Typography Rules */</span>
-    <span class="va">font-family</span>: <span class="st">'Roboto'</span>, <span class="st">sans-serif</span>;
-    <span class="va">font-size</span>: <span class="st">1.2rem</span>;                 <span class="cm">/* Relative to root HTML size */</span>
-    <span class="va">font-weight</span>: <span class="st">500</span>;                  <span class="cm">/* Medium weight */</span>
-    <span class="va">text-align</span>: <span class="st">center</span>;
-}</pre>
+<span class="kw">mov</span> <span class="cl">rcx</span>, [msg]      <span class="cm">; Square brackets dereference addresses: reads memory contents</span>
+<span class="kw">lea</span> <span class="cl">rsi</span>, [msg]      <span class="cm">; Load Effective Address: copies the structural pointer tracking link</span></pre>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s4">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
-                                The Box Model
+                                Basic Arithmetic Instructions
                             </h2>
-                            <p>Every element behaves as a rectangular container box. Total dimensional real estate calculation includes layers of margins, borders, padding bounds, and core content boundaries.</p>
+                            <p>Perform native mathematical mutations using dedicated CPU logic block circuits. These operations alter register allocations in place.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · boxmodel.css</span>
+                                    <span class="code-block-label">asm · arithmetic.asm</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.box-element</span> {
-    <span class="va">width</span>: <span class="st">300px</span>;
-    <span class="va">padding</span>: <span class="st">20px</span>;          <span class="cm">/* Space inside the border envelope */</span>
-    <span class="va">border</span>: <span class="st">2px solid #000</span>; <span class="cm">/* Edge boundary stroke line */</span>
-    <span class="va">margin</span>: <span class="st">15px auto</span>;      <span class="cm">/* Outer buffer space (centered horizontally) */</span>
+                                <pre><span class="kw">add</span> <span class="cl">rax</span>, <span class="st">50</span>         <span class="cm">; RAX = RAX + 50</span>
+<span class="kw">sub</span> <span class="cl">rbx</span>, <span class="cl">rcx</span>        <span class="cm">; RBX = RBX - RCX</span>
 
-    <span class="cm">/* Force dimensions to include padding and borders */</span>
-    <span class="va">box-sizing</span>: <span class="st">border-box</span>;
-}</pre>
-                            </div>
-                            <div class="info-box danger">
-                                <i class="fa-solid fa-triangle-exclamation"></i>
-                                <span>Always declare <code>box-sizing: border-box;</code> globally. Without it, adding padding will expand your element beyond its declared width, breaking structural layouts!</span>
+<span class="kw">inc</span> <span class="cl">rdx</span>             <span class="cm">; Increment RDX value by 1 (Fast loop step)</span>
+<span class="kw">dec</span> <span class="cl">rsi</span>             <span class="cm">; Decrement RSI value by 1</span>
+
+<span class="kw">xor</span> <span class="cl">rax</span>, <span class="cl">rax</span>        <span class="cm">; Bitwise Exclusive OR: efficiently clears register state to 0</span></pre>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s5">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
-                                Display &amp; Positioning
+                                Status Flags &amp; Conditional Jumps
                             </h2>
-                            <p>Alter how elements sit within the document layout using structural <code>display</code> properties or override normal document sorting flows using explicit positioning coordinates.</p>
+                            <p>Branching logic evaluates data by comparing operands using the <code>cmp</code> instruction. This operation subtracts values without saving the result, modifying internal CPU **Status Flags** instead.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · layout.css</span>
+                                    <span class="code-block-label">asm · control.asm</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.block-item</span>  { <span class="va">display</span>: <span class="st">block</span>; }        <span class="cm">/* Takes full line width */</span>
-<span class="cl">.inline-item</span> { <span class="va">display</span>: <span class="st">inline</span>; }       <span class="cm">/* Inline context (ignores width) */</span>
+                                <pre><span class="kw">mov</span> <span class="cl">rax</span>, <span class="st">42</span>
+<span class="kw">cmp</span> <span class="cl">rax</span>, <span class="st">50</span>         <span class="cm">; Compare current RAX state against literal scalar threshold</span>
 
-<span class="cm">/* Positioning Contexts */</span>
-<span class="cl">.parent-container</span> {
-    <span class="va">position</span>: <span class="st">relative</span>;              <span class="cm">/* Establishes boundary anchor */</span>
-}
+<span class="kw">jl</span>  .less_target    <span class="cm">; Jump to local label if RAX is Less than 50</span>
+<span class="kw">jmp</span> .always_target  <span class="cm">; Unconditional jump: instantly re-routes instruction pipeline</span>
 
-<span class="cl">.floating-badge</span> {
-    <span class="va">position</span>: <span class="st">absolute</span>;
-    <span class="va">top</span>: <span class="st">10px</span>;
-    <span class="va">right</span>: <span class="st">10px</span>;                     <span class="cm">/* Locks inside relative parent container */</span>
-}</pre>
+.less_target:
+    <span class="kw">inc</span> <span class="cl">rbx</span>
+
+.always_target:</pre>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s6">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
-                                Flexbox Context
+                                The Stack Pointer (Push &amp; Pop)
                             </h2>
-                            <p>Flexbox provides an efficient, one-dimensional layout engine to handle alignment, distribution, and content alignment inside flexible parent boxes.</p>
+                            <p>The **Stack** is a Last-In, First-Out (LIFO) memory region managed directly by the CPU. The <code>rsp</code> register tracks the top of the stack, growing downward toward lower memory addresses.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · flexbox.css</span>
+                                    <span class="code-block-label">asm · stack.asm</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.flex-container</span> {
-    <span class="va">display</span>: <span class="st">flex</span>;
-    <span class="va">flex-direction</span>: <span class="st">row</span>;            <span class="cm">/* Arrange children side-by-side horizontally */</span>
-    <span class="va">justify-content</span>: <span class="st">space-between</span>; <span class="cm">/* Distribute spacing along main axis */</span>
-    <span class="va">align-items</span>: <span class="st">center</span>;            <span class="cm">/* Align items across cross axis vertically */</span>
-    <span class="va">gap</span>: <span class="st">15px</span>;                      <span class="cm">/* Fixed spacer gutter between inner rows */</span>
-}
+                                <pre><span class="kw">push</span> <span class="cl">rax</span>            <span class="cm">; Decrements RSP by 8 bytes and copies RAX onto the Stack grid</span>
+<span class="kw">push</span> <span class="cl">rbx</span>            <span class="cm">; Preserves RBX state before calling destructive subroutines</span>
 
-<span class="cl">.flex-child</span> {
-    <span class="va">flex</span>: <span class="st">1</span>;                        <span class="cm">/* Grow evenly to take up empty space */</span>
-}</pre>
+<span class="kw">pop</span>  <span class="cl">rbx</span>            <span class="cm">; Restores value from the stack, saving it back into RBX</span>
+<span class="kw">pop</span>  <span class="cl">rax</span>            <span class="cm">; Restores RAX state, incrementing RSP by 8 bytes automatically</span></pre>
+                            </div>
+                            <div class="info-box danger">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                                <span>**Stack balance is critical!** Every single <code>push</code> instruction must map to an associated <code>pop</code> before exiting a function context. Imbalances cause subroutines to read corrupt addresses, resulting in instant Segmentation Fault crashes.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s7">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
-                                Grid Layout
+                                Functions &amp; Subroutines
                             </h2>
-                            <p>CSS Grid handles complex, two-dimensional user interfaces by splitting a container into explicit matrix columns and row tracks.</p>
+                            <p>Subroutines organize code blocks into reusable tasks. The <code>call</code> command pushes the current return address onto the stack and jumps to the target label. The <code>ret</code> statement pops that address to resume execution.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · grid.css</span>
+                                    <span class="code-block-label">asm · functions.asm</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.grid-container</span> {
-    <span class="va">display</span>: <span class="st">grid</span>;
-    
-    <span class="cm">/* Construct 3 explicit columns utilizing fraction distribution tracks */</span>
-    <span class="va">grid-template-columns</span>: <span class="st">1fr 1fr 1fr</span>;
-    <span class="va">gap</span>: <span class="st">20px</span>;                      <span class="cm">/* Matrix intersection gutters */</span>
-}
+                                <pre>_start:
+    <span class="kw">mov</span> <span class="cl">rax</span>, <span class="st">5</span>
+    <span class="kw">call</span> double_value   <span class="cm">; Divert instruction track into subroutine block context</span>
+    <span class="cm">; RAX holds 10 here</span>
 
-<span class="cl">.wide-grid-item</span> {
-    <span class="va">grid-column</span>: <span class="st">span 2</span>;            <span class="cm">/* Force item to span over two columns */</span>
-}</pre>
+double_value:
+    <span class="kw">add</span> <span class="cl">rax</span>, <span class="cl">rax</span>        <span class="cm">; Double register accumulator content parameters</span>
+    <span class="kw">ret</span>                 <span class="cm">; Pops the saved IP address off the stack, jumping back</span></pre>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s8">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
-                                Media Queries
+                                Linux System Calls (Syscalls)
                             </h2>
-                            <p>Media queries allow you to build responsive layouts by conditionally applying style parameters based on target viewport width triggers.</p>
+                            <p>Assembly can transition from user space to kernel space via the <code>syscall</code> instruction. This triggers an exception that passes execution control directly to the OS kernel to handle tasks like writing files or printing text to the console.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · responsive.css</span>
+                                    <span class="code-block-label">asm · syscall.asm</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cm">/* Standard Desktop Baseline Styles */</span>
-<span class="cl">.sidebar</span> { <span class="va">width</span>: <span class="st">300px</span>; <span class="va">display</span>: <span class="st">block</span>; }
-
-<span class="cm">/* Responsive Mobile Viewport Trigger */</span>
-<span class="kw">@media</span> (<span class="va">max-width</span>: <span class="st">768px</span>) {
-    <span class="cl">.sidebar</span> {
-        <span class="va">width</span>: <span class="st">100%</span>;
-        <span class="va">display</span>: <span class="st">none</span>; <span class="cm">/* Hides component container on smartphone devices */</span>
-    }
-}</pre>
+                                <pre><span class="cm">; Triggering a graceful sys_exit sequence via the Linux kernel</span>
+<span class="kw">mov</span> <span class="cl">rax</span>, <span class="st">60</span>          <span class="cm">; Syscall number 60 corresponds to sys_exit on x86_64 Linux</span>
+<span class="kw">mov</span> <span class="cl">rdi</span>, <span class="st">0</span>           <span class="cm">; Load standard error code 0 (Success exit parameter flag)</span>
+<span class="kw">syscall</span>              <span class="cm">; Kernel executes system interruption process routine</span></pre>
                             </div>
                             <div class="info-box tip">
                                 <i class="fa-solid fa-lightbulb"></i>
-                                <span>Now that your presentation layers match standard conventions, study advanced preprocessor syntax workflows like **Sass/SCSS** or utility engines like **Tailwind CSS**.</span>
+                                <span>With bare-metal machine language concepts clear, you can step up to analyzing binary structures using tools like **GDB** or optimizing critical compilation loops.</span>
                             </div>
                         </div>
                         <div class="divider"></div>

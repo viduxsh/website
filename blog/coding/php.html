@@ -3,9 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="CSS beginner tutorial — learn selectors, the box model, positioning, flexbox, grid, and responsiveness with ready-to-use code snippets.">
+        <meta name="description" content="PHP beginner tutorial — learn modern syntax, arrays, functions, OOP, superglobals, and database PDO interactions with ready-to-use code snippets.">
         <meta name="author" content="vidux.sh">
-        <title>vidux.sh - CSS</title>
+        <title>vidux.sh - PHP</title>
         <link rel="shortcut icon" href="../../assets/images/viduxsh_icon.png" type="image/x-icon">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,10 +41,10 @@
                             </a>
                         </div>
                         <div class="lang-header">
-                            <img src="../../assets/images/coding/logo/css.png" alt="CSS logo">
+                            <img src="../../assets/images/coding/logo/php.png" alt="PHP logo">
                             <div>
-                                <h1>CSS <span class="lang-badge">Beginner</span></h1>
-                                <p class="lang-subtitle">Cascading Style Sheets — style, layout rules, and presentation layers painter for semantic markup.</p>
+                                <h1>PHP <span class="lang-badge">Beginner</span></h1>
+                                <p class="lang-subtitle">Server-side scripting language — built for the web, driving dynamic template generation, robust OOP frameworks, and secure APIs.</p>
                             </div>
                         </div>
                         <div class="tutorial-progress" id="tutorial-progress">
@@ -61,82 +61,78 @@
                         <div class="toc">
                             <h3><i class="fa-solid fa-list"></i> Table of Contents</h3>
                             <ol>
-                                <li><a href="#s1">Inclusion &amp; Syntax</a></li>
-                                <li><a href="#s2">Core Selectors</a></li>
-                                <li><a href="#s3">Colors &amp; Typography</a></li>
-                                <li><a href="#s4">The Box Model</a></li>
-                                <li><a href="#s5">Display &amp; Positioning</a></li>
-                                <li><a href="#s6">Flexbox Context</a></li>
-                                <li><a href="#s7">Grid Layout</a></li>
-                                <li><a href="#s8">Media Queries</a></li>
+                                <li><a href="#s1">Variables &amp; Output Tags</a></li>
+                                <li><a href="#s2">Core Types &amp; Array Architectures</a></li>
+                                <li><a href="#s3">Conditionals &amp; Logical Blocks</a></li>
+                                <li><a href="#s4">Loops &amp; Foreach Keymaps</a></li>
+                                <li><a href="#s5">Functions &amp; Type Hinting</a></li>
+                                <li><a href="#s6">Classes &amp; Object Methods</a></li>
+                                <li><a href="#s7">Superglobals ($_GET, $_POST)</a></li>
+                                <li><a href="#s8">Database Interactivity via PDO</a></li>
                             </ol>
                         </div>
                         <div class="tutorial-section" id="s1">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-1);">1</span>
-                                Inclusion &amp; Syntax
+                                Variables &amp; Output Tags
                             </h2>
-                            <p>CSS rules link to HTML documents via the <code>&lt;link&gt;</code> element inside the head container. Rules target nodes to declare key-value style pairs.</p>
+                            <p>PHP execution begins inside the <code>&lt;?php</code> tag boundary. Variables are prefixed with a <code>$</code> character, dynamically typed, and statements require ending semicolons.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · style.css</span>
+                                    <span class="code-block-label">php · main.php</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cm">/* This is a CSS comment */</span>
+                                <pre><span class="kw">&lt;?php</span>
+<span class="cm">// Single-line comment</span>
+<span class="cm">/* Multi-line comment block */</span>
 
-<span class="kw">selector</span> {
-    <span class="va">property</span>: <span class="st">value</span>;
-    <span class="va">another-property</span>: <span class="st">value</span>;
-}
+<span class="kw">$domain</span> = <span class="st">"vidux.sh"</span>; 
+<span class="kw">$status</span> = <span class="st">"Active"</span>;
 
-<span class="cm">/* Example: styling all paragraphs */</span>
-<span class="cl">p</span> {
-    <span class="va">color</span>: <span class="st">#333333</span>;
-    <span class="va">line-height</span>: <span class="st">1.6</span>;
-}</pre>
-                            </div>
-                            <div class="info-box tip">
-                                <i class="fa-solid fa-lightbulb"></i>
-                                <span>Link your external stylesheet file inside the HTML <code>&lt;head&gt;</code> template using: <code>&lt;link rel="stylesheet" href="style.css"&gt;</code>.</span>
+<span class="cm">// String concatenation uses the dot (.) operator</span>
+<span class="cl">echo</span> <span class="st">"System target: "</span> . <span class="kw">$domain</span>; 
+
+<span class="cm">// Double quotes parse variables natively inside the text</span>
+<span class="cl">echo</span> <span class="st">"&lt;p&gt;Status metrics: <strong>{$status}</strong>&lt;/p&gt;"</span>; </pre>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s2">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-2);">2</span>
-                                Core Selectors
+                                Core Types &amp; Array Architectures
                             </h2>
-                            <p>Target precise document fragments using elements directly, custom class configurations, unique string ID handles, or structural states.</p>
+                            <p>PHP fields encompass standard primitive metrics and complex multi-purpose arrays that can be structured as both indexed vectors and explicit associative dictionaries.</p>
                             <div class="type-grid">
                                 <div class="type-pill">
-                                    <span class="type-name">Element</span>
-                                    <span class="type-desc">Targets all tags</span>
-                                    <span class="type-example">h1 { color: red; }</span>
+                                    <span class="type-name">String</span>
+                                    <span class="type-desc">Binary safe strings</span>
+                                    <span class="type-example">$name = 'testName';</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">.class</span>
-                                    <span class="type-desc">Reusable instances</span>
-                                    <span class="type-example">.card { padding: 20px; }</span>
+                                    <span class="type-name">Integer / Float</span>
+                                    <span class="type-desc">Signed numbers / Floats</span>
+                                    <span class="type-example">$balance = -342.50;</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">#id</span>
-                                    <span class="type-desc">Unique single node</span>
-                                    <span class="type-example">#main-nav { top: 0; }</span>
+                                    <span class="type-name">Boolean</span>
+                                    <span class="type-desc">Logical truths</span>
+                                    <span class="type-example">$auth = true;</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">:hover</span>
-                                    <span class="type-desc">Interactive state</span>
-                                    <span class="type-example">a:hover { opacity: 0.8; }</span>
+                                    <span class="type-name">Indexed Array</span>
+                                    <span class="type-desc">Ordered standard vector</span>
+                                    <span class="type-example">['HTML', 'CSS', 'PHP']</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">Combined</span>
-                                    <span class="type-desc">Child nesting paths</span>
-                                    <span class="type-example">.wrapper p { margin: 0; }</span>
+                                    <span class="type-name">Associative Array</span>
+                                    <span class="type-desc">Explicit Key-Value mapping</span>
+                                    <span class="type-example">['id' => 42, 'db' => 'sql']</span>
                                 </div>
                                 <div class="type-pill">
-                                    <span class="type-name">*</span>
-                                    <span class="type-desc">Universal resetting</span>
-                                    <span class="type-example">* { box-sizing: border-box; }</span>
+                                    <span class="type-name">Null</span>
+                                    <span class="type-desc">Explicit empty context</span>
+                                    <span class="type-example">$session = null;</span>
                                 </div>
                             </div>
                         </div>
@@ -144,24 +140,22 @@
                         <div class="tutorial-section" id="s3">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
-                                Colors &amp; Typography
+                                Conditionals &amp; Logical Blocks
                             </h2>
-                            <p>Control visual branding layers utilizing structured palette values alongside explicit scaling fonts metrics.</p>
+                            <p>Control processes via <code>if-elseif-else</code> or strict structures. Use identical evaluation symbols (<code>===</code>) to validate both content values and type matching.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · typography.css</span>
+                                    <span class="code-block-label">php · conditional.php</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.custom-text</span> {
-    <span class="cm">/* Color Formats */</span>
-    <span class="va">color</span>: <span class="st">#4a90e2</span>;                    <span class="cm">/* Hex Format */</span>
-    <span class="va">background-color</span>: <span class="st">rgba(0, 0, 0, 0.05)</span>; <span class="cm">/* RGBA (with Alpha) */</span>
+                                <pre><span class="kw">$responseCode</span> = <span class="st">200</span>;
 
-    <span class="cm">/* Typography Rules */</span>
-    <span class="va">font-family</span>: <span class="st">'Roboto'</span>, <span class="st">sans-serif</span>;
-    <span class="va">font-size</span>: <span class="st">1.2rem</span>;                 <span class="cm">/* Relative to root HTML size */</span>
-    <span class="va">font-weight</span>: <span class="st">500</span>;                  <span class="cm">/* Medium weight */</span>
-    <span class="va">text-align</span>: <span class="st">center</span>;
+<span class="kw">if</span> (<span class="kw">$responseCode</span> === <span class="st">200</span>) {
+    <span class="cl">echo</span> <span class="st">"Operational success."</span>;
+} <span class="kw">elseif</span> (<span class="kw">$responseCode</span> >= <span class="st">400</span> &amp;&amp; <span class="kw">$responseCode</span> &lt; <span class="st">500</span>) {
+    <span class="cl">echo</span> <span class="st">"Client execution block mismatch error."</span>;
+} <span class="kw">else</span> {
+    <span class="cl">echo</span> <span class="st">"Generic terminal fallback triggered."</span>;
 }</pre>
                             </div>
                         </div>
@@ -169,103 +163,102 @@
                         <div class="tutorial-section" id="s4">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
-                                The Box Model
+                                Loops &amp; Foreach Keymaps
                             </h2>
-                            <p>Every element behaves as a rectangular container box. Total dimensional real estate calculation includes layers of margins, borders, padding bounds, and core content boundaries.</p>
+                            <p>While standard <code>for</code> bounds execute predictably, <code>foreach</code> provides the cleanest interface for unpacking structural associative mappings safely.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · boxmodel.css</span>
+                                    <span class="code-block-label">php · loops.php</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.box-element</span> {
-    <span class="va">width</span>: <span class="st">300px</span>;
-    <span class="va">padding</span>: <span class="st">20px</span>;          <span class="cm">/* Space inside the border envelope */</span>
-    <span class="va">border</span>: <span class="st">2px solid #000</span>; <span class="cm">/* Edge boundary stroke line */</span>
-    <span class="va">margin</span>: <span class="st">15px auto</span>;      <span class="cm">/* Outer buffer space (centered horizontally) */</span>
+                                <pre><span class="kw">$logConfig</span> = [
+    <span class="st">"app_name"</span> => <span class="st">"testName"</span>,
+    <span class="st">"version"</span>  => <span class="st">"1.0.4"</span>,
+    <span class="st">"env"</span>      => <span class="st">"production"</span>
+];
 
-    <span class="cm">/* Force dimensions to include padding and borders */</span>
-    <span class="va">box-sizing</span>: <span class="st">border-box</span>;
+<span class="cm">// Unpacking associative keys and matching values directly</span>
+<span class="kw">foreach</span> (<span class="kw">$logConfig</span> <span class="kw">as</span> <span class="kw">$parameter</span> => <span class="kw">$setting</span>) {
+    <span class="cl">echo</span> <span class="st">"Setting up: {$parameter} assigned to {$setting}\n"</span>;
 }</pre>
-                            </div>
-                            <div class="info-box danger">
-                                <i class="fa-solid fa-triangle-exclamation"></i>
-                                <span>Always declare <code>box-sizing: border-box;</code> globally. Without it, adding padding will expand your element beyond its declared width, breaking structural layouts!</span>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s5">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
-                                Display &amp; Positioning
+                                Functions &amp; Type Hinting
                             </h2>
-                            <p>Alter how elements sit within the document layout using structural <code>display</code> properties or override normal document sorting flows using explicit positioning coordinates.</p>
+                            <p>Modern PHP strictly utilizes explicit scalar data type rules for parameters alongside enforced return signature mapping blocks.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · layout.css</span>
+                                    <span class="code-block-label">php · functions.php</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.block-item</span>  { <span class="va">display</span>: <span class="st">block</span>; }        <span class="cm">/* Takes full line width */</span>
-<span class="cl">.inline-item</span> { <span class="va">display</span>: <span class="st">inline</span>; }       <span class="cm">/* Inline context (ignores width) */</span>
+                                <pre><span class="kw">declare</span>(strict_types=<span class="st">1</span>); <span class="cm">// Enforces strict type compliance matching</span>
 
-<span class="cm">/* Positioning Contexts */</span>
-<span class="cl">.parent-container</span> {
-    <span class="va">position</span>: <span class="st">relative</span>;              <span class="cm">/* Establishes boundary anchor */</span>
+<span class="kw">function</span> generateTransactionId(string <span class="kw">$prefix</span>, int <span class="kw">$entropy</span>): string {
+    <span class="kw">$uniqueHash</span> = <span class="cl">md5</span>((string)<span class="cl">time</span>() . <span class="kw">$entropy</span>);
+    <span class="kw">return</span> <span class="kw">$prefix</span> . <span class="st">"_"</span> . <span class="cl">substr</span>(<span class="kw">$uniqueHash</span>, <span class="st">0</span>, <span class="st">8</span>);
 }
 
-<span class="cl">.floating-badge</span> {
-    <span class="va">position</span>: <span class="st">absolute</span>;
-    <span class="va">top</span>: <span class="st">10px</span>;
-    <span class="va">right</span>: <span class="st">10px</span>;                     <span class="cm">/* Locks inside relative parent container */</span>
-}</pre>
+<span class="kw">$txId</span> = generateTransactionId(<span class="st">"TX"</span>, <span class="st">9942</span>);</pre>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s6">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
-                                Flexbox Context
+                                Classes &amp; Object Methods
                             </h2>
-                            <p>Flexbox provides an efficient, one-dimensional layout engine to handle alignment, distribution, and content alignment inside flexible parent boxes.</p>
+                            <p>PHP implements an Object-Oriented model featuring explicit visibility attributes (<code>public</code>, <code>protected</code>, <code>private</code>) alongside standard class definitions.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · flexbox.css</span>
+                                    <span class="code-block-label">php · oop.php</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.flex-container</span> {
-    <span class="va">display</span>: <span class="st">flex</span>;
-    <span class="va">flex-direction</span>: <span class="st">row</span>;            <span class="cm">/* Arrange children side-by-side horizontally */</span>
-    <span class="va">justify-content</span>: <span class="st">space-between</span>; <span class="cm">/* Distribute spacing along main axis */</span>
-    <span class="va">align-items</span>: <span class="st">center</span>;            <span class="cm">/* Align items across cross axis vertically */</span>
-    <span class="va">gap</span>: <span class="st">15px</span>;                      <span class="cm">/* Fixed spacer gutter between inner rows */</span>
+                                <pre><span class="kw">class</span> DatabaseConfig {
+    <span class="kw">private</span> string <span class="kw">$dsn</span>;
+
+    <span class="cm">// PHP 8+ Constructor Property Promotion architectural shorthand</span>
+    <span class="kw">public function</span> __construct(<span class="kw">private</span> string <span class="kw">$host</span>, <span class="kw">private</span> int <span class="kw">$port</span>) {
+        <span class="kw">$this</span>->dsn = <span class="st">"mysql:host="</span> . <span class="kw">$this</span>->host . <span class="st">";port="</span> . <span class="kw">$this</span>->port;
+    }
+
+    <span class="kw">public function</span> getConnectionString(): string {
+        <span class="kw">return</span> <span class="kw">$this</span>->dsn;
+    }
 }
 
-<span class="cl">.flex-child</span> {
-    <span class="va">flex</span>: <span class="st">1</span>;                        <span class="cm">/* Grow evenly to take up empty space */</span>
-}</pre>
+<span class="kw">$configInstance</span> = <span class="kw">new</span> DatabaseConfig(<span class="st">"127.0.0.1"</span>, <span class="st">3306</span>);</pre>
+                            </div>
+                            <div class="info-box danger">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                                <span>Always target instance members using the **arrow operator object syntax** (<code>$this-&gt;property</code>). Dropping the pointer format results in structural execution parsing failures.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
                         <div class="tutorial-section" id="s7">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
-                                Grid Layout
+                                Superglobals ($_GET, $_POST)
                             </h2>
-                            <p>CSS Grid handles complex, two-dimensional user interfaces by splitting a container into explicit matrix columns and row tracks.</p>
+                            <p>Superglobals are built-in arrays accessible everywhere regardless of scope. They contain incoming runtime client vectors like query strings or multi-part forms.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · grid.css</span>
+                                    <span class="code-block-label">php · request.php</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cl">.grid-container</span> {
-    <span class="va">display</span>: <span class="st">grid</span>;
-    
-    <span class="cm">/* Construct 3 explicit columns utilizing fraction distribution tracks */</span>
-    <span class="va">grid-template-columns</span>: <span class="st">1fr 1fr 1fr</span>;
-    <span class="va">gap</span>: <span class="st">20px</span>;                      <span class="cm">/* Matrix intersection gutters */</span>
-}
+                                <pre><span class="cm">// Extracting safe attributes filtering raw input vectors manually</span>
+<span class="kw">$userEmail</span> = <span class="kw">$_POST</span>[<span class="st">'email'</span>] ?? <span class="kw">null</span>;
 
-<span class="cl">.wide-grid-item</span> {
-    <span class="va">grid-column</span>: <span class="st">span 2</span>;            <span class="cm">/* Force item to span over two columns */</span>
+<span class="kw">if</span> (<span class="kw">$userEmail</span> !== <span class="kw">null</span>) {
+    <span class="cm">// Filter and sanitize string inputs securely before operating data</span>
+    <span class="kw">$cleanEmail</span> = <span class="cl">filter_var</span>(<span class="kw">$userEmail</span>, FILTER_SANITIZE_EMAIL);
+    
+    <span class="kw">if</span> (<span class="cl">filter_var</span>(<span class="kw">$cleanEmail</span>, FILTER_VALIDATE_EMAIL)) {
+        <span class="cl">echo</span> <span class="st">"Validated secure email parameter: "</span> . <span class="cl">htmlspecialchars</span>(<span class="kw">$cleanEmail</span>);
+    }
 }</pre>
                             </div>
                         </div>
@@ -273,28 +266,28 @@
                         <div class="tutorial-section" id="s8">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
-                                Media Queries
+                                Database Interactivity via PDO
                             </h2>
-                            <p>Media queries allow you to build responsive layouts by conditionally applying style parameters based on target viewport width triggers.</p>
+                            <p>PHP Data Objects (PDO) deliver a secure database abstraction layer. Always leverage **Prepared Statements** to entirely prevent SQL Injection exploits.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
-                                    <span class="code-block-label">css · responsive.css</span>
+                                    <span class="code-block-label">php · pdo.php</span>
                                     <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
                                 </div>
-                                <pre><span class="cm">/* Standard Desktop Baseline Styles */</span>
-<span class="cl">.sidebar</span> { <span class="va">width</span>: <span class="st">300px</span>; <span class="va">display</span>: <span class="st">block</span>; }
+                                <pre><span class="kw">$pdoConnection</span> = <span class="kw">new</span> PDO(<span class="st">'mysql:host=localhost;dbname=testName'</span>, <span class="st">'root'</span>, <span class="st">'secret_pass'</span>, [
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION
+]);
 
-<span class="cm">/* Responsive Mobile Viewport Trigger */</span>
-<span class="kw">@media</span> (<span class="va">max-width</span>: <span class="st">768px</span>) {
-    <span class="cl">.sidebar</span> {
-        <span class="va">width</span>: <span class="st">100%</span>;
-        <span class="va">display</span>: <span class="st">none</span>; <span class="cm">/* Hides component container on smartphone devices */</span>
-    }
-}</pre>
+<span class="cm">// Structuring parameterized placeholders</span>
+<span class="kw">$queryStatement</span> = <span class="kw">$pdoConnection</span>->prepare(<span class="st">"SELECT id, username FROM users WHERE status = :status"</span>);
+<span class="kw">$queryStatement</span>->execute([<span class="st">'status'</span> => <span class="st">'active'</span>]);
+
+<span class="kw">$allActiveUsers</span> = <span class="kw">$queryStatement</span>->fetchAll();</pre>
                             </div>
                             <div class="info-box tip">
                                 <i class="fa-solid fa-lightbulb"></i>
-                                <span>Now that your presentation layers match standard conventions, study advanced preprocessor syntax workflows like **Sass/SCSS** or utility engines like **Tailwind CSS**.</span>
+                                <span>With modern PHP fundamentals solid, your next scaling steps include building production architectures utilizing modern paradigms via MVC frameworks like **Laravel**.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
