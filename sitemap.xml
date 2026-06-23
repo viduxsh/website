@@ -13,142 +13,222 @@
 
 <url>
   <loc>https://viduxsh.github.io/website/</loc>
-  <lastmod>2026-06-23T11:59:08+00:00</lastmod>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://viduxsh.github.io/website/index.html</loc>
-  <lastmod>2026-06-23T11:59:07+00:00</lastmod>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://viduxsh.github.io/website/projects.html</loc>
-  <lastmod>2026-06-23T11:59:07+00:00</lastmod>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://viduxsh.github.io/website/social.html</loc>
-  <lastmod>2026-06-23T11:59:07+00:00</lastmod>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://viduxsh.github.io/website/aboutme.html</loc>
-  <lastmod>2026-06-23T11:59:08+00:00</lastmod>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://viduxsh.github.io/website/blog/blog.html</loc>
-  <lastmod>2026-06-23T11:59:07+00:00</lastmod>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://viduxsh.github.io/website/blog/coding/coding.html</loc>
-  <lastmod>2026-06-23T11:59:07+00:00</lastmod>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://viduxsh.github.io/website/blog/cooking/cooking.html</loc>
-  <lastmod>2026-06-23T11:59:07+00:00</lastmod>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://viduxsh.github.io/website/blog/gaming/gaming.html</loc>
-  <lastmod>2026-06-23T11:59:07+00:00</lastmod>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://viduxsh.github.io/website/blog/motor/motor.html</loc>
-  <lastmod>2026-06-23T11:59:08+00:00</lastmod>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://viduxsh.github.io/website/blog/sport/sport.html</loc>
-  <lastmod>2026-06-23T11:59:07+00:00</lastmod>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://viduxsh.github.io/website/blog/technology/technology.html</loc>
-  <lastmod>2026-06-23T11:59:07+00:00</lastmod>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://viduxsh.github.io/website/blog/work/work.html</loc>
-  <lastmod>2026-06-23T11:59:07+00:00</lastmod>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
+  <loc>https://viduxsh.github.io/website/blog/coding/android.html</loc>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://viduxsh.github.io/website/blog/coding/arduino.html</loc>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://viduxsh.github.io/website/blog/coding/assembly.html</loc>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://viduxsh.github.io/website/blog/coding/bash.html</loc>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://viduxsh.github.io/website/blog/coding/cmd.html</loc>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
   <loc>https://viduxsh.github.io/website/blog/coding/cpp.html</loc>
-  <lastmod>2026-06-23T11:59:07+00:00</lastmod>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://viduxsh.github.io/website/blog/coding/csharp.html</loc>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
   <loc>https://viduxsh.github.io/website/blog/coding/css.html</loc>
-  <lastmod>2026-06-23T11:59:07+00:00</lastmod>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://viduxsh.github.io/website/blog/coding/dart.html</loc>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://viduxsh.github.io/website/blog/coding/go.html</loc>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
   <loc>https://viduxsh.github.io/website/blog/coding/html.html</loc>
-  <lastmod>2026-06-23T11:59:07+00:00</lastmod>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
   <loc>https://viduxsh.github.io/website/blog/coding/java.html</loc>
-  <lastmod>2026-06-23T11:59:07+00:00</lastmod>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
   <loc>https://viduxsh.github.io/website/blog/coding/javascript.html</loc>
-  <lastmod>2026-06-23T11:59:07+00:00</lastmod>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://viduxsh.github.io/website/blog/coding/kotlin.html</loc>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://viduxsh.github.io/website/blog/coding/latex.html</loc>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://viduxsh.github.io/website/blog/coding/lua.html</loc>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://viduxsh.github.io/website/blog/coding/markdown.html</loc>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://viduxsh.github.io/website/blog/coding/mysql.html</loc>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://viduxsh.github.io/website/blog/coding/php.html</loc>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://viduxsh.github.io/website/blog/coding/powershell.html</loc>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
   <loc>https://viduxsh.github.io/website/blog/coding/python.html</loc>
-  <lastmod>2026-06-23T11:59:08+00:00</lastmod>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://viduxsh.github.io/website/blog/coding/racket.html</loc>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
   <loc>https://viduxsh.github.io/website/blog/sport/gym.html</loc>
-  <lastmod>2026-06-23T11:59:07+00:00</lastmod>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
   <loc>https://viduxsh.github.io/website/blog/sport/1rm.html</loc>
-  <lastmod>2026-06-23T11:59:08+00:00</lastmod>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
   <loc>https://viduxsh.github.io/website/blog/sport/bodymeasurements.html</loc>
-  <lastmod>2026-06-23T11:59:08+00:00</lastmod>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
   <loc>https://viduxsh.github.io/website/blog/sport/military.html</loc>
-  <lastmod>2026-06-23T11:59:07+00:00</lastmod>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
   <loc>https://viduxsh.github.io/website/blog/technology/Asus_ROG_Strix_GL703VD.html</loc>
-  <lastmod>2026-06-23T11:59:08+00:00</lastmod>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
   <loc>https://viduxsh.github.io/website/blog/technology/Xiaomi_Mi_A1.html</loc>
-  <lastmod>2026-06-23T11:59:08+00:00</lastmod>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
   <loc>https://viduxsh.github.io/website/blog/technology/Xiaomi_Redmi_Note_9S.html</loc>
-  <lastmod>2026-06-23T11:59:07+00:00</lastmod>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
   <loc>https://viduxsh.github.io/website/blog/technology/Xiaomi_Redmi_Note_10_Pro.html</loc>
-  <lastmod>2026-06-23T11:59:08+00:00</lastmod>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
   <loc>https://viduxsh.github.io/website/blog/technology/Xiaomi_Redmi_Note_14_Pro_5G.html</loc>
-  <lastmod>2026-06-23T11:59:08+00:00</lastmod>
+  <lastmod>2026-06-23T19:01:29+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 
