@@ -42,8 +42,30 @@ jobs:
           set -euo pipefail
           : "${GOATCOUNTER_API_KEY:?Set the GOATCOUNTER_API_KEY repository secret}"
 
-          response="$(curl --fail --silent --show-error --get \
-            --data-urlencode 'start=1970-01-01T00:00:00Z' \
+          sites="$(curl --fail-with-body --silent --show-error \
+            --header "Authorization: Bearer ${GOATCOUNTER_API_KEY}" \
+            'https://viduxsh.goatcounter.com/api/v0/sites')"
+
+          start="$(printf '%s' "$sites" | node -e '
+            let body = "";
+            process.stdin.setEncoding("utf8");
+            process.stdin.on("data", chunk => body += chunk);
+            process.stdin.on("end", () => {
+              const site = JSON.parse(body).sites.find(site => site.code === "viduxsh");
+              if (!site || !site.first_hit_at) {
+                throw new Error("Could not find the first GoatCounter visit for viduxsh");
+              }
+              const firstHit = new Date(site.first_hit_at);
+              if (Number.isNaN(firstHit.getTime())) {
+                throw new Error("GoatCounter returned an invalid first-hit date");
+              }
+              firstHit.setUTCMinutes(0, 0, 0);
+              process.stdout.write(firstHit.toISOString());
+            });
+          ')"
+
+          response="$(curl --fail-with-body --silent --show-error --get \
+            --data-urlencode "start=${start}" \
             --header "Authorization: Bearer ${GOATCOUNTER_API_KEY}" \
             'https://viduxsh.goatcounter.com/api/v0/stats/total')"
 
