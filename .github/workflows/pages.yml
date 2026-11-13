@@ -42,7 +42,6 @@ jobs:
           set -euo pipefail
           : "${GOATCOUNTER_API_KEY:?Set the GOATCOUNTER_API_KEY repository secret}"
 
-          echo "Requesting GoatCounter site metadata (/api/v0/sites)"
           sites="$(curl --fail-with-body --silent --show-error \
             --header "Authorization: Bearer ${GOATCOUNTER_API_KEY}" \
             'https://viduxsh.goatcounter.com/api/v0/sites')"
@@ -65,7 +64,6 @@ jobs:
             });
           ')"
 
-          echo "Requesting GoatCounter pageview total (/api/v0/stats/total)"
           response="$(curl --fail-with-body --silent --show-error --get \
             --data-urlencode "start=${start}" \
             --header "Authorization: Bearer ${GOATCOUNTER_API_KEY}" \
@@ -89,7 +87,7 @@ jobs:
           '
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: _site
 
