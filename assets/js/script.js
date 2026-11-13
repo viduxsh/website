@@ -44,3 +44,41 @@ if (ageContainer) {
 if (copyrightContainer) {
   copyrightContainer.textContent = `Copyright © ${currentYear} vidux.sh. All Rights Reserved.`;
 }
+
+const footerBottom = document.querySelector("footer .footer-bottom");
+if (footerBottom && !footerBottom.querySelector("[data-visitor-count]")) {
+  const visitorCount = document.createElement("p");
+  visitorCount.appendChild(document.createTextNode("Total visits: "));
+
+  const count = document.createElement("span");
+  count.dataset.visitorCount = "";
+  count.textContent = "Loading...";
+  visitorCount.appendChild(count);
+
+  const credits = footerBottom.querySelector(".credits");
+  footerBottom.insertBefore(visitorCount, credits);
+}
+
+const visitorCountUrl = new URL("../data/visitor-count.json", document.currentScript.src);
+fetch(visitorCountUrl)
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`Request failed with status ${response.status}`);
+    }
+    return response.json();
+  })
+  .then((data) => {
+    const count = Number(data.count);
+    if (!Number.isSafeInteger(count) || count < 0) {
+      throw new Error("Invalid visitor count");
+    }
+    document.querySelectorAll("[data-visitor-count]").forEach((element) => {
+      element.textContent = count.toLocaleString();
+    });
+  })
+  .catch((error) => {
+    console.error("Error fetching visitor count:", error);
+    document.querySelectorAll("[data-visitor-count]").forEach((element) => {
+      element.textContent = "N/A";
+    });
+  });

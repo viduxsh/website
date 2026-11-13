@@ -1,0 +1,74 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Copy site files
+        run: |
+          mkdir -p _site
+          rsync -a --exclude='.git' --exclude='.github' --exclude='_site' ./ _site/
+
+      - name: Fetch total GoatCounter visits
+        env:
+          GOATCOUNTER_API_KEY: ${{ secrets.GOATCOUNTER_API_KEY }}
+        run: |
+          set -euo pipefail
+          : "${GOATCOUNTER_API_KEY:?Set the GOATCOUNTER_API_KEY repository secret}"
+
+          response="$(curl --fail --silent --show-error --get \
+            --data-urlencode 'start=1970-01-01T00:00:00Z' \
+            --header "Authorization: Bearer ${GOATCOUNTER_API_KEY}" \
+            'https://viduxsh.goatcounter.com/api/v0/stats/total')"
+
+          mkdir -p _site/assets/data
+          printf '%s' "$response" | node -e '
+            let body = "";
+            process.stdin.setEncoding("utf8");
+            process.stdin.on("data", chunk => body += chunk);
+            process.stdin.on("end", () => {
+              const total = JSON.parse(body).total;
+              if (!Number.isSafeInteger(total) || total < 0) {
+                throw new Error("GoatCounter returned an invalid total");
+              }
+              require("fs").writeFileSync(
+                "_site/assets/data/visitor-count.json",
+                JSON.stringify({ count: total }) + "\n"
+              );
+            });
+          '
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
