@@ -1,0 +1,26 @@
+{
+  "en": {
+    "page_title": "Vehicles I have driven",
+    "page_subtitle": "Vehicles I have driven over the years.",
+    "back_blog": "Back to Blog",
+    "private_vehicles": "Private Vehicles",
+    "work_vehicles": "Work Vehicles",
+    "rented_vehicles": "Rented / Loaned Vehicles"
+  },
+  "it": {
+    "page_title": "Veicoli che ho guidato",
+    "page_subtitle": "I veicoli che ho guidato nel corso degli anni.",
+    "back_blog": "Torna al Blog",
+    "private_vehicles": "Veicoli Privati",
+    "work_vehicles": "Veicoli da Lavoro",
+    "rented_vehicles": "Veicoli a Noleggio / Prestito"
+  },
+  "es": {
+    "page_title": "Vehículos que he conducido",
+    "page_subtitle": "Vehículos que he conducido a lo largo de los años.",
+    "back_blog": "Volver al Blog",
+    "private_vehicles": "Vehículos Privados",
+    "work_vehicles": "Vehículos de Trabajo",
+    "rented_vehicles": "Vehículos de Alquiler / Préstamo"
+  }
+}

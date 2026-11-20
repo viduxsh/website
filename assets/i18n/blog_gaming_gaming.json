@@ -1,0 +1,20 @@
+{
+  "en": {
+    "page_title": "Games I Play",
+    "page_subtitle": "Games I play and links to my gaming profiles.",
+    "back_blog": "Back to Blog",
+    "no_profiles": "No gaming profiles to show at the moment. Check back soon for updates!"
+  },
+  "it": {
+    "page_title": "I Miei Videogiochi",
+    "page_subtitle": "I videogiochi a cui gioco e i link ai miei profili gaming.",
+    "back_blog": "Torna al Blog",
+    "no_profiles": "Nessun profilo gaming al momento. Torna presto per aggiornamenti!"
+  },
+  "es": {
+    "page_title": "Juegos a los que Juego",
+    "page_subtitle": "Juegos a los que juego y enlaces a mis perfiles gaming.",
+    "back_blog": "Volver al Blog",
+    "no_profiles": "No hay perfiles gaming en este momento. ¡Vuelve pronto para novedades!"
+  }
+}
