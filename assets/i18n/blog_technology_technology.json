@@ -1,0 +1,17 @@
+{
+  "en": {
+    "page_title": "My devices",
+    "page_subtitle": "Devices I use and have used with their specifications.",
+    "back_blog": "Back to Blog"
+  },
+  "it": {
+    "page_title": "I miei dispositivi",
+    "page_subtitle": "Dispositivi che uso e che ho usato con le relative specifiche.",
+    "back_blog": "Torna al Blog"
+  },
+  "es": {
+    "page_title": "Mis dispositivos",
+    "page_subtitle": "Dispositivos que uso y he usado con sus especificaciones.",
+    "back_blog": "Volver al Blog"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "en": {
+    "page_subtitle": "Specifications and benchmark results.",
+    "back_blog": "Back to Blog",
+    "back_technology": "Back to Technology"
+  },
+  "it": {
+    "page_subtitle": "Specifiche tecniche e risultati benchmark.",
+    "back_blog": "Torna al Blog",
+    "back_technology": "Torna a Tecnologia"
+  },
+  "es": {
+    "page_subtitle": "Especificaciones y resultados de benchmarks.",
+    "back_blog": "Volver al Blog",
+    "back_technology": "Volver a Tecnología"
+  }
+}
