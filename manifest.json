@@ -1,0 +1,83 @@
+{
+  "id": "viduxsh-pwa",
+  "name": "vidux.sh",
+  "short_name": "vidux.sh",
+  "description": "Portfolio, programming guides, and personal blog of Ivan (vidux.sh)",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#0f1115",
+  "theme_color": "#0f1115",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["education", "developer", "productivity"],
+  "icons": [
+    {
+      "src": "assets/images/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/images/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/images/icons/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/images/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Coding Guides",
+      "short_name": "Coding",
+      "description": "Programming guides and documentation",
+      "url": "./blog/coding/coding.html",
+      "icons": [
+        {
+          "src": "assets/images/icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Projects",
+      "short_name": "Projects",
+      "description": "Explore personal and maintained projects",
+      "url": "./projects.html",
+      "icons": [
+        {
+          "src": "assets/images/icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "About Me",
+      "short_name": "About",
+      "description": "Background, mindset and contacts",
+      "url": "./aboutme.html",
+      "icons": [
+        {
+          "src": "assets/images/icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}

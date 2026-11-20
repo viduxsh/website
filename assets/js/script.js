@@ -10,7 +10,11 @@
 })();
 
 const themeToggle = document.querySelector("#switcher");
-const currentTheme = localStorage.getItem("theme") || "light";
+function getAutoTheme() {
+  const h = new Date().getHours();
+  return (h >= 20 || h < 8) ? "dark" : "light";
+}
+const currentTheme = localStorage.getItem("theme") || getAutoTheme();
 
 document.body.setAttribute("data-theme", currentTheme);
 if (currentTheme === "dark" && themeToggle) {
@@ -44,6 +48,26 @@ if (ageContainer) {
 if (copyrightContainer) {
   copyrightContainer.textContent = `Copyright © ${currentYear} vidux.sh. All Rights Reserved.`;
 }
+function updateLastModified() {
+  const d = new Date(document.lastModified);
+  let formatted = "";
+  if (!isNaN(d.getTime())) {
+    const day = String(d.getDate()).padStart(2, "0");
+    const month = String(d.getMonth() + 1).padStart(2, "0");
+    const year = d.getFullYear();
+    const hours = String(d.getHours()).padStart(2, "0");
+    const minutes = String(d.getMinutes()).padStart(2, "0");
+    formatted = `${day}/${month}/${year} ${hours}:${minutes}`;
+  } else {
+    formatted = document.lastModified;
+  }
+
+  const lastModifiedContainer = document.getElementById("last-modified-date");
+  if (lastModifiedContainer) {
+    lastModifiedContainer.textContent = formatted;
+  }
+}
+updateLastModified();
 
 const footerBottom = document.querySelector("footer .footer-bottom");
 if (footerBottom && !footerBottom.querySelector("[data-visitor-count]")) {
@@ -82,3 +106,44 @@ fetch(visitorCountUrl)
       element.textContent = "N/A";
     });
   });
+
+// ── PWA Service Worker Registration ──
+const pwaScriptSrc = (document.currentScript && document.currentScript.src) || "";
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    let swUrl = "";
+    if (pwaScriptSrc) {
+      swUrl = new URL("../../sw.js", pwaScriptSrc).href;
+    } else {
+      const depth = (window.location.pathname.match(/\//g) || []).length - 1;
+      const prefix = depth > 0 ? "../".repeat(depth) : "";
+      swUrl = prefix + "sw.js";
+    }
+    navigator.serviceWorker
+      .register(swUrl)
+      .then((reg) => {
+        console.log("[PWA] Service Worker registered with scope:", reg.scope);
+      })
+      .catch((err) => {
+        console.warn("[PWA] Service Worker registration failed:", err);
+      });
+  });
+}
+
+// Capture install prompt for PWA
+let deferredInstallPrompt = null;
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredInstallPrompt = e;
+  window.deferredInstallPrompt = e;
+  const pwaBtn = document.getElementById("pwa-install-btn");
+  if (pwaBtn) {
+    pwaBtn.style.display = "inline-flex";
+    pwaBtn.addEventListener("click", () => {
+      deferredInstallPrompt.prompt();
+      deferredInstallPrompt.userChoice.then(() => {
+        deferredInstallPrompt = null;
+      });
+    });
+  }
+});
