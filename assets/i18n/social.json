@@ -1,0 +1,50 @@
+{
+  "en": {
+    "page_title": "Social Links",
+    "page_subtitle": "Where you can find me or get in touch.",
+    "social_github": "GitHub Profile",
+    "social_telegram": "Telegram",
+    "social_email": "Email",
+    "social_instagram": "Instagram",
+    "social_tiktok": "TikTok",
+    "social_twitter": "Twitter X",
+    "social_linkedin": "LinkedIn",
+    "social_blog": "Blog",
+    "footer_contact": "Contact",
+    "footer_about": "About Me",
+    "footer_visits": "Total visits:",
+    "footer_design": "Design by"
+  },
+  "it": {
+    "page_title": "Link Social",
+    "page_subtitle": "Dove puoi trovarmi o metterti in contatto.",
+    "social_github": "Profilo GitHub",
+    "social_telegram": "Telegram",
+    "social_email": "Email",
+    "social_instagram": "Instagram",
+    "social_tiktok": "TikTok",
+    "social_twitter": "Twitter X",
+    "social_linkedin": "LinkedIn",
+    "social_blog": "Blog",
+    "footer_contact": "Contatti",
+    "footer_about": "Chi sono",
+    "footer_visits": "Visite totali:",
+    "footer_design": "Design di"
+  },
+  "es": {
+    "page_title": "Enlaces Sociales",
+    "page_subtitle": "Dónde encontrarme o ponerse en contacto.",
+    "social_github": "Perfil de GitHub",
+    "social_telegram": "Telegram",
+    "social_email": "Correo electrónico",
+    "social_instagram": "Instagram",
+    "social_tiktok": "TikTok",
+    "social_twitter": "Twitter X",
+    "social_linkedin": "LinkedIn",
+    "social_blog": "Blog",
+    "footer_contact": "Contacto",
+    "footer_about": "Sobre mí",
+    "footer_visits": "Visitas totales:",
+    "footer_design": "Diseño de"
+  }
+}
