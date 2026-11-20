@@ -1,0 +1,35 @@
+{
+  "en": {
+    "page_title": "Professional Showcase",
+    "page_subtitle": "Curriculum Vitae, experience and tech stack.",
+    "back_blog": "Back to Blog",
+    "cv_contacts": "Contacts",
+    "cv_languages": "Languages",
+    "cv_skills": "Digital Skills",
+    "cv_education": "Education &amp; Training",
+    "cv_experience": "Work Experience",
+    "cv_portfolios": "Projects &amp; Portfolios"
+  },
+  "it": {
+    "page_title": "Profilo Professionale",
+    "page_subtitle": "Curriculum Vitae, esperienza e competenze tecniche.",
+    "back_blog": "Torna al Blog",
+    "cv_contacts": "Contatti",
+    "cv_languages": "Lingue",
+    "cv_skills": "Competenze Digitali",
+    "cv_education": "Istruzione e Formazione",
+    "cv_experience": "Esperienza Lavorativa",
+    "cv_portfolios": "Progetti e Portfolio"
+  },
+  "es": {
+    "page_title": "Perfil Profesional",
+    "page_subtitle": "Curriculum Vitae, experiencia y competencias técnicas.",
+    "back_blog": "Volver al Blog",
+    "cv_contacts": "Contacto",
+    "cv_languages": "Idiomas",
+    "cv_skills": "Habilidades Digitales",
+    "cv_education": "Educación y Formación",
+    "cv_experience": "Experiencia Laboral",
+    "cv_portfolios": "Proyectos y Portafolio"
+  }
+}
