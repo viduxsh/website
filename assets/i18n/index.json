@@ -1,0 +1,29 @@
+{
+  "en": {
+    "hero_title": "Hi, I'm Ivan.",
+    "hero_subtitle": "I'm a developer based in Italy.",
+    "github_btn": "GitHub Profile",
+    "footer_contact": "Contact",
+    "footer_about": "About Me",
+    "footer_visits": "Total visits:",
+    "footer_design": "Design by"
+  },
+  "it": {
+    "hero_title": "Ciao, sono Ivan.",
+    "hero_subtitle": "Sono uno sviluppatore con base in Italia.",
+    "github_btn": "Profilo GitHub",
+    "footer_contact": "Contatti",
+    "footer_about": "Chi sono",
+    "footer_visits": "Visite totali:",
+    "footer_design": "Design di"
+  },
+  "es": {
+    "hero_title": "Hola, soy Ivan.",
+    "hero_subtitle": "Soy un desarrollador radicado en Italia.",
+    "github_btn": "Perfil de GitHub",
+    "footer_contact": "Contacto",
+    "footer_about": "Sobre mí",
+    "footer_visits": "Visitas totales:",
+    "footer_design": "Diseño de"
+  }
+}
