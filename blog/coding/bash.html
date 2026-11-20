@@ -12,8 +12,15 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="../../assets/css/style.css">
+        <link rel="manifest" href="../../manifest.json">
+        <meta name="theme-color" content="#0f1115">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="apple-mobile-web-app-title" content="vidux.sh">
+        <link rel="apple-touch-icon" href="../../assets/images/icons/apple-touch-icon.png">
     </head>
-    <body data-theme="light">
+    <body data-theme="light" data-page="blog_coding_bash">
         <div class="main-wrapper">
             <header>
                 <div class="header-container">
@@ -21,11 +28,16 @@
                         <img src="../../assets/images/viduxsh_logo_full.png" alt="Logo" class="nav-logo">
                     </div>
                     <nav class="nav-links">
-                        <a title="Home"     href="../../index.html"    class="nav-btn"><i class="fa-solid fa-house"></i><span>Home</span></a>
-                        <a title="Projects" href="../../projects.html" class="nav-btn"><i class="fa-solid fa-diagram-project"></i><span>Projects</span></a>
-                        <a title="Social"   href="../../social.html"   class="nav-btn"><i class="fa-solid fa-hashtag"></i><span>Social</span></a>
-                        <a title="About Me" href="../../aboutme.html"  class="nav-btn"><i class="fa-solid fa-address-card"></i><span>About Me</span></a>
+                        <a title="Home"     href="../../index.html"    class="nav-btn"><i class="fa-solid fa-house"></i><span data-i18n="nav_home">Home</span></a>
+                        <a title="Projects" href="../../projects.html" class="nav-btn"><i class="fa-solid fa-diagram-project"></i><span data-i18n="nav_projects">Projects</span></a>
+                        <a title="Social"   href="../../social.html"   class="nav-btn"><i class="fa-solid fa-hashtag"></i><span data-i18n="nav_social">Social</span></a>
+                        <a title="About Me" href="../../aboutme.html"  class="nav-btn"><i class="fa-solid fa-address-card"></i><span data-i18n="nav_aboutme">About Me</span></a>
                     </nav>
+                    <div class="lang-switcher" aria-label="Language selector">
+                        <button type="button" class="lang-btn" data-lang="en" aria-label="Switch to English"><span class="flag-emoji">🇬🇧</span> <span>EN</span></button>
+                        <button type="button" class="lang-btn" data-lang="it" aria-label="Switch to Italian"><span class="flag-emoji">🇮🇹</span> <span>IT</span></button>
+                        <button type="button" class="lang-btn" data-lang="es" aria-label="Switch to Spanish"><span class="flag-emoji">🇪🇸</span> <span>ES</span></button>
+                    </div>
                     <div class="theme-switcher">
                         <input type="checkbox" id="switcher">
                         <label for="switcher" title="Toggle Theme">Switch</label>
@@ -37,14 +49,13 @@
                     <div class="card-container wide">
                         <div class="guide-topbar">
                             <a title="Back to Coding" href="coding.html" class="cta-btn ghost sm">
-                                <i class="fa-solid fa-arrow-left"></i> Coding Guides
-                            </a>
+                                <i class="fa-solid fa-arrow-left"></i> <span data-i18n="back_coding">Coding Guides</span></a>
                         </div>
                         <div class="lang-header">
                             <img src="../../assets/images/coding/logo/bash.png" alt="Bash logo">
                             <div>
-                                <h1>Bash Scripting <span class="lang-badge">Beginner</span></h1>
-                                <p class="lang-subtitle">Unix Shell Engine — automation blueprints, pipeline stream redirection, system permission management, and cross-platform automation via native Linux or Windows WSL frameworks.</p>
+                                <h1>Bash Scripting <span class="lang-badge" data-i18n="badge">Beginner</span></h1>
+                                <p class="lang-subtitle" data-i18n="subtitle">Unix Shell Engine — automation blueprints, pipeline stream redirection, system permission management, and cross-platform automation via native Linux or Windows WSL frameworks.</p>
                             </div>
                         </div>
                         <div class="tutorial-progress" id="tutorial-progress">
@@ -59,24 +70,24 @@
                         </div>
                         <div class="divider" style="margin-top: 0;"></div>
                         <div class="toc">
-                            <h3><i class="fa-solid fa-list"></i> Table of Contents</h3>
+                            <h3><i class="fa-solid fa-list"></i> <span data-i18n="toc_title">Table of Contents</span></h3>
                             <ol>
-                                <li><a href="#s1">Environment Setup &amp; The Shebang</a></li>
-                                <li><a href="#s2">File System Navigation Core</a></li>
-                                <li><a href="#s3">File Manipulation &amp; Permissions</a></li>
-                                <li><a href="#s4">Variables &amp; User Inputs</a></li>
-                                <li><a href="#s5">Conditional Statements (If &amp; Test)</a></li>
-                                <li><a href="#s6">Loops &amp; Iteration Routines</a></li>
-                                <li><a href="#s7">I/O Redirections, Pipes &amp; Grep</a></li>
-                                <li><a href="#s8">Process Control &amp; System Signaling</a></li>
+                                <li><a href="#s1" data-i18n="toc_s1">Environment Setup &amp; The Shebang</a></li>
+                                <li><a href="#s2" data-i18n="toc_s2">File System Navigation Core</a></li>
+                                <li><a href="#s3" data-i18n="toc_s3">File Manipulation &amp; Permissions</a></li>
+                                <li><a href="#s4" data-i18n="toc_s4">Variables &amp; User Inputs</a></li>
+                                <li><a href="#s5" data-i18n="toc_s5">Conditional Statements (If &amp; Test)</a></li>
+                                <li><a href="#s6" data-i18n="toc_s6">Loops &amp; Iteration Routines</a></li>
+                                <li><a href="#s7" data-i18n="toc_s7">I/O Redirections, Pipes &amp; Grep</a></li>
+                                <li><a href="#s8" data-i18n="toc_s8">Process Control &amp; System Signaling</a></li>
                             </ol>
                         </div>
                         <div class="tutorial-section" id="s1">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-1);">1</span>
-                                Environment Setup &amp; The Shebang
+                                <span data-i18n="s1_title">Environment Setup &amp; The Shebang</span>
                             </h2>
-                            <p>Bash is the default execution interface for Linux environments. On Windows platforms, you can safely execute identical scripts utilizing **WSL (Windows Subsystem for Linux)** or Git Bash, bypassing native PowerShell formatting completely. Every script must explicitly declare its execution engine via a header construct called **Shebang**.</p>
+                            <p data-i18n="s1_intro">Bash is the default execution interface for Linux environments. On Windows platforms, you can safely execute identical scripts utilizing **WSL (Windows Subsystem for Linux)** or Git Bash, bypassing native PowerShell formatting completely. Every script must explicitly declare its execution engine via a header construct called **Shebang**.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">sh · script.sh</span>
@@ -92,9 +103,9 @@
                         <div class="tutorial-section" id="s2">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-2);">2</span>
-                                File System Navigation Core
+                                <span data-i18n="s2_title">File System Navigation Core</span>
                             </h2>
-                            <p>Interacting with the system requires traversing directory structures. Unlike Windows paths which utilize backslashes and drive letters (<code>C:\</code>), Unix environments map all elements down from a single root slash infrastructure.</p>
+                            <p data-i18n="s1_intro">Interacting with the system requires traversing directory structures. Unlike Windows paths which utilize backslashes and drive letters (<code>C:\</code>), Unix environments map all elements down from a single root slash infrastructure.</p>
                             <div class="type-grid">
                                 <div class="type-pill">
                                     <span class="type-name">pwd</span>
@@ -132,9 +143,9 @@
                         <div class="tutorial-section" id="s3">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
-                                File Manipulation &amp; Permissions
+                                <span data-i18n="s3_title">File Manipulation &amp; Permissions</span>
                             </h2>
-                            <p>Files must explicitly carry execution permissions to run as scripts. The operating system calculates security rights based on three user categories: **User (Owner), Group, and Others**.</p>
+                            <p data-i18n="s1_intro">Files must explicitly carry execution permissions to run as scripts. The operating system calculates security rights based on three user categories: **User (Owner), Group, and Others**.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">sh · deployment.sh</span>
@@ -153,9 +164,9 @@
                         <div class="tutorial-section" id="s4">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
-                                Variables &amp; User Inputs
+                                <span data-i18n="s4_title">Variables &amp; User Inputs</span>
                             </h2>
-                            <p>Variables store dynamic configurations within a script context. **CRITICAL WARNING:** You must never leave trailing whitespaces around the assignment operator token (<code>=</code>); otherwise, the shell engine parses the target variable name as an executable system application command.</p>
+                            <p data-i18n="s1_intro">Variables store dynamic configurations within a script context. **CRITICAL WARNING:** You must never leave trailing whitespaces around the assignment operator token (<code>=</code>); otherwise, the shell engine parses the target variable name as an executable system application command.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">sh · inputs.sh</span>
@@ -173,9 +184,9 @@
                         <div class="tutorial-section" id="s5">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
-                                Conditional Statements (If &amp; Test)
+                                <span data-i18n="s5_title">Conditional Statements (If &amp; Test)</span>
                             </h2>
-                            <p>Branching flows rely on condition blocks evaluated via the <code>[ ]</code> syntax (which internally calls the system tool <code>test</code>). Strings use standard algebraic symbols, but numerical evaluations require specific flag operators.</p>
+                            <p data-i18n="s1_intro">Branching flows rely on condition blocks evaluated via the <code>[ ]</code> syntax (which internally calls the system tool <code>test</code>). Strings use standard algebraic symbols, but numerical evaluations require specific flag operators.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">sh · logic.sh</span>
@@ -196,9 +207,9 @@
                         <div class="tutorial-section" id="s6">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
-                                Loops &amp; Iteration Routines
+                                <span data-i18n="s6_title">Loops &amp; Iteration Routines</span>
                             </h2>
-                            <p>Loops automate repetitive tasks, such as scanning text arrays or batch-modifying server log layouts, by processing structures over a structured collection block.</p>
+                            <p data-i18n="s1_intro">Loops automate repetitive tasks, such as scanning text arrays or batch-modifying server log layouts, by processing structures over a structured collection block.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">sh · loops.sh</span>
@@ -223,9 +234,9 @@
                         <div class="tutorial-section" id="s7">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
-                                I/O Redirections, Pipes &amp; Grep
+                                <span data-i18n="s7_title">I/O Redirections, Pipes &amp; Grep</span>
                             </h2>
-                            <p>The true power of Bash lies in standard stream manipulation. By leveraging the pipe operator (<code>|</code>), you can redirect the text output of one script or command to serve as the direct input for the next processing block.</p>
+                            <p data-i18n="s1_intro">The true power of Bash lies in standard stream manipulation. By leveraging the pipe operator (<code>|</code>), you can redirect the text output of one script or command to serve as the direct input for the next processing block.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">sh · streams.sh</span>
@@ -242,9 +253,9 @@
                         <div class="tutorial-section" id="s8">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
-                                Process Control &amp; System Signaling
+                                <span data-i18n="s8_title">Process Control &amp; System Signaling</span>
                             </h2>
-                            <p>Every execution task runs in its own memory container track monitored via a unique **PID (Process ID)**. Bash lets you shift tasks to the background or terminate stalled processes instantly.</p>
+                            <p data-i18n="s1_intro">Every execution task runs in its own memory container track monitored via a unique **PID (Process ID)**. Bash lets you shift tasks to the background or terminate stalled processes instantly.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">sh · processes.sh</span>
@@ -263,10 +274,10 @@
                         <div class="divider"></div>
                         <div class="guide-footer-nav">
                             <a href="coding.html" class="cta-btn ghost sm">
-                                <i class="fa-solid fa-arrow-left"></i> Back to Coding
+                                <i class="fa-solid fa-arrow-left"></i> <span data-i18n="nav_back">Back to Coding</span>
                             </a>
                             <a href="#s1" class="cta-btn sm">
-                                <i class="fa-solid fa-arrow-up"></i> Back to Top
+                                <i class="fa-solid fa-arrow-up"></i> <span data-i18n="nav_top">Back to Top</span>
                             </a>
                         </div>
                     </div>
@@ -276,7 +287,7 @@
                 <div class="footer-container">
                     <div class="footer-grid">
                         <div class="footer-widget">
-                            <h3><img width="20" height="20" src="https://img.icons8.com/3d-fluency/94/topic.png" alt="Contact"/>Contact</h3>
+                            <h3><img width="20" height="20" src="https://img.icons8.com/3d-fluency/94/topic.png" alt="Contact"/><span data-i18n="footer_contact">Contact</span></h3>
                             <ul class="contact-list">
                                 <li><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/location.png" alt="Location"/>Udine, Italy</li>
                                 <li><a href="https://t.me/viduxsh" target="_blank"><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/telegram.png" alt="Telegram"/>Telegram</a></li>
@@ -285,7 +296,7 @@
                             </ul>
                         </div>
                         <div class="footer-widget profile-widget">
-                            <h3>About Me</h3>
+                            <h3 data-i18n="footer_about">About Me</h3>
                             <div class="footer-profile-box">
                                 <img src="../../assets/images/viduxsh_logo_full.png" alt="Profile Logo" class="footer-avatar">
                                 <p id="my-age"></p>
@@ -294,12 +305,14 @@
                     </div>
                     <div class="footer-bottom">
                         <p id="copyright-year"></p>
-                        <p>Total visits: <span data-visitor-count>Loading...</span></p>
-                        <p class="credits">Design by <a href="https://github.com/viduxsh" target="_blank">vidux.sh</a></p>
+                        <p><span data-i18n="footer_modified">Last modified:</span> <span id="last-modified-date">20/11/2026 17:49</span></p>
+                        <p><span data-i18n="footer_visits">Total visits:</span> <span data-visitor-count>Loading...</span></p>
+                        <p class="credits"><span data-i18n="footer_design">Design by</span> <a href="https://github.com/viduxsh" target="_blank">vidux.sh</a></p>
                     </div>
                 </div>
             </footer>
         </div>
+        <script src="../../assets/js/i18n.js"></script>
         <script src="../../assets/js/script.js"></script>
         <script>
             function copyCode(btn) {

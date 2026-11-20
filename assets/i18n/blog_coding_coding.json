@@ -1,0 +1,21 @@
+{
+  "en": {
+    "page_title": "Coding Guides",
+    "page_subtitle": "Documentation, ready-to-use snippets, and programming logic.",
+    "back_blog": "Back to Blog"
+  },
+  "it": {
+    "page_title": "Guide di Coding",
+    "page_subtitle": "Documentazione, snippet pronti all'uso e logica di programmazione.",
+    "back_blog": "Torna al Blog"
+  },
+  "es": {
+    "page_title": "Guías de Coding",
+    "page_subtitle": "Documentación, snippets listos para usar y lógica de programación.",
+    "back_blog": "Volver al Blog",
+    "footer_contact": "Contacto",
+    "footer_about": "Sobre mí",
+    "footer_visits": "Visitas totales:",
+    "footer_design": "Diseño de"
+  }
+}

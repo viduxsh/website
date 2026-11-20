@@ -12,8 +12,15 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="../../assets/css/style.css">
+        <link rel="manifest" href="../../manifest.json">
+        <meta name="theme-color" content="#0f1115">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="apple-mobile-web-app-title" content="vidux.sh">
+        <link rel="apple-touch-icon" href="../../assets/images/icons/apple-touch-icon.png">
     </head>
-    <body data-theme="light">
+    <body data-theme="light" data-page="blog_coding_assembly">
         <div class="main-wrapper">
             <header>
                 <div class="header-container">
@@ -21,11 +28,16 @@
                         <img src="../../assets/images/viduxsh_logo_full.png" alt="Logo" class="nav-logo">
                     </div>
                     <nav class="nav-links">
-                        <a title="Home"     href="../../index.html"    class="nav-btn"><i class="fa-solid fa-house"></i><span>Home</span></a>
-                        <a title="Projects" href="../../projects.html" class="nav-btn"><i class="fa-solid fa-diagram-project"></i><span>Projects</span></a>
-                        <a title="Social"   href="../../social.html"   class="nav-btn"><i class="fa-solid fa-hashtag"></i><span>Social</span></a>
-                        <a title="About Me" href="../../aboutme.html"  class="nav-btn"><i class="fa-solid fa-address-card"></i><span>About Me</span></a>
+                        <a title="Home"     href="../../index.html"    class="nav-btn"><i class="fa-solid fa-house"></i><span data-i18n="nav_home">Home</span></a>
+                        <a title="Projects" href="../../projects.html" class="nav-btn"><i class="fa-solid fa-diagram-project"></i><span data-i18n="nav_projects">Projects</span></a>
+                        <a title="Social"   href="../../social.html"   class="nav-btn"><i class="fa-solid fa-hashtag"></i><span data-i18n="nav_social">Social</span></a>
+                        <a title="About Me" href="../../aboutme.html"  class="nav-btn"><i class="fa-solid fa-address-card"></i><span data-i18n="nav_aboutme">About Me</span></a>
                     </nav>
+                    <div class="lang-switcher" aria-label="Language selector">
+                        <button type="button" class="lang-btn" data-lang="en" aria-label="Switch to English"><span class="flag-emoji">🇬🇧</span> <span>EN</span></button>
+                        <button type="button" class="lang-btn" data-lang="it" aria-label="Switch to Italian"><span class="flag-emoji">🇮🇹</span> <span>IT</span></button>
+                        <button type="button" class="lang-btn" data-lang="es" aria-label="Switch to Spanish"><span class="flag-emoji">🇪🇸</span> <span>ES</span></button>
+                    </div>
                     <div class="theme-switcher">
                         <input type="checkbox" id="switcher">
                         <label for="switcher" title="Toggle Theme">Switch</label>
@@ -37,14 +49,13 @@
                     <div class="card-container wide">
                         <div class="guide-topbar">
                             <a title="Back to Coding" href="coding.html" class="cta-btn ghost sm">
-                                <i class="fa-solid fa-arrow-left"></i> Coding Guides
-                            </a>
+                                <i class="fa-solid fa-arrow-left"></i> <span data-i18n="back_coding">Coding Guides</span></a>
                         </div>
                         <div class="lang-header">
                             <img src="../../assets/images/coding/logo/assembly.png" alt="Assembly logo">
                             <div>
-                                <h1>Assembly <span class="lang-badge">Beginner</span></h1>
-                                <p class="lang-subtitle">x86_64 Architecture — low-overhead hardware manipulation, memory registers, stack layout orientation, and bare-metal execution control.</p>
+                                <h1>Assembly <span class="lang-badge" data-i18n="badge">Beginner</span></h1>
+                                <p class="lang-subtitle" data-i18n="subtitle">x86_64 Architecture — low-overhead hardware manipulation, memory registers, stack layout orientation, and bare-metal execution control.</p>
                             </div>
                         </div>
                         <div class="tutorial-progress" id="tutorial-progress">
@@ -59,24 +70,24 @@
                         </div>
                         <div class="divider" style="margin-top: 0;"></div>
                         <div class="toc">
-                            <h3><i class="fa-solid fa-list"></i> Table of Contents</h3>
+                            <h3><i class="fa-solid fa-list"></i> <span data-i18n="toc_title">Table of Contents</span></h3>
                             <ol>
-                                <li><a href="#s1">Program Structure &amp; Segments</a></li>
-                                <li><a href="#s2">x86_64 Processor Registers</a></li>
-                                <li><a href="#s3">Data Movement Operations</a></li>
-                                <li><a href="#s4">Basic Arithmetic Instructions</a></li>
-                                <li><a href="#s5">Status Flags &amp; Conditional Jumps</a></li>
-                                <li><a href="#s6">The Stack Pointer (Push &amp; Pop)</a></li>
-                                <li><a href="#s7">Functions &amp; Subroutines</a></li>
-                                <li><a href="#s8">Linux System Calls (Syscalls)</a></li>
+                                <li><a href="#s1" data-i18n="toc_s1">Program Structure &amp; Segments</a></li>
+                                <li><a href="#s2" data-i18n="toc_s2">x86_64 Processor Registers</a></li>
+                                <li><a href="#s3" data-i18n="toc_s3">Data Movement Operations</a></li>
+                                <li><a href="#s4" data-i18n="toc_s4">Basic Arithmetic Instructions</a></li>
+                                <li><a href="#s5" data-i18n="toc_s5">Status Flags &amp; Conditional Jumps</a></li>
+                                <li><a href="#s6" data-i18n="toc_s6">The Stack Pointer (Push &amp; Pop)</a></li>
+                                <li><a href="#s7" data-i18n="toc_s7">Functions &amp; Subroutines</a></li>
+                                <li><a href="#s8" data-i18n="toc_s8">Linux System Calls (Syscalls)</a></li>
                             </ol>
                         </div>
                         <div class="tutorial-section" id="s1">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-1);">1</span>
-                                Program Structure &amp; Segments
+                                <span data-i18n="s1_title">Program Structure &amp; Segments</span>
                             </h2>
-                            <p>An Assembly program (NASM syntax) maps directly into system memory blocks. Executable binaries separate binary parameters into structural subdivisions called **Segments** or **Sections**.</p>
+                            <p data-i18n="s1_intro">An Assembly program (NASM syntax) maps directly into system memory blocks. Executable binaries separate binary parameters into structural subdivisions called **Segments** or **Sections**.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">asm · program.asm</span>
@@ -100,9 +111,9 @@ _start:
                         <div class="tutorial-section" id="s2">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-2);">2</span>
-                                x86_64 Processor Registers
+                                <span data-i18n="s2_title">x86_64 Processor Registers</span>
                             </h2>
-                            <p>Registers are high-speed storage locations built directly inside the CPU core. Modern x86_64 chips host 64-bit general-purpose cells that remain backward-compatible with 32-bit, 16-bit, and 8-bit historical subdivisions.</p>
+                            <p data-i18n="s1_intro">Registers are high-speed storage locations built directly inside the CPU core. Modern x86_64 chips host 64-bit general-purpose cells that remain backward-compatible with 32-bit, 16-bit, and 8-bit historical subdivisions.</p>
                             <div class="type-grid">
                                 <div class="type-pill">
                                     <span class="type-name">RAX / EAX / AX</span>
@@ -140,9 +151,9 @@ _start:
                         <div class="tutorial-section" id="s3">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
-                                Data Movement Operations
+                                <span data-i18n="s3_title">Data Movement Operations</span>
                             </h2>
-                            <p>The <code>mov</code> instruction transfers data payloads between registers, or between registers and system RAM cells. Note that Intel syntax maps arguments as <code>mov destination, source</code>.</p>
+                            <p data-i18n="s1_intro">The <code>mov</code> instruction transfers data payloads between registers, or between registers and system RAM cells. Note that Intel syntax maps arguments as <code>mov destination, source</code>.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">asm · movement.asm</span>
@@ -159,9 +170,9 @@ _start:
                         <div class="tutorial-section" id="s4">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
-                                Basic Arithmetic Instructions
+                                <span data-i18n="s4_title">Basic Arithmetic Instructions</span>
                             </h2>
-                            <p>Perform native mathematical mutations using dedicated CPU logic block circuits. These operations alter register allocations in place.</p>
+                            <p data-i18n="s1_intro">Perform native mathematical mutations using dedicated CPU logic block circuits. These operations alter register allocations in place.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">asm · arithmetic.asm</span>
@@ -180,9 +191,9 @@ _start:
                         <div class="tutorial-section" id="s5">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
-                                Status Flags &amp; Conditional Jumps
+                                <span data-i18n="s5_title">Status Flags &amp; Conditional Jumps</span>
                             </h2>
-                            <p>Branching logic evaluates data by comparing operands using the <code>cmp</code> instruction. This operation subtracts values without saving the result, modifying internal CPU **Status Flags** instead.</p>
+                            <p data-i18n="s1_intro">Branching logic evaluates data by comparing operands using the <code>cmp</code> instruction. This operation subtracts values without saving the result, modifying internal CPU **Status Flags** instead.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">asm · control.asm</span>
@@ -204,9 +215,9 @@ _start:
                         <div class="tutorial-section" id="s6">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
-                                The Stack Pointer (Push &amp; Pop)
+                                <span data-i18n="s6_title">The Stack Pointer (Push &amp; Pop)</span>
                             </h2>
-                            <p>The **Stack** is a Last-In, First-Out (LIFO) memory region managed directly by the CPU. The <code>rsp</code> register tracks the top of the stack, growing downward toward lower memory addresses.</p>
+                            <p data-i18n="s1_intro">The **Stack** is a Last-In, First-Out (LIFO) memory region managed directly by the CPU. The <code>rsp</code> register tracks the top of the stack, growing downward toward lower memory addresses.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">asm · stack.asm</span>
@@ -227,9 +238,9 @@ _start:
                         <div class="tutorial-section" id="s7">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
-                                Functions &amp; Subroutines
+                                <span data-i18n="s7_title">Functions &amp; Subroutines</span>
                             </h2>
-                            <p>Subroutines organize code blocks into reusable tasks. The <code>call</code> command pushes the current return address onto the stack and jumps to the target label. The <code>ret</code> statement pops that address to resume execution.</p>
+                            <p data-i18n="s1_intro">Subroutines organize code blocks into reusable tasks. The <code>call</code> command pushes the current return address onto the stack and jumps to the target label. The <code>ret</code> statement pops that address to resume execution.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">asm · functions.asm</span>
@@ -249,9 +260,9 @@ double_value:
                         <div class="tutorial-section" id="s8">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
-                                Linux System Calls (Syscalls)
+                                <span data-i18n="s8_title">Linux System Calls (Syscalls)</span>
                             </h2>
-                            <p>Assembly can transition from user space to kernel space via the <code>syscall</code> instruction. This triggers an exception that passes execution control directly to the OS kernel to handle tasks like writing files or printing text to the console.</p>
+                            <p data-i18n="s1_intro">Assembly can transition from user space to kernel space via the <code>syscall</code> instruction. This triggers an exception that passes execution control directly to the OS kernel to handle tasks like writing files or printing text to the console.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">asm · syscall.asm</span>
@@ -270,10 +281,10 @@ double_value:
                         <div class="divider"></div>
                         <div class="guide-footer-nav">
                             <a href="coding.html" class="cta-btn ghost sm">
-                                <i class="fa-solid fa-arrow-left"></i> Back to Coding
+                                <i class="fa-solid fa-arrow-left"></i> <span data-i18n="nav_back">Back to Coding</span>
                             </a>
                             <a href="#s1" class="cta-btn sm">
-                                <i class="fa-solid fa-arrow-up"></i> Back to Top
+                                <i class="fa-solid fa-arrow-up"></i> <span data-i18n="nav_top">Back to Top</span>
                             </a>
                         </div>
                     </div>
@@ -283,7 +294,7 @@ double_value:
                 <div class="footer-container">
                     <div class="footer-grid">
                         <div class="footer-widget">
-                            <h3><img width="20" height="20" src="https://img.icons8.com/3d-fluency/94/topic.png" alt="Contact"/>Contact</h3>
+                            <h3><img width="20" height="20" src="https://img.icons8.com/3d-fluency/94/topic.png" alt="Contact"/><span data-i18n="footer_contact">Contact</span></h3>
                             <ul class="contact-list">
                                 <li><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/location.png" alt="Location"/>Udine, Italy</li>
                                 <li><a href="https://t.me/viduxsh" target="_blank"><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/telegram.png" alt="Telegram"/>Telegram</a></li>
@@ -292,7 +303,7 @@ double_value:
                             </ul>
                         </div>
                         <div class="footer-widget profile-widget">
-                            <h3>About Me</h3>
+                            <h3 data-i18n="footer_about">About Me</h3>
                             <div class="footer-profile-box">
                                 <img src="../../assets/images/viduxsh_logo_full.png" alt="Profile Logo" class="footer-avatar">
                                 <p id="my-age"></p>
@@ -301,12 +312,14 @@ double_value:
                     </div>
                     <div class="footer-bottom">
                         <p id="copyright-year"></p>
-                        <p>Total visits: <span data-visitor-count>Loading...</span></p>
-                        <p class="credits">Design by <a href="https://github.com/viduxsh" target="_blank">vidux.sh</a></p>
+                        <p><span data-i18n="footer_modified">Last modified:</span> <span id="last-modified-date">20/11/2026 17:49</span></p>
+                        <p><span data-i18n="footer_visits">Total visits:</span> <span data-visitor-count>Loading...</span></p>
+                        <p class="credits"><span data-i18n="footer_design">Design by</span> <a href="https://github.com/viduxsh" target="_blank">vidux.sh</a></p>
                     </div>
                 </div>
             </footer>
         </div>
+        <script src="../../assets/js/i18n.js"></script>
         <script src="../../assets/js/script.js"></script>
         <script>
             function copyCode(btn) {

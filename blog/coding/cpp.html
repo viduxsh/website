@@ -12,8 +12,15 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="../../assets/css/style.css">
+        <link rel="manifest" href="../../manifest.json">
+        <meta name="theme-color" content="#0f1115">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="apple-mobile-web-app-title" content="vidux.sh">
+        <link rel="apple-touch-icon" href="../../assets/images/icons/apple-touch-icon.png">
     </head>
-    <body data-theme="light">
+    <body data-theme="light" data-page="blog_coding_cpp">
         <div class="main-wrapper">
             <header>
                 <div class="header-container">
@@ -21,11 +28,16 @@
                         <img src="../../assets/images/viduxsh_logo_full.png" alt="Logo" class="nav-logo">
                     </div>
                     <nav class="nav-links">
-                        <a title="Home"     href="../../index.html"    class="nav-btn"><i class="fa-solid fa-house"></i><span>Home</span></a>
-                        <a title="Projects" href="../../projects.html" class="nav-btn"><i class="fa-solid fa-diagram-project"></i><span>Projects</span></a>
-                        <a title="Social"   href="../../social.html"   class="nav-btn"><i class="fa-solid fa-hashtag"></i><span>Social</span></a>
-                        <a title="About Me" href="../../aboutme.html"  class="nav-btn"><i class="fa-solid fa-address-card"></i><span>About Me</span></a>
+                        <a title="Home"     href="../../index.html"    class="nav-btn"><i class="fa-solid fa-house"></i><span data-i18n="nav_home">Home</span></a>
+                        <a title="Projects" href="../../projects.html" class="nav-btn"><i class="fa-solid fa-diagram-project"></i><span data-i18n="nav_projects">Projects</span></a>
+                        <a title="Social"   href="../../social.html"   class="nav-btn"><i class="fa-solid fa-hashtag"></i><span data-i18n="nav_social">Social</span></a>
+                        <a title="About Me" href="../../aboutme.html"  class="nav-btn"><i class="fa-solid fa-address-card"></i><span data-i18n="nav_aboutme">About Me</span></a>
                     </nav>
+                    <div class="lang-switcher" aria-label="Language selector">
+                        <button type="button" class="lang-btn" data-lang="en" aria-label="Switch to English"><span class="flag-emoji">🇬🇧</span> <span>EN</span></button>
+                        <button type="button" class="lang-btn" data-lang="it" aria-label="Switch to Italian"><span class="flag-emoji">🇮🇹</span> <span>IT</span></button>
+                        <button type="button" class="lang-btn" data-lang="es" aria-label="Switch to Spanish"><span class="flag-emoji">🇪🇸</span> <span>ES</span></button>
+                    </div>
                     <div class="theme-switcher">
                         <input type="checkbox" id="switcher">
                         <label for="switcher" title="Toggle Theme">Switch</label>
@@ -37,14 +49,13 @@
                     <div class="card-container wide">
                         <div class="guide-topbar">
                             <a title="Back to Coding" href="coding.html" class="cta-btn ghost sm">
-                                <i class="fa-solid fa-arrow-left"></i> Coding Guides
-                            </a>
+                                <i class="fa-solid fa-arrow-left"></i> <span data-i18n="back_coding">Coding Guides</span></a>
                         </div>
                         <div class="lang-header">
                             <img src="../../assets/images/coding/logo/cpp.png" alt="C++ logo">
                             <div>
-                                <h1>C++ <span class="lang-badge">Beginner</span></h1>
-                                <p class="lang-subtitle">Fast, strongly typed, and system-level — the backbone of high-performance software.</p>
+                                <h1>C++ <span class="lang-badge" data-i18n="badge">Beginner</span></h1>
+                                <p class="lang-subtitle" data-i18n="subtitle">Fast, strongly typed, and system-level — the backbone of high-performance software.</p>
                             </div>
                         </div>
                         <div class="tutorial-progress" id="tutorial-progress">
@@ -59,24 +70,24 @@
                         </div>
                         <div class="divider" style="margin-top: 0;"></div>
                         <div class="toc">
-                            <h3><i class="fa-solid fa-list"></i> Table of Contents</h3>
+                            <h3><i class="fa-solid fa-list"></i> <span data-i18n="toc_title">Table of Contents</span></h3>
                             <ol>
-                                <li><a href="#s1">Structure &amp; Output</a></li>
-                                <li><a href="#s2">Variables &amp; Data Types</a></li>
-                                <li><a href="#s3">Operators</a></li>
-                                <li><a href="#s4">Strings &amp; Input</a></li>
-                                <li><a href="#s5">Conditionals</a></li>
-                                <li><a href="#s6">Loops</a></li>
-                                <li><a href="#s7">Arrays &amp; Vectors</a></li>
-                                <li><a href="#s8">Functions &amp; References</a></li>
+                                <li><a href="#s1" data-i18n="toc_s1">Structure &amp; Output</a></li>
+                                <li><a href="#s2" data-i18n="toc_s2">Variables &amp; Data Types</a></li>
+                                <li><a href="#s3" data-i18n="toc_s3">Operators</a></li>
+                                <li><a href="#s4" data-i18n="toc_s4">Strings &amp; Input</a></li>
+                                <li><a href="#s5" data-i18n="toc_s5">Conditionals</a></li>
+                                <li><a href="#s6" data-i18n="toc_s6">Loops</a></li>
+                                <li><a href="#s7" data-i18n="toc_s7">Arrays &amp; Vectors</a></li>
+                                <li><a href="#s8" data-i18n="toc_s8">Functions &amp; References</a></li>
                             </ol>
                         </div>
                         <div class="tutorial-section" id="s1">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-1);">1</span>
-                                Structure &amp; Output
+                                <span data-i18n="s1_title">Structure &amp; Output</span>
                             </h2>
-                            <p>C++ is a compiled, strongly-typed language. Every execution begins inside the <code>main()</code> function. Statements end with a semicolon, and output uses <code>std::cout</code>.</p>
+                            <p data-i18n="s1_intro">C++ is a compiled, strongly-typed language. Every execution begins inside the <code>main()</code> function. Statements end with a semicolon, and output uses <code>std::cout</code>.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">cpp · main.cpp</span>
@@ -104,9 +115,9 @@
                         <div class="tutorial-section" id="s2">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-2);">2</span>
-                                Variables &amp; Data Types
+                                <span data-i18n="s2_title">Variables &amp; Data Types</span>
                             </h2>
-                            <p>C++ is <strong>statically typed</strong>: you must explicitly declare the data type of a variable before using it. This type cannot change at runtime.</p>
+                            <p data-i18n="s1_intro">C++ is <strong>statically typed</strong>: you must explicitly declare the data type of a variable before using it. This type cannot change at runtime.</p>
                             <div class="type-grid">
                                 <div class="type-pill">
                                     <span class="type-name">int</span>
@@ -158,9 +169,9 @@
                         <div class="tutorial-section" id="s3">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
-                                Operators
+                                <span data-i18n="s3_title">Operators</span>
                             </h2>
-                            <p>C++ uses standard symbols for mathematical logic, assignments, and side-by-side value comparisons.</p>
+                            <p data-i18n="s1_intro">C++ uses standard symbols for mathematical logic, assignments, and side-by-side value comparisons.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">cpp · operators.cpp</span>
@@ -188,9 +199,9 @@
                         <div class="tutorial-section" id="s4">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
-                                Strings &amp; Input
+                                <span data-i18n="s4_title">Strings &amp; Input</span>
                             </h2>
-                            <p>To use text strings safely instead of old C-style char arrays, include the <code>&lt;string&gt;</code> header. Reading input from the user can be done via <code>std::cin</code>.</p>
+                            <p data-i18n="s1_intro">To use text strings safely instead of old C-style char arrays, include the <code>&lt;string&gt;</code> header. Reading input from the user can be done via <code>std::cin</code>.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">cpp · strings.cpp</span>
@@ -215,9 +226,9 @@
                         <div class="tutorial-section" id="s5">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
-                                Conditionals
+                                <span data-i18n="s5_title">Conditionals</span>
                             </h2>
-                            <p>C++ uses standard scoping patterns via blocks nested inside <code>if</code>, <code>else if</code>, and <code>else</code> frameworks alongside structural <code>switch</code> setups.</p>
+                            <p data-i18n="s1_intro">C++ uses standard scoping patterns via blocks nested inside <code>if</code>, <code>else if</code>, and <code>else</code> frameworks alongside structural <code>switch</code> setups.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">cpp · conditionals.cpp</span>
@@ -243,9 +254,9 @@
                         <div class="tutorial-section" id="s6">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
-                                Loops
+                                <span data-i18n="s6_title">Loops</span>
                             </h2>
-                            <p>Perform repetitive computational logic blocks safely using standard <code>for</code>, <code>while</code>, and range-based <code>for</code> loops.</p>
+                            <p data-i18n="s1_intro">Perform repetitive computational logic blocks safely using standard <code>for</code>, <code>while</code>, and range-based <code>for</code> loops.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">cpp · loops.cpp</span>
@@ -268,9 +279,9 @@
                         <div class="tutorial-section" id="s7">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
-                                Arrays &amp; Vectors
+                                <span data-i18n="s7_title">Arrays &amp; Vectors</span>
                             </h2>
-                            <p>Fixed-size built-in <strong>arrays</strong> require bounds defined at compile-time. Dynamic resizing lists rely on <code>std::vector</code> from the Standard Template Library (STL).</p>
+                            <p data-i18n="s1_intro">Fixed-size built-in <strong>arrays</strong> require bounds defined at compile-time. Dynamic resizing lists rely on <code>std::vector</code> from the Standard Template Library (STL).</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">cpp · collections.cpp</span>
@@ -296,9 +307,9 @@
                         <div class="tutorial-section" id="s8">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
-                                Functions &amp; References
+                                <span data-i18n="s8_title">Functions &amp; References</span>
                             </h2>
-                            <p>Functions require signature declarations detailing returned data types. To pass parameters without expensive memory copying, use <strong>references</strong> (<code>&amp;</code>).</p>
+                            <p data-i18n="s1_intro">Functions require signature declarations detailing returned data types. To pass parameters without expensive memory copying, use <strong>references</strong> (<code>&amp;</code>).</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">cpp · functions.cpp</span>
@@ -331,10 +342,10 @@
                         <div class="divider"></div>
                         <div class="guide-footer-nav">
                             <a href="coding.html" class="cta-btn ghost sm">
-                                <i class="fa-solid fa-arrow-left"></i> Back to Coding
+                                <i class="fa-solid fa-arrow-left"></i> <span data-i18n="nav_back">Back to Coding</span>
                             </a>
                             <a href="#s1" class="cta-btn sm">
-                                <i class="fa-solid fa-arrow-up"></i> Back to Top
+                                <i class="fa-solid fa-arrow-up"></i> <span data-i18n="nav_top">Back to Top</span>
                             </a>
                         </div>
                     </div>
@@ -344,7 +355,7 @@
                 <div class="footer-container">
                     <div class="footer-grid">
                         <div class="footer-widget">
-                            <h3><img width="20" height="20" src="https://img.icons8.com/3d-fluency/94/topic.png" alt="Contact"/>Contact</h3>
+                            <h3><img width="20" height="20" src="https://img.icons8.com/3d-fluency/94/topic.png" alt="Contact"/><span data-i18n="footer_contact">Contact</span></h3>
                             <ul class="contact-list">
                                 <li><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/location.png" alt="Location"/>Udine, Italy</li>
                                 <li><a href="https://t.me/viduxsh" target="_blank"><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/telegram.png" alt="Telegram"/>Telegram</a></li>
@@ -353,7 +364,7 @@
                             </ul>
                         </div>
                         <div class="footer-widget profile-widget">
-                            <h3>About Me</h3>
+                            <h3 data-i18n="footer_about">About Me</h3>
                             <div class="footer-profile-box">
                                 <img src="../../assets/images/viduxsh_logo_full.png" alt="Profile Logo" class="footer-avatar">
                                 <p id="my-age"></p>
@@ -362,12 +373,14 @@
                     </div>
                     <div class="footer-bottom">
                         <p id="copyright-year"></p>
-                        <p>Total visits: <span data-visitor-count>Loading...</span></p>
-                        <p class="credits">Design by <a href="https://github.com/viduxsh" target="_blank">vidux.sh</a></p>
+                        <p><span data-i18n="footer_modified">Last modified:</span> <span id="last-modified-date">20/11/2026 17:49</span></p>
+                        <p><span data-i18n="footer_visits">Total visits:</span> <span data-visitor-count>Loading...</span></p>
+                        <p class="credits"><span data-i18n="footer_design">Design by</span> <a href="https://github.com/viduxsh" target="_blank">vidux.sh</a></p>
                     </div>
                 </div>
             </footer>
         </div>
+        <script src="../../assets/js/i18n.js"></script>
         <script src="../../assets/js/script.js"></script>
         <script>
             function copyCode(btn) {

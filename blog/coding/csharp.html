@@ -12,8 +12,15 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="../../assets/css/style.css">
+        <link rel="manifest" href="../../manifest.json">
+        <meta name="theme-color" content="#0f1115">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="apple-mobile-web-app-title" content="vidux.sh">
+        <link rel="apple-touch-icon" href="../../assets/images/icons/apple-touch-icon.png">
     </head>
-    <body data-theme="light">
+    <body data-theme="light" data-page="blog_coding_csharp">
         <div class="main-wrapper">
             <header>
                 <div class="header-container">
@@ -21,11 +28,16 @@
                         <img src="../../assets/images/viduxsh_logo_full.png" alt="Logo" class="nav-logo">
                     </div>
                     <nav class="nav-links">
-                        <a title="Home"     href="../../index.html"    class="nav-btn"><i class="fa-solid fa-house"></i><span>Home</span></a>
-                        <a title="Projects" href="../../projects.html" class="nav-btn"><i class="fa-solid fa-diagram-project"></i><span>Projects</span></a>
-                        <a title="Social"   href="../../social.html"   class="nav-btn"><i class="fa-solid fa-hashtag"></i><span>Social</span></a>
-                        <a title="About Me" href="../../aboutme.html"  class="nav-btn"><i class="fa-solid fa-address-card"></i><span>About Me</span></a>
+                        <a title="Home"     href="../../index.html"    class="nav-btn"><i class="fa-solid fa-house"></i><span data-i18n="nav_home">Home</span></a>
+                        <a title="Projects" href="../../projects.html" class="nav-btn"><i class="fa-solid fa-diagram-project"></i><span data-i18n="nav_projects">Projects</span></a>
+                        <a title="Social"   href="../../social.html"   class="nav-btn"><i class="fa-solid fa-hashtag"></i><span data-i18n="nav_social">Social</span></a>
+                        <a title="About Me" href="../../aboutme.html"  class="nav-btn"><i class="fa-solid fa-address-card"></i><span data-i18n="nav_aboutme">About Me</span></a>
                     </nav>
+                    <div class="lang-switcher" aria-label="Language selector">
+                        <button type="button" class="lang-btn" data-lang="en" aria-label="Switch to English"><span class="flag-emoji">🇬🇧</span> <span>EN</span></button>
+                        <button type="button" class="lang-btn" data-lang="it" aria-label="Switch to Italian"><span class="flag-emoji">🇮🇹</span> <span>IT</span></button>
+                        <button type="button" class="lang-btn" data-lang="es" aria-label="Switch to Spanish"><span class="flag-emoji">🇪🇸</span> <span>ES</span></button>
+                    </div>
                     <div class="theme-switcher">
                         <input type="checkbox" id="switcher">
                         <label for="switcher" title="Toggle Theme">Switch</label>
@@ -37,14 +49,13 @@
                     <div class="card-container wide">
                         <div class="guide-topbar">
                             <a title="Back to Coding" href="coding.html" class="cta-btn ghost sm">
-                                <i class="fa-solid fa-arrow-left"></i> Coding Guides
-                            </a>
+                                <i class="fa-solid fa-arrow-left"></i> <span data-i18n="back_coding">Coding Guides</span></a>
                         </div>
                         <div class="lang-header">
                             <img src="../../assets/images/coding/logo/csharp.png" alt="C# logo">
                             <div>
-                                <h1>C# <span class="lang-badge">Beginner</span></h1>
-                                <p class="lang-subtitle">Multi-paradigm language — enterprise-grade OOP, cross-platform performance via .NET, native garbage collection, and powerful type-safe queries.</p>
+                                <h1>C# <span class="lang-badge" data-i18n="badge">Beginner</span></h1>
+                                <p class="lang-subtitle" data-i18n="subtitle">Multi-paradigm language — enterprise-grade OOP, cross-platform performance via .NET, native garbage collection, and powerful type-safe queries.</p>
                             </div>
                         </div>
                         <div class="tutorial-progress" id="tutorial-progress">
@@ -59,24 +70,24 @@
                         </div>
                         <div class="divider" style="margin-top: 0;"></div>
                         <div class="toc">
-                            <h3><i class="fa-solid fa-list"></i> Table of Contents</h3>
+                            <h3><i class="fa-solid fa-list"></i> <span data-i18n="toc_title">Table of Contents</span></h3>
                             <ol>
-                                <li><a href="#s1">Entry Point &amp; Variables</a></li>
-                                <li><a href="#s2">Data Types &amp; Generics</a></li>
-                                <li><a href="#s3">Conditionals &amp; Logic Operations</a></li>
-                                <li><a href="#s4">Loops &amp; Advanced Switch Patterns</a></li>
-                                <li><a href="#s5">Methods &amp; Auto-Properties</a></li>
-                                <li><a href="#s6">OOP Architecture &amp; Records</a></li>
-                                <li><a href="#s7">Exceptions &amp; Safe Resource Management</a></li>
-                                <li><a href="#s8">Data Querying via LINQ Expressions</a></li>
+                                <li><a href="#s1" data-i18n="toc_s1">Entry Point &amp; Variables</a></li>
+                                <li><a href="#s2" data-i18n="toc_s2">Data Types &amp; Generics</a></li>
+                                <li><a href="#s3" data-i18n="toc_s3">Conditionals &amp; Logic Operations</a></li>
+                                <li><a href="#s4" data-i18n="toc_s4">Loops &amp; Advanced Switch Patterns</a></li>
+                                <li><a href="#s5" data-i18n="toc_s5">Methods &amp; Auto-Properties</a></li>
+                                <li><a href="#s6" data-i18n="toc_s6">OOP Architecture &amp; Records</a></li>
+                                <li><a href="#s7" data-i18n="toc_s7">Exceptions &amp; Safe Resource Management</a></li>
+                                <li><a href="#s8" data-i18n="toc_s8">Data Querying via LINQ Expressions</a></li>
                             </ol>
                         </div>
                         <div class="tutorial-section" id="s1">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-1);">1</span>
-                                Entry Point &amp; Variables
+                                <span data-i18n="s1_title">Entry Point &amp; Variables</span>
                             </h2>
-                            <p>Modern C# implements **Top-Level Statements**, removing boilerplate code like namespaces and class declarations for entry files. Variables can use explicit types or infer them via the <code>var</code> keyword while maintaining strict type safety.</p>
+                            <p data-i18n="s1_intro">Modern C# implements **Top-Level Statements**, removing boilerplate code like namespaces and class declarations for entry files. Variables can use explicit types or infer them via the <code>var</code> keyword while maintaining strict type safety.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">cs · Program.cs</span>
@@ -99,9 +110,9 @@ Console.WriteLine(<span class="st">$"System core: {project} is currently {operat
                         <div class="tutorial-section" id="s2">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-2);">2</span>
-                                Data Types &amp; Generics
+                                <span data-i18n="s2_title">Data Types &amp; Generics</span>
                             </h2>
-                            <p>C# distinguishes between Value Types (stored on the stack) and Reference Types (stored on the heap). Collections like <code>List&lt;T&gt;</code> enforce type safety through generics.</p>
+                            <p data-i18n="s1_intro">C# distinguishes between Value Types (stored on the stack) and Reference Types (stored on the heap). Collections like <code>List&lt;T&gt;</code> enforce type safety through generics.</p>
                             <div class="type-grid">
                                 <div class="type-pill">
                                     <span class="type-name">int / long</span>
@@ -139,9 +150,9 @@ Console.WriteLine(<span class="st">$"System core: {project} is currently {operat
                         <div class="tutorial-section" id="s3">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
-                                Conditionals &amp; Logic Operations
+                                <span data-i18n="s3_title">Conditionals &amp; Logic Operations</span>
                             </h2>
-                            <p>Control application flow using standard <code>if</code>, <code>else if</code>, and <code>else</code> evaluation statements alongside explicit relational tracking operators.</p>
+                            <p data-i18n="s1_intro">Control application flow using standard <code>if</code>, <code>else if</code>, and <code>else</code> evaluation statements alongside explicit relational tracking operators.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">cs · ControlFlow.cs</span>
@@ -162,9 +173,9 @@ Console.WriteLine(<span class="st">$"System core: {project} is currently {operat
                         <div class="tutorial-section" id="s4">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
-                                Loops &amp; Advanced Switch Patterns
+                                <span data-i18n="s4_title">Loops &amp; Advanced Switch Patterns</span>
                             </h2>
-                            <p>Iterate over lists securely using <code>foreach</code> blocks. Modern C# also introduces powerful **Switch Expressions** that parse value configurations cleanly.</p>
+                            <p data-i18n="s1_intro">Iterate over lists securely using <code>foreach</code> blocks. Modern C# also introduces powerful **Switch Expressions** that parse value configurations cleanly.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">cs · LoopsAndSwitch.cs</span>
@@ -187,9 +198,9 @@ Console.WriteLine(<span class="st">$"System core: {project} is currently {operat
                         <div class="tutorial-section" id="s5">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
-                                Methods &amp; Auto-Properties
+                                <span data-i18n="s5_title">Methods &amp; Auto-Properties</span>
                             </h2>
-                            <p>Methods declare parameters with strict visibility and return signatures. Use shorthand expressions (<code>=&gt;</code>) for simple operations, and leverage **Auto-Implemented Properties** to safely encapsulate state fields.</p>
+                            <p data-i18n="s1_intro">Methods declare parameters with strict visibility and return signatures. Use shorthand expressions (<code>=&gt;</code>) for simple operations, and leverage **Auto-Implemented Properties** to safely encapsulate state fields.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">cs · Encapsulation.cs</span>
@@ -208,9 +219,9 @@ Console.WriteLine(<span class="st">$"System core: {project} is currently {operat
                         <div class="tutorial-section" id="s6">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
-                                OOP Architecture &amp; Records
+                                <span data-i18n="s6_title">OOP Architecture &amp; Records</span>
                             </h2>
-                            <p>C# implements a classic Object-Oriented paradigm featuring single class inheritance and explicit interface contracts. It also supports **Records**, which provide lightweight, immutable data structures out of the box.</p>
+                            <p data-i18n="s1_intro">C# implements a classic Object-Oriented paradigm featuring single class inheritance and explicit interface contracts. It also supports **Records**, which provide lightweight, immutable data structures out of the box.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">cs · Inheritance.cs</span>
@@ -237,9 +248,9 @@ Console.WriteLine(<span class="st">$"System core: {project} is currently {operat
                         <div class="tutorial-section" id="s7">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
-                                Exceptions &amp; Safe Resource Management
+                                <span data-i18n="s7_title">Exceptions &amp; Safe Resource Management</span>
                             </h2>
-                            <p>Handle runtime faults gracefully using <code>try-catch-finally</code> blocks. For external resources like network links or file streams, always use the <code>using</code> declaration statement to guarantee memory cleanup through `IDisposable` execution blocks.</p>
+                            <p data-i18n="s1_intro">Handle runtime faults gracefully using <code>try-catch-finally</code> blocks. For external resources like network links or file streams, always use the <code>using</code> declaration statement to guarantee memory cleanup through `IDisposable` execution blocks.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">cs · ExecutionSafety.cs</span>
@@ -262,9 +273,9 @@ Console.WriteLine(<span class="st">$"System core: {project} is currently {operat
                         <div class="tutorial-section" id="s8">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
-                                Data Querying via LINQ Expressions
+                                <span data-i18n="s8_title">Data Querying via LINQ Expressions</span>
                             </h2>
-                            <p>**Language Integrated Query (LINQ)** provides a powerful, type-safe syntax to filter, transform, and aggregate data collections cleanly—whether operating on arrays or remote database entities.</p>
+                            <p data-i18n="s1_intro">**Language Integrated Query (LINQ)** provides a powerful, type-safe syntax to filter, transform, and aggregate data collections cleanly—whether operating on arrays or remote database entities.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">cs · LinqQueries.cs</span>
@@ -289,10 +300,10 @@ Console.WriteLine(<span class="st">$"System core: {project} is currently {operat
                         <div class="divider"></div>
                         <div class="guide-footer-nav">
                             <a href="coding.html" class="cta-btn ghost sm">
-                                <i class="fa-solid fa-arrow-left"></i> Back to Coding
+                                <i class="fa-solid fa-arrow-left"></i> <span data-i18n="nav_back">Back to Coding</span>
                             </a>
                             <a href="#s1" class="cta-btn sm">
-                                <i class="fa-solid fa-arrow-up"></i> Back to Top
+                                <i class="fa-solid fa-arrow-up"></i> <span data-i18n="nav_top">Back to Top</span>
                             </a>
                         </div>
                     </div>
@@ -302,7 +313,7 @@ Console.WriteLine(<span class="st">$"System core: {project} is currently {operat
                 <div class="footer-container">
                     <div class="footer-grid">
                         <div class="footer-widget">
-                            <h3><img width="20" height="20" src="https://img.icons8.com/3d-fluency/94/topic.png" alt="Contact"/>Contact</h3>
+                            <h3><img width="20" height="20" src="https://img.icons8.com/3d-fluency/94/topic.png" alt="Contact"/><span data-i18n="footer_contact">Contact</span></h3>
                             <ul class="contact-list">
                                 <li><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/location.png" alt="Location"/>Udine, Italy</li>
                                 <li><a href="https://t.me/viduxsh" target="_blank"><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/telegram.png" alt="Telegram"/>Telegram</a></li>
@@ -311,7 +322,7 @@ Console.WriteLine(<span class="st">$"System core: {project} is currently {operat
                             </ul>
                         </div>
                         <div class="footer-widget profile-widget">
-                            <h3>About Me</h3>
+                            <h3 data-i18n="footer_about">About Me</h3>
                             <div class="footer-profile-box">
                                 <img src="../../assets/images/viduxsh_logo_full.png" alt="Profile Logo" class="footer-avatar">
                                 <p id="my-age"></p>
@@ -320,12 +331,14 @@ Console.WriteLine(<span class="st">$"System core: {project} is currently {operat
                     </div>
                     <div class="footer-bottom">
                         <p id="copyright-year"></p>
-                        <p>Total visits: <span data-visitor-count>Loading...</span></p>
-                        <p class="credits">Design by <a href="https://github.com/viduxsh" target="_blank">vidux.sh</a></p>
+                        <p><span data-i18n="footer_modified">Last modified:</span> <span id="last-modified-date">20/11/2026 17:49</span></p>
+                        <p><span data-i18n="footer_visits">Total visits:</span> <span data-visitor-count>Loading...</span></p>
+                        <p class="credits"><span data-i18n="footer_design">Design by</span> <a href="https://github.com/viduxsh" target="_blank">vidux.sh</a></p>
                     </div>
                 </div>
             </footer>
         </div>
+        <script src="../../assets/js/i18n.js"></script>
         <script src="../../assets/js/script.js"></script>
         <script>
             function copyCode(btn) {

@@ -12,8 +12,15 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="../../assets/css/style.css">
+        <link rel="manifest" href="../../manifest.json">
+        <meta name="theme-color" content="#0f1115">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="apple-mobile-web-app-title" content="vidux.sh">
+        <link rel="apple-touch-icon" href="../../assets/images/icons/apple-touch-icon.png">
     </head>
-    <body data-theme="light">
+    <body data-theme="light" data-page="blog_coding_go">
         <div class="main-wrapper">
             <header>
                 <div class="header-container">
@@ -21,11 +28,16 @@
                         <img src="../../assets/images/viduxsh_logo_full.png" alt="Logo" class="nav-logo">
                     </div>
                     <nav class="nav-links">
-                        <a title="Home"     href="../../index.html"    class="nav-btn"><i class="fa-solid fa-house"></i><span>Home</span></a>
-                        <a title="Projects" href="../../projects.html" class="nav-btn"><i class="fa-solid fa-diagram-project"></i><span>Projects</span></a>
-                        <a title="Social"   href="../../social.html"   class="nav-btn"><i class="fa-solid fa-hashtag"></i><span>Social</span></a>
-                        <a title="About Me" href="../../aboutme.html"  class="nav-btn"><i class="fa-solid fa-address-card"></i><span>About Me</span></a>
+                        <a title="Home"     href="../../index.html"    class="nav-btn"><i class="fa-solid fa-house"></i><span data-i18n="nav_home">Home</span></a>
+                        <a title="Projects" href="../../projects.html" class="nav-btn"><i class="fa-solid fa-diagram-project"></i><span data-i18n="nav_projects">Projects</span></a>
+                        <a title="Social"   href="../../social.html"   class="nav-btn"><i class="fa-solid fa-hashtag"></i><span data-i18n="nav_social">Social</span></a>
+                        <a title="About Me" href="../../aboutme.html"  class="nav-btn"><i class="fa-solid fa-address-card"></i><span data-i18n="nav_aboutme">About Me</span></a>
                     </nav>
+                    <div class="lang-switcher" aria-label="Language selector">
+                        <button type="button" class="lang-btn" data-lang="en" aria-label="Switch to English"><span class="flag-emoji">🇬🇧</span> <span>EN</span></button>
+                        <button type="button" class="lang-btn" data-lang="it" aria-label="Switch to Italian"><span class="flag-emoji">🇮🇹</span> <span>IT</span></button>
+                        <button type="button" class="lang-btn" data-lang="es" aria-label="Switch to Spanish"><span class="flag-emoji">🇪🇸</span> <span>ES</span></button>
+                    </div>
                     <div class="theme-switcher">
                         <input type="checkbox" id="switcher">
                         <label for="switcher" title="Toggle Theme">Switch</label>
@@ -37,14 +49,13 @@
                     <div class="card-container wide">
                         <div class="guide-topbar">
                             <a title="Back to Coding" href="coding.html" class="cta-btn ghost sm">
-                                <i class="fa-solid fa-arrow-left"></i> Coding Guides
-                            </a>
+                                <i class="fa-solid fa-arrow-left"></i> <span data-i18n="back_coding">Coding Guides</span></a>
                         </div>
                         <div class="lang-header">
                             <img src="../../assets/images/coding/logo/go.png" alt="Go logo">
                             <div>
-                                <h1>Go <span class="lang-badge">Beginner</span></h1>
-                                <p class="lang-subtitle">Statically typed compiled language — minimalist syntax, structural typing, and high-performance concurrency models.</p>
+                                <h1>Go <span class="lang-badge" data-i18n="badge">Beginner</span></h1>
+                                <p class="lang-subtitle" data-i18n="subtitle">Statically typed compiled language — minimalist syntax, structural typing, and high-performance concurrency models.</p>
                             </div>
                         </div>
                         <div class="tutorial-progress" id="tutorial-progress">
@@ -59,24 +70,24 @@
                         </div>
                         <div class="divider" style="margin-top: 0;"></div>
                         <div class="toc">
-                            <h3><i class="fa-solid fa-list"></i> Table of Contents</h3>
+                            <h3><i class="fa-solid fa-list"></i> <span data-i18n="toc_title">Table of Contents</span></h3>
                             <ol>
-                                <li><a href="#s1">Entry Point &amp; Variables</a></li>
-                                <li><a href="#s2">Data Types &amp; Zero Values</a></li>
-                                <li><a href="#s3">Conditionals &amp; Inlines</a></li>
-                                <li><a href="#s4">The Only Loop: For</a></li>
-                                <li><a href="#s5">Functions &amp; Multi-Returns</a></li>
-                                <li><a href="#s6">Pointers &amp; Structs</a></li>
-                                <li><a href="#s7">Implicit Interfaces</a></li>
-                                <li><a href="#s8">Goroutines &amp; Channels</a></li>
+                                <li><a href="#s1" data-i18n="toc_s1">Entry Point &amp; Variables</a></li>
+                                <li><a href="#s2" data-i18n="toc_s2">Data Types &amp; Zero Values</a></li>
+                                <li><a href="#s3" data-i18n="toc_s3">Conditionals &amp; Inlines</a></li>
+                                <li><a href="#s4" data-i18n="toc_s4">The Only Loop: For</a></li>
+                                <li><a href="#s5" data-i18n="toc_s5">Functions &amp; Multi-Returns</a></li>
+                                <li><a href="#s6" data-i18n="toc_s6">Pointers &amp; Structs</a></li>
+                                <li><a href="#s7" data-i18n="toc_s7">Implicit Interfaces</a></li>
+                                <li><a href="#s8" data-i18n="toc_s8">Goroutines &amp; Channels</a></li>
                             </ol>
                         </div>
                         <div class="tutorial-section" id="s1">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-1);">1</span>
-                                Entry Point &amp; Variables
+                                <span data-i18n="s1_title">Entry Point &amp; Variables</span>
                             </h2>
-                            <p>Every execution file must declare its <code>package</code> context. Go utilizes explicit static type mapping or the short assignment operator (<code>:=</code>) for local type inference.</p>
+                            <p data-i18n="s1_intro">Every execution file must declare its <code>package</code> context. Go utilizes explicit static type mapping or the short assignment operator (<code>:=</code>) for local type inference.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">go · main.go</span>
@@ -104,9 +115,9 @@
                         <div class="tutorial-section" id="s2">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-2);">2</span>
-                                Data Types &amp; Zero Values
+                                <span data-i18n="s2_title">Data Types &amp; Zero Values</span>
                             </h2>
-                            <p>Variables declared without an explicit initial value are automatically assigned their type-specific **Zero Value**, avoiding garbage memory pointers.</p>
+                            <p data-i18n="s1_intro">Variables declared without an explicit initial value are automatically assigned their type-specific **Zero Value**, avoiding garbage memory pointers.</p>
                             <div class="type-grid">
                                 <div class="type-pill">
                                     <span class="type-name">int / uint</span>
@@ -144,9 +155,9 @@
                         <div class="tutorial-section" id="s3">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
-                                Conditionals &amp; Inlines
+                                <span data-i18n="s3_title">Conditionals &amp; Inlines</span>
                             </h2>
-                            <p>Conditionals do not wrap statements inside parentheses. They also support a compact initialization statement scope execution path prior to evaluating conditions.</p>
+                            <p data-i18n="s1_intro">Conditionals do not wrap statements inside parentheses. They also support a compact initialization statement scope execution path prior to evaluating conditions.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">go · logic.go</span>
@@ -166,9 +177,9 @@
                         <div class="tutorial-section" id="s4">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
-                                The Only Loop: For
+                                <span data-i18n="s4_title">The Only Loop: For</span>
                             </h2>
-                            <p>To avoid keyword overhead, Go leverages the <code>for</code> keyword to handle all looping behaviors, including standard loops, conditional while structures, and endless cycles.</p>
+                            <p data-i18n="s1_intro">To avoid keyword overhead, Go leverages the <code>for</code> keyword to handle all looping behaviors, including standard loops, conditional while structures, and endless cycles.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">go · loops.go</span>
@@ -196,9 +207,9 @@ items := []string{<span class="st">"db"</span>, <span class="st">"cache"</span>}
                         <div class="tutorial-section" id="s5">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
-                                Functions &amp; Multi-Returns
+                                <span data-i18n="s5_title">Functions &amp; Multi-Returns</span>
                             </h2>
-                            <p>Functions support passing multiple values as a tuple, a paradigm heavily integrated across the standard library for idiomatic error handling.</p>
+                            <p data-i18n="s1_intro">Functions support passing multiple values as a tuple, a paradigm heavily integrated across the standard library for idiomatic error handling.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">go · functions.go</span>
@@ -226,9 +237,9 @@ items := []string{<span class="st">"db"</span>, <span class="st">"cache"</span>}
                         <div class="tutorial-section" id="s6">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
-                                Pointers &amp; Structs
+                                <span data-i18n="s6_title">Pointers &amp; Structs</span>
                             </h2>
-                            <p>Go lacks object-oriented <code>class</code> definitions. Custom data structures are defined using <code>struct</code> schemas, and behavior is attached using explicit method receivers.</p>
+                            <p data-i18n="s1_intro">Go lacks object-oriented <code>class</code> definitions. Custom data structures are defined using <code>struct</code> schemas, and behavior is attached using explicit method receivers.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">go · objects.go</span>
@@ -258,9 +269,9 @@ items := []string{<span class="st">"db"</span>, <span class="st">"cache"</span>}
                         <div class="tutorial-section" id="s7">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
-                                Implicit Interfaces
+                                <span data-i18n="s7_title">Implicit Interfaces</span>
                             </h2>
-                            <p>Interfaces are satisfied **implicitly**. A concrete type does not need to explicitly implement an interface via a keyword; it simply needs to implement the matching method signatures.</p>
+                            <p data-i18n="s1_intro">Interfaces are satisfied **implicitly**. A concrete type does not need to explicitly implement an interface via a keyword; it simply needs to implement the matching method signatures.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">go · interfaces.go</span>
@@ -282,9 +293,9 @@ items := []string{<span class="st">"db"</span>, <span class="st">"cache"</span>}
                         <div class="tutorial-section" id="s8">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
-                                Goroutines &amp; Channels
+                                <span data-i18n="s8_title">Goroutines &amp; Channels</span>
                             </h2>
-                            <p>Concurrency is baked into the language core. Prefixing a call with <code>go</code> executes it on an ultra-lightweight thread, while **Channels** orchestrate data transfers between them.</p>
+                            <p data-i18n="s1_intro">Concurrency is baked into the language core. Prefixing a call with <code>go</code> executes it on an ultra-lightweight thread, while **Channels** orchestrate data transfers between them.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">go · concurrency.go</span>
@@ -312,10 +323,10 @@ items := []string{<span class="st">"db"</span>, <span class="st">"cache"</span>}
                         <div class="divider"></div>
                         <div class="guide-footer-nav">
                             <a href="coding.html" class="cta-btn ghost sm">
-                                <i class="fa-solid fa-arrow-left"></i> Back to Coding
+                                <i class="fa-solid fa-arrow-left"></i> <span data-i18n="nav_back">Back to Coding</span>
                             </a>
                             <a href="#s1" class="cta-btn sm">
-                                <i class="fa-solid fa-arrow-up"></i> Back to Top
+                                <i class="fa-solid fa-arrow-up"></i> <span data-i18n="nav_top">Back to Top</span>
                             </a>
                         </div>
                     </div>
@@ -325,7 +336,7 @@ items := []string{<span class="st">"db"</span>, <span class="st">"cache"</span>}
                 <div class="footer-container">
                     <div class="footer-grid">
                         <div class="footer-widget">
-                            <h3><img width="20" height="20" src="https://img.icons8.com/3d-fluency/94/topic.png" alt="Contact"/>Contact</h3>
+                            <h3><img width="20" height="20" src="https://img.icons8.com/3d-fluency/94/topic.png" alt="Contact"/><span data-i18n="footer_contact">Contact</span></h3>
                             <ul class="contact-list">
                                 <li><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/location.png" alt="Location"/>Udine, Italy</li>
                                 <li><a href="https://t.me/viduxsh" target="_blank"><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/telegram.png" alt="Telegram"/>Telegram</a></li>
@@ -334,7 +345,7 @@ items := []string{<span class="st">"db"</span>, <span class="st">"cache"</span>}
                             </ul>
                         </div>
                         <div class="footer-widget profile-widget">
-                            <h3>About Me</h3>
+                            <h3 data-i18n="footer_about">About Me</h3>
                             <div class="footer-profile-box">
                                 <img src="../../assets/images/viduxsh_logo_full.png" alt="Profile Logo" class="footer-avatar">
                                 <p id="my-age"></p>
@@ -343,12 +354,14 @@ items := []string{<span class="st">"db"</span>, <span class="st">"cache"</span>}
                     </div>
                     <div class="footer-bottom">
                         <p id="copyright-year"></p>
-                        <p>Total visits: <span data-visitor-count>Loading...</span></p>
-                        <p class="credits">Design by <a href="https://github.com/viduxsh" target="_blank">vidux.sh</a></p>
+                        <p><span data-i18n="footer_modified">Last modified:</span> <span id="last-modified-date">20/11/2026 17:49</span></p>
+                        <p><span data-i18n="footer_visits">Total visits:</span> <span data-visitor-count>Loading...</span></p>
+                        <p class="credits"><span data-i18n="footer_design">Design by</span> <a href="https://github.com/viduxsh" target="_blank">vidux.sh</a></p>
                     </div>
                 </div>
             </footer>
         </div>
+        <script src="../../assets/js/i18n.js"></script>
         <script src="../../assets/js/script.js"></script>
         <script>
             function copyCode(btn) {

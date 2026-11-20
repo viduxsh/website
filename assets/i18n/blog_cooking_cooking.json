@@ -1,0 +1,20 @@
+{
+  "en": {
+    "page_title": "My Recipes",
+    "page_subtitle": "A collection of my favorite recipes, preparations, and cooking tips.",
+    "back_blog": "Back to Blog",
+    "no_recipes": "No recipes added yet. Check back soon for delicious updates!"
+  },
+  "it": {
+    "page_title": "Le mie Ricette",
+    "page_subtitle": "Una raccolta delle mie ricette preferite, preparazioni e consigli culinari.",
+    "back_blog": "Torna al Blog",
+    "no_recipes": "Nessuna ricetta ancora inserita. Torna presto per gustose novità!"
+  },
+  "es": {
+    "page_title": "Mis Recetas",
+    "page_subtitle": "Una colección de mis recetas favoritas, preparaciones y consejos culinarios.",
+    "back_blog": "Volver al Blog",
+    "no_recipes": "¡Aún no hay recetas añadidas. Vuelve pronto para deliciosas novedades!"
+  }
+}

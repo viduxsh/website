@@ -12,8 +12,15 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="../../assets/css/style.css">
+        <link rel="manifest" href="../../manifest.json">
+        <meta name="theme-color" content="#0f1115">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="apple-mobile-web-app-title" content="vidux.sh">
+        <link rel="apple-touch-icon" href="../../assets/images/icons/apple-touch-icon.png">
     </head>
-    <body data-theme="light">
+    <body data-theme="light" data-page="blog_coding_cmd">
         <div class="main-wrapper">
             <header>
                 <div class="header-container">
@@ -21,11 +28,16 @@
                         <img src="../../assets/images/viduxsh_logo_full.png" alt="Logo" class="nav-logo">
                     </div>
                     <nav class="nav-links">
-                        <a title="Home"     href="../../index.html"    class="nav-btn"><i class="fa-solid fa-house"></i><span>Home</span></a>
-                        <a title="Projects" href="../../projects.html" class="nav-btn"><i class="fa-solid fa-diagram-project"></i><span>Projects</span></a>
-                        <a title="Social"   href="../../social.html"   class="nav-btn"><i class="fa-solid fa-hashtag"></i><span>Social</span></a>
-                        <a title="About Me" href="../../aboutme.html"  class="nav-btn"><i class="fa-solid fa-address-card"></i><span>About Me</span></a>
+                        <a title="Home"     href="../../index.html"    class="nav-btn"><i class="fa-solid fa-house"></i><span data-i18n="nav_home">Home</span></a>
+                        <a title="Projects" href="../../projects.html" class="nav-btn"><i class="fa-solid fa-diagram-project"></i><span data-i18n="nav_projects">Projects</span></a>
+                        <a title="Social"   href="../../social.html"   class="nav-btn"><i class="fa-solid fa-hashtag"></i><span data-i18n="nav_social">Social</span></a>
+                        <a title="About Me" href="../../aboutme.html"  class="nav-btn"><i class="fa-solid fa-address-card"></i><span data-i18n="nav_aboutme">About Me</span></a>
                     </nav>
+                    <div class="lang-switcher" aria-label="Language selector">
+                        <button type="button" class="lang-btn" data-lang="en" aria-label="Switch to English"><span class="flag-emoji">🇬🇧</span> <span>EN</span></button>
+                        <button type="button" class="lang-btn" data-lang="it" aria-label="Switch to Italian"><span class="flag-emoji">🇮🇹</span> <span>IT</span></button>
+                        <button type="button" class="lang-btn" data-lang="es" aria-label="Switch to Spanish"><span class="flag-emoji">🇪🇸</span> <span>ES</span></button>
+                    </div>
                     <div class="theme-switcher">
                         <input type="checkbox" id="switcher">
                         <label for="switcher" title="Toggle Theme">Switch</label>
@@ -37,14 +49,13 @@
                     <div class="card-container wide">
                         <div class="guide-topbar">
                             <a title="Back to Coding" href="coding.html" class="cta-btn ghost sm">
-                                <i class="fa-solid fa-arrow-left"></i> Coding Guides
-                            </a>
+                                <i class="fa-solid fa-arrow-left"></i> <span data-i18n="back_coding">Coding Guides</span></a>
                         </div>
                         <div class="lang-header">
                             <img src="../../assets/images/coding/logo/cmd.png" alt="Windows CMD logo">
                             <div>
-                                <h1>Windows CMD <span class="lang-badge">Beginner</span></h1>
-                                <p class="lang-subtitle">Legacy Command Line Engine — mastering Batch scripting, environment configurations, errorlevel routing, file handling, and core Windows system sub-utilities.</p>
+                                <h1>Windows CMD <span class="lang-badge" data-i18n="badge">Beginner</span></h1>
+                                <p class="lang-subtitle" data-i18n="subtitle">Legacy Command Line Engine — mastering Batch scripting, environment configurations, errorlevel routing, file handling, and core Windows system sub-utilities.</p>
                             </div>
                         </div>
                         <div class="tutorial-progress" id="tutorial-progress">
@@ -59,24 +70,24 @@
                         </div>
                         <div class="divider" style="margin-top: 0;"></div>
                         <div class="toc">
-                            <h3><i class="fa-solid fa-list"></i> Table of Contents</h3>
+                            <h3><i class="fa-solid fa-list"></i> <span data-i18n="toc_title">Table of Contents</span></h3>
                             <ol>
-                                <li><a href="#s1">Batch Script Entry &amp; Echo Control</a></li>
-                                <li><a href="#s2">File System Navigation (Drives &amp; Paths)</a></li>
-                                <li><a href="#s3">File Management &amp; Directory Operations</a></li>
-                                <li><a href="#s4">Environment Variables (%VAR%)</a></li>
-                                <li><a href="#s5">Conditional Flow &amp; Errorlevels</a></li>
-                                <li><a href="#s6">The Batch Loop Paradigm (FOR)</a></li>
-                                <li><a href="#s7">Standard Redirections &amp; Piping</a></li>
-                                <li><a href="#s8">Network Diagnostics &amp; Administration Utilities</a></li>
+                                <li><a href="#s1" data-i18n="toc_s1">Batch Script Entry &amp; Echo Control</a></li>
+                                <li><a href="#s2" data-i18n="toc_s2">File System Navigation (Drives &amp; Paths)</a></li>
+                                <li><a href="#s3" data-i18n="toc_s3">File Management &amp; Directory Operations</a></li>
+                                <li><a href="#s4" data-i18n="toc_s4">Environment Variables (%VAR%)</a></li>
+                                <li><a href="#s5" data-i18n="toc_s5">Conditional Flow &amp; Errorlevels</a></li>
+                                <li><a href="#s6" data-i18n="toc_s6">The Batch Loop Paradigm (FOR)</a></li>
+                                <li><a href="#s7" data-i18n="toc_s7">Standard Redirections &amp; Piping</a></li>
+                                <li><a href="#s8" data-i18n="toc_s8">Network Diagnostics &amp; Administration Utilities</a></li>
                             </ol>
                         </div>
                         <div class="tutorial-section" id="s1">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-1);">1</span>
-                                Batch Script Entry &amp; Echo Control
+                                <span data-i18n="s1_title">Batch Script Entry &amp; Echo Control</span>
                             </h2>
-                            <p>Windows Command Prompt automation relies on text files saved with the <code>.bat</code> or <code>.cmd</code> extensions. By default, the terminal echoes back every instruction line before executing it. To suppress this visual clutter and clean up the viewport console output, scripts open with an explicit directive.</p>
+                            <p data-i18n="s1_intro">Windows Command Prompt automation relies on text files saved with the <code>.bat</code> or <code>.cmd</code> extensions. By default, the terminal echoes back every instruction line before executing it. To suppress this visual clutter and clean up the viewport console output, scripts open with an explicit directive.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">bat · script.bat</span>
@@ -91,9 +102,9 @@
                         <div class="tutorial-section" id="s2">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-2);">2</span>
-                                File System Navigation (Drives &amp; Paths)
+                                <span data-i18n="s2_title">File System Navigation (Drives &amp; Paths)</span>
                             </h2>
-                            <p>CMD utilizes backslashes (<code>\</code>) for system paths. Unlike modern systems, typing <code>cd</code> to shift directories across different hardware or partition volumes will fail unless you include a specific flag to unlock cross-volume stepping.</p>
+                            <p data-i18n="s1_intro">CMD utilizes backslashes (<code>\</code>) for system paths. Unlike modern systems, typing <code>cd</code> to shift directories across different hardware or partition volumes will fail unless you include a specific flag to unlock cross-volume stepping.</p>
                             <div class="type-grid">
                                 <div class="type-pill">
                                     <span class="type-name">cd</span>
@@ -121,9 +132,9 @@
                         <div class="tutorial-section" id="s3">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
-                                File Management &amp; Directory Operations
+                                <span data-i18n="s3_title">File Management &amp; Directory Operations</span>
                             </h2>
-                            <p>CMD provides dedicated tools for copying, moving, and removing operational file payloads. For robust, enterprise-grade file replication tasks, Windows includes a powerful sub-engine called **Robocopy**.</p>
+                            <p data-i18n="s1_intro">CMD provides dedicated tools for copying, moving, and removing operational file payloads. For robust, enterprise-grade file replication tasks, Windows includes a powerful sub-engine called **Robocopy**.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">bat · file_ops.bat</span>
@@ -142,9 +153,9 @@
                         <div class="tutorial-section" id="s4">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
-                                Environment Variables (%VAR%)
+                                <span data-i18n="s4_title">Environment Variables (%VAR%)</span>
                             </h2>
-                            <p>Variables are allocated using the `set` command and referenced by wrapping the token name inside percentage symbols (<code>%VAR%</code>). **CRITICAL ALLOCATION RULE:** You must never add trailing or leading spaces around the equation operator (<code>=</code>), as CMD will literally append those whitespaces directly into the key or value string.</p>
+                            <p data-i18n="s1_intro">Variables are allocated using the `set` command and referenced by wrapping the token name inside percentage symbols (<code>%VAR%</code>). **CRITICAL ALLOCATION RULE:** You must never add trailing or leading spaces around the equation operator (<code>=</code>), as CMD will literally append those whitespaces directly into the key or value string.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">bat · variables.bat</span>
@@ -162,9 +173,9 @@
                         <div class="tutorial-section" id="s5">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
-                                Conditional Flow &amp; Errorlevels
+                                <span data-i18n="s5_title">Conditional Flow &amp; Errorlevels</span>
                             </h2>
-                            <p>Conditional structures evaluate runtime equations. Upon completing execution, every system application leaves an integer exit code called an **ERRORLEVEL** (where <code>0</code> signifies successful execution, and any non-zero value indicates an error).</p>
+                            <p data-i18n="s1_intro">Conditional structures evaluate runtime equations. Upon completing execution, every system application leaves an integer exit code called an **ERRORLEVEL** (where <code>0</code> signifies successful execution, and any non-zero value indicates an error).</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">bat · process_control.bat</span>
@@ -185,9 +196,9 @@
                         <div class="tutorial-section" id="s6">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
-                                The Batch Loop Paradigm (FOR)
+                                <span data-i18n="s6_title">The Batch Loop Paradigm (FOR)</span>
                             </h2>
-                            <p>The <code>FOR</code> construct inside CMD uses a specialized syntax. When evaluated directly within an active terminal console shell line, loop variables use a single percent symbol (<code>%i</code>). However, inside a reusable batch script file (<code>.bat</code>), they require a double prefix (<code>%%i</code>).</p>
+                            <p data-i18n="s1_intro">The <code>FOR</code> construct inside CMD uses a specialized syntax. When evaluated directly within an active terminal console shell line, loop variables use a single percent symbol (<code>%i</code>). However, inside a reusable batch script file (<code>.bat</code>), they require a double prefix (<code>%%i</code>).</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">bat · loops.bat</span>
@@ -208,9 +219,9 @@
                         <div class="tutorial-section" id="s7">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
-                                Standard Redirections &amp; Piping
+                                <span data-i18n="s7_title">Standard Redirections &amp; Piping</span>
                             </h2>
-                            <p>Output streams can be suppressed or captured. You can append text blocks to logs, redirect output streams, or isolate specific matches within unstructured string arrays using the **findstr** engine.</p>
+                            <p data-i18n="s1_intro">Output streams can be suppressed or captured. You can append text blocks to logs, redirect output streams, or isolate specific matches within unstructured string arrays using the **findstr** engine.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">bat · stream_pipes.bat</span>
@@ -231,9 +242,9 @@
                         <div class="tutorial-section" id="s8">
                             <h2>
                                 <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
-                                Network Diagnostics &amp; Administration Utilities
+                                <span data-i18n="s8_title">Network Diagnostics &amp; Administration Utilities</span>
                             </h2>
-                            <p>Despite its age, the Command Prompt remains an effective tool for running low-level network diagnostic utilities and manipulating advanced system configurations directly via specialized administrative utilities.</p>
+                            <p data-i18n="s1_intro">Despite its age, the Command Prompt remains an effective tool for running low-level network diagnostic utilities and manipulating advanced system configurations directly via specialized administrative utilities.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">bat · diagnostics.bat</span>
@@ -254,10 +265,10 @@
                         <div class="divider"></div>
                         <div class="guide-footer-nav">
                             <a href="coding.html" class="cta-btn ghost sm">
-                                <i class="fa-solid fa-arrow-left"></i> Back to Coding
+                                <i class="fa-solid fa-arrow-left"></i> <span data-i18n="nav_back">Back to Coding</span>
                             </a>
                             <a href="#s1" class="cta-btn sm">
-                                <i class="fa-solid fa-arrow-up"></i> Back to Top
+                                <i class="fa-solid fa-arrow-up"></i> <span data-i18n="nav_top">Back to Top</span>
                             </a>
                         </div>
                     </div>
@@ -267,7 +278,7 @@
                 <div class="footer-container">
                     <div class="footer-grid">
                         <div class="footer-widget">
-                            <h3><img width="20" height="20" src="https://img.icons8.com/3d-fluency/94/topic.png" alt="Contact"/>Contact</h3>
+                            <h3><img width="20" height="20" src="https://img.icons8.com/3d-fluency/94/topic.png" alt="Contact"/><span data-i18n="footer_contact">Contact</span></h3>
                             <ul class="contact-list">
                                 <li><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/location.png" alt="Location"/>Udine, Italy</li>
                                 <li><a href="https://t.me/viduxsh" target="_blank"><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/telegram.png" alt="Telegram"/>Telegram</a></li>
@@ -276,7 +287,7 @@
                             </ul>
                         </div>
                         <div class="footer-widget profile-widget">
-                            <h3>About Me</h3>
+                            <h3 data-i18n="footer_about">About Me</h3>
                             <div class="footer-profile-box">
                                 <img src="../../assets/images/viduxsh_logo_full.png" alt="Profile Logo" class="footer-avatar">
                                 <p id="my-age"></p>
@@ -285,12 +296,14 @@
                     </div>
                     <div class="footer-bottom">
                         <p id="copyright-year"></p>
-                        <p>Total visits: <span data-visitor-count>Loading...</span></p>
-                        <p class="credits">Design by <a href="https://github.com/viduxsh" target="_blank">vidux.sh</a></p>
+                        <p><span data-i18n="footer_modified">Last modified:</span> <span id="last-modified-date">20/11/2026 17:49</span></p>
+                        <p><span data-i18n="footer_visits">Total visits:</span> <span data-visitor-count>Loading...</span></p>
+                        <p class="credits"><span data-i18n="footer_design">Design by</span> <a href="https://github.com/viduxsh" target="_blank">vidux.sh</a></p>
                     </div>
                 </div>
             </footer>
         </div>
+        <script src="../../assets/js/i18n.js"></script>
         <script src="../../assets/js/script.js"></script>
         <script>
             function copyCode(btn) {
