@@ -1,0 +1,39 @@
+{
+  "en": {
+    "page_title": "My Blog",
+    "page_subtitle": "Thoughts, tech insights, and personal updates.",
+    "cat_coding": "Coding",
+    "cat_cooking": "Cooking",
+    "cat_gaming": "Gaming",
+    "cat_motor": "Motor",
+    "cat_sport": "Sport",
+    "cat_technology": "Technology",
+    "cat_work": "Work"
+  },
+  "it": {
+    "page_title": "Il mio Blog",
+    "page_subtitle": "Pensieri, approfondimenti tech e aggiornamenti personali.",
+    "cat_coding": "Coding",
+    "cat_cooking": "Cucina",
+    "cat_gaming": "Gaming",
+    "cat_motor": "Motori",
+    "cat_sport": "Sport",
+    "cat_technology": "Tecnologia",
+    "cat_work": "Lavoro"
+  },
+  "es": {
+    "page_title": "Mi Blog",
+    "page_subtitle": "Pensamientos, artículos tecnológicos y actualizaciones personales.",
+    "cat_coding": "Coding",
+    "cat_cooking": "Cocina",
+    "cat_gaming": "Gaming",
+    "cat_motor": "Motores",
+    "cat_sport": "Deporte",
+    "cat_technology": "Tecnología",
+    "cat_work": "Trabajo",
+    "footer_contact": "Contacto",
+    "footer_about": "Sobre mí",
+    "footer_visits": "Visitas totales:",
+    "footer_design": "Diseño de"
+  }
+}
