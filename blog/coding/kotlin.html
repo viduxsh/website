@@ -104,7 +104,7 @@ activeConnections += <span class="st">1</span></pre>
                             </div>
                             <div class="info-box tip">
                                 <i class="fa-solid fa-lightbulb"></i>
-                                <span>Always default to declaring properties with <code>val</code>. Switch to <code>var</code> only when explicit state reassignment becomes necessary.</span>
+                                <span data-i18n="tip1">Always default to declaring properties with <code>val</code>. Switch to <code>var</code> only when explicit state reassignment becomes necessary.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -113,36 +113,36 @@ activeConnections += <span class="st">1</span></pre>
                                 <span class="section-icon" style="background: var(--guide-accent-2);">2</span>
                                 <span data-i18n="s2_title">Core Types Hierarchy</span>
                             </h2>
-                            <p data-i18n="s1_intro">In Kotlin, everything behaves as an object. There are no built-in primitive types like in Java; numbers and characters are handled as uniform objects.</p>
+                            <p data-i18n="s2_intro">In Kotlin, everything behaves as an object. There are no built-in primitive types like in Java; numbers and characters are handled as uniform objects.</p>
                             <div class="type-grid">
                                 <div class="type-pill">
                                     <span class="type-name">Int / Long</span>
-                                    <span class="type-desc">Standard integers</span>
+                                    <span class="type-desc" data-i18n="pill1_desc">Standard integers</span>
                                     <span class="type-example">val port = 8080</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">Double / Float</span>
-                                    <span class="type-desc">Floating-point values</span>
+                                    <span class="type-desc" data-i18n="pill2_desc">Floating-point values</span>
                                     <span class="type-example">val latency = 12.45</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">Boolean</span>
-                                    <span class="type-desc">Logical state truths</span>
+                                    <span class="type-desc" data-i18n="pill3_desc">Logical state truths</span>
                                     <span class="type-example">val isSecure = true</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">String</span>
-                                    <span class="type-desc">Character sequences</span>
+                                    <span class="type-desc" data-i18n="pill4_desc">Character sequences</span>
                                     <span class="type-example">val tag = "Kotlin"</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">List / Set</span>
-                                    <span class="type-desc">Immutable collections</span>
+                                    <span class="type-desc" data-i18n="pill5_desc">Immutable collections</span>
                                     <span class="type-example">listOf("A", "B")</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">Any</span>
-                                    <span class="type-desc">The root of the hierarchy</span>
+                                    <span class="type-desc" data-i18n="pill6_desc">The root of the hierarchy</span>
                                     <span class="type-example">Equivalent to Object</span>
                                 </div>
                             </div>
@@ -153,7 +153,7 @@ activeConnections += <span class="st">1</span></pre>
                                 <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
                                 <span data-i18n="s3_title">Control Flows &amp; Expressions</span>
                             </h2>
-                            <p data-i18n="s1_intro">Conditionals function as expressions that return values. The structural <code>when</code> block acts as an optimized, powerful replacement for the classic <code>switch</code> construct.</p>
+                            <p data-i18n="s3_intro">Conditionals function as expressions that return values. The structural <code>when</code> block acts as an optimized, powerful replacement for the classic <code>switch</code> construct.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">kotlin · controlflow.kt</span>
@@ -178,7 +178,7 @@ activeConnections += <span class="st">1</span></pre>
                                 <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
                                 <span data-i18n="s4_title">Loops &amp; Ranges</span>
                             </h2>
-                            <p data-i18n="s1_intro">Kotlin uses readable, expressive range constructs within its execution blocks to traverse sequences, arrays, and standard interval fields seamlessly.</p>
+                            <p data-i18n="s4_intro">Kotlin uses readable, expressive range constructs within its execution blocks to traverse sequences, arrays, and standard interval fields seamlessly.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">kotlin · loops.kt</span>
@@ -207,7 +207,7 @@ activeConnections += <span class="st">1</span></pre>
                                 <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
                                 <span data-i18n="s5_title">Functions &amp; Named Arguments</span>
                             </h2>
-                            <p data-i18n="s1_intro">Functions support optional default argument values, which helps reduce boilerplates and prevents the need for overly nested method overloading.</p>
+                            <p data-i18n="s5_intro">Functions support optional default argument values, which helps reduce boilerplates and prevents the need for overly nested method overloading.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">kotlin · functions.kt</span>
@@ -233,7 +233,7 @@ activeConnections += <span class="st">1</span></pre>
                                 <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
                                 <span data-i18n="s6_title">Classes &amp; Data Classes</span>
                             </h2>
-                            <p data-i18n="s1_intro">Classes are closed by default (not inheritable). The <code>data class</code> keyword automatically generates fields like <code>equals()</code>, <code>hashCode()</code>, and <code>toString()</code> for pure data holders.</p>
+                            <p data-i18n="s6_intro">Classes are closed by default (not inheritable). The <code>data class</code> keyword automatically generates fields like <code>equals()</code>, <code>hashCode()</code>, and <code>toString()</code> for pure data holders.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">kotlin · classes.kt</span>
@@ -255,7 +255,7 @@ activeConnections += <span class="st">1</span></pre>
                             </div>
                             <div class="info-box danger">
                                 <i class="fa-solid fa-triangle-exclamation"></i>
-                                <span>Unlike Java, Kotlin classes are **open for extension only if explicitly marked with the <code>open</code> modifier keyword**. By default, inheritance structures are safely locked.</span>
+                                <span data-i18n="tip2">Unlike Java, Kotlin classes are **open for extension only if explicitly marked with the <code>open</code> modifier keyword**. By default, inheritance structures are safely locked.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -264,7 +264,7 @@ activeConnections += <span class="st">1</span></pre>
                                 <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
                                 <span data-i18n="s7_title">Null Safety Ecosystem</span>
                             </h2>
-                            <p data-i18n="s1_intro">Kotlin addresses the infamous billion-dollar mistake by separating nullable types from non-nullable ones at the compiler level, effectively eliminating <code>NullPointerException</code> risks.</p>
+                            <p data-i18n="s7_intro">Kotlin addresses the infamous billion-dollar mistake by separating nullable types from non-nullable ones at the compiler level, effectively eliminating <code>NullPointerException</code> risks.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">kotlin · nullsafety.kt</span>
@@ -289,7 +289,7 @@ sessionKey = <span class="kw">null</span> <span class="cm">// Valid configuratio
                                 <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
                                 <span data-i18n="s8_title">Asynchronous Coroutines</span>
                             </h2>
-                            <p data-i18n="s1_intro">Kotlin manages non-blocking, asynchronous tasks using ultra-lightweight threads called Coroutines, which allow you to write clean, sequential-looking code for background routines.</p>
+                            <p data-i18n="s8_intro">Kotlin manages non-blocking, asynchronous tasks using ultra-lightweight threads called Coroutines, which allow you to write clean, sequential-looking code for background routines.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">kotlin · coroutines.kt</span>
@@ -312,7 +312,7 @@ sessionKey = <span class="kw">null</span> <span class="cm">// Valid configuratio
                             </div>
                             <div class="info-box tip">
                                 <i class="fa-solid fa-lightbulb"></i>
-                                <span>With Kotlin syntax basics down, you are fully equipped to build modern native Android mobile applications with **Jetpack Compose** or cross-platform web layers using **Ktor**.</span>
+                                <span data-i18n="tip3">With Kotlin syntax basics down, you are fully equipped to build modern native Android mobile applications with **Jetpack Compose** or cross-platform web layers using **Ktor**.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -362,11 +362,18 @@ sessionKey = <span class="kw">null</span> <span class="cm">// Valid configuratio
             function copyCode(btn) {
                 const pre  = btn.closest('.code-block').querySelector('pre');
                 const text = pre.innerText;
+                const lang = localStorage.getItem('lang') || 'en';
+                const labels = {
+                  en: { copy: 'Copy', copied: 'Copied!' },
+                  it: { copy: 'Copia', copied: 'Copiato!' },
+                  es: { copy: 'Copiar', copied: '¡Copiado!' }
+                };
+                const l = labels[lang] || labels.en;
                 navigator.clipboard.writeText(text).then(() => {
-                    btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                    btn.innerHTML = '<i class="fa-solid fa-check"></i> ' + l.copied;
                     btn.classList.add('copied');
                     setTimeout(() => {
-                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy';
+                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> ' + l.copy;
                         btn.classList.remove('copied');
                     }, 2000);
                 });

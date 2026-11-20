@@ -113,36 +113,36 @@ _start:
                                 <span class="section-icon" style="background: var(--guide-accent-2);">2</span>
                                 <span data-i18n="s2_title">x86_64 Processor Registers</span>
                             </h2>
-                            <p data-i18n="s1_intro">Registers are high-speed storage locations built directly inside the CPU core. Modern x86_64 chips host 64-bit general-purpose cells that remain backward-compatible with 32-bit, 16-bit, and 8-bit historical subdivisions.</p>
+                            <p data-i18n="s2_intro">Registers are high-speed storage locations built directly inside the CPU core. Modern x86_64 chips host 64-bit general-purpose cells that remain backward-compatible with 32-bit, 16-bit, and 8-bit historical subdivisions.</p>
                             <div class="type-grid">
                                 <div class="type-pill">
                                     <span class="type-name">RAX / EAX / AX</span>
-                                    <span class="type-desc">Primary accumulator used for math and system function return codes</span>
+                                    <span class="type-desc" data-i18n="pill1_desc">Primary accumulator used for math and system function return codes</span>
                                     <span class="type-example">64-bit / 32-bit / 16-bit</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">R_X (RBX, RCX, RDX)</span>
-                                    <span class="type-desc">General usage nodes, loop counting parameters, and I/O tracking data</span>
+                                    <span class="type-desc" data-i18n="pill2_desc">General usage nodes, loop counting parameters, and I/O tracking data</span>
                                     <span class="type-example">Base, Counter, Data</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">RSI / RDI</span>
-                                    <span class="type-desc">Source and Destination Index elements reserved for string arrays</span>
+                                    <span class="type-desc" data-i18n="pill3_desc">Source and Destination Index elements reserved for string arrays</span>
                                     <span class="type-example">Memory address pointers</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">R8 - R15</span>
-                                    <span class="type-desc">Modern expansion registers added to the 64-bit architecture specification</span>
+                                    <span class="type-desc" data-i18n="pill4_desc">Modern expansion registers added to the 64-bit architecture specification</span>
                                     <span class="type-example">General purpose storage</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">RSP</span>
-                                    <span class="type-desc">Stack Pointer tracking the current boundary address of execution metrics</span>
+                                    <span class="type-desc" data-i18n="pill5_desc">Stack Pointer tracking the current boundary address of execution metrics</span>
                                     <span class="type-example">Crucial call stack monitor</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">RIP</span>
-                                    <span class="type-desc">Instruction Pointer holds the memory coordinates of the upcoming command</span>
+                                    <span class="type-desc" data-i18n="pill6_desc">Instruction Pointer holds the memory coordinates of the upcoming command</span>
                                     <span class="type-example">Program counter tracker</span>
                                 </div>
                             </div>
@@ -153,7 +153,7 @@ _start:
                                 <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
                                 <span data-i18n="s3_title">Data Movement Operations</span>
                             </h2>
-                            <p data-i18n="s1_intro">The <code>mov</code> instruction transfers data payloads between registers, or between registers and system RAM cells. Note that Intel syntax maps arguments as <code>mov destination, source</code>.</p>
+                            <p data-i18n="s3_intro">The <code>mov</code> instruction transfers data payloads between registers, or between registers and system RAM cells. Note that Intel syntax maps arguments as <code>mov destination, source</code>.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">asm · movement.asm</span>
@@ -172,7 +172,7 @@ _start:
                                 <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
                                 <span data-i18n="s4_title">Basic Arithmetic Instructions</span>
                             </h2>
-                            <p data-i18n="s1_intro">Perform native mathematical mutations using dedicated CPU logic block circuits. These operations alter register allocations in place.</p>
+                            <p data-i18n="s4_intro">Perform native mathematical mutations using dedicated CPU logic block circuits. These operations alter register allocations in place.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">asm · arithmetic.asm</span>
@@ -193,7 +193,7 @@ _start:
                                 <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
                                 <span data-i18n="s5_title">Status Flags &amp; Conditional Jumps</span>
                             </h2>
-                            <p data-i18n="s1_intro">Branching logic evaluates data by comparing operands using the <code>cmp</code> instruction. This operation subtracts values without saving the result, modifying internal CPU **Status Flags** instead.</p>
+                            <p data-i18n="s5_intro">Branching logic evaluates data by comparing operands using the <code>cmp</code> instruction. This operation subtracts values without saving the result, modifying internal CPU **Status Flags** instead.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">asm · control.asm</span>
@@ -217,7 +217,7 @@ _start:
                                 <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
                                 <span data-i18n="s6_title">The Stack Pointer (Push &amp; Pop)</span>
                             </h2>
-                            <p data-i18n="s1_intro">The **Stack** is a Last-In, First-Out (LIFO) memory region managed directly by the CPU. The <code>rsp</code> register tracks the top of the stack, growing downward toward lower memory addresses.</p>
+                            <p data-i18n="s6_intro">The **Stack** is a Last-In, First-Out (LIFO) memory region managed directly by the CPU. The <code>rsp</code> register tracks the top of the stack, growing downward toward lower memory addresses.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">asm · stack.asm</span>
@@ -231,7 +231,7 @@ _start:
                             </div>
                             <div class="info-box danger">
                                 <i class="fa-solid fa-triangle-exclamation"></i>
-                                <span>**Stack balance is critical!** Every single <code>push</code> instruction must map to an associated <code>pop</code> before exiting a function context. Imbalances cause subroutines to read corrupt addresses, resulting in instant Segmentation Fault crashes.</span>
+                                <span data-i18n="tip1">**Stack balance is critical!** Every single <code>push</code> instruction must map to an associated <code>pop</code> before exiting a function context. Imbalances cause subroutines to read corrupt addresses, resulting in instant Segmentation Fault crashes.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -240,7 +240,7 @@ _start:
                                 <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
                                 <span data-i18n="s7_title">Functions &amp; Subroutines</span>
                             </h2>
-                            <p data-i18n="s1_intro">Subroutines organize code blocks into reusable tasks. The <code>call</code> command pushes the current return address onto the stack and jumps to the target label. The <code>ret</code> statement pops that address to resume execution.</p>
+                            <p data-i18n="s7_intro">Subroutines organize code blocks into reusable tasks. The <code>call</code> command pushes the current return address onto the stack and jumps to the target label. The <code>ret</code> statement pops that address to resume execution.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">asm · functions.asm</span>
@@ -262,7 +262,7 @@ double_value:
                                 <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
                                 <span data-i18n="s8_title">Linux System Calls (Syscalls)</span>
                             </h2>
-                            <p data-i18n="s1_intro">Assembly can transition from user space to kernel space via the <code>syscall</code> instruction. This triggers an exception that passes execution control directly to the OS kernel to handle tasks like writing files or printing text to the console.</p>
+                            <p data-i18n="s8_intro">Assembly can transition from user space to kernel space via the <code>syscall</code> instruction. This triggers an exception that passes execution control directly to the OS kernel to handle tasks like writing files or printing text to the console.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">asm · syscall.asm</span>
@@ -275,7 +275,7 @@ double_value:
                             </div>
                             <div class="info-box tip">
                                 <i class="fa-solid fa-lightbulb"></i>
-                                <span>With bare-metal machine language concepts clear, you can step up to analyzing binary structures using tools like **GDB** or optimizing critical compilation loops.</span>
+                                <span data-i18n="tip2">With bare-metal machine language concepts clear, you can step up to analyzing binary structures using tools like **GDB** or optimizing critical compilation loops.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -325,11 +325,18 @@ double_value:
             function copyCode(btn) {
                 const pre  = btn.closest('.code-block').querySelector('pre');
                 const text = pre.innerText;
+                const lang = localStorage.getItem('lang') || 'en';
+                const labels = {
+                  en: { copy: 'Copy', copied: 'Copied!' },
+                  it: { copy: 'Copia', copied: 'Copiato!' },
+                  es: { copy: 'Copiar', copied: '¡Copiado!' }
+                };
+                const l = labels[lang] || labels.en;
                 navigator.clipboard.writeText(text).then(() => {
-                    btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                    btn.innerHTML = '<i class="fa-solid fa-check"></i> ' + l.copied;
                     btn.classList.add('copied');
                     setTimeout(() => {
-                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy';
+                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> ' + l.copy;
                         btn.classList.remove('copied');
                     }, 2000);
                 });

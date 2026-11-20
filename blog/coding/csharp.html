@@ -112,36 +112,36 @@ Console.WriteLine(<span class="st">$"System core: {project} is currently {operat
                                 <span class="section-icon" style="background: var(--guide-accent-2);">2</span>
                                 <span data-i18n="s2_title">Data Types &amp; Generics</span>
                             </h2>
-                            <p data-i18n="s1_intro">C# distinguishes between Value Types (stored on the stack) and Reference Types (stored on the heap). Collections like <code>List&lt;T&gt;</code> enforce type safety through generics.</p>
+                            <p data-i18n="s2_intro">C# distinguishes between Value Types (stored on the stack) and Reference Types (stored on the heap). Collections like <code>List&lt;T&gt;</code> enforce type safety through generics.</p>
                             <div class="type-grid">
                                 <div class="type-pill">
                                     <span class="type-name">int / long</span>
-                                    <span class="type-desc">32-bit and 64-bit signed integers</span>
+                                    <span class="type-desc" data-i18n="pill1_desc">32-bit and 64-bit signed integers</span>
                                     <span class="type-example">int userId = 404;</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">decimal</span>
-                                    <span class="type-desc">128-bit high precision financial type</span>
+                                    <span class="type-desc" data-i18n="pill2_desc">128-bit high precision financial type</span>
                                     <span class="type-example">decimal balance = 1532.50m;</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">bool</span>
-                                    <span class="type-desc">Standard boolean true/false state</span>
+                                    <span class="type-desc" data-i18n="pill3_desc">Standard boolean true/false state</span>
                                     <span class="type-example">bool isAuth = true;</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">string</span>
-                                    <span class="type-desc">Immutable sequence of UTF-16 characters</span>
+                                    <span class="type-desc" data-i18n="pill4_desc">Immutable sequence of UTF-16 characters</span>
                                     <span class="type-example">string route = "/api/v1";</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">List&lt;T&gt;</span>
-                                    <span class="type-desc">Strongly-typed dynamic array list</span>
+                                    <span class="type-desc" data-i18n="pill5_desc">Strongly-typed dynamic array list</span>
                                     <span class="type-example">var tags = new List&lt;string&gt;();</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">Nullable&lt;T&gt; / T?</span>
-                                    <span class="type-desc">Wraps value types to allow null values</span>
+                                    <span class="type-desc" data-i18n="pill6_desc">Wraps value types to allow null values</span>
                                     <span class="type-example">int? index = null;</span>
                                 </div>
                             </div>
@@ -152,7 +152,7 @@ Console.WriteLine(<span class="st">$"System core: {project} is currently {operat
                                 <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
                                 <span data-i18n="s3_title">Conditionals &amp; Logic Operations</span>
                             </h2>
-                            <p data-i18n="s1_intro">Control application flow using standard <code>if</code>, <code>else if</code>, and <code>else</code> evaluation statements alongside explicit relational tracking operators.</p>
+                            <p data-i18n="s3_intro">Control application flow using standard <code>if</code>, <code>else if</code>, and <code>else</code> evaluation statements alongside explicit relational tracking operators.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">cs · ControlFlow.cs</span>
@@ -175,7 +175,7 @@ Console.WriteLine(<span class="st">$"System core: {project} is currently {operat
                                 <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
                                 <span data-i18n="s4_title">Loops &amp; Advanced Switch Patterns</span>
                             </h2>
-                            <p data-i18n="s1_intro">Iterate over lists securely using <code>foreach</code> blocks. Modern C# also introduces powerful **Switch Expressions** that parse value configurations cleanly.</p>
+                            <p data-i18n="s4_intro">Iterate over lists securely using <code>foreach</code> blocks. Modern C# also introduces powerful **Switch Expressions** that parse value configurations cleanly.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">cs · LoopsAndSwitch.cs</span>
@@ -200,7 +200,7 @@ Console.WriteLine(<span class="st">$"System core: {project} is currently {operat
                                 <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
                                 <span data-i18n="s5_title">Methods &amp; Auto-Properties</span>
                             </h2>
-                            <p data-i18n="s1_intro">Methods declare parameters with strict visibility and return signatures. Use shorthand expressions (<code>=&gt;</code>) for simple operations, and leverage **Auto-Implemented Properties** to safely encapsulate state fields.</p>
+                            <p data-i18n="s5_intro">Methods declare parameters with strict visibility and return signatures. Use shorthand expressions (<code>=&gt;</code>) for simple operations, and leverage **Auto-Implemented Properties** to safely encapsulate state fields.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">cs · Encapsulation.cs</span>
@@ -221,7 +221,7 @@ Console.WriteLine(<span class="st">$"System core: {project} is currently {operat
                                 <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
                                 <span data-i18n="s6_title">OOP Architecture &amp; Records</span>
                             </h2>
-                            <p data-i18n="s1_intro">C# implements a classic Object-Oriented paradigm featuring single class inheritance and explicit interface contracts. It also supports **Records**, which provide lightweight, immutable data structures out of the box.</p>
+                            <p data-i18n="s6_intro">C# implements a classic Object-Oriented paradigm featuring single class inheritance and explicit interface contracts. It also supports **Records**, which provide lightweight, immutable data structures out of the box.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">cs · Inheritance.cs</span>
@@ -241,7 +241,7 @@ Console.WriteLine(<span class="st">$"System core: {project} is currently {operat
                             </div>
                             <div class="info-box danger">
                                 <i class="fa-solid fa-triangle-exclamation"></i>
-                                <span>Classes use reference equality, whereas **Records implement value-based equality checking automatically**. Comparing two identical record instances with <code>==</code> evaluates to <code>true</code>.</span>
+                                <span data-i18n="tip1">Classes use reference equality, whereas **Records implement value-based equality checking automatically**. Comparing two identical record instances with <code>==</code> evaluates to <code>true</code>.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -250,7 +250,7 @@ Console.WriteLine(<span class="st">$"System core: {project} is currently {operat
                                 <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
                                 <span data-i18n="s7_title">Exceptions &amp; Safe Resource Management</span>
                             </h2>
-                            <p data-i18n="s1_intro">Handle runtime faults gracefully using <code>try-catch-finally</code> blocks. For external resources like network links or file streams, always use the <code>using</code> declaration statement to guarantee memory cleanup through `IDisposable` execution blocks.</p>
+                            <p data-i18n="s7_intro">Handle runtime faults gracefully using <code>try-catch-finally</code> blocks. For external resources like network links or file streams, always use the <code>using</code> declaration statement to guarantee memory cleanup through `IDisposable` execution blocks.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">cs · ExecutionSafety.cs</span>
@@ -275,7 +275,7 @@ Console.WriteLine(<span class="st">$"System core: {project} is currently {operat
                                 <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
                                 <span data-i18n="s8_title">Data Querying via LINQ Expressions</span>
                             </h2>
-                            <p data-i18n="s1_intro">**Language Integrated Query (LINQ)** provides a powerful, type-safe syntax to filter, transform, and aggregate data collections cleanly—whether operating on arrays or remote database entities.</p>
+                            <p data-i18n="s8_intro">**Language Integrated Query (LINQ)** provides a powerful, type-safe syntax to filter, transform, and aggregate data collections cleanly—whether operating on arrays or remote database entities.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">cs · LinqQueries.cs</span>
@@ -294,7 +294,7 @@ Console.WriteLine(<span class="st">$"System core: {project} is currently {operat
                             </div>
                             <div class="info-box tip">
                                 <i class="fa-solid fa-lightbulb"></i>
-                                <span>With C# fundamentals solidified, you are ready to build cross-platform APIs using **ASP.NET Core** frameworks or integrate performant entity mappers like **Entity Framework Core**.</span>
+                                <span data-i18n="tip2">With C# fundamentals solidified, you are ready to build cross-platform APIs using **ASP.NET Core** frameworks or integrate performant entity mappers like **Entity Framework Core**.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -344,11 +344,18 @@ Console.WriteLine(<span class="st">$"System core: {project} is currently {operat
             function copyCode(btn) {
                 const pre  = btn.closest('.code-block').querySelector('pre');
                 const text = pre.innerText;
+                const lang = localStorage.getItem('lang') || 'en';
+                const labels = {
+                  en: { copy: 'Copy', copied: 'Copied!' },
+                  it: { copy: 'Copia', copied: 'Copiato!' },
+                  es: { copy: 'Copiar', copied: '¡Copiado!' }
+                };
+                const l = labels[lang] || labels.en;
                 navigator.clipboard.writeText(text).then(() => {
-                    btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                    btn.innerHTML = '<i class="fa-solid fa-check"></i> ' + l.copied;
                     btn.classList.add('copied');
                     setTimeout(() => {
-                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy';
+                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> ' + l.copy;
                         btn.classList.remove('copied');
                     }, 2000);
                 });

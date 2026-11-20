@@ -111,7 +111,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-2);">2</span>
                                 <span data-i18n="s2_title">The AndroidManifest.xml Entry</span>
                             </h2>
-                            <p data-i18n="s1_intro">The <code>AndroidManifest.xml</code> is the ultimate ledger file read by the Android OS before booting your software package. Regardless of language choice, you must register hardware permissions and structural views here.</p>
+                            <p data-i18n="s2_intro">The <code>AndroidManifest.xml</code> is the ultimate ledger file read by the Android OS before booting your software package. Regardless of language choice, you must register hardware permissions and structural views here.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">xml · AndroidManifest.xml</span>
@@ -139,36 +139,36 @@
                                 <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
                                 <span data-i18n="s3_title">App Resources &amp; R.java Mapping</span>
                             </h2>
-                            <p data-i18n="s1_intro">The <code>res/</code> directory houses non-code visual components. During the build workflow, the build system automatically generates a unique tracking file named <code>R.java</code>, turning asset pathways into static integer addresses referenced by your logic code.</p>
+                            <p data-i18n="s3_intro">The <code>res/</code> directory houses non-code visual components. During the build workflow, the build system automatically generates a unique tracking file named <code>R.java</code>, turning asset pathways into static integer addresses referenced by your logic code.</p>
                             <div class="type-grid">
                                 <div class="type-pill">
                                     <span class="type-name">res/drawable/</span>
-                                    <span class="type-desc">Vector assets (XML path definitions) or bitmap image arrays</span>
+                                    <span class="type-desc" data-i18n="pill1_desc">Vector assets (XML path definitions) or bitmap image arrays</span>
                                     <span class="type-example">Accessed via: R.drawable.ic_logo</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">res/layout/</span>
-                                    <span class="type-desc">Traditional XML screen rendering matrix schemas (not used in pure Compose)</span>
+                                    <span class="type-desc" data-i18n="pill2_desc">Traditional XML screen rendering matrix schemas (not used in pure Compose)</span>
                                     <span class="type-example">Accessed via: R.layout.activity_main</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">res/values/strings.xml</span>
-                                    <span class="type-desc">Localized textual strings to enable clean multi-language translation management</span>
+                                    <span class="type-desc" data-i18n="pill3_desc">Localized textual strings to enable clean multi-language translation management</span>
                                     <span class="type-example">Accessed via: R.string.welcome_msg</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">res/values/themes.xml</span>
-                                    <span class="type-desc">Style parameter configurations mapping color flags and core typography attributes</span>
+                                    <span class="type-desc" data-i18n="pill4_desc">Style parameter configurations mapping color flags and core typography attributes</span>
                                     <span class="type-example">Accessed via: R.style.AppTheme</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">res/mipmap/</span>
-                                    <span class="type-desc">Device application execution launcher icon matrices clipped per pixel densities</span>
+                                    <span class="type-desc" data-i18n="pill5_desc">Device application execution launcher icon matrices clipped per pixel densities</span>
                                     <span class="type-example">Accessed via: R.mipmap.ic_launcher</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">res/xml/</span>
-                                    <span class="type-desc">Arbitrary structural system configuration components (e.g., Network Security configs)</span>
+                                    <span class="type-desc" data-i18n="pill6_desc">Arbitrary structural system configuration components (e.g., Network Security configs)</span>
                                     <span class="type-example">Raw static system files</span>
                                 </div>
                             </div>
@@ -179,7 +179,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
                                 <span data-i18n="s4_title">The Gradle Build System Matrix</span>
                             </h2>
-                            <p data-i18n="s1_intro">Android utilizes **Gradle** to orchestrate source code file compilation, dependency downloading, and final code signing processes. Modern configurations use Kotlin Script (<code>.gradle.kts</code>) or Groovy (<code>.gradle</code>).</p>
+                            <p data-i18n="s4_intro">Android utilizes **Gradle** to orchestrate source code file compilation, dependency downloading, and final code signing processes. Modern configurations use Kotlin Script (<code>.gradle.kts</code>) or Groovy (<code>.gradle</code>).</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">kotlin · app/build.gradle.kts</span>
@@ -214,7 +214,7 @@ dependencies {
                                 <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
                                 <span data-i18n="s5_title">Application &amp; Activity Lifecycles</span>
                             </h2>
-                            <p data-i18n="s1_intro">Unlike standard desktop software execution loops, the Android system controls process memory allocations directly. Visual containers called **Activities** travel along a strict state path to adapt smoothly to device interruptions.</p>
+                            <p data-i18n="s5_intro">Unlike standard desktop software execution loops, the Android system controls process memory allocations directly. Visual containers called **Activities** travel along a strict state path to adapt smoothly to device interruptions.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">kt/java · Lifecycle hooks</span>
@@ -237,7 +237,7 @@ dependencies {
                                 <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
                                 <span data-i18n="s6_title">Core System Components (The Big Four)</span>
                             </h2>
-                            <p data-i18n="s1_intro">An application system interaction layer is constructed by utilizing varying combinations of the **Four Fundamental Component Elements** managed directly by the Android OS runtime layer.</p>
+                            <p data-i18n="s6_intro">An application system interaction layer is constructed by utilizing varying combinations of the **Four Fundamental Component Elements** managed directly by the Android OS runtime layer.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">System Structural Schema</span>
@@ -256,7 +256,7 @@ dependencies {
                             </div>
                             <div class="info-box danger">
                                 <i class="fa-solid fa-triangle-exclamation"></i>
-                                <span>**Intents serve as the core structural binding adhesive.** They act as asynchronous communication tokens used to launch different Activities or dispatch messaging payloads across distinct sandboxed OS processes.</span>
+                                <span data-i18n="tip1">**Intents serve as the core structural binding adhesive.** They act as asynchronous communication tokens used to launch different Activities or dispatch messaging payloads across distinct sandboxed OS processes.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -265,7 +265,7 @@ dependencies {
                                 <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
                                 <span data-i18n="s7_title">Main Thread vs Background Workers</span>
                             </h2>
-                            <p data-i18n="s1_intro">Android runs all interface drawing operations on a single, isolated execution track known as the **Main Thread** (or UI Thread). Forcing network requests or file modifications onto this track locks up the UI, triggering an immediate app freeze.</p>
+                            <p data-i18n="s7_intro">Android runs all interface drawing operations on a single, isolated execution track known as the **Main Thread** (or UI Thread). Forcing network requests or file modifications onto this track locks up the UI, triggering an immediate app freeze.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">Execution Strategy</span>
@@ -292,7 +292,7 @@ dependencies {
                                 <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
                                 <span data-i18n="s8_title">Compilation Flow: Java/Kotlin to ART</span>
                             </h2>
-                            <p data-i18n="s1_intro">Whether you choose to write your app logic in Java or Kotlin, both toolchains emit standard JVM instructions. A secondary compilation phase then compresses these bytecode files into custom register configurations optimized for mobile devices.</p>
+                            <p data-i18n="s8_intro">Whether you choose to write your app logic in Java or Kotlin, both toolchains emit standard JVM instructions. A secondary compilation phase then compresses these bytecode files into custom register configurations optimized for mobile devices.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">Compilation Pipeline Diagram</span>
@@ -314,7 +314,7 @@ dependencies {
                             </div>
                             <div class="info-box tip">
                                 <i class="fa-solid fa-lightbulb"></i>
-                                <span>With the agnostic structural blueprint of an Android project clear, you can confidently delve into **Java view management systems** or master declarative UI trees using modern **Jetpack Compose in Kotlin**.</span>
+                                <span data-i18n="tip2">With the agnostic structural blueprint of an Android project clear, you can confidently delve into **Java view management systems** or master declarative UI trees using modern **Jetpack Compose in Kotlin**.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -364,11 +364,18 @@ dependencies {
             function copyCode(btn) {
                 const pre  = btn.closest('.code-block').querySelector('pre');
                 const text = pre.innerText;
+                const lang = localStorage.getItem('lang') || 'en';
+                const labels = {
+                  en: { copy: 'Copy', copied: 'Copied!' },
+                  it: { copy: 'Copia', copied: 'Copiato!' },
+                  es: { copy: 'Copiar', copied: '¡Copiado!' }
+                };
+                const l = labels[lang] || labels.en;
                 navigator.clipboard.writeText(text).then(() => {
-                    btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                    btn.innerHTML = '<i class="fa-solid fa-check"></i> ' + l.copied;
                     btn.classList.add('copied');
                     setTimeout(() => {
-                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy';
+                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> ' + l.copy;
                         btn.classList.remove('copied');
                     }, 2000);
                 });

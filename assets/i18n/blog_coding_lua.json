@@ -29,7 +29,18 @@
     "s5_intro": "Functions are first-class citizens. They can be assigned to variables, passed as arguments, and returned from other routines. They also support multiple return values natively.",
     "s6_intro": "Tables are the sole data structuring mechanism in Lua. They function as indexed arrays or key-value hash dictionaries interchangeably.",
     "s7_intro": "Metatables allow tables to override operational behaviors when interacting with keys, arithmetic signs, or function inheritance chains via fallback definitions called metamethods.",
-    "s8_intro": "Break up codebases across distinct files by packaging components into local tables returned at the end of scripts, and loaded via <code>require</code> calls."
+    "s8_intro": "Break up codebases across distinct files by packaging components into local tables returned at the end of scripts, and loaded via <code>require</code> calls.",
+    "copy_btn": "Copy",
+    "copied_btn": "Copied!",
+    "tip1": "Lua doesn't require semicolons (<code>;</code>) at the end of statements, though they are syntactically valid.",
+    "tip2": "Unlike almost all mainstream modern environments, **Lua arrays are 1-indexed**. In standard sequences, `array[0]` evaluates to `nil`. Keep this in mind when implementing algorithms!",
+    "tip3": "Lua is incredibly lightweight and efficient, making it the premier choice for extension modding layers, configuration schemas, and embedded architectures.",
+    "pill1_desc": "Non-value / unassigned",
+    "pill2_desc": "true or false choices",
+    "pill3_desc": "Double floats / Integers",
+    "pill4_desc": "Immutable text string",
+    "pill5_desc": "First-class executable",
+    "pill6_desc": "Only data structure"
   },
   "it": {
     "back_coding": "Guide di Coding",
@@ -61,7 +72,18 @@
     "s5_intro": "Lua simula l'ereditarietà e le classi collegando le tabelle tramite il metametodo <code>__index</code> e l'operatore due punti <code>:</code>.",
     "s6_intro": "Le coroutine di Lua sono thread cooperativi che possono cedere il controllo con <code>yield()</code> ed essere ripresi con <code>resume()</code>.",
     "s7_intro": "Lua include un motore di pattern matching leggero e veloce, ottimizzato per analizzare ed estrarre testo senza l'overhead delle regex tradizionali.",
-    "s8_intro": "Lua è progettato specificamente per essere incorporato in motori C/C++, scambiando dati e invocando funzioni tramite uno stack condiviso."
+    "s8_intro": "Lua è progettato specificamente per essere incorporato in motori C/C++, scambiando dati e invocando funzioni tramite uno stack condiviso.",
+    "copy_btn": "Copia",
+    "copied_btn": "Copiato!",
+    "tip1": "Ricorda che in Lua <strong>gli indici delle tabelle partono da 1</strong> (e non da 0 come nella maggior parte dei linguaggi C-like).",
+    "tip2": "Solo <code>false</code> e <code>nil</code> sono considerati falsi nei test condizionali: il numero <code>0</code> e la stringa vuota <code>\"\"</code> sono considerati veri.",
+    "tip3": "Lua eccelle nell'integrazione embedded: puoi incorporarlo come motore di scripting ultra-rapido in applicazioni C/C++ o motori grafici come <strong>LÖVE2D</strong> o <strong>Roblox</strong>.",
+    "pill1_desc": "Valore nullo / non assegnato",
+    "pill2_desc": "Valori booleani vero o falso",
+    "pill3_desc": "Numeri decimali doppi o interi",
+    "pill4_desc": "Stringa di testo immutabile",
+    "pill5_desc": "Funzione trattata come valore di prima classe",
+    "pill6_desc": "Unica struttura dati integrata (array, dizionari, oggetti)"
   },
   "es": {
     "back_coding": "Guías de Coding",
@@ -93,6 +115,17 @@
     "s5_intro": "Mediante el metamétodo <code>__index</code> y la sintaxis de dos puntos <code>:</code>, Lua implementa clases, herencia y métodos con contexto implícito.",
     "s6_intro": "Las corrutinas posibilitan alternar el flujo de ejecución pausando tareas con <code>yield()</code> y reactivándolas a demanda.",
     "s7_intro": "El sistema de patrones integrado en Lua analiza cadenas rápidamente sin la complejidad ni el consumo de memoria de expresiones regulares completas.",
-    "s8_intro": "Lua fue concebido para integrarse en aplicaciones escritas en C/C++, interactuando mediante una pila virtual compartida."
+    "s8_intro": "Lua fue concebido para integrarse en aplicaciones escritas en C/C++, interactuando mediante una pila virtual compartida.",
+    "copy_btn": "Copiar",
+    "copied_btn": "¡Copiado!",
+    "tip1": "Recuerda que en Lua <strong>los índices de las tablas comienzan en 1</strong> (y no en 0 como en la mayoría de los lenguajes tipo C).",
+    "tip2": "Solo <code>false</code> y <code>nil</code> se evalúan como falsos en condiciones: el número <code>0</code> y la cadena vacía <code>\"\"</code> se evalúan como verdaderos.",
+    "tip3": "Lua destaca en la integración embebida: puedes incorporarlo como motor de scripting ultrarrápido en aplicaciones C/C++ o motores de videojuegos como <strong>LÖVE2D</strong> o <strong>Roblox</strong>.",
+    "pill1_desc": "Sin valor / no asignado",
+    "pill2_desc": "Opciones booleanas verdadero o falso",
+    "pill3_desc": "Decimales dobles o números enteros",
+    "pill4_desc": "Cadena de texto inmutable",
+    "pill5_desc": "Función como valor de primera clase",
+    "pill6_desc": "Única estructura de datos integrada (arrays, diccionarios, objetos)"
   }
 }

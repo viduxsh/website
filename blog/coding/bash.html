@@ -105,36 +105,36 @@
                                 <span class="section-icon" style="background: var(--guide-accent-2);">2</span>
                                 <span data-i18n="s2_title">File System Navigation Core</span>
                             </h2>
-                            <p data-i18n="s1_intro">Interacting with the system requires traversing directory structures. Unlike Windows paths which utilize backslashes and drive letters (<code>C:\</code>), Unix environments map all elements down from a single root slash infrastructure.</p>
+                            <p data-i18n="s2_intro">Interacting with the system requires traversing directory structures. Unlike Windows paths which utilize backslashes and drive letters (<code>C:\</code>), Unix environments map all elements down from a single root slash infrastructure.</p>
                             <div class="type-grid">
                                 <div class="type-pill">
                                     <span class="type-name">pwd</span>
-                                    <span class="type-desc">Print Working Directory: outputs your precise active directory path location</span>
+                                    <span class="type-desc" data-i18n="pill1_desc">Print Working Directory: outputs your precise active directory path location</span>
                                     <span class="type-example">/home/ivan/projects</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">ls -la</span>
-                                    <span class="type-desc">Lists all directory files, revealing hidden entities along with permission metadata</span>
+                                    <span class="type-desc" data-i18n="pill2_desc">Lists all directory files, revealing hidden entities along with permission metadata</span>
                                     <span class="type-example">Lists flags and dots</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">cd /path</span>
-                                    <span class="type-desc">Changes your current shell context location. Use "cd .." to climb up one layer</span>
+                                    <span class="type-desc" data-i18n="pill3_desc">Changes your current shell context location. Use "cd .." to climb up one layer</span>
                                     <span class="type-example">cd /var/log/nginx</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">mkdir -p</span>
-                                    <span class="type-desc">Creates new structural folder systems, automatically creating intermediate parent directories</span>
+                                    <span class="type-desc" data-i18n="pill4_desc">Creates new structural folder systems, automatically creating intermediate parent directories</span>
                                     <span class="type-example">mkdir -p app/src/main</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">WSL Note</span>
-                                    <span class="type-desc">Inside Windows WSL, your local storage drives are automatically mounted under the mnt tree</span>
+                                    <span class="type-desc" data-i18n="pill5_desc">Inside Windows WSL, your local storage drives are automatically mounted under the mnt tree</span>
                                     <span class="type-example">cd /mnt/c/Users/</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">clear</span>
-                                    <span class="type-desc">Flushes all printed terminal buffer lines away, cleaning up your visibility view</span>
+                                    <span class="type-desc" data-i18n="pill6_desc">Flushes all printed terminal buffer lines away, cleaning up your visibility view</span>
                                     <span class="type-example">Resets terminal viewport</span>
                                 </div>
                             </div>
@@ -145,7 +145,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
                                 <span data-i18n="s3_title">File Manipulation &amp; Permissions</span>
                             </h2>
-                            <p data-i18n="s1_intro">Files must explicitly carry execution permissions to run as scripts. The operating system calculates security rights based on three user categories: **User (Owner), Group, and Others**.</p>
+                            <p data-i18n="s3_intro">Files must explicitly carry execution permissions to run as scripts. The operating system calculates security rights based on three user categories: **User (Owner), Group, and Others**.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">sh · deployment.sh</span>
@@ -166,7 +166,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
                                 <span data-i18n="s4_title">Variables &amp; User Inputs</span>
                             </h2>
-                            <p data-i18n="s1_intro">Variables store dynamic configurations within a script context. **CRITICAL WARNING:** You must never leave trailing whitespaces around the assignment operator token (<code>=</code>); otherwise, the shell engine parses the target variable name as an executable system application command.</p>
+                            <p data-i18n="s4_intro">Variables store dynamic configurations within a script context. **CRITICAL WARNING:** You must never leave trailing whitespaces around the assignment operator token (<code>=</code>); otherwise, the shell engine parses the target variable name as an executable system application command.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">sh · inputs.sh</span>
@@ -186,7 +186,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
                                 <span data-i18n="s5_title">Conditional Statements (If &amp; Test)</span>
                             </h2>
-                            <p data-i18n="s1_intro">Branching flows rely on condition blocks evaluated via the <code>[ ]</code> syntax (which internally calls the system tool <code>test</code>). Strings use standard algebraic symbols, but numerical evaluations require specific flag operators.</p>
+                            <p data-i18n="s5_intro">Branching flows rely on condition blocks evaluated via the <code>[ ]</code> syntax (which internally calls the system tool <code>test</code>). Strings use standard algebraic symbols, but numerical evaluations require specific flag operators.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">sh · logic.sh</span>
@@ -209,7 +209,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
                                 <span data-i18n="s6_title">Loops &amp; Iteration Routines</span>
                             </h2>
-                            <p data-i18n="s1_intro">Loops automate repetitive tasks, such as scanning text arrays or batch-modifying server log layouts, by processing structures over a structured collection block.</p>
+                            <p data-i18n="s6_intro">Loops automate repetitive tasks, such as scanning text arrays or batch-modifying server log layouts, by processing structures over a structured collection block.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">sh · loops.sh</span>
@@ -227,7 +227,7 @@
                             </div>
                             <div class="info-box danger">
                                 <i class="fa-solid fa-triangle-exclamation"></i>
-                                <span>**Be mindful of Line Endings cross-platform!** Scripts created on Windows carry invisible carriage return markers (<code>\r\n</code>, CRLF). Running these files inside Linux or WSL throws obscure syntax crashes because Bash looks for pure Unix line breaks (<code>\n</code>, LF). Fix these files using the <code>dos2unix</code> tool.</span>
+                                <span data-i18n="tip1">**Be mindful of Line Endings cross-platform!** Scripts created on Windows carry invisible carriage return markers (<code>\r\n</code>, CRLF). Running these files inside Linux or WSL throws obscure syntax crashes because Bash looks for pure Unix line breaks (<code>\n</code>, LF). Fix these files using the <code>dos2unix</code> tool.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -236,7 +236,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
                                 <span data-i18n="s7_title">I/O Redirections, Pipes &amp; Grep</span>
                             </h2>
-                            <p data-i18n="s1_intro">The true power of Bash lies in standard stream manipulation. By leveraging the pipe operator (<code>|</code>), you can redirect the text output of one script or command to serve as the direct input for the next processing block.</p>
+                            <p data-i18n="s7_intro">The true power of Bash lies in standard stream manipulation. By leveraging the pipe operator (<code>|</code>), you can redirect the text output of one script or command to serve as the direct input for the next processing block.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">sh · streams.sh</span>
@@ -255,7 +255,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
                                 <span data-i18n="s8_title">Process Control &amp; System Signaling</span>
                             </h2>
-                            <p data-i18n="s1_intro">Every execution task runs in its own memory container track monitored via a unique **PID (Process ID)**. Bash lets you shift tasks to the background or terminate stalled processes instantly.</p>
+                            <p data-i18n="s8_intro">Every execution task runs in its own memory container track monitored via a unique **PID (Process ID)**. Bash lets you shift tasks to the background or terminate stalled processes instantly.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">sh · processes.sh</span>
@@ -268,7 +268,7 @@
                             </div>
                             <div class="info-box tip">
                                 <i class="fa-solid fa-lightbulb"></i>
-                                <span>With fundamental scripting structures clear, your next engineering advancements involve cross-compiling deployment workflows using **Docker containers** or building complex **CI/CD pipeline scripts**.</span>
+                                <span data-i18n="tip2">With fundamental scripting structures clear, your next engineering advancements involve cross-compiling deployment workflows using **Docker containers** or building complex **CI/CD pipeline scripts**.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -318,11 +318,18 @@
             function copyCode(btn) {
                 const pre  = btn.closest('.code-block').querySelector('pre');
                 const text = pre.innerText;
+                const lang = localStorage.getItem('lang') || 'en';
+                const labels = {
+                  en: { copy: 'Copy', copied: 'Copied!' },
+                  it: { copy: 'Copia', copied: 'Copiato!' },
+                  es: { copy: 'Copiar', copied: '¡Copiado!' }
+                };
+                const l = labels[lang] || labels.en;
                 navigator.clipboard.writeText(text).then(() => {
-                    btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                    btn.innerHTML = '<i class="fa-solid fa-check"></i> ' + l.copied;
                     btn.classList.add('copied');
                     setTimeout(() => {
-                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy';
+                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> ' + l.copy;
                         btn.classList.remove('copied');
                     }, 2000);
                 });

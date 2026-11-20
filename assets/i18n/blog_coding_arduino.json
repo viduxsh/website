@@ -29,7 +29,17 @@
     "s5_intro": "The Serial peripheral manages UART communication streams, enabling telemetry data transmission back to a host computer or connected module grids.",
     "s6_intro": "The <code>delay()</code> function halts execution entirely, locking up the CPU core. Using <code>millis()</code> allows you to create non-blocking timers so multiple tasks can run concurrently.",
     "s7_intro": "Arduino can easily incorporate structured software libraries. The <code>Servo.h</code> library wraps low-level PWM timing loops, exposing a clean API to position actuators directly by degree input.",
-    "s8_intro": "Interrupts monitor pin transitions asynchronously. When triggered, they instantly pause the main execution cycle to run an explicit Interrupt Service Routine (ISR) for high-priority events."
+    "s8_intro": "Interrupts monitor pin transitions asynchronously. When triggered, they instantly pause the main execution cycle to run an explicit Interrupt Service Routine (ISR) for high-priority events.",
+    "copy_btn": "Copy",
+    "copied_btn": "Copied!",
+    "tip1": "Always declare tracking variables for <code>millis()</code> as **unsigned long**. Using standard signed integers causes compilation mismatch faults and breaks timing calculations during counter wrap-arounds.",
+    "tip2": "With bare-metal fundamentals under control, you are ready to construct low-overhead IoT routines and map peripheral grids leveraging custom architectures.",
+    "pill1_desc": "1-byte logical state value",
+    "pill2_desc": "1-byte unsigned number (0 to 255)",
+    "pill3_desc": "2-byte signed integer on 8-bit AVR",
+    "pill4_desc": "4-byte large positive number",
+    "pill5_desc": "4-byte standard precision decimal",
+    "pill6_desc": "1-byte text character literal"
   },
   "it": {
     "back_coding": "Guide di Coding",
@@ -61,7 +71,17 @@
     "s5_intro": "La porta seriale UART permette di scambiare dati tra la scheda Arduino e il computer, ideale per il debug e il telecontrollo.",
     "s6_intro": "L'uso di <code>delay()</code> blocca la CPU. Utilizzare <code>millis()</code> permette di coordinare compiti simultanei senza fermare il microcontrollore.",
     "s7_intro": "Gli interrupt consentono alla scheda di reagire istantaneamente a eventi esterni, interrompendo il codice del loop solo per il tempo necessario.",
-    "s8_intro": "I2C e SPI sono i bus seriali standard per interfacciare sensori avanzati, display OLED e memorie esterne con pochissimi pin."
+    "s8_intro": "I2C e SPI sono i bus seriali standard per interfacciare sensori avanzati, display OLED e memorie esterne con pochissimi pin.",
+    "copy_btn": "Copia",
+    "copied_btn": "Copiato!",
+    "tip1": "Dichiara sempre le variabili per <code>millis()</code> come <strong>unsigned long</strong>. L'utilizzo di <code>int</code> standard causerà un overflow dopo soli ~32 secondi, bloccando la logica temporale del tuo sketch.",
+    "tip2": "Con i concetti base bare-metal sotto controllo, sei pronto per costruire nodi IoT a basso consumo energetico integrando modem <strong>ESP32 Wi-Fi/Bluetooth</strong> o protocolli a lungo raggio come <strong>LoRa</strong>.",
+    "pill1_desc": "Valore logico a 1 byte (true/false)",
+    "pill2_desc": "Numero senza segno a 1 byte (0 a 255)",
+    "pill3_desc": "Intero con segno a 2 byte su AVR a 8 bit",
+    "pill4_desc": "Grande numero positivo a 4 byte",
+    "pill5_desc": "Decimale a precisione standard a 4 byte",
+    "pill6_desc": "Carattere di testo letterale a 1 byte"
   },
   "es": {
     "back_coding": "Guías de Coding",
@@ -93,6 +113,16 @@
     "s5_intro": "El canal serie UART facilita la transmisión bidireccional de datos con la computadora, siendo clave para depuración y monitoreo de sensores.",
     "s6_intro": "La función <code>delay()</code> congela el procesador. Utilizar <code>millis()</code> permite ejecutar múltiples tareas simultáneas en paralelo.",
     "s7_intro": "Las interrupciones permiten responder de inmediato a eventos críticos en pines específicos, pausando temporalmente el ciclo habitual.",
-    "s8_intro": "I2C y SPI son los buses sincrónicos más usados para conectar pantallas, acelerómetros y periféricos complejos ocupando un mínimo de pines."
+    "s8_intro": "I2C y SPI son los buses sincrónicos más usados para conectar pantallas, acelerómetros y periféricos complejos ocupando un mínimo de pines.",
+    "copy_btn": "Copiar",
+    "copied_btn": "¡Copiado!",
+    "tip1": "Declara siempre las variables para <code>millis()</code> como <strong>unsigned long</strong>. Usar <code>int</code> estándar provocará un desbordamiento en solo ~32 segundos, rompiendo la lógica temporal de tu sketch.",
+    "tip2": "Con los conceptos base bare-metal bajo control, estás listo para construir nodos IoT de bajo consumo integrando módems <strong>ESP32 Wi-Fi/Bluetooth</strong> o protocolos de largo alcance como <strong>LoRa</strong>.",
+    "pill1_desc": "Valor lógico de 1 byte (true/false)",
+    "pill2_desc": "Número sin signo de 1 byte (0 a 255)",
+    "pill3_desc": "Entero con signo de 2 bytes en AVR de 8 bits",
+    "pill4_desc": "Gran número positivo de 4 bytes",
+    "pill5_desc": "Decimal de precisión estándar de 4 bytes",
+    "pill6_desc": "Carácter de texto literal de 1 byte"
   }
 }

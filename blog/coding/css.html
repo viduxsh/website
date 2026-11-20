@@ -108,7 +108,7 @@
                             </div>
                             <div class="info-box tip">
                                 <i class="fa-solid fa-lightbulb"></i>
-                                <span>Link your external stylesheet file inside the HTML <code>&lt;head&gt;</code> template using: <code>&lt;link rel="stylesheet" href="style.css"&gt;</code>.</span>
+                                <span data-i18n="tip1">Link your external stylesheet file inside the HTML <code>&lt;head&gt;</code> template using: <code>&lt;link rel="stylesheet" href="style.css"&gt;</code>.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -117,36 +117,36 @@
                                 <span class="section-icon" style="background: var(--guide-accent-2);">2</span>
                                 <span data-i18n="s2_title">Core Selectors</span>
                             </h2>
-                            <p data-i18n="s1_intro">Target precise document fragments using elements directly, custom class configurations, unique string ID handles, or structural states.</p>
+                            <p data-i18n="s2_intro">Target precise document fragments using elements directly, custom class configurations, unique string ID handles, or structural states.</p>
                             <div class="type-grid">
                                 <div class="type-pill">
                                     <span class="type-name">Element</span>
-                                    <span class="type-desc">Targets all tags</span>
+                                    <span class="type-desc" data-i18n="pill1_desc">Targets all tags</span>
                                     <span class="type-example">h1 { color: red; }</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">.class</span>
-                                    <span class="type-desc">Reusable instances</span>
+                                    <span class="type-desc" data-i18n="pill2_desc">Reusable instances</span>
                                     <span class="type-example">.card { padding: 20px; }</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">#id</span>
-                                    <span class="type-desc">Unique single node</span>
+                                    <span class="type-desc" data-i18n="pill3_desc">Unique single node</span>
                                     <span class="type-example">#main-nav { top: 0; }</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">:hover</span>
-                                    <span class="type-desc">Interactive state</span>
+                                    <span class="type-desc" data-i18n="pill4_desc">Interactive state</span>
                                     <span class="type-example">a:hover { opacity: 0.8; }</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">Combined</span>
-                                    <span class="type-desc">Child nesting paths</span>
+                                    <span class="type-desc" data-i18n="pill5_desc">Child nesting paths</span>
                                     <span class="type-example">.wrapper p { margin: 0; }</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">*</span>
-                                    <span class="type-desc">Universal resetting</span>
+                                    <span class="type-desc" data-i18n="pill6_desc">Universal resetting</span>
                                     <span class="type-example">* { box-sizing: border-box; }</span>
                                 </div>
                             </div>
@@ -157,7 +157,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
                                 <span data-i18n="s3_title">Colors &amp; Typography</span>
                             </h2>
-                            <p data-i18n="s1_intro">Control visual branding layers utilizing structured palette values alongside explicit scaling fonts metrics.</p>
+                            <p data-i18n="s3_intro">Control visual branding layers utilizing structured palette values alongside explicit scaling fonts metrics.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">css · typography.css</span>
@@ -182,7 +182,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
                                 <span data-i18n="s4_title">The Box Model</span>
                             </h2>
-                            <p data-i18n="s1_intro">Every element behaves as a rectangular container box. Total dimensional real estate calculation includes layers of margins, borders, padding bounds, and core content boundaries.</p>
+                            <p data-i18n="s4_intro">Every element behaves as a rectangular container box. Total dimensional real estate calculation includes layers of margins, borders, padding bounds, and core content boundaries.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">css · boxmodel.css</span>
@@ -200,7 +200,7 @@
                             </div>
                             <div class="info-box danger">
                                 <i class="fa-solid fa-triangle-exclamation"></i>
-                                <span>Always declare <code>box-sizing: border-box;</code> globally. Without it, adding padding will expand your element beyond its declared width, breaking structural layouts!</span>
+                                <span data-i18n="tip2">Always declare <code>box-sizing: border-box;</code> globally. Without it, adding padding will expand your element beyond its declared width, breaking structural layouts!</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -209,7 +209,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
                                 <span data-i18n="s5_title">Display &amp; Positioning</span>
                             </h2>
-                            <p data-i18n="s1_intro">Alter how elements sit within the document layout using structural <code>display</code> properties or override normal document sorting flows using explicit positioning coordinates.</p>
+                            <p data-i18n="s5_intro">Alter how elements sit within the document layout using structural <code>display</code> properties or override normal document sorting flows using explicit positioning coordinates.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">css · layout.css</span>
@@ -236,7 +236,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
                                 <span data-i18n="s6_title">Flexbox Context</span>
                             </h2>
-                            <p data-i18n="s1_intro">Flexbox provides an efficient, one-dimensional layout engine to handle alignment, distribution, and content alignment inside flexible parent boxes.</p>
+                            <p data-i18n="s6_intro">Flexbox provides an efficient, one-dimensional layout engine to handle alignment, distribution, and content alignment inside flexible parent boxes.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">css · flexbox.css</span>
@@ -261,7 +261,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
                                 <span data-i18n="s7_title">Grid Layout</span>
                             </h2>
-                            <p data-i18n="s1_intro">CSS Grid handles complex, two-dimensional user interfaces by splitting a container into explicit matrix columns and row tracks.</p>
+                            <p data-i18n="s7_intro">CSS Grid handles complex, two-dimensional user interfaces by splitting a container into explicit matrix columns and row tracks.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">css · grid.css</span>
@@ -286,7 +286,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
                                 <span data-i18n="s8_title">Media Queries</span>
                             </h2>
-                            <p data-i18n="s1_intro">Media queries allow you to build responsive layouts by conditionally applying style parameters based on target viewport width triggers.</p>
+                            <p data-i18n="s8_intro">Media queries allow you to build responsive layouts by conditionally applying style parameters based on target viewport width triggers.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">css · responsive.css</span>
@@ -305,7 +305,7 @@
                             </div>
                             <div class="info-box tip">
                                 <i class="fa-solid fa-lightbulb"></i>
-                                <span>Now that your presentation layers match standard conventions, study advanced preprocessor syntax workflows like **Sass/SCSS** or utility engines like **Tailwind CSS**.</span>
+                                <span data-i18n="tip3">Now that your presentation layers match standard conventions, study advanced preprocessor syntax workflows like **Sass/SCSS** or utility engines like **Tailwind CSS**.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -355,11 +355,18 @@
             function copyCode(btn) {
                 const pre  = btn.closest('.code-block').querySelector('pre');
                 const text = pre.innerText;
+                const lang = localStorage.getItem('lang') || 'en';
+                const labels = {
+                  en: { copy: 'Copy', copied: 'Copied!' },
+                  it: { copy: 'Copia', copied: 'Copiato!' },
+                  es: { copy: 'Copiar', copied: '¡Copiado!' }
+                };
+                const l = labels[lang] || labels.en;
                 navigator.clipboard.writeText(text).then(() => {
-                    btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                    btn.innerHTML = '<i class="fa-solid fa-check"></i> ' + l.copied;
                     btn.classList.add('copied');
                     setTimeout(() => {
-                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy';
+                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> ' + l.copy;
                         btn.classList.remove('copied');
                     }, 2000);
                 });

@@ -1,5 +1,8 @@
 {
   "en": {
+    "page_browser_title": "vidux.sh - Sport",
+    "page_description": "Sport I practice, progress tracking and statistics.",
+    "theme_toggle_title": "Toggle Theme",
     "page_title": "Sport I practice",
     "page_subtitle": "List of sports I practice, progress tracking and statistics.",
     "back_blog": "Back to Blog",
@@ -9,6 +12,9 @@
     "sport_military": "Military"
   },
   "it": {
+    "page_browser_title": "vidux.sh - Sport",
+    "page_description": "Lista degli sport praticati, progressi e statistiche.",
+    "theme_toggle_title": "Cambia tema",
     "page_title": "Sport che pratico",
     "page_subtitle": "Lista degli sport che pratico, tracciamento progressi e statistiche.",
     "back_blog": "Torna al Blog",
@@ -18,6 +24,9 @@
     "sport_military": "Militare"
   },
   "es": {
+    "page_browser_title": "vidux.sh - Deportes",
+    "page_description": "Lista de deportes practicados, progreso y estadísticas.",
+    "theme_toggle_title": "Cambiar tema",
     "page_title": "Deportes que practico",
     "page_subtitle": "Lista de deportes que practico, seguimiento de progresos y estadísticas.",
     "back_blog": "Volver al Blog",

@@ -108,7 +108,7 @@
                             </div>
                             <div class="info-box tip">
                                 <i class="fa-solid fa-lightbulb"></i>
-                                <span>Compile your source file via terminal using a compiler like GCC: <code>g++ main.cpp -o main</code>, then run the executable with <code>./main</code>.</span>
+                                <span data-i18n="tip1">Compile your source file via terminal using a compiler like GCC: <code>g++ main.cpp -o main</code>, then run the executable with <code>./main</code>.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -117,36 +117,36 @@
                                 <span class="section-icon" style="background: var(--guide-accent-2);">2</span>
                                 <span data-i18n="s2_title">Variables &amp; Data Types</span>
                             </h2>
-                            <p data-i18n="s1_intro">C++ is <strong>statically typed</strong>: you must explicitly declare the data type of a variable before using it. This type cannot change at runtime.</p>
+                            <p data-i18n="s2_intro">C++ is <strong>statically typed</strong>: you must explicitly declare the data type of a variable before using it. This type cannot change at runtime.</p>
                             <div class="type-grid">
                                 <div class="type-pill">
                                     <span class="type-name">int</span>
-                                    <span class="type-desc">Integers</span>
+                                    <span class="type-desc" data-i18n="pill1_desc">Integers</span>
                                     <span class="type-example">42, -7, 0</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">double</span>
-                                    <span class="type-desc">Floating-point</span>
+                                    <span class="type-desc" data-i18n="pill2_desc">Floating-point</span>
                                     <span class="type-example">3.1415, -0.5</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">char</span>
-                                    <span class="type-desc">Single character</span>
+                                    <span class="type-desc" data-i18n="pill3_desc">Single character</span>
                                     <span class="type-example">'A', 'z', '9'</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">bool</span>
-                                    <span class="type-desc">True or False</span>
+                                    <span class="type-desc" data-i18n="pill4_desc">True or False</span>
                                     <span class="type-example">true, false</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">void</span>
-                                    <span class="type-desc">Valueless type</span>
+                                    <span class="type-desc" data-i18n="pill5_desc">Valueless type</span>
                                     <span class="type-example">Used in functions</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">auto</span>
-                                    <span class="type-desc">Type deduction</span>
+                                    <span class="type-desc" data-i18n="pill6_desc">Type deduction</span>
                                     <span class="type-example">auto x = 5;</span>
                                 </div>
                             </div>
@@ -171,7 +171,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
                                 <span data-i18n="s3_title">Operators</span>
                             </h2>
-                            <p data-i18n="s1_intro">C++ uses standard symbols for mathematical logic, assignments, and side-by-side value comparisons.</p>
+                            <p data-i18n="s3_intro">C++ uses standard symbols for mathematical logic, assignments, and side-by-side value comparisons.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">cpp · operators.cpp</span>
@@ -201,7 +201,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
                                 <span data-i18n="s4_title">Strings &amp; Input</span>
                             </h2>
-                            <p data-i18n="s1_intro">To use text strings safely instead of old C-style char arrays, include the <code>&lt;string&gt;</code> header. Reading input from the user can be done via <code>std::cin</code>.</p>
+                            <p data-i18n="s4_intro">To use text strings safely instead of old C-style char arrays, include the <code>&lt;string&gt;</code> header. Reading input from the user can be done via <code>std::cin</code>.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">cpp · strings.cpp</span>
@@ -228,7 +228,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
                                 <span data-i18n="s5_title">Conditionals</span>
                             </h2>
-                            <p data-i18n="s1_intro">C++ uses standard scoping patterns via blocks nested inside <code>if</code>, <code>else if</code>, and <code>else</code> frameworks alongside structural <code>switch</code> setups.</p>
+                            <p data-i18n="s5_intro">C++ uses standard scoping patterns via blocks nested inside <code>if</code>, <code>else if</code>, and <code>else</code> frameworks alongside structural <code>switch</code> setups.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">cpp · conditionals.cpp</span>
@@ -256,7 +256,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
                                 <span data-i18n="s6_title">Loops</span>
                             </h2>
-                            <p data-i18n="s1_intro">Perform repetitive computational logic blocks safely using standard <code>for</code>, <code>while</code>, and range-based <code>for</code> loops.</p>
+                            <p data-i18n="s6_intro">Perform repetitive computational logic blocks safely using standard <code>for</code>, <code>while</code>, and range-based <code>for</code> loops.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">cpp · loops.cpp</span>
@@ -281,7 +281,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
                                 <span data-i18n="s7_title">Arrays &amp; Vectors</span>
                             </h2>
-                            <p data-i18n="s1_intro">Fixed-size built-in <strong>arrays</strong> require bounds defined at compile-time. Dynamic resizing lists rely on <code>std::vector</code> from the Standard Template Library (STL).</p>
+                            <p data-i18n="s7_intro">Fixed-size built-in <strong>arrays</strong> require bounds defined at compile-time. Dynamic resizing lists rely on <code>std::vector</code> from the Standard Template Library (STL).</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">cpp · collections.cpp</span>
@@ -309,7 +309,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
                                 <span data-i18n="s8_title">Functions &amp; References</span>
                             </h2>
-                            <p data-i18n="s1_intro">Functions require signature declarations detailing returned data types. To pass parameters without expensive memory copying, use <strong>references</strong> (<code>&amp;</code>).</p>
+                            <p data-i18n="s8_intro">Functions require signature declarations detailing returned data types. To pass parameters without expensive memory copying, use <strong>references</strong> (<code>&amp;</code>).</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">cpp · functions.cpp</span>
@@ -336,7 +336,7 @@
                             </div>
                             <div class="info-box tip">
                                 <i class="fa-solid fa-lightbulb"></i>
-                                <span>Now that you have learned the foundations of procedural syntax, explore object-oriented architecture patterns like <strong>Classes</strong>, <strong>Pointers</strong>, and manual <strong>Memory Management</strong>.</span>
+                                <span data-i18n="tip2">Now that you have learned the foundations of procedural syntax, explore object-oriented architecture patterns like <strong>Classes</strong>, <strong>Pointers</strong>, and manual <strong>Memory Management</strong>.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -386,11 +386,18 @@
             function copyCode(btn) {
                 const pre  = btn.closest('.code-block').querySelector('pre');
                 const text = pre.innerText;
+                const lang = localStorage.getItem('lang') || 'en';
+                const labels = {
+                  en: { copy: 'Copy', copied: 'Copied!' },
+                  it: { copy: 'Copia', copied: 'Copiato!' },
+                  es: { copy: 'Copiar', copied: '¡Copiado!' }
+                };
+                const l = labels[lang] || labels.en;
                 navigator.clipboard.writeText(text).then(() => {
-                    btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                    btn.innerHTML = '<i class="fa-solid fa-check"></i> ' + l.copied;
                     btn.classList.add('copied');
                     setTimeout(() => {
-                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy';
+                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> ' + l.copy;
                         btn.classList.remove('copied');
                     }, 2000);
                 });

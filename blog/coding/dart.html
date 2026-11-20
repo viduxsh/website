@@ -110,36 +110,36 @@
                                 <span class="section-icon" style="background: var(--guide-accent-2);">2</span>
                                 <span data-i18n="s2_title">Built-in Types Ecosystem</span>
                             </h2>
-                            <p data-i18n="s1_intro">All data structural types inherit behaviors from the master <code>Object</code> reference. Numbers are cleanly separated between integer fields and floating points.</p>
+                            <p data-i18n="s2_intro">All data structural types inherit behaviors from the master <code>Object</code> reference. Numbers are cleanly separated between integer fields and floating points.</p>
                             <div class="type-grid">
                                 <div class="type-pill">
                                     <span class="type-name">int / double</span>
-                                    <span class="type-desc">Numeric architectures (num)</span>
+                                    <span class="type-desc" data-i18n="pill1_desc">Numeric architectures (num)</span>
                                     <span class="type-example">int delay = 200;</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">String</span>
-                                    <span class="type-desc">UTF-16 string vectors</span>
+                                    <span class="type-desc" data-i18n="pill2_desc">UTF-16 string vectors</span>
                                     <span class="type-example">String app = 'vidux';</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">bool</span>
-                                    <span class="type-desc">Compile boolean flags</span>
+                                    <span class="type-desc" data-i18n="pill3_desc">Compile boolean flags</span>
                                     <span class="type-example">bool isActive = false;</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">List&lt;T&gt;</span>
-                                    <span class="type-desc">Ordered array collections</span>
+                                    <span class="type-desc" data-i18n="pill4_desc">Ordered array collections</span>
                                     <span class="type-example">[1, 2, 3]</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">Map&lt;K, V&gt;</span>
-                                    <span class="type-desc">Linked hash collection grids</span>
+                                    <span class="type-desc" data-i18n="pill5_desc">Linked hash collection grids</span>
                                     <span class="type-example">{'key': 'value'}</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">dynamic</span>
-                                    <span class="type-desc">Bypasses static type checks</span>
+                                    <span class="type-desc" data-i18n="pill6_desc">Bypasses static type checks</span>
                                     <span class="type-example">Avoid using in production</span>
                                 </div>
                             </div>
@@ -150,7 +150,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
                                 <span data-i18n="s3_title">Conditionals &amp; Null-Aware Operators</span>
                             </h2>
-                            <p data-i18n="s1_intro">Dart guarantees Sound Null Safety. Types are non-nullable by default unless explicitly appended with the nullability flag (<code>?</code>).</p>
+                            <p data-i18n="s3_intro">Dart guarantees Sound Null Safety. Types are non-nullable by default unless explicitly appended with the nullability flag (<code>?</code>).</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">dart · safety.dart</span>
@@ -177,7 +177,7 @@ username ??= <span class="st">'guest_user'</span>;
                                 <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
                                 <span data-i18n="s4_title">Loops &amp; Collection Iterators</span>
                             </h2>
-                            <p data-i18n="s1_intro">Dart handles typical loops natively, but it also provides clean, concise patterns specifically for processing collection streams.</p>
+                            <p data-i18n="s4_intro">Dart handles typical loops natively, but it also provides clean, concise patterns specifically for processing collection streams.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">dart · loops.dart</span>
@@ -205,7 +205,7 @@ endpoints.forEach((route) => <span class="cl">print</span>(<span class="st">'Cal
                                 <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
                                 <span data-i18n="s5_title">Functions &amp; Optional Parameters</span>
                             </h2>
-                            <p data-i18n="s1_intro">Functions wrap definitions clearly. Named optional parameters are enclosed in curly brackets (<code>{}</code>) and support default fallback assignments.</p>
+                            <p data-i18n="s5_intro">Functions wrap definitions clearly. Named optional parameters are enclosed in curly brackets (<code>{}</code>) and support default fallback assignments.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">dart · functions.dart</span>
@@ -231,7 +231,7 @@ endpoints.forEach((route) => <span class="cl">print</span>(<span class="st">'Cal
                                 <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
                                 <span data-i18n="s6_title">Classes &amp; Modern Constructors</span>
                             </h2>
-                            <p data-i18n="s1_intro">Dart features implicit interfaces for all classes. Constructors use syntactic sugar to directly map parameters to internal instance properties.</p>
+                            <p data-i18n="s6_intro">Dart features implicit interfaces for all classes. Constructors use syntactic sugar to directly map parameters to internal instance properties.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">dart · objects.dart</span>
@@ -256,7 +256,7 @@ endpoints.forEach((route) => <span class="cl">print</span>(<span class="st">'Cal
                             </div>
                             <div class="info-box danger">
                                 <i class="fa-solid fa-triangle-exclamation"></i>
-                                <span>Properties prefixed with an underscore (e.g., <code>_privateField</code>) are **strictly library-private**, meaning they are encapsulated and hidden from external file imports.</span>
+                                <span data-i18n="tip1">Properties prefixed with an underscore (e.g., <code>_privateField</code>) are **strictly library-private**, meaning they are encapsulated and hidden from external file imports.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -265,7 +265,7 @@ endpoints.forEach((route) => <span class="cl">print</span>(<span class="st">'Cal
                                 <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
                                 <span data-i18n="s7_title">Asynchronous Programming (Futures)</span>
                             </h2>
-                            <p data-i18n="s1_intro">Dart uses <code>Future</code> objects to handle non-blocking asynchronous operations, combining clean <code>async</code> and <code>await</code> syntactic workflows.</p>
+                            <p data-i18n="s7_intro">Dart uses <code>Future</code> objects to handle non-blocking asynchronous operations, combining clean <code>async</code> and <code>await</code> syntactic workflows.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">dart · async.dart</span>
@@ -290,7 +290,7 @@ Future&lt;<span class="kw">String</span>&gt; fetchNetworkData() <span class="kw"
                                 <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
                                 <span data-i18n="s8_title">Cascade Notation &amp; Extensions</span>
                             </h2>
-                            <p data-i18n="s1_intro">The cascade operator (<code>..</code>) lets you chain multiple operations on the same object sequence, saving you from writing repetitive variable lookups.</p>
+                            <p data-i18n="s8_intro">The cascade operator (<code>..</code>) lets you chain multiple operations on the same object sequence, saving you from writing repetitive variable lookups.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">dart · advance.dart</span>
@@ -312,7 +312,7 @@ Future&lt;<span class="kw">String</span>&gt; fetchNetworkData() <span class="kw"
                             </div>
                             <div class="info-box tip">
                                 <i class="fa-solid fa-lightbulb"></i>
-                                <span>With Dart fundamentals down, you are ready to construct fast, responsive cross-platform user interfaces using the **Flutter engine UI library framework**.</span>
+                                <span data-i18n="tip2">With Dart fundamentals down, you are ready to construct fast, responsive cross-platform user interfaces using the **Flutter engine UI library framework**.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -362,11 +362,18 @@ Future&lt;<span class="kw">String</span>&gt; fetchNetworkData() <span class="kw"
             function copyCode(btn) {
                 const pre  = btn.closest('.code-block').querySelector('pre');
                 const text = pre.innerText;
+                const lang = localStorage.getItem('lang') || 'en';
+                const labels = {
+                  en: { copy: 'Copy', copied: 'Copied!' },
+                  it: { copy: 'Copia', copied: 'Copiato!' },
+                  es: { copy: 'Copiar', copied: '¡Copiado!' }
+                };
+                const l = labels[lang] || labels.en;
                 navigator.clipboard.writeText(text).then(() => {
-                    btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                    btn.innerHTML = '<i class="fa-solid fa-check"></i> ' + l.copied;
                     btn.classList.add('copied');
                     setTimeout(() => {
-                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy';
+                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> ' + l.copy;
                         btn.classList.remove('copied');
                     }, 2000);
                 });

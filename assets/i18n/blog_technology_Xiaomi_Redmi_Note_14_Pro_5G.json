@@ -1,17 +1,62 @@
 {
   "en": {
+    "page_browser_title": "vidux.sh - Xiaomi Redmi Note 14 Pro 5G",
+    "page_description": "Xiaomi Redmi Note 14 Pro 5G specifications and benchmark results.",
     "page_subtitle": "Specifications and benchmark results.",
     "back_blog": "Back to Blog",
-    "back_technology": "Back to Technology"
+    "back_technology": "Back to Technology",
+    "th_network": "Network",
+    "th_technical_data": "Technical data",
+    "th_display": "Display",
+    "th_camera": "Camera",
+    "th_video": "Video",
+    "th_connectivity": "Connectivity",
+    "th_sensors": "Sensors",
+    "th_functions": "Functions",
+    "th_battery": "Battery",
+    "th_stress_test": "Stress Test",
+    "th_storage_test_v11_1_2": "Storage Test v11.1.2",
+    "th_benchmark_results_v11_1_2": "Benchmark Results v11.1.2",
+    "th_ai_benchmark_v3_6_2": "AI Benchmark v3.6.2"
   },
   "it": {
+    "page_browser_title": "vidux.sh - Xiaomi Redmi Note 14 Pro 5G",
+    "page_description": "Specifiche e risultati benchmark di Xiaomi Redmi Note 14 Pro 5G.",
     "page_subtitle": "Specifiche tecniche e risultati benchmark.",
     "back_blog": "Torna al Blog",
-    "back_technology": "Torna a Tecnologia"
+    "back_technology": "Torna a Tecnologia",
+    "th_network": "Rete",
+    "th_technical_data": "Dati Tecnici",
+    "th_display": "Schermo",
+    "th_camera": "Fotocamera",
+    "th_video": "Video",
+    "th_connectivity": "Connettività",
+    "th_sensors": "Sensori",
+    "th_functions": "Funzioni",
+    "th_battery": "Batteria",
+    "th_stress_test": "Stress Test",
+    "th_storage_test_v11_1_2": "Test Archiviazione v11.1.2",
+    "th_benchmark_results_v11_1_2": "Risultati Benchmark v11.1.2",
+    "th_ai_benchmark_v3_6_2": "AI Benchmark v3.6.2"
   },
   "es": {
+    "page_browser_title": "vidux.sh - Xiaomi Redmi Note 14 Pro 5G",
+    "page_description": "Especificaciones y resultados de benchmarks de Xiaomi Redmi Note 14 Pro 5G.",
     "page_subtitle": "Especificaciones y resultados de benchmarks.",
     "back_blog": "Volver al Blog",
-    "back_technology": "Volver a Tecnología"
+    "back_technology": "Volver a Tecnología",
+    "th_network": "Red",
+    "th_technical_data": "Datos Técnicos",
+    "th_display": "Pantalla",
+    "th_camera": "Cámara",
+    "th_video": "Vídeo",
+    "th_connectivity": "Conectividad",
+    "th_sensors": "Sensores",
+    "th_functions": "Funciones",
+    "th_battery": "Batería",
+    "th_stress_test": "Stress Test",
+    "th_storage_test_v11_1_2": "Test Almacenamiento v11.1.2",
+    "th_benchmark_results_v11_1_2": "Resultados Benchmark v11.1.2",
+    "th_ai_benchmark_v3_6_2": "AI Benchmark v3.6.2"
   }
 }

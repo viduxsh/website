@@ -29,7 +29,18 @@
     "s5_intro": "Some nodes are <strong>void elements</strong> (self-closing) and do not wrap text blocks. The <code>&lt;img&gt;</code> element uses <code>src</code> paths and requires an informative <code>alt</code> description.",
     "s6_intro": "Organize sequential data items using ordered indexes (<code>&lt;ol&gt;</code>) or unordered bullet layouts (<code>&lt;ul&gt;</code>). Children must consist strictly of list item nodes (<code>&lt;li&gt;</code>).",
     "s7_intro": "Tables manage multi-column tabular data matrices cleanly using a structural sequence of rows (<code>&lt;tr&gt;</code>), headers (<code>&lt;th&gt;</code>), and data cells (<code>&lt;td&gt;</code>).",
-    "s8_intro": "Forms parse and capture interactive user dataset inputs. Explicitly couple text labels to inputs using matching <code>id</code> and <code>for</code> attributes."
+    "s8_intro": "Forms parse and capture interactive user dataset inputs. Explicitly couple text labels to inputs using matching <code>id</code> and <code>for</code> attributes.",
+    "copy_btn": "Copy",
+    "copied_btn": "Copied!",
+    "tip1": "The <code>&lt;head&gt;</code> contains metadata, styles, and configurations not visible to users, while the <code>&lt;body&gt;</code> contains everything rendered on screen.",
+    "tip2": "Never omit the <code>alt</code> attribute. It is crucial for web accessibility (screen readers) and acts as fallback text if the image asset fails to load.",
+    "tip3": "With structural markup mastered, dive into <strong>CSS3 Architecture Grid Modules</strong> and <strong>Flexbox Context Engines</strong> to apply visual layouts over elements.",
+    "pill1_desc": "Introductory content",
+    "pill2_desc": "Dominant core area",
+    "pill3_desc": "Thematic block",
+    "pill4_desc": "Self-contained unit",
+    "pill5_desc": "Generic block wrapper",
+    "pill6_desc": "Generic inline container"
   },
   "it": {
     "back_coding": "Guide di Coding",
@@ -61,7 +72,18 @@
     "s5_intro": "Gli elementi del form consentono di raccogliere dati utente con validazioni native del browser senza dipendere necessariamente da JavaScript.",
     "s6_intro": "Le tabelle HTML organizzano dataset bidimensionali suddividendoli in testata (thead), corpo dei dati (tbody) e chiusure riepilogative.",
     "s7_intro": "Elementi come header, nav, main, section, article e footer definiscono chiaramente il ruolo di ogni blocco all'interno del layout.",
-    "s8_intro": "Garantire contrasto sufficiente, attributi alt descrittivi e ruoli ARIA consente alle persone con disabilità di fruire appieno dei contenuti web."
+    "s8_intro": "Garantire contrasto sufficiente, attributi alt descrittivi e ruoli ARIA consente alle persone con disabilità di fruire appieno dei contenuti web.",
+    "copy_btn": "Copia",
+    "copied_btn": "Copiato!",
+    "tip1": "Salva sempre il file con estensione <code>.html</code> e aprilo in qualsiasi browser web per visualizzare immediatamente la renderizzazione della pagina.",
+    "tip2": "Includi sempre attributi <code>alt</code> descrittivi nelle immagini e utilizza tag semantici (<code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>) per garantire l'accessibilità e una SEO ottimale.",
+    "tip3": "La struttura scheletrica HTML è pronta: abbinala a un foglio di stile <strong>CSS</strong> per la grafica e aggiungi logica dinamica interattiva con <strong>JavaScript</strong>.",
+    "pill1_desc": "Contenuto introduttivo o di testata",
+    "pill2_desc": "Area centrale e dominante della pagina",
+    "pill3_desc": "Blocco tematico di contenuto",
+    "pill4_desc": "Unità autonoma e riutilizzabile",
+    "pill5_desc": "Contenitore a blocchi generico",
+    "pill6_desc": "Contenitore inline generico"
   },
   "es": {
     "back_coding": "Guías de Coding",
@@ -93,6 +115,17 @@
     "s5_intro": "Los formularios permiten recopilar entradas de usuario integrando validaciones automáticas de formato para correos, números y contraseñas.",
     "s6_intro": "Las tablas organizan datos bidimensionales definiendo celdas de encabezado y bloques semánticos separados para el cuerpo y el pie de tabla.",
     "s7_intro": "Etiquetas como <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code> y <code>&lt;article&gt;</code> enriquecen el significado estructural de la interfaz de usuario.",
-    "s8_intro": "Desarrollar una web accesible requiere navegación por teclado, descripciones precisas y atributos semánticos para tecnologías de asistencia."
+    "s8_intro": "Desarrollar una web accesible requiere navegación por teclado, descripciones precisas y atributos semánticos para tecnologías de asistencia.",
+    "copy_btn": "Copiar",
+    "copied_btn": "¡Copiado!",
+    "tip1": "Guarda siempre el archivo con la extensión <code>.html</code> y ábrelo en cualquier navegador web para previsualizar inmediatamente la página.",
+    "tip2": "Incluye siempre atributos <code>alt</code> descriptivos en las imágenes y utiliza etiquetas semánticas (<code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>) para garantizar la accesibilidad y un SEO óptimo.",
+    "tip3": "La estructura HTML está lista: combínala con una hoja de estilo <strong>CSS</strong> para el diseño visual y añade lógica interactiva dinámica con <strong>JavaScript</strong>.",
+    "pill1_desc": "Contenido introductorio o cabecera",
+    "pill2_desc": "Área principal y dominante de la página",
+    "pill3_desc": "Bloque temático de contenido",
+    "pill4_desc": "Unidad independiente y reutilizable",
+    "pill5_desc": "Contenedor genérico de bloque",
+    "pill6_desc": "Contenedor genérico en línea"
   }
 }

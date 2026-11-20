@@ -29,7 +29,17 @@
     "s5_intro": "Branching flows rely on condition blocks evaluated via the <code>[ ]</code> syntax (which internally calls the system tool <code>test</code>). Strings use standard algebraic symbols, but numerical evaluations require specific flag operators.",
     "s6_intro": "Loops automate repetitive tasks, such as scanning text arrays or batch-modifying server log layouts, by processing structures over a structured collection block.",
     "s7_intro": "The true power of Bash lies in standard stream manipulation. By leveraging the pipe operator (<code>|</code>), you can redirect the text output of one script or command to serve as the direct input for the next processing block.",
-    "s8_intro": "Every execution task runs in its own memory container track monitored via a unique **PID (Process ID)**. Bash lets you shift tasks to the background or terminate stalled processes instantly."
+    "s8_intro": "Every execution task runs in its own memory container track monitored via a unique **PID (Process ID)**. Bash lets you shift tasks to the background or terminate stalled processes instantly.",
+    "copy_btn": "Copy",
+    "copied_btn": "Copied!",
+    "tip1": "**Be mindful of Line Endings cross-platform!** Scripts created on Windows carry invisible carriage return markers (<code>\\r\\n</code>, CRLF). Running these files inside Linux or WSL throws obscure syntax crashes because Bash looks for pure Unix line breaks (<code>\\n</code>, LF). Fix these files using the <code>dos2unix</code> tool.",
+    "tip2": "With fundamental scripting structures clear, your next engineering advancements involve cross-compiling deployment workflows using **Docker containers** or building complex **CI/CD pipeline scripts**.",
+    "pill1_desc": "Print Working Directory: outputs your precise active directory path location",
+    "pill2_desc": "Lists all directory files, revealing hidden entities along with permission metadata",
+    "pill3_desc": "Changes your current shell context location. Use \"cd ..\" to climb up one layer",
+    "pill4_desc": "Creates new structural folder systems, automatically creating intermediate parent directories",
+    "pill5_desc": "Inside Windows WSL, your local storage drives are automatically mounted under the mnt tree",
+    "pill6_desc": "Flushes all printed terminal buffer lines away, cleaning up your visibility view"
   },
   "it": {
     "back_coding": "Guide di Coding",
@@ -61,7 +71,17 @@
     "s5_intro": "I cicli consentono di iterare su elenchi di file, intervalli numerici e linee di testo provenienti da file o comandi.",
     "s6_intro": "Le funzioni consentono di incapsulare compiti riutilizzabili. È fondamentale dichiarare le variabili con <code>local</code> per prevenire conflitti globali.",
     "s7_intro": "La sintassi <code>$(comando)</code> esegue un'istruzione in una sottoshell catturandone direttamente l'output in una variabile.",
-    "s8_intro": "Configurare <code>set -euo pipefail</code> e usare <code>trap</code> garantisce che lo script si arresti tempestivamente in caso di errore non gestito."
+    "s8_intro": "Configurare <code>set -euo pipefail</code> e usare <code>trap</code> garantisce che lo script si arresti tempestivamente in caso di errore non gestito.",
+    "copy_btn": "Copia",
+    "copied_btn": "Copiato!",
+    "tip1": "<strong>Attenzione ai terminatori di riga multipiattaforma!</strong> Gli script scritti su Windows contengono terminatori CRLF invisibili che provocano errori <code>\\r: command not found</code> su Linux. Convertili usando <code>dos2unix script.sh</code>.",
+    "tip2": "Con le strutture fondamentali di scripting comprese, i tuoi prossimi passi riguardano l'orchestrazione di deployment tramite <strong>container Docker</strong> o la scrittura di pipeline <strong>CI/CD</strong> complesse.",
+    "pill1_desc": "Print Working Directory: mostra il percorso della cartella attiva",
+    "pill2_desc": "Elenca tutti i file mostrando anche quelli nascosti e i permessi",
+    "pill3_desc": "Cambia la cartella corrente. Usa \"cd ..\" per salire di un livello",
+    "pill4_desc": "Crea nuove cartelle, incluse quelle intermedie mancanti",
+    "pill5_desc": "In Windows WSL le unità disco locali sono montate sotto /mnt",
+    "pill6_desc": "Pulisce la schermata del terminale da tutto il testo precedente"
   },
   "es": {
     "back_coding": "Guías de Coding",
@@ -93,6 +113,16 @@
     "s5_intro": "Los bucles facilitan iterar sobre colecciones de archivos, listas de valores o procesar líneas completas procedentes de archivos de texto.",
     "s6_intro": "Modularizar scripts en funciones mejora la claridad. Es crucial utilizar <code>local</code> para evitar sobreescribir variables en el entorno global.",
     "s7_intro": "La sintaxis <code>$(comando)</code> ejecuta procesos en una subshell aislada e inyecta su salida de texto directamente en variables o argumentos.",
-    "s8_intro": "Incorporar <code>set -euo pipefail</code> e interceptar eventos con <code>trap</code> previene que los scripts continúen ejecutándose ante fallos inesperados."
+    "s8_intro": "Incorporar <code>set -euo pipefail</code> e interceptar eventos con <code>trap</code> previene que los scripts continúen ejecutándose ante fallos inesperados.",
+    "copy_btn": "Copiar",
+    "copied_btn": "¡Copiado!",
+    "tip1": "<strong>¡Atención a los saltos de línea multiplataforma!</strong> Los scripts creados en Windows contienen retornos CRLF invisibles que provocan errores <code>\\r: command not found</code> en Linux. Conviértelos con <code>dos2unix script.sh</code>.",
+    "tip2": "Con las estructuras fundamentales de scripting comprendidas, tus siguientes pasos abarcan la orquestación de despliegues mediante <strong>contenedores Docker</strong> o la creación de pipelines <strong>CI/CD</strong> complejas.",
+    "pill1_desc": "Print Working Directory: muestra la ruta del directorio activo",
+    "pill2_desc": "Lista todos los archivos, mostrando elementos ocultos y permisos",
+    "pill3_desc": "Cambia el directorio actual. Usa \"cd ..\" para subir un nivel",
+    "pill4_desc": "Crea nuevos directorios, incluyendo los directorios padres intermedios",
+    "pill5_desc": "En Windows WSL las unidades de disco se montan bajo /mnt",
+    "pill6_desc": "Limpia la pantalla de la terminal de todo el texto anterior"
   }
 }

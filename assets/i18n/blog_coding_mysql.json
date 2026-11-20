@@ -29,7 +29,18 @@
     "s5_intro": "Relational databases avoid data duplication by splitting metrics across tables. Use <code>JOIN</code> operations to cleanly link related rows back together on shared key boundaries.",
     "s6_intro": "Condense multiple matching rows into a single summary block. Group records by shared attributes, and use <code>HAVING</code> statements to filter those combined sets.",
     "s7_intro": "You can embed queries inside other queries. This lets you construct dynamic criteria where a nested data search directly controls the main outer filter path.",
-    "s8_intro": "As tables scale up, looking up values sequentially can stall execution pipelines. Adding structural B-Tree **Indexes** lets the engine quickly map and locate records directly."
+    "s8_intro": "As tables scale up, looking up values sequentially can stall execution pipelines. Adding structural B-Tree **Indexes** lets the engine quickly map and locate records directly.",
+    "copy_btn": "Copy",
+    "copied_btn": "Copied!",
+    "tip1": "**Never omit the WHERE clause in UPDATE or DELETE statements!** Forgetting it applies the operation globally, updating or erasing all rows in the table.",
+    "tip2": "The <code>WHERE</code> clause filters raw input data rows **before any groupings compile**, whereas <code>HAVING</code> filters calculated metrics **after group aggregations finalize**.",
+    "tip3": "With database architecture fundamentals clear, your next steps involve coordinating transactions via **ACID isolation isolation steps** and exploring asynchronous connection layers.",
+    "pill1_desc": "Standard and large numerical values",
+    "pill2_desc": "Variable-length string optimization",
+    "pill3_desc": "Exact fixed-point financial numbers",
+    "pill4_desc": "Logical true or false assertions",
+    "pill5_desc": "Calendar dates and precision clocks",
+    "pill6_desc": "Unstructured metadata body payloads"
   },
   "it": {
     "back_coding": "Guide di Coding",
@@ -61,7 +72,18 @@
     "s5_intro": "I database relazionali evitano la duplicazione dividendo i dati su più tabelle connesse tramite operazioni di JOIN.",
     "s6_intro": "Condensa più righe corrispondenti in un singolo blocco di riepilogo con funzioni di aggregazione e clausole GROUP BY e HAVING.",
     "s7_intro": "È possibile annidare query all'interno di altre query per definire filtri dinamici avanzati basati su risultati intermedi.",
-    "s8_intro": "Con la crescita delle tabelle, l'aggiunta di indici B-Tree consente al motore di individuare i record rapidamente senza scansioni complete."
+    "s8_intro": "Con la crescita delle tabelle, l'aggiunta di indici B-Tree consente al motore di individuare i record rapidamente senza scansioni complete.",
+    "copy_btn": "Copia",
+    "copied_btn": "Copiato!",
+    "tip1": "Esegui sempre i comandi di modifica dati (<code>UPDATE</code> o <code>DELETE</code>) con una clausola <code>WHERE</code> esplicita per evitare modifiche involontarie a tutte le righe della tabella.",
+    "tip2": "Crea indici (<code>INDEX</code>) sulle colonne usate frequentemente nelle clausole <code>WHERE</code> e nelle <code>JOIN</code> per accelerare notevolmente la velocità delle query di lettura.",
+    "tip3": "Approfondisci le transazioni <strong>ACID</strong> con <code>START TRANSACTION</code> e <code>COMMIT</code> per garantire l'integrità assoluta dei dati in operazioni su più tabelle.",
+    "pill1_desc": "Valori numerici standard e grandi interi",
+    "pill2_desc": "Stringhe a lunghezza variabile ottimizzate",
+    "pill3_desc": "Numeri finanziari esatti a virgola fissa",
+    "pill4_desc": "Valutazioni logiche vero o falso",
+    "pill5_desc": "Date di calendario e orari ad alta precisione",
+    "pill6_desc": "Dati non strutturati in formato JSON"
   },
   "es": {
     "back_coding": "Guías de Coding",
@@ -93,6 +115,17 @@
     "s5_intro": "Para evitar redundancias, los datos se distribuyen en tablas vinculadas a través de claves foráneas mediante cláusulas <code>JOIN</code>.",
     "s6_intro": "Calcula totales, promedios y recuentos resumiendo filas mediante <code>GROUP BY</code> y aplicando filtros agregados con <code>HAVING</code>.",
     "s7_intro": "Anidar sentencias <code>SELECT</code> dentro de otras consultas permite parametrizar búsquedas basadas en resultados dinámicos.",
-    "s8_intro": "Crear índices sobre columnas consultadas con frecuencia evita lecturas completas de disco y acelera las consultas exponencialmente."
+    "s8_intro": "Crear índices sobre columnas consultadas con frecuencia evita lecturas completas de disco y acelera las consultas exponencialmente.",
+    "copy_btn": "Copiar",
+    "copied_btn": "¡Copiado!",
+    "tip1": "Ejecuta siempre sentencias de modificación (<code>UPDATE</code> o <code>DELETE</code>) con una cláusula <code>WHERE</code> explícita para evitar cambios no deseados en toda la tabla.",
+    "tip2": "Crea índices (<code>INDEX</code>) en las columnas consultadas frecuentemente en cláusulas <code>WHERE</code> y <code>JOIN</code> para optimizar la velocidad de lectura.",
+    "tip3": "Profundiza en transacciones <strong>ACID</strong> usando <code>START TRANSACTION</code> y <code>COMMIT</code> para asegurar la integridad de los datos en operaciones multitabla.",
+    "pill1_desc": "Valores numéricos estándar y grandes enteros",
+    "pill2_desc": "Cadenas de longitud variable optimizadas",
+    "pill3_desc": "Números financieros exactos de coma fija",
+    "pill4_desc": "Afirmaciones lógicas verdadero o falso",
+    "pill5_desc": "Fechas de calendario y horas de precisión",
+    "pill6_desc": "Datos no estructurados en formato JSON"
   }
 }

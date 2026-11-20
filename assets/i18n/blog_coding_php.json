@@ -29,7 +29,17 @@
     "s5_intro": "Modern PHP strictly utilizes explicit scalar data type rules for parameters alongside enforced return signature mapping blocks.",
     "s6_intro": "PHP implements an Object-Oriented model featuring explicit visibility attributes (<code>public</code>, <code>protected</code>, <code>private</code>) alongside standard class definitions.",
     "s7_intro": "Superglobals are built-in arrays accessible everywhere regardless of scope. They contain incoming runtime client vectors like query strings or multi-part forms.",
-    "s8_intro": "PHP Data Objects (PDO) deliver a secure database abstraction layer. Always leverage **Prepared Statements** to entirely prevent SQL Injection exploits."
+    "s8_intro": "PHP Data Objects (PDO) deliver a secure database abstraction layer. Always leverage **Prepared Statements** to entirely prevent SQL Injection exploits.",
+    "copy_btn": "Copy",
+    "copied_btn": "Copied!",
+    "tip1": "Always target instance members using the **arrow operator object syntax** (<code>$this-&gt;property</code>). Dropping the pointer format results in structural execution parsing failures.",
+    "tip2": "With modern PHP fundamentals solid, your next scaling steps include building production architectures utilizing modern paradigms via MVC frameworks like **Laravel**.",
+    "pill1_desc": "Binary safe strings",
+    "pill2_desc": "Signed numbers / Floats",
+    "pill3_desc": "Logical truths",
+    "pill4_desc": "Ordered standard vector",
+    "pill5_desc": "Explicit Key-Value mapping",
+    "pill6_desc": "Explicit empty context"
   },
   "it": {
     "back_coding": "Guide di Coding",
@@ -61,7 +71,17 @@
     "s5_intro": "PHP Data Objects (PDO) è l'interfaccia standard per connettersi ai database, proteggendo da SQL injection tramite Prepared Statements.",
     "s6_intro": "La gestione delle sessioni con <code>session_start()</code> preserva lo stato di autenticazione e le preferenze dell'utente tra diverse richieste HTTP.",
     "s7_intro": "Gli errori fatali e le anomalie applicative vengono gestiti elegantemente tramite la gerarchia di <code>Throwable</code> ed eccezioni personalizzate.",
-    "s8_intro": "Composer automatizza l'inclusione delle dipendenze esterne e l'autoloading dei file secondo lo standard PSR-4 attraverso i namespace."
+    "s8_intro": "Composer automatizza l'inclusione delle dipendenze esterne e l'autoloading dei file secondo lo standard PSR-4 attraverso i namespace.",
+    "copy_btn": "Copia",
+    "copied_btn": "Copiato!",
+    "tip1": "Usa sempre <strong>Prepared Statements</strong> con PDO o MySQLi quando inserisci dati provenienti da utenti per proteggere la tua applicazione da attacchi SQL Injection.",
+    "tip2": "Con le basi moderne di PHP (oggetti, tipi rigorosi e routing) consolidate, sei pronto per esplorare framework d'eccellenza come <strong>Laravel</strong> o <strong>Symfony</strong>.",
+    "pill1_desc": "Stringhe binarie sicure",
+    "pill2_desc": "Numeri con segno e decimali",
+    "pill3_desc": "Valori booleani vero o falso",
+    "pill4_desc": "Array ordinato standard",
+    "pill5_desc": "Mappatura esplicita chiave-valore (array associativo)",
+    "pill6_desc": "Contesto vuoto esplicito (null)"
   },
   "es": {
     "back_coding": "Guías de Coding",
@@ -93,6 +113,16 @@
     "s5_intro": "La librería PDO estandariza el acceso a motores SQL y previene ataques de inyección mediante consultas preparadas parametrizadas.",
     "s6_intro": "El control de sesiones conserva el estado entre solicitudes consecutivas, manteniendo abierta la autenticación de usuarios de forma segura.",
     "s7_intro": "Interceptar fallos en bloques <code>try-catch</code> evita exponer detalles de servidor a los visitantes finales ante errores imprevistos.",
-    "s8_intro": "Composer estructura el código bajo el estándar PSR-4, importando clases y librerías externas mediante autocarga sin requerir <code>include</code> manuales."
+    "s8_intro": "Composer estructura el código bajo el estándar PSR-4, importando clases y librerías externas mediante autocarga sin requerir <code>include</code> manuales.",
+    "copy_btn": "Copiar",
+    "copied_btn": "¡Copiado!",
+    "tip1": "Usa siempre <strong>Prepared Statements</strong> con PDO o MySQLi cuando manejes datos de usuarios para proteger tu aplicación contra ataques de inyección SQL.",
+    "tip2": "Con las bases modernas de PHP (objetos, tipado estricto y enrutamiento) consolidadas, estás listo para explorar frameworks líderes como <strong>Laravel</strong> o <strong>Symfony</strong>.",
+    "pill1_desc": "Cadenas de caracteres binariamente seguras",
+    "pill2_desc": "Números con signo y decimales",
+    "pill3_desc": "Valores booleanos verdadero o falso",
+    "pill4_desc": "Array ordenado estándar",
+    "pill5_desc": "Mapeo explícito clave-valor (array asociativo)",
+    "pill6_desc": "Contexto vacío explícito (null)"
   }
 }

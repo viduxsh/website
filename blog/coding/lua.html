@@ -106,7 +106,7 @@ globalVar = <span class="st">"accessible everywhere"</span> <span class="cm">-- 
                             </div>
                             <div class="info-box tip">
                                 <i class="fa-solid fa-lightbulb"></i>
-                                <span>Lua doesn't require semicolons (<code>;</code>) at the end of statements, though they are syntactically valid.</span>
+                                <span data-i18n="tip1">Lua doesn't require semicolons (<code>;</code>) at the end of statements, though they are syntactically valid.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -115,36 +115,36 @@ globalVar = <span class="st">"accessible everywhere"</span> <span class="cm">-- 
                                 <span class="section-icon" style="background: var(--guide-accent-2);">2</span>
                                 <span data-i18n="s2_title">Data Types</span>
                             </h2>
-                            <p data-i18n="s1_intro">Lua is dynamically typed. Variables don't have types; only the values assigned to them do. There are 8 basic types, with the core 6 used inside daily logic structures.</p>
+                            <p data-i18n="s2_intro">Lua is dynamically typed. Variables don't have types; only the values assigned to them do. There are 8 basic types, with the core 6 used inside daily logic structures.</p>
                             <div class="type-grid">
                                 <div class="type-pill">
                                     <span class="type-name">nil</span>
-                                    <span class="type-desc">Non-value / unassigned</span>
+                                    <span class="type-desc" data-i18n="pill1_desc">Non-value / unassigned</span>
                                     <span class="type-example">local empty = nil</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">boolean</span>
-                                    <span class="type-desc">true or false choices</span>
+                                    <span class="type-desc" data-i18n="pill2_desc">true or false choices</span>
                                     <span class="type-example">local active = true</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">number</span>
-                                    <span class="type-desc">Double floats / Integers</span>
+                                    <span class="type-desc" data-i18n="pill3_desc">Double floats / Integers</span>
                                     <span class="type-example">local ratio = 3.14</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">string</span>
-                                    <span class="type-desc">Immutable text string</span>
+                                    <span class="type-desc" data-i18n="pill4_desc">Immutable text string</span>
                                     <span class="type-example">local raw = "hello"</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">function</span>
-                                    <span class="type-desc">First-class executable</span>
+                                    <span class="type-desc" data-i18n="pill5_desc">First-class executable</span>
                                     <span class="type-example">local f = function() end</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">table</span>
-                                    <span class="type-desc">Only data structure</span>
+                                    <span class="type-desc" data-i18n="pill6_desc">Only data structure</span>
                                     <span class="type-example">local data = {}</span>
                                 </div>
                             </div>
@@ -155,7 +155,7 @@ globalVar = <span class="st">"accessible everywhere"</span> <span class="cm">-- 
                                 <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
                                 <span data-i18n="s3_title">Conditionals</span>
                             </h2>
-                            <p data-i18n="s1_intro">Control program flows using <code>if-then-elseif-else</code> blocks. Note that only <code>false</code> and <code>nil</code> evaluate to false; numbers like <code>0</code> and empty strings <code>""</code> evaluate to true.</p>
+                            <p data-i18n="s3_intro">Control program flows using <code>if-then-elseif-else</code> blocks. Note that only <code>false</code> and <code>nil</code> evaluate to false; numbers like <code>0</code> and empty strings <code>""</code> evaluate to true.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">lua · logic.lua</span>
@@ -183,7 +183,7 @@ globalVar = <span class="st">"accessible everywhere"</span> <span class="cm">-- 
                                 <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
                                 <span data-i18n="s4_title">Loops &amp; Iteration</span>
                             </h2>
-                            <p data-i18n="s1_intro">Lua handles repetition using numerical <code>for</code> bounds, generic <code>for</code> iterators over tables, alongside <code>while</code> and <code>repeat-until</code> loops.</p>
+                            <p data-i18n="s4_intro">Lua handles repetition using numerical <code>for</code> bounds, generic <code>for</code> iterators over tables, alongside <code>while</code> and <code>repeat-until</code> loops.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">lua · loops.lua</span>
@@ -207,7 +207,7 @@ globalVar = <span class="st">"accessible everywhere"</span> <span class="cm">-- 
                                 <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
                                 <span data-i18n="s5_title">Functions</span>
                             </h2>
-                            <p data-i18n="s1_intro">Functions are first-class citizens. They can be assigned to variables, passed as arguments, and returned from other routines. They also support multiple return values natively.</p>
+                            <p data-i18n="s5_intro">Functions are first-class citizens. They can be assigned to variables, passed as arguments, and returned from other routines. They also support multiple return values natively.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">lua · functions.lua</span>
@@ -230,7 +230,7 @@ globalVar = <span class="st">"accessible everywhere"</span> <span class="cm">-- 
                                 <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
                                 <span data-i18n="s6_title">Tables (Arrays &amp; Dictionaries)</span>
                             </h2>
-                            <p data-i18n="s1_intro">Tables are the sole data structuring mechanism in Lua. They function as indexed arrays or key-value hash dictionaries interchangeably.</p>
+                            <p data-i18n="s6_intro">Tables are the sole data structuring mechanism in Lua. They function as indexed arrays or key-value hash dictionaries interchangeably.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">lua · tables.lua</span>
@@ -250,7 +250,7 @@ globalVar = <span class="st">"accessible everywhere"</span> <span class="cm">-- 
                             </div>
                             <div class="info-box danger">
                                 <i class="fa-solid fa-triangle-exclamation"></i>
-                                <span>Unlike almost all mainstream modern environments, **Lua arrays are 1-indexed**. In standard sequences, `array[0]` evaluates to `nil`. Keep this in mind when implementing algorithms!</span>
+                                <span data-i18n="tip2">Unlike almost all mainstream modern environments, **Lua arrays are 1-indexed**. In standard sequences, `array[0]` evaluates to `nil`. Keep this in mind when implementing algorithms!</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -259,7 +259,7 @@ globalVar = <span class="st">"accessible everywhere"</span> <span class="cm">-- 
                                 <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
                                 <span data-i18n="s7_title">Metatables &amp; OOP</span>
                             </h2>
-                            <p data-i18n="s1_intro">Metatables allow tables to override operational behaviors when interacting with keys, arithmetic signs, or function inheritance chains via fallback definitions called metamethods.</p>
+                            <p data-i18n="s7_intro">Metatables allow tables to override operational behaviors when interacting with keys, arithmetic signs, or function inheritance chains via fallback definitions called metamethods.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">lua · metatables.lua</span>
@@ -289,7 +289,7 @@ position:printCoords()</pre>
                                 <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
                                 <span data-i18n="s8_title">Modules &amp; Standard Libs</span>
                             </h2>
-                            <p data-i18n="s1_intro">Break up codebases across distinct files by packaging components into local tables returned at the end of scripts, and loaded via <code>require</code> calls.</p>
+                            <p data-i18n="s8_intro">Break up codebases across distinct files by packaging components into local tables returned at the end of scripts, and loaded via <code>require</code> calls.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">lua · modules.lua</span>
@@ -309,7 +309,7 @@ position:printCoords()</pre>
                             </div>
                             <div class="info-box tip">
                                 <i class="fa-solid fa-lightbulb"></i>
-                                <span>Lua is incredibly lightweight and efficient, making it the premier choice for extension modding layers, configuration schemas, and embedded architectures.</span>
+                                <span data-i18n="tip3">Lua is incredibly lightweight and efficient, making it the premier choice for extension modding layers, configuration schemas, and embedded architectures.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -359,11 +359,18 @@ position:printCoords()</pre>
             function copyCode(btn) {
                 const pre  = btn.closest('.code-block').querySelector('pre');
                 const text = pre.innerText;
+                const lang = localStorage.getItem('lang') || 'en';
+                const labels = {
+                  en: { copy: 'Copy', copied: 'Copied!' },
+                  it: { copy: 'Copia', copied: 'Copiato!' },
+                  es: { copy: 'Copiar', copied: '¡Copiado!' }
+                };
+                const l = labels[lang] || labels.en;
                 navigator.clipboard.writeText(text).then(() => {
-                    btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                    btn.innerHTML = '<i class="fa-solid fa-check"></i> ' + l.copied;
                     btn.classList.add('copied');
                     setTimeout(() => {
-                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy';
+                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> ' + l.copy;
                         btn.classList.remove('copied');
                     }, 2000);
                 });

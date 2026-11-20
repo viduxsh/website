@@ -29,7 +29,15 @@
     "s5_intro": "PowerShell does not use standard symbols (like <code>&gt;</code> or <code>==</code>) for comparison logic, because those tokens are reserved for stream redirection. Instead, it relies on dedicated **dash-based operators**.",
     "s6_intro": "PowerShell provides classic control loops along with the highly optimized <code>ForEach-Object</code> pipeline cmdlet, which evaluates incoming elements sequentially via the automatic pipeline variable <code>$_</code>.",
     "s7_intro": "When you pipe data in PowerShell, you are passing full, structured objects rather than raw strings of text. This design avoids complex regex filtering or text splitting (like <code>awk</code> or <code>cut</code>), allowing you to filter, sort, or inspect fields directly by their property names.",
-    "s8_intro": "PowerShell interfaces directly with the host operating system kernel using the **CIM (Common Information Model)** architecture, enabling comprehensive instrumentation and management of both local and remote nodes."
+    "s8_intro": "PowerShell interfaces directly with the host operating system kernel using the **CIM (Common Information Model)** architecture, enabling comprehensive instrumentation and management of both local and remote nodes.",
+    "copy_btn": "Copy",
+    "copied_btn": "Copied!",
+    "tip1": "**Sub-expression expansions require specific wrapping!** If you reference an object's sub-property inside double quotes, you must wrap it in the sub-expression syntax <code>$($Object.Property)</code>. Writing <code>\"$_.FullName\"</code> will simply print the object's base string representation followed by a literal \".FullName\" suffix.",
+    "tip2": "Now that you understand the object-oriented nature of PowerShell, you can build declarative infrastructure models using **DSC (Desired State Configuration)** or construct modular provisioning workflows.",
+    "pill1_desc": "The default Windows client boundary mode. Permits raw interactive commands but locks down all file executions.",
+    "pill2_desc": "Allows scripts to run only if they carry an explicit, authentic signature from a trusted digital publisher.",
+    "pill3_desc": "Requires downloaded external scripts to be signed, but executes local, user-authored script trees freely.",
+    "pill4_desc": "Bypasses all signing restrictions. Runs any script file but warns you before evaluating internet assets."
   },
   "it": {
     "back_coding": "Guide di Coding",
@@ -61,7 +69,15 @@
     "s5_intro": "Aggiungendo <code>[CmdletBinding()]</code> le funzioni create dallo sviluppatore acquisiscono parametri comuni come <code>-Verbose</code> e <code>-ErrorAction</code>.",
     "s6_intro": "PowerShell distingue tra errori bloccanti e non bloccanti, consentendo di intercettarli accuratamente con blocchi <code>try/catch/finally</code>.",
     "s7_intro": "I provider permettono di navigare registri di sistema, certificati e variabili di ambiente con gli stessi comandi usati per il disco (es. <code>dir</code> o <code>cd</code>).",
-    "s8_intro": "Il comando <code>Invoke-Command</code> esegue blocchi di script su centinaia di server contemporaneamente attraverso connessioni sicure crittografate."
+    "s8_intro": "Il comando <code>Invoke-Command</code> esegue blocchi di script su centinaia di server contemporaneamente attraverso connessioni sicure crittografate.",
+    "copy_btn": "Copia",
+    "copied_btn": "Copiato!",
+    "tip1": "A differenza della shell Bash che manipola flussi di testo grezzo, <strong>PowerShell opera su pipeline di oggetti .NET tipizzati</strong>: puoi accedere direttamente a proprietà e metodi.",
+    "tip2": "Sfrutta PowerShell 7 multipiattaforma per automatizzare infrastrutture cloud <strong>Azure o AWS</strong> e gestire configurazioni di sistemi Windows e Linux in modo unificato.",
+    "pill1_desc": "Modalità predefinita di Windows: consente comandi interattivi ma blocca tutti gli script da file.",
+    "pill2_desc": "Esegue gli script solo se firmati digitalmente da un editore verificato e fidato.",
+    "pill3_desc": "Richiede firma solo per gli script scaricati da Internet; esegue liberamente quelli locali.",
+    "pill4_desc": "Disabilita tutte le restrizioni di firma, eseguendo qualsiasi script."
   },
   "es": {
     "back_coding": "Guías de Coding",
@@ -93,6 +109,14 @@
     "s5_intro": "Habilitar <code>[CmdletBinding()]</code> en una función personalizada proporciona soporte nativo para parámetros del sistema como <code>-Verbose</code> y confirmaciones.",
     "s6_intro": "Combinar <code>-ErrorAction Stop</code> con bloques <code>try/catch</code> asegura la captura de fallos de comando para evitar interrupciones no deseadas.",
     "s7_intro": "Los PSDrives permiten inspeccionar almacenes de certificados, variables de entorno y el registro de Windows usando comandos de navegación de carpetas.",
-    "s8_intro": "La administración distribuida permite despachar comandos en paralelo sobre múltiples máquinas remotas de forma segura mediante WinRM o SSH."
+    "s8_intro": "La administración distribuida permite despachar comandos en paralelo sobre múltiples máquinas remotas de forma segura mediante WinRM o SSH.",
+    "copy_btn": "Copiar",
+    "copied_btn": "¡Copiado!",
+    "tip1": "A diferencia de la consola Bash que procesa texto plano, <strong>PowerShell opera sobre pipelines de objetos .NET tipados</strong>: puedes acceder directamente a propiedades y métodos.",
+    "tip2": "Aprovecha PowerShell 7 multiplataforma para automatizar infraestructuras en <strong>Azure o AWS</strong> y gestionar sistemas Windows y Linux de manera unificada.",
+    "pill1_desc": "Modo predeterminado de Windows: permite comandos interactivos pero bloquea scripts desde archivo.",
+    "pill2_desc": "Ejecuta scripts únicamente si están firmados digitalmente por un editor confiable.",
+    "pill3_desc": "Requiere firma solo para scripts descargados de Internet; ejecuta libremente los locales.",
+    "pill4_desc": "Omite todas las restricciones de firma, ejecutando cualquier script."
   }
 }

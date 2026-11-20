@@ -111,36 +111,36 @@
                                 <span class="section-icon" style="background: var(--guide-accent-2);">2</span>
                                 <span data-i18n="s2_title">Core Column Types</span>
                             </h2>
-                            <p data-i18n="s1_intro">Fields require strict, upfront data allocation definitions to guarantee memory optimization and validate storage integrity across the storage engine blocks.</p>
+                            <p data-i18n="s2_intro">Fields require strict, upfront data allocation definitions to guarantee memory optimization and validate storage integrity across the storage engine blocks.</p>
                             <div class="type-grid">
                                 <div class="type-pill">
                                     <span class="type-name">INT / BIGINT</span>
-                                    <span class="type-desc">Standard and large numerical values</span>
+                                    <span class="type-desc" data-i18n="pill1_desc">Standard and large numerical values</span>
                                     <span class="type-example">id INT</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">VARCHAR(N)</span>
-                                    <span class="type-desc">Variable-length string optimization</span>
+                                    <span class="type-desc" data-i18n="pill2_desc">Variable-length string optimization</span>
                                     <span class="type-example">title VARCHAR(255)</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">DECIMAL(P, S)</span>
-                                    <span class="type-desc">Exact fixed-point financial numbers</span>
+                                    <span class="type-desc" data-i18n="pill3_desc">Exact fixed-point financial numbers</span>
                                     <span class="type-example">amount DECIMAL(10, 2)</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">BOOLEAN / TINYINT</span>
-                                    <span class="type-desc">Logical true or false assertions</span>
+                                    <span class="type-desc" data-i18n="pill4_desc">Logical true or false assertions</span>
                                     <span class="type-example">is_active TINYINT(1)</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">DATE / DATETIME</span>
-                                    <span class="type-desc">Calendar dates and precision clocks</span>
+                                    <span class="type-desc" data-i18n="pill5_desc">Calendar dates and precision clocks</span>
                                     <span class="type-example">logged_at DATETIME</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">TEXT / BLOB</span>
-                                    <span class="type-desc">Unstructured metadata body payloads</span>
+                                    <span class="type-desc" data-i18n="pill6_desc">Unstructured metadata body payloads</span>
                                     <span class="type-example">description TEXT</span>
                                 </div>
                             </div>
@@ -151,7 +151,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
                                 <span data-i18n="s3_title">Data Manipulation (CRUD)</span>
                             </h2>
-                            <p data-i18n="s1_intro">Data mutation operations utilize <code>INSERT</code>, <code>UPDATE</code>, and <code>DELETE</code>. These commands populate tables or alter record sets within safe transactional contexts.</p>
+                            <p data-i18n="s3_intro">Data mutation operations utilize <code>INSERT</code>, <code>UPDATE</code>, and <code>DELETE</code>. These commands populate tables or alter record sets within safe transactional contexts.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">sql · manipulation.sql</span>
@@ -172,7 +172,7 @@
                             </div>
                             <div class="info-box danger">
                                 <i class="fa-solid fa-triangle-exclamation"></i>
-                                <span>**Never omit the WHERE clause in UPDATE or DELETE statements!** Forgetting it applies the operation globally, updating or erasing all rows in the table.</span>
+                                <span data-i18n="tip1">**Never omit the WHERE clause in UPDATE or DELETE statements!** Forgetting it applies the operation globally, updating or erasing all rows in the table.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -181,7 +181,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
                                 <span data-i18n="s4_title">Filtering with WHERE Clauses</span>
                             </h2>
-                            <p data-i18n="s1_intro">Isolate and filter tracking metrics by using specific logic operators, string pattern match match mappings, and range boundaries inside your queries.</p>
+                            <p data-i18n="s4_intro">Isolate and filter tracking metrics by using specific logic operators, string pattern match match mappings, and range boundaries inside your queries.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">sql · queries.sql</span>
@@ -202,7 +202,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
                                 <span data-i18n="s5_title">Relational JOIN Operations</span>
                             </h2>
-                            <p data-i18n="s1_intro">Relational databases avoid data duplication by splitting metrics across tables. Use <code>JOIN</code> operations to cleanly link related rows back together on shared key boundaries.</p>
+                            <p data-i18n="s5_intro">Relational databases avoid data duplication by splitting metrics across tables. Use <code>JOIN</code> operations to cleanly link related rows back together on shared key boundaries.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">sql · joins.sql</span>
@@ -221,7 +221,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
                                 <span data-i18n="s6_title">Aggregation &amp; Grouping</span>
                             </h2>
-                            <p data-i18n="s1_intro">Condense multiple matching rows into a single summary block. Group records by shared attributes, and use <code>HAVING</code> statements to filter those combined sets.</p>
+                            <p data-i18n="s6_intro">Condense multiple matching rows into a single summary block. Group records by shared attributes, and use <code>HAVING</code> statements to filter those combined sets.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">sql · aggregation.sql</span>
@@ -234,7 +234,7 @@
                             </div>
                             <div class="info-box tip">
                                 <i class="fa-solid fa-lightbulb"></i>
-                                <span>The <code>WHERE</code> clause filters raw input data rows **before any groupings compile**, whereas <code>HAVING</code> filters calculated metrics **after group aggregations finalize**.</span>
+                                <span data-i18n="tip2">The <code>WHERE</code> clause filters raw input data rows **before any groupings compile**, whereas <code>HAVING</code> filters calculated metrics **after group aggregations finalize**.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -243,7 +243,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
                                 <span data-i18n="s7_title">Subqueries &amp; Nested Filters</span>
                             </h2>
-                            <p data-i18n="s1_intro">You can embed queries inside other queries. This lets you construct dynamic criteria where a nested data search directly controls the main outer filter path.</p>
+                            <p data-i18n="s7_intro">You can embed queries inside other queries. This lets you construct dynamic criteria where a nested data search directly controls the main outer filter path.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">sql · subqueries.sql</span>
@@ -267,7 +267,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
                                 <span data-i18n="s8_title">Indexes &amp; Performance Control</span>
                             </h2>
-                            <p data-i18n="s1_intro">As tables scale up, looking up values sequentially can stall execution pipelines. Adding structural B-Tree **Indexes** lets the engine quickly map and locate records directly.</p>
+                            <p data-i18n="s8_intro">As tables scale up, looking up values sequentially can stall execution pipelines. Adding structural B-Tree **Indexes** lets the engine quickly map and locate records directly.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">sql · optimization.sql</span>
@@ -283,7 +283,7 @@
                             </div>
                             <div class="info-box tip">
                                 <i class="fa-solid fa-lightbulb"></i>
-                                <span>With database architecture fundamentals clear, your next steps involve coordinating transactions via **ACID isolation isolation steps** and exploring asynchronous connection layers.</span>
+                                <span data-i18n="tip3">With database architecture fundamentals clear, your next steps involve coordinating transactions via **ACID isolation isolation steps** and exploring asynchronous connection layers.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -333,11 +333,18 @@
             function copyCode(btn) {
                 const pre  = btn.closest('.code-block').querySelector('pre');
                 const text = pre.innerText;
+                const lang = localStorage.getItem('lang') || 'en';
+                const labels = {
+                  en: { copy: 'Copy', copied: 'Copied!' },
+                  it: { copy: 'Copia', copied: 'Copiato!' },
+                  es: { copy: 'Copiar', copied: '¡Copiado!' }
+                };
+                const l = labels[lang] || labels.en;
                 navigator.clipboard.writeText(text).then(() => {
-                    btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                    btn.innerHTML = '<i class="fa-solid fa-check"></i> ' + l.copied;
                     btn.classList.add('copied');
                     setTimeout(() => {
-                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy';
+                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> ' + l.copy;
                         btn.classList.remove('copied');
                     }, 2000);
                 });

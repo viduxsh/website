@@ -1,17 +1,62 @@
 {
   "en": {
+    "page_browser_title": "vidux.sh - Xiaomi Redmi Note 10 Pro",
+    "page_description": "Xiaomi Redmi Note 10 Pro specifications and benchmark results.",
     "page_subtitle": "Specifications and benchmark results.",
     "back_blog": "Back to Blog",
-    "back_technology": "Back to Technology"
+    "back_technology": "Back to Technology",
+    "th_network": "Network",
+    "th_technical_data": "Technical data",
+    "th_display": "Display",
+    "th_camera": "Camera",
+    "th_video": "Video",
+    "th_connectivity": "Connectivity",
+    "th_sensors": "Sensors",
+    "th_functions": "Functions",
+    "th_battery": "Battery",
+    "th_stress_test": "Stress Test",
+    "th_storage_test_v10_1_9": "Storage Test v10.1.9",
+    "th_benchmark_results_v10_1_9": "Benchmark Results v10.1.9",
+    "th_ai_benchmark_v3_0_5": "AI Benchmark v3.0.5"
   },
   "it": {
+    "page_browser_title": "vidux.sh - Xiaomi Redmi Note 10 Pro",
+    "page_description": "Specifiche e risultati benchmark di Xiaomi Redmi Note 10 Pro.",
     "page_subtitle": "Specifiche tecniche e risultati benchmark.",
     "back_blog": "Torna al Blog",
-    "back_technology": "Torna a Tecnologia"
+    "back_technology": "Torna a Tecnologia",
+    "th_network": "Rete",
+    "th_technical_data": "Dati Tecnici",
+    "th_display": "Schermo",
+    "th_camera": "Fotocamera",
+    "th_video": "Video",
+    "th_connectivity": "Connettività",
+    "th_sensors": "Sensori",
+    "th_functions": "Funzioni",
+    "th_battery": "Batteria",
+    "th_stress_test": "Stress Test",
+    "th_storage_test_v10_1_9": "Test Archiviazione v10.1.9",
+    "th_benchmark_results_v10_1_9": "Risultati Benchmark v10.1.9",
+    "th_ai_benchmark_v3_0_5": "AI Benchmark v3.0.5"
   },
   "es": {
+    "page_browser_title": "vidux.sh - Xiaomi Redmi Note 10 Pro",
+    "page_description": "Especificaciones y resultados de benchmarks de Xiaomi Redmi Note 10 Pro.",
     "page_subtitle": "Especificaciones y resultados de benchmarks.",
     "back_blog": "Volver al Blog",
-    "back_technology": "Volver a Tecnología"
+    "back_technology": "Volver a Tecnología",
+    "th_network": "Red",
+    "th_technical_data": "Datos Técnicos",
+    "th_display": "Pantalla",
+    "th_camera": "Cámara",
+    "th_video": "Vídeo",
+    "th_connectivity": "Conectividad",
+    "th_sensors": "Sensores",
+    "th_functions": "Funciones",
+    "th_battery": "Batería",
+    "th_stress_test": "Stress Test",
+    "th_storage_test_v10_1_9": "Test Almacenamiento v10.1.9",
+    "th_benchmark_results_v10_1_9": "Resultados Benchmark v10.1.9",
+    "th_ai_benchmark_v3_0_5": "AI Benchmark v3.0.5"
   }
 }

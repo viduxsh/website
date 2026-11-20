@@ -29,7 +29,17 @@
     "s5_intro": "Lists manage grouped items. Use the <code>itemize</code> environment for bulleted logs or <code>enumerate</code> to build sequenced, numbered hierarchies.",
     "s6_intro": "Images use floating containers. LaTeX calculates where to place them dynamically based on spatial optimization parameters, avoiding awkward layout breaks across pages.",
     "s7_intro": "Tables use the <code>tabular</code> block environment. You define explicit column count boundaries and structural alignment flags using pipe tokens and ampersands.",
-    "s8_intro": "Separate bibliographic data records from your text layouts. Using standard **BibTeX files**, you can inject citation nodes that assemble, format, and alphabetize references automatically."
+    "s8_intro": "Separate bibliographic data records from your text layouts. Using standard **BibTeX files**, you can inject citation nodes that assemble, format, and alphabetize references automatically.",
+    "copy_btn": "Copy",
+    "copied_btn": "Copied!",
+    "tip1": "Always declare <code>\\label</code> parameters **after the caption command**. Swapping this order breaks the cross-reference indexing chain, causing misnumbered link tracks.",
+    "tip2": "With fundamental document blocks mastered, your next evolutionary steps cover custom macro creation via <code>\\newcommand</code> and multi-file tracking layouts.",
+    "pill1_desc": "Bold weight font face modification",
+    "pill2_desc": "Italicized emphasis font transformation",
+    "pill3_desc": "Monospaced font execution environment",
+    "pill4_desc": "Explicit base-level text underline track",
+    "pill5_desc": "Forces an immediate hard line break",
+    "pill6_desc": "Escapes the native comment parameter token"
   },
   "it": {
     "back_coding": "Guide di Coding",
@@ -61,7 +71,17 @@
     "s5_intro": "L'ambiente <code>tabular</code> gestisce l'allineamento di righe e colonne, con il pacchetto <code>booktabs</code> per tabelle professionali.",
     "s6_intro": "Gli ambienti flottanti consentono al motore di posizionare immagini e grafici nel punto ottimale della pagina evitando spazi vuoti.",
     "s7_intro": "Con <code>\\label</code> e <code>\\ref</code> figure, tabelle ed equazioni vengono citate dinamicamente senza aggiornare i numeri a mano.",
-    "s8_intro": "La gestione bibliografica automatizzata formatta le citazioni e genera l'indice dei riferimenti secondo gli standard accademici internazionali."
+    "s8_intro": "La gestione bibliografica automatizzata formatta le citazioni e genera l'indice dei riferimenti secondo gli standard accademici internazionali.",
+    "copy_btn": "Copia",
+    "copied_btn": "Copiato!",
+    "tip1": "Usa compilatori online come <strong>Overleaf</strong> per iniziare a comporre documenti istantaneamente senza dover installare distribuzioni TeX pesanti in locale.",
+    "tip2": "Per documenti accademici complessi, integra <strong>BibTeX / Biber</strong> per gestire citazioni e bibliografie in modo completamente automatico e conforme agli standard.",
+    "pill1_desc": "Carattere in grassetto marcato",
+    "pill2_desc": "Trasformazione in corsivo enfatizzato",
+    "pill3_desc": "Ambiente font monospaziato per codice",
+    "pill4_desc": "Sottolineatura esplicita del testo",
+    "pill5_desc": "Forza un a capo immediato nella pagina",
+    "pill6_desc": "Consente di stampare il simbolo di commento %"
   },
   "es": {
     "back_coding": "Guías de Coding",
@@ -93,6 +113,16 @@
     "s5_intro": "El entorno <code>tabular</code> organiza matrices de datos, optimizándose notablemente con paquetes profesionales como <code>booktabs</code>.",
     "s6_intro": "Los elementos flotantes permiten al compilador ubicar imágenes e ilustraciones en la posición óptima de la página impresa.",
     "s7_intro": "Mediante el emparejamiento de etiquetas y referencias, las menciones a tablas y capítulos se actualizan solas tras cada compilación.",
-    "s8_intro": "La gestión automática de fuentes bibliográficas formatea citas académicas conforme a normativas internacionales como IEEE o APA."
+    "s8_intro": "La gestión automática de fuentes bibliográficas formatea citas académicas conforme a normativas internacionales como IEEE o APA.",
+    "copy_btn": "Copiar",
+    "copied_btn": "¡Copiado!",
+    "tip1": "Usa plataformas online como <strong>Overleaf</strong> para comenzar a redactar documentos al instante sin necesidad de instalar distribuciones TeX pesadas en local.",
+    "tip2": "Para documentos académicos complejos, integra <strong>BibTeX / Biber</strong> para gestionar citas y referencias bibliográficas de forma automatizada y profesional.",
+    "pill1_desc": "Tipografía en negrita destacada",
+    "pill2_desc": "Transformación en cursiva enfatizada",
+    "pill3_desc": "Entorno tipográfico monoespaciado para código",
+    "pill4_desc": "Subrayado explícito del texto",
+    "pill5_desc": "Fuerza un salto de línea inmediato en el documento",
+    "pill6_desc": "Permite imprimir el símbolo de comentario %"
   }
 }

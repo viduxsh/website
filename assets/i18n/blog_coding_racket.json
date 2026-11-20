@@ -29,7 +29,17 @@
     "s5_intro": "Functions are first-class citizens. They are created using <code>define</code> syntax maps, or declared as anonymous blocks via the <code>lambda</code> keyword signature.",
     "s6_intro": "Racket completely lacks traditional object classes. Custom data schemas are declared with <code>struct</code> configurations, which automatically generate safe getters, setters, and structural query predicates.",
     "s7_intro": "To keep the environment pure, variables are bound locally within functional boundaries using the <code>let</code>, <code>let*</code>, or <code>letrec</code> lexical expression components.",
-    "s8_intro": "Racket is a premier ecosystem for language creation. Its powerful hygiene macro system allows you to define custom language constructs and extend its syntax syntax transformation models."
+    "s8_intro": "Racket is a premier ecosystem for language creation. Its powerful hygiene macro system allows you to define custom language constructs and extend its syntax syntax transformation models.",
+    "copy_btn": "Copy",
+    "copied_btn": "Copied!",
+    "tip1": "Structures are **strictly immutable by default**. To allow direct mutation hooks, you must explicitly flag the schema configuration with the <code>#:mutable</code> modifier attribute.",
+    "tip2": "With Racket's prefix structures mastered, you are prepared to build custom Domain Specific Languages (DSLs) or compile web layouts using **Scribble** or **Web-Server/Servlet**.",
+    "pill1_desc": "Exact integers, rationals, complex",
+    "pill2_desc": "Mutable or immutable text",
+    "pill3_desc": "Logical true or false flags",
+    "pill4_desc": "Interned lightweight identifiers",
+    "pill5_desc": "Immutable linked sequence",
+    "pill6_desc": "Basic cell holding two elements"
   },
   "it": {
     "back_coding": "Guide di Coding",
@@ -61,7 +71,17 @@
     "s5_intro": "Racket non utilizza loop tradizionali: i calcoli iterativi vengono implementati attraverso ricorsione in coda (tail recursion) a costo zero di memoria.",
     "s6_intro": "Funzioni che accettano altre funzioni come argomento elaborano liste con eleganza matematica e senza mutazioni di stato.",
     "s7_intro": "La forma <code>struct</code> genera tipi di dato composti immutabili, creando automaticamente costruttori, predicati di tipo e selettori di campo.",
-    "s8_intro": "Il potente sistema di macro igieniche con <code>define-syntax-rule</code> consente di estendere la sintassi del linguaggio creando nuovi costrutti."
+    "s8_intro": "Il potente sistema di macro igieniche con <code>define-syntax-rule</code> consente di estendere la sintassi del linguaggio creando nuovi costrutti.",
+    "copy_btn": "Copia",
+    "copied_btn": "Copiato!",
+    "tip1": "Le parentesi quadre <code>[...]</code> sono sintatticamente equivalenti alle tonde <code>(...)</code>: usale convenzionalmente in <code>cond</code> e <code>let</code> per rendere il codice molto più leggibile.",
+    "tip2": "Racket è un ambiente straordinario per la programmazione funzionale pura e per l'apprendimento della teoria dei compilatori e della meta-programmazione con macro igieniche.",
+    "pill1_desc": "Interi esatti, razionali e numeri complessi",
+    "pill2_desc": "Testo mutabile o immutabile",
+    "pill3_desc": "Flag booleani logici vero o falso",
+    "pill4_desc": "Simboli e identificatori leggeri interni",
+    "pill5_desc": "Sequenze collegate immutabili (liste)",
+    "pill6_desc": "Coppia base fondamentale che unisce due elementi"
   },
   "es": {
     "back_coding": "Guías de Coding",
@@ -93,6 +113,16 @@
     "s5_intro": "El paradigma funcional prescinde de ciclos imperativos; la recursión terminal optimizada (tail-call optimization) itera sin desbordar la pila.",
     "s6_intro": "Operadores como <code>map</code> y <code>filter</code> procesan colecciones abstrayendo la lógica de iteración mediante transformaciones puras.",
     "s7_intro": "La instrucción <code>struct</code> define tipos estructurados inmutables generando constructores automáticos y funciones de comprobación.",
-    "s8_intro": "El sistema de macros higiénicas de Racket transforma el árbol sintáctico del lenguaje permitiendo diseñar nuevos dialectos y DSLs."
+    "s8_intro": "El sistema de macros higiénicas de Racket transforma el árbol sintáctico del lenguaje permitiendo diseñar nuevos dialectos y DSLs.",
+    "copy_btn": "Copiar",
+    "copied_btn": "¡Copiado!",
+    "tip1": "Los corchetes <code>[...]</code> son sintácticamente equivalentes a los paréntesis <code>(...)</code>: úsalos en <code>cond</code> y <code>let</code> para mejorar notablemente la legibilidad.",
+    "tip2": "Racket es un entorno extraordinario para la programación funcional pura y el estudio de diseño de lenguajes y metaprogramación con macros higiénicas.",
+    "pill1_desc": "Enteros exactos, racionales y números complejos",
+    "pill2_desc": "Texto mutable o inmutable",
+    "pill3_desc": "Marcadores booleanos verdadero o falso",
+    "pill4_desc": "Símbolos e identificadores ligeros internos",
+    "pill5_desc": "Secuencias enlazadas inmutables (listas)",
+    "pill6_desc": "Par celda fundamental que contiene dos elementos"
   }
 }

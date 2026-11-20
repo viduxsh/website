@@ -106,7 +106,7 @@
                             </div>
                             <div class="info-box tip">
                                 <i class="fa-solid fa-lightbulb"></i>
-                                <span>The file name <strong>must exact-match</strong> the name of the public class inside it (e.g., <code>Main.java</code> for <code>public class Main</code>).</span>
+                                <span data-i18n="tip1">The file name <strong>must exact-match</strong> the name of the public class inside it (e.g., <code>Main.java</code> for <code>public class Main</code>).</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -115,36 +115,36 @@
                                 <span class="section-icon" style="background: var(--guide-accent-2);">2</span>
                                 <span data-i18n="s2_title">Variables &amp; Data Types</span>
                             </h2>
-                            <p data-i18n="s1_intro">Java relies on strong, static type verification. Variables are separated into low-level <strong>primitives</strong> and reference <strong>objects</strong>.</p>
+                            <p data-i18n="s2_intro">Java relies on strong, static type verification. Variables are separated into low-level <strong>primitives</strong> and reference <strong>objects</strong>.</p>
                             <div class="type-grid">
                                 <div class="type-pill">
                                     <span class="type-name">int</span>
-                                    <span class="type-desc">32-bit Integer</span>
+                                    <span class="type-desc" data-i18n="pill1_desc">32-bit Integer</span>
                                     <span class="type-example">10, -500, 0</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">double</span>
-                                    <span class="type-desc">64-bit Float</span>
+                                    <span class="type-desc" data-i18n="pill2_desc">64-bit Float</span>
                                     <span class="type-example">3.14, -0.05</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">boolean</span>
-                                    <span class="type-desc">Logical state</span>
+                                    <span class="type-desc" data-i18n="pill3_desc">Logical state</span>
                                     <span class="type-example">true, false</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">char</span>
-                                    <span class="type-desc">16-bit Unicode</span>
+                                    <span class="type-desc" data-i18n="pill4_desc">16-bit Unicode</span>
                                     <span class="type-example">'A', '7', '$'</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">String</span>
-                                    <span class="type-desc">Object literal</span>
+                                    <span class="type-desc" data-i18n="pill5_desc">Object literal</span>
                                     <span class="type-example">"Text block"</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">var</span>
-                                    <span class="type-desc">Local inference</span>
+                                    <span class="type-desc" data-i18n="pill6_desc">Local inference</span>
                                     <span class="type-example">Java 10+ only</span>
                                 </div>
                             </div>
@@ -171,7 +171,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
                                 <span data-i18n="s3_title">Operators</span>
                             </h2>
-                            <p data-i18n="s1_intro">Java supports standard operations for evaluating mathematics, chaining conditionals, and manipulating variables inline.</p>
+                            <p data-i18n="s3_intro">Java supports standard operations for evaluating mathematics, chaining conditionals, and manipulating variables inline.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">java · Operators.java</span>
@@ -196,7 +196,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
                                 <span data-i18n="s4_title">Strings &amp; User Input</span>
                             </h2>
-                            <p data-i18n="s1_intro">Strings are non-primitive objects equipped with built-in utility methods. Capturing human terminal input relies on the <code>Scanner</code> utility.</p>
+                            <p data-i18n="s4_intro">Strings are non-primitive objects equipped with built-in utility methods. Capturing human terminal input relies on the <code>Scanner</code> utility.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">java · InputOutput.java</span>
@@ -217,7 +217,7 @@
                             </div>
                             <div class="info-box danger">
                                 <i class="fa-solid fa-triangle-exclamation"></i>
-                                <span>Always compare String objects using <code>.equals()</code> (e.g., <code>str1.equals(str2)</code>). Using <code>==</code> evaluates memory addresses instead of text literal equity!</span>
+                                <span data-i18n="tip2">Always compare String objects using <code>.equals()</code> (e.g., <code>str1.equals(str2)</code>). Using <code>==</code> evaluates memory addresses instead of text literal equity!</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -226,7 +226,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
                                 <span data-i18n="s5_title">Conditionals</span>
                             </h2>
-                            <p data-i18n="s1_intro">Direct the code path using clean branching structures like <code>if-else</code> structures or structural <code>switch</code> evaluations.</p>
+                            <p data-i18n="s5_intro">Direct the code path using clean branching structures like <code>if-else</code> structures or structural <code>switch</code> evaluations.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">java · Branching.java</span>
@@ -257,7 +257,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
                                 <span data-i18n="s6_title">Loops</span>
                             </h2>
-                            <p data-i18n="s1_intro">Process repeated code segments using deterministic index-based counters or dynamically evaluated logical boundaries.</p>
+                            <p data-i18n="s6_intro">Process repeated code segments using deterministic index-based counters or dynamically evaluated logical boundaries.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">java · Loops.java</span>
@@ -282,7 +282,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
                                 <span data-i18n="s7_title">Arrays &amp; ArrayList</span>
                             </h2>
-                            <p data-i18n="s1_intro">Native <strong>arrays</strong> preserve fixed bounds. Dynamic collections that grow dynamically leverage the <code>ArrayList</code> entity class from <code>java.util</code>.</p>
+                            <p data-i18n="s7_intro">Native <strong>arrays</strong> preserve fixed bounds. Dynamic collections that grow dynamically leverage the <code>ArrayList</code> entity class from <code>java.util</code>.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">java · Collections.java</span>
@@ -311,7 +311,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
                                 <span data-i18n="s8_title">Methods &amp; Classes Basics</span>
                             </h2>
-                            <p data-i18n="s1_intro">Methods control behavioral parameters inside objects. Structures orchestrate initialization arguments via precise <code>constructor</code> functions.</p>
+                            <p data-i18n="s8_intro">Methods control behavioral parameters inside objects. Structures orchestrate initialization arguments via precise <code>constructor</code> functions.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">java · UserTemplate.java</span>
@@ -342,7 +342,7 @@
                             </div>
                             <div class="info-box tip">
                                 <i class="fa-solid fa-lightbulb"></i>
-                                <span>Now that you have mastered procedural components, deep dive into robust corporate architectures studying <strong>Inheritance</strong>, <strong>Interfaces</strong>, and <strong>Polymorphism</strong>.</span>
+                                <span data-i18n="tip3">Now that you have mastered procedural components, deep dive into robust corporate architectures studying <strong>Inheritance</strong>, <strong>Interfaces</strong>, and <strong>Polymorphism</strong>.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -392,11 +392,18 @@
             function copyCode(btn) {
                 const pre  = btn.closest('.code-block').querySelector('pre');
                 const text = pre.innerText;
+                const lang = localStorage.getItem('lang') || 'en';
+                const labels = {
+                  en: { copy: 'Copy', copied: 'Copied!' },
+                  it: { copy: 'Copia', copied: 'Copiato!' },
+                  es: { copy: 'Copiar', copied: '¡Copiado!' }
+                };
+                const l = labels[lang] || labels.en;
                 navigator.clipboard.writeText(text).then(() => {
-                    btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                    btn.innerHTML = '<i class="fa-solid fa-check"></i> ' + l.copied;
                     btn.classList.add('copied');
                     setTimeout(() => {
-                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy';
+                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> ' + l.copy;
                         btn.classList.remove('copied');
                     }, 2000);
                 });

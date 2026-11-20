@@ -113,36 +113,36 @@
                                 <span class="section-icon" style="background: var(--guide-accent-2);">2</span>
                                 <span data-i18n="s2_title">Core Types &amp; Linked Lists</span>
                             </h2>
-                            <p data-i18n="s1_intro">Racket features explicit primitives along with dynamic linked lists. Lists are constructed recursively out of single element bindings or standard list wrappers.</p>
+                            <p data-i18n="s2_intro">Racket features explicit primitives along with dynamic linked lists. Lists are constructed recursively out of single element bindings or standard list wrappers.</p>
                             <div class="type-grid">
                                 <div class="type-pill">
                                     <span class="type-name">Number</span>
-                                    <span class="type-desc">Exact integers, rationals, complex</span>
+                                    <span class="type-desc" data-i18n="pill1_desc">Exact integers, rationals, complex</span>
                                     <span class="type-example">42, 1/3, 3+4i</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">String</span>
-                                    <span class="type-desc">Mutable or immutable text</span>
+                                    <span class="type-desc" data-i18n="pill2_desc">Mutable or immutable text</span>
                                     <span class="type-example">"pocketlog"</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">Boolean</span>
-                                    <span class="type-desc">Logical true or false flags</span>
+                                    <span class="type-desc" data-i18n="pill3_desc">Logical true or false flags</span>
                                     <span class="type-example">#t or #f</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">Symbol</span>
-                                    <span class="type-desc">Interned lightweight identifiers</span>
+                                    <span class="type-desc" data-i18n="pill4_desc">Interned lightweight identifiers</span>
                                     <span class="type-example">'apple, 'success</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">List (list)</span>
-                                    <span class="type-desc">Immutable linked sequence</span>
+                                    <span class="type-desc" data-i18n="pill5_desc">Immutable linked sequence</span>
                                     <span class="type-example">(list 1 2 3) o '(1 2 3)</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">Pair (cons)</span>
-                                    <span class="type-desc">Basic cell holding two elements</span>
+                                    <span class="type-desc" data-i18n="pill6_desc">Basic cell holding two elements</span>
                                     <span class="type-example">(cons 1 2)</span>
                                 </div>
                             </div>
@@ -153,7 +153,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
                                 <span data-i18n="s3_title">Conditionals &amp; Predicates</span>
                             </h2>
-                            <p data-i18n="s1_intro">Racket evaluates conditional branching statements through <code>if</code> blocks for binary queries, or <code>cond</code> blocks for parsing multi-step expressions clean of nested nesting layouts.</p>
+                            <p data-i18n="s3_intro">Racket evaluates conditional branching statements through <code>if</code> blocks for binary queries, or <code>cond</code> blocks for parsing multi-step expressions clean of nested nesting layouts.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">racket · control.rkt</span>
@@ -179,7 +179,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
                                 <span data-i18n="s4_title">Loops &amp; Functional Recursion</span>
                             </h2>
-                            <p data-i18n="s1_intro">While explicit <code>for</code> iterators are present, idiomatic Racket relies on recursive execution loop iterations via named <code>let</code> wrappers to securely alter stack state frame data.</p>
+                            <p data-i18n="s4_intro">While explicit <code>for</code> iterators are present, idiomatic Racket relies on recursive execution loop iterations via named <code>let</code> wrappers to securely alter stack state frame data.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">racket · loops.rkt</span>
@@ -202,7 +202,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
                                 <span data-i18n="s5_title">Functions &amp; Lambda Expressions</span>
                             </h2>
-                            <p data-i18n="s1_intro">Functions are first-class citizens. They are created using <code>define</code> syntax maps, or declared as anonymous blocks via the <code>lambda</code> keyword signature.</p>
+                            <p data-i18n="s5_intro">Functions are first-class citizens. They are created using <code>define</code> syntax maps, or declared as anonymous blocks via the <code>lambda</code> keyword signature.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">racket · functions.rkt</span>
@@ -228,7 +228,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
                                 <span data-i18n="s6_title">Structures Data Models</span>
                             </h2>
-                            <p data-i18n="s1_intro">Racket completely lacks traditional object classes. Custom data schemas are declared with <code>struct</code> configurations, which automatically generate safe getters, setters, and structural query predicates.</p>
+                            <p data-i18n="s6_intro">Racket completely lacks traditional object classes. Custom data schemas are declared with <code>struct</code> configurations, which automatically generate safe getters, setters, and structural query predicates.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">racket · structures.rkt</span>
@@ -248,7 +248,7 @@
                             </div>
                             <div class="info-box danger">
                                 <i class="fa-solid fa-triangle-exclamation"></i>
-                                <span>Structures are **strictly immutable by default**. To allow direct mutation hooks, you must explicitly flag the schema configuration with the <code>#:mutable</code> modifier attribute.</span>
+                                <span data-i18n="tip1">Structures are **strictly immutable by default**. To allow direct mutation hooks, you must explicitly flag the schema configuration with the <code>#:mutable</code> modifier attribute.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -257,7 +257,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
                                 <span data-i18n="s7_title">Local Bindings &amp; State Scope</span>
                             </h2>
-                            <p data-i18n="s1_intro">To keep the environment pure, variables are bound locally within functional boundaries using the <code>let</code>, <code>let*</code>, or <code>letrec</code> lexical expression components.</p>
+                            <p data-i18n="s7_intro">To keep the environment pure, variables are bound locally within functional boundaries using the <code>let</code>, <code>let*</code>, or <code>letrec</code> lexical expression components.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">racket · scopes.rkt</span>
@@ -278,7 +278,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
                                 <span data-i18n="s8_title">The Power of Syntactic Macros</span>
                             </h2>
-                            <p data-i18n="s1_intro">Racket is a premier ecosystem for language creation. Its powerful hygiene macro system allows you to define custom language constructs and extend its syntax syntax transformation models.</p>
+                            <p data-i18n="s8_intro">Racket is a premier ecosystem for language creation. Its powerful hygiene macro system allows you to define custom language constructs and extend its syntax syntax transformation models.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">racket · macros.rkt</span>
@@ -296,7 +296,7 @@
                             </div>
                             <div class="info-box tip">
                                 <i class="fa-solid fa-lightbulb"></i>
-                                <span>With Racket's prefix structures mastered, you are prepared to build custom Domain Specific Languages (DSLs) or compile web layouts using **Scribble** or **Web-Server/Servlet**.</span>
+                                <span data-i18n="tip2">With Racket's prefix structures mastered, you are prepared to build custom Domain Specific Languages (DSLs) or compile web layouts using **Scribble** or **Web-Server/Servlet**.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -346,11 +346,18 @@
             function copyCode(btn) {
                 const pre  = btn.closest('.code-block').querySelector('pre');
                 const text = pre.innerText;
+                const lang = localStorage.getItem('lang') || 'en';
+                const labels = {
+                  en: { copy: 'Copy', copied: 'Copied!' },
+                  it: { copy: 'Copia', copied: 'Copiato!' },
+                  es: { copy: 'Copiar', copied: '¡Copiado!' }
+                };
+                const l = labels[lang] || labels.en;
                 navigator.clipboard.writeText(text).then(() => {
-                    btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                    btn.innerHTML = '<i class="fa-solid fa-check"></i> ' + l.copied;
                     btn.classList.add('copied');
                     setTimeout(() => {
-                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy';
+                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> ' + l.copy;
                         btn.classList.remove('copied');
                     }, 2000);
                 });

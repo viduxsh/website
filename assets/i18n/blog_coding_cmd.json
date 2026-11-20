@@ -29,7 +29,15 @@
     "s5_intro": "Conditional structures evaluate runtime equations. Upon completing execution, every system application leaves an integer exit code called an **ERRORLEVEL** (where <code>0</code> signifies successful execution, and any non-zero value indicates an error).",
     "s6_intro": "The <code>FOR</code> construct inside CMD uses a specialized syntax. When evaluated directly within an active terminal console shell line, loop variables use a single percent symbol (<code>%i</code>). However, inside a reusable batch script file (<code>.bat</code>), they require a double prefix (<code>%%i</code>).",
     "s7_intro": "Output streams can be suppressed or captured. You can append text blocks to logs, redirect output streams, or isolate specific matches within unstructured string arrays using the **findstr** engine.",
-    "s8_intro": "Despite its age, the Command Prompt remains an effective tool for running low-level network diagnostic utilities and manipulating advanced system configurations directly via specialized administrative utilities."
+    "s8_intro": "Despite its age, the Command Prompt remains an effective tool for running low-level network diagnostic utilities and manipulating advanced system configurations directly via specialized administrative utilities.",
+    "copy_btn": "Copy",
+    "copied_btn": "Copied!",
+    "tip1": "**The Null Device naming convention differs from Unix!** When you want to completely suppress stdout or error outputs so they don't print to the console interface, you cannot redirect to <code>/dev/null</code>. Instead, Windows uses a special, dedicated internal pseudo-device keyword named <code>nul</code> (e.g., <code>command &gt;nul 2&gt;&amp;1</code>).",
+    "tip2": "While CMD is excellent for working with legacy system setups, your modern automation projects on Windows should leverage **PowerShell** or **WSL** to build robust, cross-platform environments.",
+    "pill1_desc": "Prints the current operational path location when called standalone without arguments.",
+    "pill2_desc": "The essential /d switch shifts both the targeted active directory path and the physical volume tier simultaneously.",
+    "pill3_desc": "Exposes structural contents of the current directory. Include /a to view hidden assets.",
+    "pill4_desc": "Flushes out all text records from the console window instantly, restoring a blank workspace grid."
   },
   "it": {
     "back_coding": "Guide di Coding",
@@ -61,7 +69,15 @@
     "s5_intro": "Operazioni rapide sul filesystem vengono eseguite nativamente con comandi essenziali come <code>copy</code>, <code>move</code>, <code>del</code> e <code>mkdir</code>.",
     "s6_intro": "Analogamente ai sistemi Unix, CMD consente di reindirizzare output e messaggi di errore su file o verso <code>nul</code> per silenziarli.",
     "s7_intro": "I parametri passati allo script sono accessibili come <code>%1</code>, <code>%2</code>, con potenti modificatori per estrarre percorso e nome file.",
-    "s8_intro": "Ogni comando restituisce un codice di stato. Monitorare <code>%ERRORLEVEL%</code> consente di verificare l'esito di ogni operazione ed evitare errori a catena."
+    "s8_intro": "Ogni comando restituisce un codice di stato. Monitorare <code>%ERRORLEVEL%</code> consente di verificare l'esito di ogni operazione ed evitare errori a catena.",
+    "copy_btn": "Copia",
+    "copied_btn": "Copiato!",
+    "tip1": "<strong>La convenzione per il dispositivo nullo differisce da Unix!</strong> Per sopprimere l'output di un comando su Windows Batch usa <code>&gt;nul 2&gt;&amp;1</code> invece di <code>/dev/null</code>.",
+    "tip2": "Sebbene CMD sia eccellente per gestire configurazioni di sistema legacy, per progetti di automazione moderni su Windows ti consigliamo di esplorare <strong>PowerShell</strong> per accedere direttamente all'ecosistema .NET.",
+    "pill1_desc": "Mostra il percorso operativo corrente se invocato senza argomenti.",
+    "pill2_desc": "Il parametro /d cambia contemporaneamente sia il percorso che l'unità disco.",
+    "pill3_desc": "Mostra i file della cartella corrente. Includi /a per visualizzare i nascosti.",
+    "pill4_desc": "Cancella istantaneamente tutto il testo dalla finestra della console."
   },
   "es": {
     "back_coding": "Guías de Coding",
@@ -93,6 +109,14 @@
     "s5_intro": "El manejo de ficheros en CMD se realiza directamente con utilidades integradas esenciales como <code>copy</code>, <code>move</code>, <code>del</code> y <code>mkdir</code>.",
     "s6_intro": "Es posible redirigir mensajes a archivos de texto o silenciar salidas indeseadas enviándolas directamente al dispositivo nulo <code>>nul 2>&1</code>.",
     "s7_intro": "Los argumentos recibidos por el script se leen con <code>%1</code> y cuentan con modificadores como <code>%~dp0</code> para obtener la carpeta actual del script.",
-    "s8_intro": "Cada ejecutable reporta un código de finalización que queda registrado en <code>%ERRORLEVEL%</code>, permitiendo abortar o recuperarse de fallos."
+    "s8_intro": "Cada ejecutable reporta un código de finalización que queda registrado en <code>%ERRORLEVEL%</code>, permitiendo abortar o recuperarse de fallos.",
+    "copy_btn": "Copiar",
+    "copied_btn": "¡Copiado!",
+    "tip1": "<strong>¡La convención para el dispositivo nulo difiere de Unix!</strong> Para suprimir completamente la salida de un comando en Windows Batch usa <code>&gt;nul 2&gt;&amp;1</code> en lugar de <code>/dev/null</code>.",
+    "tip2": "Aunque CMD es excelente para administrar configuraciones de sistemas heredados, para proyectos de automatización modernos en Windows te recomendamos explorar <strong>PowerShell</strong> y acceder directamente al ecosistema .NET.",
+    "pill1_desc": "Muestra la ruta operativa actual si se invoca sin argumentos.",
+    "pill2_desc": "El parámetro /d cambia a la vez tanto la ruta activa como la unidad de disco.",
+    "pill3_desc": "Muestra los archivos del directorio actual. Incluye /a para ver los ocultos.",
+    "pill4_desc": "Limpia instantáneamente todo el texto de la ventana de la consola."
   }
 }

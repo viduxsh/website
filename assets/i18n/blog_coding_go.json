@@ -29,7 +29,18 @@
     "s5_intro": "Functions support passing multiple values as a tuple, a paradigm heavily integrated across the standard library for idiomatic error handling.",
     "s6_intro": "Go lacks object-oriented <code>class</code> definitions. Custom data structures are defined using <code>struct</code> schemas, and behavior is attached using explicit method receivers.",
     "s7_intro": "Interfaces are satisfied **implicitly**. A concrete type does not need to explicitly implement an interface via a keyword; it simply needs to implement the matching method signatures.",
-    "s8_intro": "Concurrency is baked into the language core. Prefixing a call with <code>go</code> executes it on an ultra-lightweight thread, while **Channels** orchestrate data transfers between them."
+    "s8_intro": "Concurrency is baked into the language core. Prefixing a call with <code>go</code> executes it on an ultra-lightweight thread, while **Channels** orchestrate data transfers between them.",
+    "copy_btn": "Copy",
+    "copied_btn": "Copied!",
+    "tip1": "The Go compiler is uncompromising: **any declared variable or imported package that is not used will throw a compilation error.** No dead code allowed.",
+    "tip2": "Go has **no pointer arithmetic**. You can fetch memory addresses via the <code>&amp;</code> operator and read values using <code>*</code>, but you cannot manually shift pointer offsets.",
+    "tip3": "With Go fundamentals mastered, you are ready to construct scalable cloud infrastructures, microservices, and fast APIs using **Gin** or **Fiber**.",
+    "pill1_desc": "Platform dependent sizes",
+    "pill2_desc": "Explicit precision floats",
+    "pill3_desc": "Logical true / false truths",
+    "pill4_desc": "Immutable byte sequences",
+    "pill5_desc": "Dynamic wrapper for arrays",
+    "pill6_desc": "Hash map key-value dictionary"
   },
   "it": {
     "back_coding": "Guide di Coding",
@@ -61,7 +72,18 @@
     "s5_intro": "Le interfacce vengono soddisfatte implicitamente: qualsiasi tipo che implementa i metodi richiesti implementa automaticamente l'interfaccia.",
     "s6_intro": "Al posto delle eccezioni, Go tratta gli errori come normali valori restituiti in coppia, imponendo controlli immediati ed espliciti.",
     "s7_intro": "Le goroutine sono thread leggeri gestiti dal runtime di Go. I canali consentono a goroutine diverse di scambiarsi dati in modo sincronizzato.",
-    "s8_intro": "L'istruzione <code>defer</code> posticipa l'esecuzione di una funzione fino all'uscita dal blocco corrente, ideale per rilasciare mutex e chiudere file."
+    "s8_intro": "L'istruzione <code>defer</code> posticipa l'esecuzione di una funzione fino all'uscita dal blocco corrente, ideale per rilasciare mutex e chiudere file.",
+    "copy_btn": "Copia",
+    "copied_btn": "Copiato!",
+    "tip1": "I comandi Go formattano automaticamente il codice: esegui <code>go fmt</code> prima di ogni commit per allineare la formattazione agli standard ufficiali del linguaggio.",
+    "tip2": "Gestisci sempre gli errori esplicitamente controllando <code>if err != nil</code>: in Go gli errori sono valori ordinari, non eccezioni invisibili.",
+    "tip3": "Con la concurrency e i canali padroneggiati, sperimenta la creazione di microservizi ad alta scalabilità usando router come <strong>Chi</strong> o framework gRPC/Protobuf.",
+    "pill1_desc": "Dimensioni dipendenti dalla piattaforma (32/64 bit)",
+    "pill2_desc": "Numeri floating point a precisione esplicita",
+    "pill3_desc": "Valori logici vero o falso",
+    "pill4_desc": "Sequenze immutabili di byte",
+    "pill5_desc": "Wrapper dinamico e ridimensionabile per array",
+    "pill6_desc": "Dizionario hash di coppie chiave-valore"
   },
   "es": {
     "back_coding": "Guías de Coding",
@@ -93,6 +115,17 @@
     "s5_intro": "Las interfaces se satisfacen automáticamente: si un tipo define las funciones que la interfaz requiere, la implementa sin declaraciones explícitas.",
     "s6_intro": "En lugar de excepciones costosas, las funciones retornan un valor de error junto con el resultado para su verificación inmediata.",
     "s7_intro": "Las goroutines son hilos ultralivianos gestionados por Go. Los canales permiten coordinar la comunicación segura entre procesos paralelos.",
-    "s8_intro": "La palabra clave <code>defer</code> pospone el cierre de archivos o la liberación de cerrojos hasta que la función finaliza su ejecución."
+    "s8_intro": "La palabra clave <code>defer</code> pospone el cierre de archivos o la liberación de cerrojos hasta que la función finaliza su ejecución.",
+    "copy_btn": "Copiar",
+    "copied_btn": "¡Copiado!",
+    "tip1": "Los comandos de Go formatean automáticamente el código: ejecuta <code>go fmt</code> antes de cada commit para alinear el formato con los estándares oficiales del lenguaje.",
+    "tip2": "Gestiona siempre los errores explícitamente comprobando <code>if err != nil</code>: en Go los errores son valores normales, no excepciones invisibles.",
+    "tip3": "Con la concurrencia y los canales dominados, experimenta creando microservicios de alta escalabilidad usando enrutadores como <strong>Chi</strong> o frameworks gRPC/Protobuf.",
+    "pill1_desc": "Tamaños dependientes de la arquitectura (32/64 bits)",
+    "pill2_desc": "Números de coma flotante de precisión explícita",
+    "pill3_desc": "Valores lógicos verdadero o falso",
+    "pill4_desc": "Secuencias inmutables de bytes",
+    "pill5_desc": "Estructura dinámica redimensionable sobre arrays",
+    "pill6_desc": "Diccionario hash de pares clave-valor"
   }
 }

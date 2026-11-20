@@ -29,7 +29,18 @@
     "s5_intro": "Python uses <code>if</code>, <code>elif</code>, and <code>else</code> for decision-making. Indentation (4 spaces) is mandatory — it replaces the curly braces of other languages.",
     "s6_intro": "Python has two loop types: <code>for</code> (iterate over a sequence) and <code>while</code> (repeat while a condition is true).",
     "s7_intro": "A <strong>list</strong> is mutable (changeable), while a <strong>tuple</strong> is immutable. Both are ordered sequences.",
-    "s8_intro": "Functions let you package reusable logic. Define them with <code>def</code>, call them by name, and optionally return a value with <code>return</code>."
+    "s8_intro": "Functions let you package reusable logic. Define them with <code>def</code>, call them by name, and optionally return a value with <code>return</code>.",
+    "copy_btn": "Copy",
+    "copied_btn": "Copied!",
+    "tip1": "Run Python scripts from the terminal with <code>python hello.py</code>. You can also open an interactive shell by typing <code>python</code> alone.",
+    "tip2": "Python does not have a <code>switch</code> statement, but from Python 3.10+ you can use <code>match</code> / <code>case</code> for the same purpose.",
+    "tip3": "This covers the foundations of Python. Next steps: explore <strong>dictionaries</strong>, <strong>classes</strong>, <strong>file I/O</strong>, and the rich <strong>standard library</strong> (e.g. <code>os</code>, <code>json</code>, <code>math</code>).",
+    "pill1_desc": "Whole numbers",
+    "pill2_desc": "Decimal numbers",
+    "pill3_desc": "Text / strings",
+    "pill4_desc": "True or False",
+    "pill5_desc": "Ordered collection",
+    "pill6_desc": "Key-value pairs"
   },
   "it": {
     "back_coding": "Guide di Coding",
@@ -61,7 +72,18 @@
     "s5_intro": "Le classi in Python supportano costruttori <code>__init__</code>, metodi dunder speciali per sovraccaricare operatori ed ereditarietà.",
     "s6_intro": "La filosofia Python 'è più facile chiedere perdono che permesso' (EAFP) incoraggia l'uso pulito delle eccezioni per gestire casi limite.",
     "s7_intro": "L'istruzione <code>with</code> garantisce che risorse come file, connessioni e lock vengano rilasciate tempestivamente anche in caso di errore.",
-    "s8_intro": "I generatori producono valori 'on demand' tramite la parola chiave <code>yield</code>, consentendo di elaborare flussi di dati infiniti senza saturare la RAM."
+    "s8_intro": "I generatori producono valori 'on demand' tramite la parola chiave <code>yield</code>, consentendo di elaborare flussi di dati infiniti senza saturare la RAM.",
+    "copy_btn": "Copia",
+    "copied_btn": "Copiato!",
+    "tip1": "Esegui gli script Python dal terminale con <code>python hello.py</code>. Puoi anche avviare la console interattiva digitando semplicemente <code>python</code>.",
+    "tip2": "Crea sempre un ambiente virtuale con <code>python -m venv .venv</code> per isolare le dipendenze di ciascun progetto ed evitare conflitti tra librerie globali.",
+    "tip3": "Ora che conosci la sintassi fondamentale, esplora framework web come <strong>FastAPI</strong> o <strong>Flask</strong>, oppure librerie per la Data Science come <strong>Pandas</strong> e <strong>NumPy</strong>.",
+    "pill1_desc": "Numeri interi positivi e negativi",
+    "pill2_desc": "Numeri decimali a virgola mobile",
+    "pill3_desc": "Testo e sequenze di caratteri",
+    "pill4_desc": "Valori booleani Vero o Falso",
+    "pill5_desc": "Collezioni ordinate e modificabili",
+    "pill6_desc": "Dizionari di coppie chiave-valore"
   },
   "es": {
     "back_coding": "Guías de Coding",
@@ -93,6 +115,17 @@
     "s5_intro": "Definir clases con métodos mágicos (dunder methods) como <code>__str__</code> permite integrar objetos con los operadores estándar del lenguaje.",
     "s6_intro": "Siguiendo el principio EAFP, capturar excepciones específicas permite responder limpiamente a entradas inesperadas sin detener el programa.",
     "s7_intro": "Usar <code>with</code> garantiza que los ficheros se cierren automáticamente al salir del bloque, incluso si se produce un fallo durante la lectura.",
-    "s8_intro": "La palabra clave <code>yield</code> transforma funciones ordinarias en generadores diferidos que producen datos sin llenar la memoria física."
+    "s8_intro": "La palabra clave <code>yield</code> transforma funciones ordinarias en generadores diferidos que producen datos sin llenar la memoria física.",
+    "copy_btn": "Copiar",
+    "copied_btn": "¡Copiado!",
+    "tip1": "Ejecuta scripts de Python desde la terminal con <code>python hello.py</code>. También puedes abrir una consola interactiva escribiendo simplemente <code>python</code>.",
+    "tip2": "Crea siempre un entorno virtual con <code>python -m venv .venv</code> para aislar las dependencias de cada proyecto y evitar conflictos entre paquetes globales.",
+    "tip3": "Ahora que conoces la sintaxis fundamental, explora frameworks web como <strong>FastAPI</strong> o <strong>Flask</strong>, o librerías de Ciencia de Datos como <strong>Pandas</strong> y <strong>NumPy</strong>.",
+    "pill1_desc": "Números enteros positivos y negativos",
+    "pill2_desc": "Números decimales de coma flotante",
+    "pill3_desc": "Texto y cadenas de caracteres",
+    "pill4_desc": "Valores booleanos Verdadero o Falso",
+    "pill5_desc": "Colecciones ordenadas y modificables",
+    "pill6_desc": "Diccionarios de pares clave-valor"
   }
 }

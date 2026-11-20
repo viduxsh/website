@@ -104,26 +104,26 @@
                                 <span class="section-icon" style="background: var(--guide-accent-2);">2</span>
                                 <span data-i18n="s2_title">Execution Policies &amp; Script Security</span>
                             </h2>
-                            <p data-i18n="s1_intro">By default, Windows blocks script executions to defend against malicious injections. PowerShell uses **Execution Policies** to determine whether untrusted configuration scripts can be processed inside your runtime thread.</p>
+                            <p data-i18n="s2_intro">By default, Windows blocks script executions to defend against malicious injections. PowerShell uses **Execution Policies** to determine whether untrusted configuration scripts can be processed inside your runtime thread.</p>
                             <div class="type-grid">
                                 <div class="type-pill">
                                     <span class="type-name">Restricted</span>
-                                    <span class="type-desc">The default Windows client boundary mode. Permits raw interactive commands but locks down all file executions.</span>
+                                    <span class="type-desc" data-i18n="pill1_desc">The default Windows client boundary mode. Permits raw interactive commands but locks down all file executions.</span>
                                     <span class="type-example">Default Safe Layer</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">AllSigned</span>
-                                    <span class="type-desc">Allows scripts to run only if they carry an explicit, authentic signature from a trusted digital publisher.</span>
+                                    <span class="type-desc" data-i18n="pill2_desc">Allows scripts to run only if they carry an explicit, authentic signature from a trusted digital publisher.</span>
                                     <span class="type-example">Requires Certs</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">RemoteSigned</span>
-                                    <span class="type-desc">Requires downloaded external scripts to be signed, but executes local, user-authored script trees freely.</span>
+                                    <span class="type-desc" data-i18n="pill3_desc">Requires downloaded external scripts to be signed, but executes local, user-authored script trees freely.</span>
                                     <span class="type-example">Standard Dev Choice</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">Unrestricted</span>
-                                    <span class="type-desc">Bypasses all signing restrictions. Runs any script file but warns you before evaluating internet assets.</span>
+                                    <span class="type-desc" data-i18n="pill4_desc">Bypasses all signing restrictions. Runs any script file but warns you before evaluating internet assets.</span>
                                     <span class="type-example">Risk Zone Node</span>
                                 </div>
                             </div>
@@ -142,7 +142,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
                                 <span data-i18n="s3_title">File System Provider Navigation</span>
                             </h2>
-                            <p data-i18n="s1_intro">PowerShell uses abstraction layers called **Providers** to expose various data repositories—such as the Windows Registry, environment variables, or local certificate silos—as if they were standard file system drives.</p>
+                            <p data-i18n="s3_intro">PowerShell uses abstraction layers called **Providers** to expose various data repositories—such as the Windows Registry, environment variables, or local certificate silos—as if they were standard file system drives.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">ps1 · paths.ps1</span>
@@ -161,7 +161,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
                                 <span data-i18n="s4_title">Strongly-Typed Variables &amp; Arrays</span>
                             </h2>
-                            <p data-i18n="s1_intro">Variables are prefixed with the dollar symbol (<code>$</code>). Because they wrap full **.NET Objects**, you can dynamically query properties or pass variable payloads explicitly to typed constraint fields.</p>
+                            <p data-i18n="s4_intro">Variables are prefixed with the dollar symbol (<code>$</code>). Because they wrap full **.NET Objects**, you can dynamically query properties or pass variable payloads explicitly to typed constraint fields.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">ps1 · data.ps1</span>
@@ -180,7 +180,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
                                 <span data-i18n="s5_title">Logical Branching &amp; Operators</span>
                             </h2>
-                            <p data-i18n="s1_intro">PowerShell does not use standard symbols (like <code>&gt;</code> or <code>==</code>) for comparison logic, because those tokens are reserved for stream redirection. Instead, it relies on dedicated **dash-based operators**.</p>
+                            <p data-i18n="s5_intro">PowerShell does not use standard symbols (like <code>&gt;</code> or <code>==</code>) for comparison logic, because those tokens are reserved for stream redirection. Instead, it relies on dedicated **dash-based operators**.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">ps1 · conditional.ps1</span>
@@ -204,7 +204,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
                                 <span data-i18n="s6_title">Loops &amp; Pipeline Iteration ($_)</span>
                             </h2>
-                            <p data-i18n="s1_intro">PowerShell provides classic control loops along with the highly optimized <code>ForEach-Object</code> pipeline cmdlet, which evaluates incoming elements sequentially via the automatic pipeline variable <code>$_</code>.</p>
+                            <p data-i18n="s6_intro">PowerShell provides classic control loops along with the highly optimized <code>ForEach-Object</code> pipeline cmdlet, which evaluates incoming elements sequentially via the automatic pipeline variable <code>$_</code>.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">ps1 · loops.ps1</span>
@@ -222,7 +222,7 @@
                             </div>
                             <div class="info-box danger">
                                 <i class="fa-solid fa-triangle-exclamation"></i>
-                                <span>**Sub-expression expansions require specific wrapping!** If you reference an object's sub-property inside double quotes, you must wrap it in the sub-expression syntax <code>$($Object.Property)</code>. Writing <code>"$_.FullName"</code> will simply print the object's base string representation followed by a literal ".FullName" suffix.</span>
+                                <span data-i18n="tip1">**Sub-expression expansions require specific wrapping!** If you reference an object's sub-property inside double quotes, you must wrap it in the sub-expression syntax <code>$($Object.Property)</code>. Writing <code>"$_.FullName"</code> will simply print the object's base string representation followed by a literal ".FullName" suffix.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -231,7 +231,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
                                 <span data-i18n="s7_title">The Object Pipeline vs Text Streams</span>
                             </h2>
-                            <p data-i18n="s1_intro">When you pipe data in PowerShell, you are passing full, structured objects rather than raw strings of text. This design avoids complex regex filtering or text splitting (like <code>awk</code> or <code>cut</code>), allowing you to filter, sort, or inspect fields directly by their property names.</p>
+                            <p data-i18n="s7_intro">When you pipe data in PowerShell, you are passing full, structured objects rather than raw strings of text. This design avoids complex regex filtering or text splitting (like <code>awk</code> or <code>cut</code>), allowing you to filter, sort, or inspect fields directly by their property names.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">ps1 · pipeline.ps1</span>
@@ -250,7 +250,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
                                 <span data-i18n="s8_title">WMI/CIM &amp; System Process Handling</span>
                             </h2>
-                            <p data-i18n="s1_intro">PowerShell interfaces directly with the host operating system kernel using the **CIM (Common Information Model)** architecture, enabling comprehensive instrumentation and management of both local and remote nodes.</p>
+                            <p data-i18n="s8_intro">PowerShell interfaces directly with the host operating system kernel using the **CIM (Common Information Model)** architecture, enabling comprehensive instrumentation and management of both local and remote nodes.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">ps1 · system.ps1</span>
@@ -264,7 +264,7 @@
                             </div>
                             <div class="info-box tip">
                                 <i class="fa-solid fa-lightbulb"></i>
-                                <span>Now that you understand the object-oriented nature of PowerShell, you can build declarative infrastructure models using **DSC (Desired State Configuration)** or construct modular provisioning workflows.</span>
+                                <span data-i18n="tip2">Now that you understand the object-oriented nature of PowerShell, you can build declarative infrastructure models using **DSC (Desired State Configuration)** or construct modular provisioning workflows.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -314,11 +314,18 @@
             function copyCode(btn) {
                 const pre  = btn.closest('.code-block').querySelector('pre');
                 const text = pre.innerText;
+                const lang = localStorage.getItem('lang') || 'en';
+                const labels = {
+                  en: { copy: 'Copy', copied: 'Copied!' },
+                  it: { copy: 'Copia', copied: 'Copiato!' },
+                  es: { copy: 'Copiar', copied: '¡Copiado!' }
+                };
+                const l = labels[lang] || labels.en;
                 navigator.clipboard.writeText(text).then(() => {
-                    btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                    btn.innerHTML = '<i class="fa-solid fa-check"></i> ' + l.copied;
                     btn.classList.add('copied');
                     setTimeout(() => {
-                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy';
+                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> ' + l.copy;
                         btn.classList.remove('copied');
                     }, 2000);
                 });

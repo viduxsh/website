@@ -112,36 +112,36 @@ Hello world! This is a minimal compiled PDF output document.
                                 <span class="section-icon" style="background: var(--guide-accent-2);">2</span>
                                 <span data-i18n="s2_title">Core Text Layout &amp; Formatting</span>
                             </h2>
-                            <p data-i18n="s1_intro">Text properties rely on structural commands. Empty lines separate target paragraphs automatically, while specific operators apply typographic styles without breaking base font rules.</p>
+                            <p data-i18n="s2_intro">Text properties rely on structural commands. Empty lines separate target paragraphs automatically, while specific operators apply typographic styles without breaking base font rules.</p>
                             <div class="type-grid">
                                 <div class="type-pill">
                                     <span class="type-name">\textbf{text}</span>
-                                    <span class="type-desc">Bold weight font face modification</span>
+                                    <span class="type-desc" data-i18n="pill1_desc">Bold weight font face modification</span>
                                     <span class="type-example">\textbf{Bold text}</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">\textit{text}</span>
-                                    <span class="type-desc">Italicized emphasis font transformation</span>
+                                    <span class="type-desc" data-i18n="pill2_desc">Italicized emphasis font transformation</span>
                                     <span class="type-example">\textit{Italic text}</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">\texttt{text}</span>
-                                    <span class="type-desc">Monospaced font execution environment</span>
+                                    <span class="type-desc" data-i18n="pill3_desc">Monospaced font execution environment</span>
                                     <span class="type-example">\texttt{code_block}</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">\underline{text}</span>
-                                    <span class="type-desc">Explicit base-level text underline track</span>
+                                    <span class="type-desc" data-i18n="pill4_desc">Explicit base-level text underline track</span>
                                     <span class="type-example">\underline{Important}</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">\\</span>
-                                    <span class="type-desc">Forces an immediate hard line break</span>
+                                    <span class="type-desc" data-i18n="pill5_desc">Forces an immediate hard line break</span>
                                     <span class="type-example">Line 1 \\ Line 2</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">\%</span>
-                                    <span class="type-desc">Escapes the native comment parameter token</span>
+                                    <span class="type-desc" data-i18n="pill6_desc">Escapes the native comment parameter token</span>
                                     <span class="type-example">Value: 100\%</span>
                                 </div>
                             </div>
@@ -152,7 +152,7 @@ Hello world! This is a minimal compiled PDF output document.
                                 <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
                                 <span data-i18n="s3_title">Sections &amp; Hierarchy Management</span>
                             </h2>
-                            <p data-i18n="s1_intro">Organize long manuals or engineering blueprints using structural nodes. The engine keeps track of numbering automatically and compiles indexed matrices natively.</p>
+                            <p data-i18n="s3_intro">Organize long manuals or engineering blueprints using structural nodes. The engine keeps track of numbering automatically and compiles indexed matrices natively.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">tex · structure.tex</span>
@@ -177,7 +177,7 @@ Deep block layout detailing concrete programmatic instruction parameters.
                                 <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
                                 <span data-i18n="s4_title">Mathematical Typesetting Modes</span>
                             </h2>
-                            <p data-i18n="s1_intro">LaTeX excels at mathematical notation. You can render equations inline using single dollar delimiters or display them as centered, standalone blocks using double dollar boundaries.</p>
+                            <p data-i18n="s4_intro">LaTeX excels at mathematical notation. You can render equations inline using single dollar delimiters or display them as centered, standalone blocks using double dollar boundaries.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">tex · math.tex</span>
@@ -200,7 +200,7 @@ You can also use numbered environments for reference mapping:
                                 <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
                                 <span data-i18n="s5_title">Lists &amp; Enumeration Environments</span>
                             </h2>
-                            <p data-i18n="s1_intro">Lists manage grouped items. Use the <code>itemize</code> environment for bulleted logs or <code>enumerate</code> to build sequenced, numbered hierarchies.</p>
+                            <p data-i18n="s5_intro">Lists manage grouped items. Use the <code>itemize</code> environment for bulleted logs or <code>enumerate</code> to build sequenced, numbered hierarchies.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">tex · lists.tex</span>
@@ -222,7 +222,7 @@ You can also use numbered environments for reference mapping:
                                 <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
                                 <span data-i18n="s6_title">Floating Figures &amp; Image Assets</span>
                             </h2>
-                            <p data-i18n="s1_intro">Images use floating containers. LaTeX calculates where to place them dynamically based on spatial optimization parameters, avoiding awkward layout breaks across pages.</p>
+                            <p data-i18n="s6_intro">Images use floating containers. LaTeX calculates where to place them dynamically based on spatial optimization parameters, avoiding awkward layout breaks across pages.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">tex · figures.tex</span>
@@ -239,7 +239,7 @@ As visualized in Figure~<span class="kw">\ref</span>{fig:sys_diag}, the executio
                             </div>
                             <div class="info-box danger">
                                 <i class="fa-solid fa-triangle-exclamation"></i>
-                                <span>Always declare <code>\label</code> parameters **after the caption command**. Swapping this order breaks the cross-reference indexing chain, causing misnumbered link tracks.</span>
+                                <span data-i18n="tip1">Always declare <code>\label</code> parameters **after the caption command**. Swapping this order breaks the cross-reference indexing chain, causing misnumbered link tracks.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -248,7 +248,7 @@ As visualized in Figure~<span class="kw">\ref</span>{fig:sys_diag}, the executio
                                 <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
                                 <span data-i18n="s7_title">Tables &amp; Alignment Grids</span>
                             </h2>
-                            <p data-i18n="s1_intro">Tables use the <code>tabular</code> block environment. You define explicit column count boundaries and structural alignment flags using pipe tokens and ampersands.</p>
+                            <p data-i18n="s7_intro">Tables use the <code>tabular</code> block environment. You define explicit column count boundaries and structural alignment flags using pipe tokens and ampersands.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">tex · tables.tex</span>
@@ -270,7 +270,7 @@ As visualized in Figure~<span class="kw">\ref</span>{fig:sys_diag}, the executio
                                 <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
                                 <span data-i18n="s8_title">Citations &amp; BibTeX Bibliographies</span>
                             </h2>
-                            <p data-i18n="s1_intro">Separate bibliographic data records from your text layouts. Using standard **BibTeX files**, you can inject citation nodes that assemble, format, and alphabetize references automatically.</p>
+                            <p data-i18n="s8_intro">Separate bibliographic data records from your text layouts. Using standard **BibTeX files**, you can inject citation nodes that assemble, format, and alphabetize references automatically.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">bib · references.bib</span>
@@ -297,7 +297,7 @@ As visualized in Figure~<span class="kw">\ref</span>{fig:sys_diag}, the executio
                             </div>
                             <div class="info-box tip">
                                 <i class="fa-solid fa-lightbulb"></i>
-                                <span>With fundamental document blocks mastered, your next evolutionary steps cover custom macro creation via <code>\newcommand</code> and multi-file tracking layouts.</span>
+                                <span data-i18n="tip2">With fundamental document blocks mastered, your next evolutionary steps cover custom macro creation via <code>\newcommand</code> and multi-file tracking layouts.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -347,11 +347,18 @@ As visualized in Figure~<span class="kw">\ref</span>{fig:sys_diag}, the executio
             function copyCode(btn) {
                 const pre  = btn.closest('.code-block').querySelector('pre');
                 const text = pre.innerText;
+                const lang = localStorage.getItem('lang') || 'en';
+                const labels = {
+                  en: { copy: 'Copy', copied: 'Copied!' },
+                  it: { copy: 'Copia', copied: 'Copiato!' },
+                  es: { copy: 'Copiar', copied: '¡Copiado!' }
+                };
+                const l = labels[lang] || labels.en;
                 navigator.clipboard.writeText(text).then(() => {
-                    btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                    btn.innerHTML = '<i class="fa-solid fa-check"></i> ' + l.copied;
                     btn.classList.add('copied');
                     setTimeout(() => {
-                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy';
+                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> ' + l.copy;
                         btn.classList.remove('copied');
                     }, 2000);
                 });

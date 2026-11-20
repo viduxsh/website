@@ -29,7 +29,17 @@
     "s5_intro": "Unlike standard desktop software execution loops, the Android system controls process memory allocations directly. Visual containers called **Activities** travel along a strict state path to adapt smoothly to device interruptions.",
     "s6_intro": "An application system interaction layer is constructed by utilizing varying combinations of the **Four Fundamental Component Elements** managed directly by the Android OS runtime layer.",
     "s7_intro": "Android runs all interface drawing operations on a single, isolated execution track known as the **Main Thread** (or UI Thread). Forcing network requests or file modifications onto this track locks up the UI, triggering an immediate app freeze.",
-    "s8_intro": "Whether you choose to write your app logic in Java or Kotlin, both toolchains emit standard JVM instructions. A secondary compilation phase then compresses these bytecode files into custom register configurations optimized for mobile devices."
+    "s8_intro": "Whether you choose to write your app logic in Java or Kotlin, both toolchains emit standard JVM instructions. A secondary compilation phase then compresses these bytecode files into custom register configurations optimized for mobile devices.",
+    "copy_btn": "Copy",
+    "copied_btn": "Copied!",
+    "tip1": "**Intents serve as the core structural binding adhesive.** They act as asynchronous communication tokens used to launch different Activities or dispatch messaging payloads across distinct sandboxed OS processes.",
+    "tip2": "With the agnostic structural blueprint of an Android project clear, you can confidently delve into **Java view management systems** or master declarative UI trees using modern **Jetpack Compose in Kotlin**.",
+    "pill1_desc": "Vector assets (XML path definitions) or bitmap image arrays",
+    "pill2_desc": "Traditional XML screen rendering matrix schemas (not used in pure Compose)",
+    "pill3_desc": "Localized textual strings to enable clean multi-language translation management",
+    "pill4_desc": "Style parameter configurations mapping color flags and core typography attributes",
+    "pill5_desc": "Device application execution launcher icon matrices clipped per pixel densities",
+    "pill6_desc": "Arbitrary structural system configuration components (e.g., Network Security configs)"
   },
   "it": {
     "back_coding": "Guide di Coding",
@@ -61,7 +71,17 @@
     "s5_intro": "A differenza del software desktop tradizionale, il sistema operativo Android può distruggere e ricreare le Activity in qualsiasi momento.",
     "s6_intro": "L'interazione con il sistema Android si basa su quattro pilastri fondamentali dell'applicazione: Activity, Service, BroadcastReceiver e ContentProvider.",
     "s7_intro": "Android esegue tutte le operazioni di rendering su un singolo thread principale (UI Thread). I task pesanti devono essere delegati in background.",
-    "s8_intro": "Sia che tu scriva la logica in Java o in Kotlin, entrambi i linguaggi vengono compilati in bytecode DEX ed eseguiti dalla Android Runtime (ART)."
+    "s8_intro": "Sia che tu scriva la logica in Java o in Kotlin, entrambi i linguaggi vengono compilati in bytecode DEX ed eseguiti dalla Android Runtime (ART).",
+    "copy_btn": "Copia",
+    "copied_btn": "Copiato!",
+    "tip1": "<strong>Gli Intent fungono da collante architetturale principale.</strong> Agiscono come messaggi asincroni che collegano Activity, avviano Service in background o inviano notifiche di sistema a Broadcast Receiver registrati.",
+    "tip2": "Con chiara la struttura agnostica di un progetto Android, il prossimo passo naturale è approfondire le <strong>Kotlin Coroutines</strong> per la gestione del threading o passare alla creazione di interfacce dichiarative moderne con <strong>Jetpack Compose</strong>.",
+    "pill1_desc": "Asset vettoriali (definizioni XML) o matrici bitmap",
+    "pill2_desc": "Schemi di rendering interfaccia XML tradizionali",
+    "pill3_desc": "Stringhe testuali localizzate per la gestione multilingua",
+    "pill4_desc": "Configurazioni di stile per colori e tipografia",
+    "pill5_desc": "Icone di avvio dell'app ritagliate per densità di pixel",
+    "pill6_desc": "Componenti di configurazione del sistema (es. sicurezza di rete)"
   },
   "es": {
     "back_coding": "Guías de Coding",
@@ -93,6 +113,16 @@
     "s5_intro": "A diferencia del software de escritorio clásico, el sistema Android puede destruir y recrear Activities en cualquier momento según la memoria.",
     "s6_intro": "La arquitectura de interacción de Android se construye sobre cuatro componentes esenciales: Activity, Service, BroadcastReceiver y ContentProvider.",
     "s7_intro": "Android ejecuta el dibujo de interfaz en un único hilo principal (UI Thread). Las tareas pesadas deben delegarse a trabajadores en segundo plano.",
-    "s8_intro": "Ya sea que escribas en Java o Kotlin, el código se compila a bytecode DEX y es ejecutado de forma nativa por el entorno Android Runtime (ART)."
+    "s8_intro": "Ya sea que escribas en Java o Kotlin, el código se compila a bytecode DEX y es ejecutado de forma nativa por el entorno Android Runtime (ART).",
+    "copy_btn": "Copiar",
+    "copied_btn": "¡Copiado!",
+    "tip1": "<strong>Los Intents actúan como el enlace estructural clave.</strong> Funcionan como mensajes asíncronos que conectan Activities, inician Services en segundo plano o envían notificaciones del sistema a Broadcast Receivers registrados.",
+    "tip2": "Con clara la estructura agnóstica de un proyecto Android, el siguiente paso natural es profundizar en las <strong>Kotlin Coroutines</strong> para la gestión de hilos o pasar a crear interfaces declarativas modernas con <strong>Jetpack Compose</strong>.",
+    "pill1_desc": "Recursos vectoriales (definiciones XML) o mapas de bits",
+    "pill2_desc": "Esquemas tradicionales de renderizado de interfaz XML",
+    "pill3_desc": "Cadenas de texto localizadas para gestión multilingüe",
+    "pill4_desc": "Configuraciones de estilo para colores y tipografía",
+    "pill5_desc": "Iconos de inicio de la aplicación según densidades de píxel",
+    "pill6_desc": "Componentes de configuración del sistema (ej. seguridad de red)"
   }
 }

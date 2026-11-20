@@ -106,7 +106,7 @@
                             </div>
                             <div class="info-box tip">
                                 <i class="fa-solid fa-lightbulb"></i>
-                                <span>You can run JavaScript directly in the browser console without any file — just open DevTools (<kbd>F12</kbd>), go to the <strong>Console</strong> tab, and type code.</span>
+                                <span data-i18n="tip1">You can run JavaScript directly in the browser console without any file — just open DevTools (<kbd>F12</kbd>), go to the <strong>Console</strong> tab, and type code.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -115,36 +115,36 @@
                                 <span class="section-icon" style="background: var(--guide-accent-1);">2</span>
                                 <span data-i18n="s2_title">Variables &amp; Data Types</span>
                             </h2>
-                            <p data-i18n="s1_intro">JavaScript has three ways to declare variables: <code>let</code> (reassignable), <code>const</code> (constant), and the older <code>var</code> (avoid in modern code). Types are determined at runtime.</p>
+                            <p data-i18n="s2_intro">JavaScript has three ways to declare variables: <code>let</code> (reassignable), <code>const</code> (constant), and the older <code>var</code> (avoid in modern code). Types are determined at runtime.</p>
                             <div class="type-grid">
                                 <div class="type-pill">
                                     <span class="type-name">Number</span>
-                                    <span class="type-desc">Integers &amp; floats</span>
+                                    <span class="type-desc" data-i18n="pill1_desc">Integers &amp; floats</span>
                                     <span class="type-example">42, 3.14, -7</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">String</span>
-                                    <span class="type-desc">Text</span>
+                                    <span class="type-desc" data-i18n="pill2_desc">Text</span>
                                     <span class="type-example">"hello", 'hi'</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">Boolean</span>
-                                    <span class="type-desc">True or False</span>
+                                    <span class="type-desc" data-i18n="pill3_desc">True or False</span>
                                     <span class="type-example">true, false</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">null</span>
-                                    <span class="type-desc">Intentional empty</span>
+                                    <span class="type-desc" data-i18n="pill4_desc">Intentional empty</span>
                                     <span class="type-example">null</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">undefined</span>
-                                    <span class="type-desc">Not yet assigned</span>
+                                    <span class="type-desc" data-i18n="pill5_desc">Not yet assigned</span>
                                     <span class="type-example">undefined</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">Object</span>
-                                    <span class="type-desc">Key-value pairs</span>
+                                    <span class="type-desc" data-i18n="pill6_desc">Key-value pairs</span>
                                     <span class="type-example">{ key: val }</span>
                                 </div>
                             </div>
@@ -174,7 +174,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
                                 <span data-i18n="s3_title">Operators</span>
                             </h2>
-                            <p data-i18n="s1_intro">JavaScript operators work similarly to other languages. Pay attention to <code>==</code> vs <code>===</code> — always prefer <strong>strict equality</strong> (<code>===</code>) to avoid unexpected type coercion.</p>
+                            <p data-i18n="s3_intro">JavaScript operators work similarly to other languages. Pay attention to <code>==</code> vs <code>===</code> — always prefer <strong>strict equality</strong> (<code>===</code>) to avoid unexpected type coercion.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">javascript · operators.js</span>
@@ -200,7 +200,7 @@
                             </div>
                             <div class="info-box warn">
                                 <i class="fa-solid fa-triangle-exclamation"></i>
-                                <span>Always use <code>===</code> and <code>!==</code> in JavaScript. The loose operators (<code>==</code>, <code>!=</code>) perform type coercion which leads to subtle bugs.</span>
+                                <span data-i18n="tip2">Always use <code>===</code> and <code>!==</code> in JavaScript. The loose operators (<code>==</code>, <code>!=</code>) perform type coercion which leads to subtle bugs.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -209,7 +209,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
                                 <span data-i18n="s4_title">Strings &amp; Template Literals</span>
                             </h2>
-                            <p data-i18n="s1_intro">Strings can be written with single quotes, double quotes, or backticks. Backtick strings (template literals) let you embed expressions with <code>${ }</code> and span multiple lines.</p>
+                            <p data-i18n="s4_intro">Strings can be written with single quotes, double quotes, or backticks. Backtick strings (template literals) let you embed expressions with <code>${ }</code> and span multiple lines.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">javascript · strings.js</span>
@@ -247,7 +247,7 @@ Line three`</span>
                                 <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
                                 <span data-i18n="s5_title">Conditionals</span>
                             </h2>
-                            <p data-i18n="s1_intro">JavaScript supports <code>if / else if / else</code>, the ternary operator, and <code>switch</code> for multi-branch logic.</p>
+                            <p data-i18n="s5_intro">JavaScript supports <code>if / else if / else</code>, the ternary operator, and <code>switch</code> for multi-branch logic.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">javascript · conditionals.js</span>
@@ -286,7 +286,7 @@ Line three`</span>
                                 <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
                                 <span data-i18n="s6_title">Loops</span>
                             </h2>
-                            <p data-i18n="s1_intro">JavaScript offers <code>for</code>, <code>while</code>, <code>for...of</code> (iterating values) and <code>for...in</code> (iterating object keys).</p>
+                            <p data-i18n="s6_intro">JavaScript offers <code>for</code>, <code>while</code>, <code>for...of</code> (iterating values) and <code>for...in</code> (iterating object keys).</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">javascript · loops.js</span>
@@ -324,7 +324,7 @@ Line three`</span>
                                 <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
                                 <span data-i18n="s7_title">Arrays &amp; Objects</span>
                             </h2>
-                            <p data-i18n="s1_intro"><strong>Arrays</strong> store ordered lists of values. <strong>Objects</strong> store key-value pairs and are the backbone of JavaScript data structures.</p>
+                            <p data-i18n="s7_intro"><strong>Arrays</strong> store ordered lists of values. <strong>Objects</strong> store key-value pairs and are the backbone of JavaScript data structures.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">javascript · collections.js</span>
@@ -366,7 +366,7 @@ Line three`</span>
                                 <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
                                 <span data-i18n="s8_title">Functions</span>
                             </h2>
-                            <p data-i18n="s1_intro">JavaScript has three common ways to define functions: <strong>function declarations</strong>, <strong>function expressions</strong>, and the modern <strong>arrow functions</strong> (<code>=&gt;</code>).</p>
+                            <p data-i18n="s8_intro">JavaScript has three common ways to define functions: <strong>function declarations</strong>, <strong>function expressions</strong>, and the modern <strong>arrow functions</strong> (<code>=&gt;</code>).</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">javascript · functions.js</span>
@@ -396,7 +396,7 @@ Line three`</span>
                             </div>
                             <div class="info-box tip">
                                 <i class="fa-solid fa-lightbulb"></i>
-                                <span>This covers the fundamentals of JavaScript. Next steps: explore <strong>DOM manipulation</strong>, <strong>Events</strong>, <strong>Promises &amp; async/await</strong>, and <strong>Fetch API</strong> for working with web pages and APIs.</span>
+                                <span data-i18n="tip3">This covers the fundamentals of JavaScript. Next steps: explore <strong>DOM manipulation</strong>, <strong>Events</strong>, <strong>Promises &amp; async/await</strong>, and <strong>Fetch API</strong> for working with web pages and APIs.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -446,11 +446,18 @@ Line three`</span>
             function copyCode(btn) {
                 const pre  = btn.closest('.code-block').querySelector('pre');
                 const text = pre.innerText;
+                const lang = localStorage.getItem('lang') || 'en';
+                const labels = {
+                  en: { copy: 'Copy', copied: 'Copied!' },
+                  it: { copy: 'Copia', copied: 'Copiato!' },
+                  es: { copy: 'Copiar', copied: '¡Copiado!' }
+                };
+                const l = labels[lang] || labels.en;
                 navigator.clipboard.writeText(text).then(() => {
-                    btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                    btn.innerHTML = '<i class="fa-solid fa-check"></i> ' + l.copied;
                     btn.classList.add('copied');
                     setTimeout(() => {
-                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy';
+                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> ' + l.copy;
                         btn.classList.remove('copied');
                     }, 2000);
                 });

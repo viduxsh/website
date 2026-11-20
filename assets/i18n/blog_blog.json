@@ -1,5 +1,7 @@
 {
   "en": {
+    "page_browser_title": "vidux.sh - Blog",
+    "page_description": "Blog - vidux.sh",
     "page_title": "My Blog",
     "page_subtitle": "Thoughts, tech insights, and personal updates.",
     "cat_coding": "Coding",
@@ -8,9 +10,15 @@
     "cat_motor": "Motor",
     "cat_sport": "Sport",
     "cat_technology": "Technology",
-    "cat_work": "Work"
+    "cat_work": "Work",
+    "theme_toggle_title": "Toggle Theme",
+    "footer_location": "Udine, Italy",
+    "footer_location_alt": "Location",
+    "footer_loading": "Loading..."
   },
   "it": {
+    "page_browser_title": "vidux.sh - Blog",
+    "page_description": "Blog - vidux.sh",
     "page_title": "Il mio Blog",
     "page_subtitle": "Pensieri, approfondimenti tech e aggiornamenti personali.",
     "cat_coding": "Coding",
@@ -19,9 +27,15 @@
     "cat_motor": "Motori",
     "cat_sport": "Sport",
     "cat_technology": "Tecnologia",
-    "cat_work": "Lavoro"
+    "cat_work": "Lavoro",
+    "theme_toggle_title": "Cambia tema",
+    "footer_location": "Udine, Italia",
+    "footer_location_alt": "Posizione",
+    "footer_loading": "Caricamento..."
   },
   "es": {
+    "page_browser_title": "vidux.sh - Blog",
+    "page_description": "Blog - vidux.sh",
     "page_title": "Mi Blog",
     "page_subtitle": "Pensamientos, artículos tecnológicos y actualizaciones personales.",
     "cat_coding": "Coding",
@@ -34,6 +48,10 @@
     "footer_contact": "Contacto",
     "footer_about": "Sobre mí",
     "footer_visits": "Visitas totales:",
-    "footer_design": "Diseño de"
+    "footer_design": "Diseño de",
+    "theme_toggle_title": "Cambiar tema",
+    "footer_location": "Udine, Italia",
+    "footer_location_alt": "Ubicación",
+    "footer_loading": "Cargando..."
   }
 }

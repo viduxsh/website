@@ -29,7 +29,17 @@
     "s5_intro": "Methods declare parameters with strict visibility and return signatures. Use shorthand expressions (<code>=&gt;</code>) for simple operations, and leverage **Auto-Implemented Properties** to safely encapsulate state fields.",
     "s6_intro": "C# implements a classic Object-Oriented paradigm featuring single class inheritance and explicit interface contracts. It also supports **Records**, which provide lightweight, immutable data structures out of the box.",
     "s7_intro": "Handle runtime faults gracefully using <code>try-catch-finally</code> blocks. For external resources like network links or file streams, always use the <code>using</code> declaration statement to guarantee memory cleanup through `IDisposable` execution blocks.",
-    "s8_intro": "**Language Integrated Query (LINQ)** provides a powerful, type-safe syntax to filter, transform, and aggregate data collections cleanly—whether operating on arrays or remote database entities."
+    "s8_intro": "**Language Integrated Query (LINQ)** provides a powerful, type-safe syntax to filter, transform, and aggregate data collections cleanly—whether operating on arrays or remote database entities.",
+    "copy_btn": "Copy",
+    "copied_btn": "Copied!",
+    "tip1": "Classes use reference equality, whereas **Records implement value-based equality checking automatically**. Comparing two identical record instances with <code>==</code> evaluates to <code>true</code>.",
+    "tip2": "With C# fundamentals solidified, you are ready to build cross-platform APIs using **ASP.NET Core** frameworks or integrate performant entity mappers like **Entity Framework Core**.",
+    "pill1_desc": "32-bit and 64-bit signed integers",
+    "pill2_desc": "128-bit high precision financial type",
+    "pill3_desc": "Standard boolean true/false state",
+    "pill4_desc": "Immutable sequence of UTF-16 characters",
+    "pill5_desc": "Strongly-typed dynamic array list",
+    "pill6_desc": "Wraps value types to allow null values"
   },
   "it": {
     "back_coding": "Guide di Coding",
@@ -61,7 +71,17 @@
     "s5_intro": "Language Integrated Query (LINQ) unifica l'interrogazione e la manipolazione di collezioni in memoria, file XML e database.",
     "s6_intro": "Il pattern <code>async/await</code> basato su <code>Task</code> semplifica le operazioni I/O asincrone senza bloccare il thread di esecuzione.",
     "s7_intro": "Le collezioni generiche come <code>List&lt;T&gt;</code> e <code>Dictionary&lt;TKey, TValue&gt;</code> garantiscono sicurezza dei tipi e massime prestazioni.",
-    "s8_intro": "La dichiarazione <code>using</code> assicura che connessioni, file e risorse non gestite vengano rilasciate tempestivamente mediante <code>Dispose()</code>."
+    "s8_intro": "La dichiarazione <code>using</code> assicura che connessioni, file e risorse non gestite vengano rilasciate tempestivamente mediante <code>Dispose()</code>.",
+    "copy_btn": "Copia",
+    "copied_btn": "Copiato!",
+    "tip1": "Le classi utilizzano l'uguaglianza per riferimento, mentre i <strong>Record implementano il confronto per valore</strong> in modo nativo, rendendoli la scelta perfetta per DTO immutabili e messaggi di eventi.",
+    "tip2": "Con le basi di C# consolidate, sei pronto per costruire API cloud ad alte prestazioni con <strong>ASP.NET Core</strong> o mappare database in modo relazionale con <strong>Entity Framework Core</strong>.",
+    "pill1_desc": "Interi con segno a 32 e 64 bit",
+    "pill2_desc": "Tipo finanziario ad altissima precisione a 128 bit",
+    "pill3_desc": "Stato booleano standard vero/falso",
+    "pill4_desc": "Sequenza immutabile di caratteri UTF-16",
+    "pill5_desc": "Lista dinamica fortemente tipizzata",
+    "pill6_desc": "Consente a tipi valore di accettare null"
   },
   "es": {
     "back_coding": "Guías de Coding",
@@ -93,6 +113,16 @@
     "s5_intro": "LINQ proporciona una sintaxis unificada y expresiva para filtrar, ordenar y transformar colecciones y orígenes de bases de datos relacionales.",
     "s6_intro": "El modelo asíncrono basado en <code>Task</code> libera los hilos de interfaz y servidor mientras se esperan respuestas de disco o red.",
     "s7_intro": "Estructuras como <code>List&lt;T&gt;</code> y diccionarios genéricos optimizan la memoria evitando conversiones innecesarias de boxing y unboxing.",
-    "s8_intro": "La declaración <code>using</code> garantiza la liberación inmediata de recursos externos, sockets o archivos abiertos cerrándolos al terminar el bloque."
+    "s8_intro": "La declaración <code>using</code> garantiza la liberación inmediata de recursos externos, sockets o archivos abiertos cerrándolos al terminar el bloque.",
+    "copy_btn": "Copiar",
+    "copied_btn": "¡Copiado!",
+    "tip1": "Las clases utilizan la igualdad por referencia, mientras que los <strong>Records implementan la comparación por valor</strong> de forma nativa, haciéndolos ideales para DTOs inmutables y mensajes de eventos.",
+    "tip2": "Con las bases de C# consolidadas, estás listo para crear APIs en la nube de alto rendimiento con <strong>ASP.NET Core</strong> o mapear bases de datos con <strong>Entity Framework Core</strong>.",
+    "pill1_desc": "Enteros con signo de 32 y 64 bits",
+    "pill2_desc": "Tipo financiero de alta precisión a 128 bits",
+    "pill3_desc": "Estado booleano estándar verdadero/falso",
+    "pill4_desc": "Secuencia inmutable de caracteres UTF-16",
+    "pill5_desc": "Lista dinámica fuertemente tipada",
+    "pill6_desc": "Permite que tipos por valor acepten null"
   }
 }

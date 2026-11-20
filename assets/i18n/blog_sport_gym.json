@@ -1,20 +1,65 @@
 {
   "en": {
+    "page_browser_title": "vidux.sh - Gym",
+    "page_description": "Gym Training Exercises",
+    "theme_toggle_title": "Toggle Theme",
     "page_title": "My Weekly Split",
     "page_subtitle": "My personal weekly split.",
     "back_blog": "Back to Blog",
-    "back_sport": "Back to Sport"
+    "back_sport": "Back to Sport",
+    "gym_slow_movement": "Slow movement",
+    "gym_to_failure": "To failure",
+    "gym_col_exercise": "Exercise",
+    "gym_col_series": "Series/Repetitions",
+    "gym_col_recovery": "Recovery",
+    "gym_col_notes": "Notes",
+    "gym_day_legs": "Legs",
+    "gym_day_chest": "Chest",
+    "gym_day_back": "Back",
+    "gym_day_shoulders": "Shoulders",
+    "gym_day_arms": "Arms",
+    "gym_day_abs": "Abs"
   },
   "it": {
+    "page_browser_title": "vidux.sh - Palestra",
+    "page_description": "Esercizi di allenamento in palestra",
+    "theme_toggle_title": "Cambia tema",
     "page_title": "La mia Scheda Settimanale",
     "page_subtitle": "La mia scheda di allenamento settimanale.",
     "back_blog": "Torna al Blog",
-    "back_sport": "Torna allo Sport"
+    "back_sport": "Torna allo Sport",
+    "gym_slow_movement": "Movimento lento",
+    "gym_to_failure": "Al cedimento",
+    "gym_col_exercise": "Esercizio",
+    "gym_col_series": "Serie/Ripetizioni",
+    "gym_col_recovery": "Recupero",
+    "gym_col_notes": "Note",
+    "gym_day_legs": "Gambe",
+    "gym_day_chest": "Petto",
+    "gym_day_back": "Schiena",
+    "gym_day_shoulders": "Spalle",
+    "gym_day_arms": "Braccia",
+    "gym_day_abs": "Addominali"
   },
   "es": {
+    "page_browser_title": "vidux.sh - Gimnasio",
+    "page_description": "Ejercicios de entrenamiento de gimnasio",
+    "theme_toggle_title": "Cambiar tema",
     "page_title": "Mi Rutina Semanal",
     "page_subtitle": "Mi rutina semanal de entrenamiento personal.",
     "back_blog": "Volver al Blog",
-    "back_sport": "Volver a Deportes"
+    "back_sport": "Volver a Deportes",
+    "gym_slow_movement": "Movimiento lento",
+    "gym_to_failure": "Al fallo",
+    "gym_col_exercise": "Ejercicio",
+    "gym_col_series": "Series/Repeticiones",
+    "gym_col_recovery": "Descanso",
+    "gym_col_notes": "Notas",
+    "gym_day_legs": "Piernas",
+    "gym_day_chest": "Pecho",
+    "gym_day_back": "Espalda",
+    "gym_day_shoulders": "Hombros",
+    "gym_day_arms": "Brazos",
+    "gym_day_abs": "Abdominales"
   }
 }

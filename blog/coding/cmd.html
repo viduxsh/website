@@ -104,26 +104,26 @@
                                 <span class="section-icon" style="background: var(--guide-accent-2);">2</span>
                                 <span data-i18n="s2_title">File System Navigation (Drives &amp; Paths)</span>
                             </h2>
-                            <p data-i18n="s1_intro">CMD utilizes backslashes (<code>\</code>) for system paths. Unlike modern systems, typing <code>cd</code> to shift directories across different hardware or partition volumes will fail unless you include a specific flag to unlock cross-volume stepping.</p>
+                            <p data-i18n="s2_intro">CMD utilizes backslashes (<code>\</code>) for system paths. Unlike modern systems, typing <code>cd</code> to shift directories across different hardware or partition volumes will fail unless you include a specific flag to unlock cross-volume stepping.</p>
                             <div class="type-grid">
                                 <div class="type-pill">
                                     <span class="type-name">cd</span>
-                                    <span class="type-desc">Prints the current operational path location when called standalone without arguments.</span>
+                                    <span class="type-desc" data-i18n="pill1_desc">Prints the current operational path location when called standalone without arguments.</span>
                                     <span class="type-example">C:\Users\Ivan</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">cd /d D:\data</span>
-                                    <span class="type-desc">The essential /d switch shifts both the targeted active directory path and the physical volume tier simultaneously.</span>
+                                    <span class="type-desc" data-i18n="pill2_desc">The essential /d switch shifts both the targeted active directory path and the physical volume tier simultaneously.</span>
                                     <span class="type-example">Changes Drive &amp; Folder</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">dir</span>
-                                    <span class="type-desc">Exposes structural contents of the current directory. Include /a to view hidden assets.</span>
+                                    <span class="type-desc" data-i18n="pill3_desc">Exposes structural contents of the current directory. Include /a to view hidden assets.</span>
                                     <span class="type-example">Prints current directory matrix</span>
                                 </div>
                                 <div class="type-pill">
                                     <span class="type-name">cls</span>
-                                    <span class="type-desc">Flushes out all text records from the console window instantly, restoring a blank workspace grid.</span>
+                                    <span class="type-desc" data-i18n="pill4_desc">Flushes out all text records from the console window instantly, restoring a blank workspace grid.</span>
                                     <span class="type-example">Clears terminal buffer</span>
                                 </div>
                             </div>
@@ -134,7 +134,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-3);">3</span>
                                 <span data-i18n="s3_title">File Management &amp; Directory Operations</span>
                             </h2>
-                            <p data-i18n="s1_intro">CMD provides dedicated tools for copying, moving, and removing operational file payloads. For robust, enterprise-grade file replication tasks, Windows includes a powerful sub-engine called **Robocopy**.</p>
+                            <p data-i18n="s3_intro">CMD provides dedicated tools for copying, moving, and removing operational file payloads. For robust, enterprise-grade file replication tasks, Windows includes a powerful sub-engine called **Robocopy**.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">bat · file_ops.bat</span>
@@ -155,7 +155,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-5);">4</span>
                                 <span data-i18n="s4_title">Environment Variables (%VAR%)</span>
                             </h2>
-                            <p data-i18n="s1_intro">Variables are allocated using the `set` command and referenced by wrapping the token name inside percentage symbols (<code>%VAR%</code>). **CRITICAL ALLOCATION RULE:** You must never add trailing or leading spaces around the equation operator (<code>=</code>), as CMD will literally append those whitespaces directly into the key or value string.</p>
+                            <p data-i18n="s4_intro">Variables are allocated using the `set` command and referenced by wrapping the token name inside percentage symbols (<code>%VAR%</code>). **CRITICAL ALLOCATION RULE:** You must never add trailing or leading spaces around the equation operator (<code>=</code>), as CMD will literally append those whitespaces directly into the key or value string.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">bat · variables.bat</span>
@@ -175,7 +175,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-4);">5</span>
                                 <span data-i18n="s5_title">Conditional Flow &amp; Errorlevels</span>
                             </h2>
-                            <p data-i18n="s1_intro">Conditional structures evaluate runtime equations. Upon completing execution, every system application leaves an integer exit code called an **ERRORLEVEL** (where <code>0</code> signifies successful execution, and any non-zero value indicates an error).</p>
+                            <p data-i18n="s5_intro">Conditional structures evaluate runtime equations. Upon completing execution, every system application leaves an integer exit code called an **ERRORLEVEL** (where <code>0</code> signifies successful execution, and any non-zero value indicates an error).</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">bat · process_control.bat</span>
@@ -198,7 +198,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-1);">6</span>
                                 <span data-i18n="s6_title">The Batch Loop Paradigm (FOR)</span>
                             </h2>
-                            <p data-i18n="s1_intro">The <code>FOR</code> construct inside CMD uses a specialized syntax. When evaluated directly within an active terminal console shell line, loop variables use a single percent symbol (<code>%i</code>). However, inside a reusable batch script file (<code>.bat</code>), they require a double prefix (<code>%%i</code>).</p>
+                            <p data-i18n="s6_intro">The <code>FOR</code> construct inside CMD uses a specialized syntax. When evaluated directly within an active terminal console shell line, loop variables use a single percent symbol (<code>%i</code>). However, inside a reusable batch script file (<code>.bat</code>), they require a double prefix (<code>%%i</code>).</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">bat · loops.bat</span>
@@ -221,7 +221,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-3);">7</span>
                                 <span data-i18n="s7_title">Standard Redirections &amp; Piping</span>
                             </h2>
-                            <p data-i18n="s1_intro">Output streams can be suppressed or captured. You can append text blocks to logs, redirect output streams, or isolate specific matches within unstructured string arrays using the **findstr** engine.</p>
+                            <p data-i18n="s7_intro">Output streams can be suppressed or captured. You can append text blocks to logs, redirect output streams, or isolate specific matches within unstructured string arrays using the **findstr** engine.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">bat · stream_pipes.bat</span>
@@ -235,7 +235,7 @@
                             </div>
                             <div class="info-box danger">
                                 <i class="fa-solid fa-triangle-exclamation"></i>
-                                <span>**The Null Device naming convention differs from Unix!** When you want to completely suppress stdout or error outputs so they don't print to the console interface, you cannot redirect to <code>/dev/null</code>. Instead, Windows uses a special, dedicated internal pseudo-device keyword named <code>nul</code> (e.g., <code>command &gt;nul 2&gt;&amp;1</code>).</span>
+                                <span data-i18n="tip1">**The Null Device naming convention differs from Unix!** When you want to completely suppress stdout or error outputs so they don't print to the console interface, you cannot redirect to <code>/dev/null</code>. Instead, Windows uses a special, dedicated internal pseudo-device keyword named <code>nul</code> (e.g., <code>command &gt;nul 2&gt;&amp;1</code>).</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -244,7 +244,7 @@
                                 <span class="section-icon" style="background: var(--guide-accent-5);">8</span>
                                 <span data-i18n="s8_title">Network Diagnostics &amp; Administration Utilities</span>
                             </h2>
-                            <p data-i18n="s1_intro">Despite its age, the Command Prompt remains an effective tool for running low-level network diagnostic utilities and manipulating advanced system configurations directly via specialized administrative utilities.</p>
+                            <p data-i18n="s8_intro">Despite its age, the Command Prompt remains an effective tool for running low-level network diagnostic utilities and manipulating advanced system configurations directly via specialized administrative utilities.</p>
                             <div class="code-block">
                                 <div class="code-block-header">
                                     <span class="code-block-label">bat · diagnostics.bat</span>
@@ -259,7 +259,7 @@
                             </div>
                             <div class="info-box tip">
                                 <i class="fa-solid fa-lightbulb"></i>
-                                <span>While CMD is excellent for working with legacy system setups, your modern automation projects on Windows should leverage **PowerShell** or **WSL** to build robust, cross-platform environments.</span>
+                                <span data-i18n="tip2">While CMD is excellent for working with legacy system setups, your modern automation projects on Windows should leverage **PowerShell** or **WSL** to build robust, cross-platform environments.</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -309,11 +309,18 @@
             function copyCode(btn) {
                 const pre  = btn.closest('.code-block').querySelector('pre');
                 const text = pre.innerText;
+                const lang = localStorage.getItem('lang') || 'en';
+                const labels = {
+                  en: { copy: 'Copy', copied: 'Copied!' },
+                  it: { copy: 'Copia', copied: 'Copiato!' },
+                  es: { copy: 'Copiar', copied: '¡Copiado!' }
+                };
+                const l = labels[lang] || labels.en;
                 navigator.clipboard.writeText(text).then(() => {
-                    btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                    btn.innerHTML = '<i class="fa-solid fa-check"></i> ' + l.copied;
                     btn.classList.add('copied');
                     setTimeout(() => {
-                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy';
+                        btn.innerHTML = '<i class="fa-regular fa-copy"></i> ' + l.copy;
                         btn.classList.remove('copied');
                     }, 2000);
                 });

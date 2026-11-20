@@ -29,7 +29,18 @@
     "s5_intro": "JavaScript supports <code>if / else if / else</code>, the ternary operator, and <code>switch</code> for multi-branch logic.",
     "s6_intro": "JavaScript offers <code>for</code>, <code>while</code>, <code>for...of</code> (iterating values) and <code>for...in</code> (iterating object keys).",
     "s7_intro": "<strong>Arrays</strong> store ordered lists of values. <strong>Objects</strong> store key-value pairs and are the backbone of JavaScript data structures.",
-    "s8_intro": "JavaScript has three common ways to define functions: <strong>function declarations</strong>, <strong>function expressions</strong>, and the modern <strong>arrow functions</strong> (<code>=&gt;</code>)."
+    "s8_intro": "JavaScript has three common ways to define functions: <strong>function declarations</strong>, <strong>function expressions</strong>, and the modern <strong>arrow functions</strong> (<code>=&gt;</code>).",
+    "copy_btn": "Copy",
+    "copied_btn": "Copied!",
+    "tip1": "You can run JavaScript directly in the browser console without any file — just open DevTools (<kbd>F12</kbd>), go to the <strong>Console</strong> tab, and type code.",
+    "tip2": "Always use <code>===</code> and <code>!==</code> in JavaScript. The loose operators (<code>==</code>, <code>!=</code>) perform type coercion which leads to subtle bugs.",
+    "tip3": "This covers the fundamentals of JavaScript. Next steps: explore <strong>DOM manipulation</strong>, <strong>Events</strong>, <strong>Promises &amp; async/await</strong>, and <strong>Fetch API</strong> for working with web pages and APIs.",
+    "pill1_desc": "Integers &amp; floats",
+    "pill2_desc": "Text",
+    "pill3_desc": "True or False",
+    "pill4_desc": "Intentional empty",
+    "pill5_desc": "Not yet assigned",
+    "pill6_desc": "Key-value pairs"
   },
   "it": {
     "back_coding": "Guide di Coding",
@@ -61,7 +72,18 @@
     "s5_intro": "I metodi del Document Object Model consentono di ascoltare interazioni dell'utente, modificare stili e creare elementi dinamici.",
     "s6_intro": "Le Promise gestiscono operazioni asincrone evitando il callback hell, con <code>async/await</code> che rende il codice fluido e leggibile.",
     "s7_intro": "Sotto la sintassi delle classi ES6, JavaScript opera con un modello di ereditarietà prototipale basato su catene di prototipi.",
-    "s8_intro": "Il sistema di moduli standard consente di dividere l'applicazione in file indipendenti, importando solo le funzionalità necessarie."
+    "s8_intro": "Il sistema di moduli standard consente di dividere l'applicazione in file indipendenti, importando solo le funzionalità necessarie.",
+    "copy_btn": "Copia",
+    "copied_btn": "Copiato!",
+    "tip1": "Usa sempre <code>const</code> per impostazione predefinita e <code>let</code> solo per le variabili che devono cambiare valore; evita l'uso del vecchio <code>var</code> per scongiurare problemi di scope.",
+    "tip2": "Preferisci la sintassi <code>async/await</code> rispetto alle Promise concatenate con <code>.then()</code> per scrivere codice asincrono lineare, pulito e leggibile.",
+    "tip3": "Con le basi del DOM e delle Promise consolidate, sperimenta framework frontend reattivi moderni come <strong>Vue, React o Svelte</strong>, oppure runtime server-side come <strong>Node.js</strong>.",
+    "pill1_desc": "Interi e numeri decimali",
+    "pill2_desc": "Testo e stringhe",
+    "pill3_desc": "Vero o Falso",
+    "pill4_desc": "Assenza intenzionale di valore",
+    "pill5_desc": "Non ancora assegnato",
+    "pill6_desc": "Coppie di chiave e valore"
   },
   "es": {
     "back_coding": "Guías de Coding",
@@ -93,6 +115,17 @@
     "s5_intro": "Acceder a los nodos del navegador permite escuchar clics, alternar clases CSS e inyectar contenidos interactivos en vivo.",
     "s6_intro": "El paradigma de Promesas sincroniza peticiones HTTP y operaciones lentas, alcanzando máxima claridad mediante <code>async/await</code>.",
     "s7_intro": "La sintaxis de clases formaliza el modelo de delegación prototípica propio del lenguaje facilitando la creación de objetos.",
-    "s8_intro": "Las instrucciones <code>import</code> y <code>export</code> dividen aplicaciones complejas en módulos reutilizables y limpios."
+    "s8_intro": "Las instrucciones <code>import</code> y <code>export</code> dividen aplicaciones complejas en módulos reutilizables y limpios.",
+    "copy_btn": "Copiar",
+    "copied_btn": "¡Copiado!",
+    "tip1": "Usa siempre <code>const</code> por defecto y <code>let</code> solo para variables cuyo valor deba reasignarse; evita el uso del antiguo <code>var</code> para prevenir problemas de ámbito.",
+    "tip2": "Prefiere la sintaxis <code>async/await</code> frente a las Promesas encadenadas con <code>.then()</code> para escribir código asíncrono limpio, lineal y legible.",
+    "tip3": "Con las bases del DOM y las Promesas consolidadas, experimenta con frameworks frontend modernos como <strong>Vue, React o Svelte</strong>, o entornos server-side como <strong>Node.js</strong>.",
+    "pill1_desc": "Enteros y números decimales",
+    "pill2_desc": "Texto y cadenas",
+    "pill3_desc": "Verdadero o Falso",
+    "pill4_desc": "Ausencia intencionada de valor",
+    "pill5_desc": "Aún no asignado",
+    "pill6_desc": "Pares de clave y valor"
   }
 }

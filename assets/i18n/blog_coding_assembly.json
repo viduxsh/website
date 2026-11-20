@@ -29,7 +29,17 @@
     "s5_intro": "Branching logic evaluates data by comparing operands using the <code>cmp</code> instruction. This operation subtracts values without saving the result, modifying internal CPU **Status Flags** instead.",
     "s6_intro": "The **Stack** is a Last-In, First-Out (LIFO) memory region managed directly by the CPU. The <code>rsp</code> register tracks the top of the stack, growing downward toward lower memory addresses.",
     "s7_intro": "Subroutines organize code blocks into reusable tasks. The <code>call</code> command pushes the current return address onto the stack and jumps to the target label. The <code>ret</code> statement pops that address to resume execution.",
-    "s8_intro": "Assembly can transition from user space to kernel space via the <code>syscall</code> instruction. This triggers an exception that passes execution control directly to the OS kernel to handle tasks like writing files or printing text to the console."
+    "s8_intro": "Assembly can transition from user space to kernel space via the <code>syscall</code> instruction. This triggers an exception that passes execution control directly to the OS kernel to handle tasks like writing files or printing text to the console.",
+    "copy_btn": "Copy",
+    "copied_btn": "Copied!",
+    "tip1": "**Stack balance is critical!** Every single <code>push</code> instruction must map to an associated <code>pop</code> before exiting a function context. Imbalances cause subroutines to read corrupt addresses, resulting in instant Segmentation Fault crashes.",
+    "tip2": "With bare-metal machine language concepts clear, you can step up to analyzing binary structures using tools like **GDB** or optimizing critical compilation loops.",
+    "pill1_desc": "Primary accumulator used for math and system function return codes",
+    "pill2_desc": "General usage nodes, loop counting parameters, and I/O tracking data",
+    "pill3_desc": "Source and Destination Index elements reserved for string arrays",
+    "pill4_desc": "Modern expansion registers added to the 64-bit architecture specification",
+    "pill5_desc": "Stack Pointer tracking the current boundary address of execution metrics",
+    "pill6_desc": "Instruction Pointer holds the memory coordinates of the upcoming command"
   },
   "it": {
     "back_coding": "Guide di Coding",
@@ -61,7 +71,17 @@
     "s5_intro": "Lo stack opera con logica LIFO ed è gestito dal registro RSP. È cruciale per salvare indirizzi di ritorno e variabili locali.",
     "s6_intro": "Su sistemi Linux x86_64 l'ABI System V stabilisce esattamente quali registri contengono i parametri di input e i valori di ritorno.",
     "s7_intro": "Per comunicare con l'hardware e il filesystem, il programma passa il controllo al kernel attraverso l'istruzione <code>syscall</code>.",
-    "s8_intro": "Un programma Assembly è suddiviso in sezioni distinte: <code>.data</code> per costanti inizializzate, <code>.bss</code> per variabili vuote e <code>.text</code> per il codice eseguibile."
+    "s8_intro": "Un programma Assembly è suddiviso in sezioni distinte: <code>.data</code> per costanti inizializzate, <code>.bss</code> per variabili vuote e <code>.text</code> per il codice eseguibile.",
+    "copy_btn": "Copia",
+    "copied_btn": "Copiato!",
+    "tip1": "<strong>Il bilanciamento dello stack è critico!</strong> Ogni singola istruzione <code>push</code> deve corrispondere a un'equivalente <code>pop</code> prima dell'uscita dal frame della funzione; altrimenti l'indirizzo di ritorno punterà a memoria corrotta causando un immediato Segmentation Fault.",
+    "tip2": "Con i concetti di linguaggio macchina a basso livello chiari, il prossimo passo per espandere le tue competenze è l'analisi binaria con disassemblatori come <strong>Ghidra</strong> o la scrittura di shellcode per la ricerca di vulnerabilità.",
+    "pill1_desc": "Accumulatore primario per operazioni matematiche e codici di ritorno",
+    "pill2_desc": "Registri generali, contatori di loop e dati di I/O",
+    "pill3_desc": "Registri indice sorgente e destinazione per stringhe e array",
+    "pill4_desc": "Registri di espansione moderni introdotti nell'architettura a 64 bit",
+    "pill5_desc": "Stack Pointer: traccia l'indirizzo limite corrente dello stack",
+    "pill6_desc": "Instruction Pointer: contiene l'indirizzo della prossima istruzione"
   },
   "es": {
     "back_coding": "Guías de Coding",
@@ -93,6 +113,16 @@
     "s5_intro": "La pila funciona con arquitectura LIFO controlada por el puntero RSP. Permite preservar estados de registros y variables locales.",
     "s6_intro": "En Linux x86_64 la especificación System V ABI define qué registros específicos reciben los argumentos de entrada y resultados de retorno.",
     "s7_intro": "Para interactuar con la consola, discos o red, el código transfiere el control directamente al núcleo Linux usando la instrucción <code>syscall</code>.",
-    "s8_intro": "Un archivo de ensamblador organiza su contenido en secciones: <code>.data</code> para variables con valor inicial, <code>.bss</code> para datos sin inicializar y <code>.text</code> para las instrucciones ejecutables."
+    "s8_intro": "Un archivo de ensamblador organiza su contenido en secciones: <code>.data</code> para variables con valor inicial, <code>.bss</code> para datos sin inicializar y <code>.text</code> para las instrucciones ejecutables.",
+    "copy_btn": "Copiar",
+    "copied_btn": "¡Copiado!",
+    "tip1": "<strong>¡El equilibrio del stack es crítico!</strong> Cada instrucción <code>push</code> debe coincidir con un <code>pop</code> equivalente antes de salir del marco de la función; de lo contrario, la dirección de retorno apuntará a memoria corrupta provocando un fallo de segmentación inmediato.",
+    "tip2": "Con los conceptos de lenguaje máquina de bajo nivel claros, el siguiente paso para ampliar tus habilidades es el análisis binario con desensambladores como <strong>Ghidra</strong> o la creación de shellcodes para auditorías de seguridad.",
+    "pill1_desc": "Acumulador principal para operaciones matemáticas y códigos de retorno",
+    "pill2_desc": "Registros generales, contadores de bucle y datos de E/S",
+    "pill3_desc": "Registros índice origen y destino para cadenas y arrays",
+    "pill4_desc": "Registros de expansión modernos de la arquitectura de 64 bits",
+    "pill5_desc": "Stack Pointer: rastrea la dirección límite actual de la pila",
+    "pill6_desc": "Instruction Pointer: contiene la dirección de la siguiente instrucción"
   }
 }

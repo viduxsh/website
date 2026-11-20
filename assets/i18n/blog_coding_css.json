@@ -29,7 +29,18 @@
     "s5_intro": "Alter how elements sit within the document layout using structural <code>display</code> properties or override normal document sorting flows using explicit positioning coordinates.",
     "s6_intro": "Flexbox provides an efficient, one-dimensional layout engine to handle alignment, distribution, and content alignment inside flexible parent boxes.",
     "s7_intro": "CSS Grid handles complex, two-dimensional user interfaces by splitting a container into explicit matrix columns and row tracks.",
-    "s8_intro": "Media queries allow you to build responsive layouts by conditionally applying style parameters based on target viewport width triggers."
+    "s8_intro": "Media queries allow you to build responsive layouts by conditionally applying style parameters based on target viewport width triggers.",
+    "copy_btn": "Copy",
+    "copied_btn": "Copied!",
+    "tip1": "Link your external stylesheet file inside the HTML <code>&lt;head&gt;</code> template using: <code>&lt;link rel=\"stylesheet\" href=\"style.css\"&gt;</code>.",
+    "tip2": "Always declare <code>box-sizing: border-box;</code> globally. Without it, adding padding will expand your element beyond its declared width, breaking structural layouts!",
+    "tip3": "Now that your presentation layers match standard conventions, study advanced preprocessor syntax workflows like **Sass/SCSS** or utility engines like **Tailwind CSS**.",
+    "pill1_desc": "Targets all tags",
+    "pill2_desc": "Reusable instances",
+    "pill3_desc": "Unique single node",
+    "pill4_desc": "Interactive state",
+    "pill5_desc": "Child nesting paths",
+    "pill6_desc": "Universal resetting"
   },
   "it": {
     "back_coding": "Guide di Coding",
@@ -61,7 +72,18 @@
     "s5_intro": "Le proprietà di posizionamento (static, relative, absolute, fixed e sticky) controllano con precisione il flusso di visualizzazione.",
     "s6_intro": "Le media query adattano stili e dimensioni dello schermo in base al dispositivo, dal display mobile fino ai grandi monitor desktop.",
     "s7_intro": "Le transizioni rendono fluidi i cambi di stato interattivi, mentre le animazioni con <code>@keyframes</code> creano movimenti complessi e continui.",
-    "s8_intro": "Le variabili CSS native permettono di centralizzare colori, spaziature e impostazioni di tema (come light/dark mode) in modo riutilizzabile."
+    "s8_intro": "Le variabili CSS native permettono di centralizzare colori, spaziature e impostazioni di tema (come light/dark mode) in modo riutilizzabile.",
+    "copy_btn": "Copia",
+    "copied_btn": "Copiato!",
+    "tip1": "Collega il tuo foglio di stile esterno all'interno del tag HTML <code>&lt;head&gt;</code> usando: <code>&lt;link rel=\"stylesheet\" href=\"style.css\"&gt;</code>.",
+    "tip2": "Applica sempre <code>box-sizing: border-box;</code> come reset globale nel tuo CSS per far sì che padding e bordi siano inclusi nella larghezza e altezza totale degli elementi.",
+    "tip3": "Ora che padroneggi Flexbox e Grid, esplora le <strong>Custom Properties (CSS Variables)</strong>, le animazioni fluide e i framework responsive moderni come <strong>Tailwind CSS</strong>.",
+    "pill1_desc": "Seleziona tutti i tag specificati",
+    "pill2_desc": "Istanze riutilizzabili",
+    "pill3_desc": "Singolo nodo univoco",
+    "pill4_desc": "Stati interattivi ed eventi",
+    "pill5_desc": "Relazioni di discendenza tra nodi",
+    "pill6_desc": "Reset globale universale"
   },
   "es": {
     "back_coding": "Guías de Coding",
@@ -93,6 +115,17 @@
     "s5_intro": "Los valores de posición (relative, absolute, fixed y sticky) permiten fijar o desvincular elementos del flujo natural de lectura de la página.",
     "s6_intro": "Las reglas <code>@media</code> adaptan la tipografía y el diseño a diferentes resoluciones de pantalla, optimizando la experiencia móvil.",
     "s7_intro": "Las transiciones suavizan cambios visuales al pasar el cursor o interactuar, mientras que <code>@keyframes</code> genera coreografías animadas.",
-    "s8_intro": "Las propiedades personalizadas (custom properties) facilitan definir paletas de colores globales y conmutar fluidamente entre temas claro y oscuro."
+    "s8_intro": "Las propiedades personalizadas (custom properties) facilitan definir paletas de colores globales y conmutar fluidamente entre temas claro y oscuro.",
+    "copy_btn": "Copiar",
+    "copied_btn": "¡Copiado!",
+    "tip1": "Enlaza tu hoja de estilo externa dentro de la etiqueta HTML <code>&lt;head&gt;</code> usando: <code>&lt;link rel=\"stylesheet\" href=\"style.css\"&gt;</code>.",
+    "tip2": "Aplica siempre <code>box-sizing: border-box;</code> como reset global en tu CSS para asegurarte de que el padding y los bordes se incluyan en el ancho y alto total de los elementos.",
+    "tip3": "Ahora que dominas Flexbox y Grid, explora las <strong>Custom Properties (variables CSS)</strong>, las animaciones fluidas y los frameworks modernos y adaptativos como <strong>Tailwind CSS</strong>.",
+    "pill1_desc": "Afecta a todas las etiquetas indicadas",
+    "pill2_desc": "Instancias reutilizables",
+    "pill3_desc": "Nodo único e irrepetible",
+    "pill4_desc": "Estados interactivos y eventos",
+    "pill5_desc": "Relaciones de descendencia entre nodos",
+    "pill6_desc": "Restablecimiento universal"
   }
 }

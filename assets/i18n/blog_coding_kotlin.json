@@ -29,7 +29,18 @@
     "s5_intro": "Functions support optional default argument values, which helps reduce boilerplates and prevents the need for overly nested method overloading.",
     "s6_intro": "Classes are closed by default (not inheritable). The <code>data class</code> keyword automatically generates fields like <code>equals()</code>, <code>hashCode()</code>, and <code>toString()</code> for pure data holders.",
     "s7_intro": "Kotlin addresses the infamous billion-dollar mistake by separating nullable types from non-nullable ones at the compiler level, effectively eliminating <code>NullPointerException</code> risks.",
-    "s8_intro": "Kotlin manages non-blocking, asynchronous tasks using ultra-lightweight threads called Coroutines, which allow you to write clean, sequential-looking code for background routines."
+    "s8_intro": "Kotlin manages non-blocking, asynchronous tasks using ultra-lightweight threads called Coroutines, which allow you to write clean, sequential-looking code for background routines.",
+    "copy_btn": "Copy",
+    "copied_btn": "Copied!",
+    "tip1": "Always default to declaring properties with <code>val</code>. Switch to <code>var</code> only when explicit state reassignment becomes necessary.",
+    "tip2": "Unlike Java, Kotlin classes are **open for extension only if explicitly marked with the <code>open</code> modifier keyword**. By default, inheritance structures are safely locked.",
+    "tip3": "With Kotlin syntax basics down, you are fully equipped to build modern native Android mobile applications with **Jetpack Compose** or cross-platform web layers using **Ktor**.",
+    "pill1_desc": "Standard integers",
+    "pill2_desc": "Floating-point values",
+    "pill3_desc": "Logical state truths",
+    "pill4_desc": "Character sequences",
+    "pill5_desc": "Immutable collections",
+    "pill6_desc": "The root of the hierarchy"
   },
   "it": {
     "back_coding": "Guide di Coding",
@@ -61,7 +72,18 @@
     "s5_intro": "Funzioni come <code>let</code>, <code>apply</code>, <code>run</code>, <code>also</code> e <code>with</code> eseguono blocchi di codice all'interno del contesto dell'oggetto.",
     "s6_intro": "Le coroutine sono thread leggeri gestiti cooperativamente, che consentono di scrivere codice asincrono sequenziale e ad altissima efficienza.",
     "s7_intro": "Le classi e interfacce sigillate delimitano una gerarchia chiusa di sottoclassi, perfetta per rappresentare stati UI esaustivi.",
-    "s8_intro": "Kotlin Flow gestisce sequenze asincrone di dati con contropressione integrata, ideale per architetture reattive moderne."
+    "s8_intro": "Kotlin Flow gestisce sequenze asincrone di dati con contropressione integrata, ideale per architetture reattive moderne.",
+    "copy_btn": "Copia",
+    "copied_btn": "Copiato!",
+    "tip1": "Il sistema di tipi di Kotlin distingue i tipi non-null da quelli nullable: <code>String</code> non può contenere null, mentre <code>String?</code> sì, eliminando i NullPointerException alla radice.",
+    "tip2": "Le data class generano automaticamente per te i metodi <code>equals()</code>, <code>hashCode()</code>, <code>toString()</code> e <code>copy()</code> a partire dalle proprietà dichiarate.",
+    "tip3": "Espandi le tue competenze esplorando le <strong>Coroutines</strong> per la gestione del lavoro asincrono o sviluppa UI moderne per Android con <strong>Jetpack Compose</strong>.",
+    "pill1_desc": "Numeri interi standard",
+    "pill2_desc": "Numeri a virgola mobile",
+    "pill3_desc": "Valori logici vero o falso",
+    "pill4_desc": "Sequenze di caratteri testuali",
+    "pill5_desc": "Collezioni di elementi immutabili",
+    "pill6_desc": "La radice della gerarchia dei tipi"
   },
   "es": {
     "back_coding": "Guías de Coding",
@@ -93,6 +115,17 @@
     "s5_intro": "Las utilidades de alcance como <code>apply</code>, <code>let</code> y <code>run</code> simplifican la inicialización y manipulación de objetos.",
     "s6_intro": "Las corrutinas posibilitan pausar y reanudar la ejecución de tareas asíncronas de manera cooperativa y con consumo mínimo de RAM.",
     "s7_intro": "Restringir la herencia a un conjunto conocido de subtipos asegura que el compilador valide todos los posibles estados de una vista.",
-    "s8_intro": "Flow procesa transmisiones continuas de información en tiempo real, operando de forma integrada con el ciclo de vida de las aplicaciones."
+    "s8_intro": "Flow procesa transmisiones continuas de información en tiempo real, operando de forma integrada con el ciclo de vida de las aplicaciones.",
+    "copy_btn": "Copiar",
+    "copied_btn": "¡Copiado!",
+    "tip1": "El sistema de tipos de Kotlin distingue tipos non-null de nullable: <code>String</code> no puede contener null, mientras que <code>String?</code> sí, eliminando de raíz los NullPointerException.",
+    "tip2": "Las data classes generan automáticamente para ti los métodos <code>equals()</code>, <code>hashCode()</code>, <code>toString()</code> y <code>copy()</code> a partir de las propiedades declaradas.",
+    "tip3": "Amplía tus habilidades explorando las <strong>Coroutines</strong> para gestionar tareas asíncronas o desarrolla interfaces modernas para Android con <strong>Jetpack Compose</strong>.",
+    "pill1_desc": "Números enteros estándar",
+    "pill2_desc": "Valores de coma flotante",
+    "pill3_desc": "Estados lógicos verdadero o falso",
+    "pill4_desc": "Secuencias de caracteres",
+    "pill5_desc": "Colecciones inmutables",
+    "pill6_desc": "La raíz de toda la jerarquía de tipos"
   }
 }

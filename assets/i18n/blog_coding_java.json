@@ -29,7 +29,18 @@
     "s5_intro": "Direct the code path using clean branching structures like <code>if-else</code> structures or structural <code>switch</code> evaluations.",
     "s6_intro": "Process repeated code segments using deterministic index-based counters or dynamically evaluated logical boundaries.",
     "s7_intro": "Native <strong>arrays</strong> preserve fixed bounds. Dynamic collections that grow dynamically leverage the <code>ArrayList</code> entity class from <code>java.util</code>.",
-    "s8_intro": "Methods control behavioral parameters inside objects. Structures orchestrate initialization arguments via precise <code>constructor</code> functions."
+    "s8_intro": "Methods control behavioral parameters inside objects. Structures orchestrate initialization arguments via precise <code>constructor</code> functions.",
+    "copy_btn": "Copy",
+    "copied_btn": "Copied!",
+    "tip1": "The file name <strong>must exact-match</strong> the name of the public class inside it (e.g., <code>Main.java</code> for <code>public class Main</code>).",
+    "tip2": "Always compare String objects using <code>.equals()</code> (e.g., <code>str1.equals(str2)</code>). Using <code>==</code> evaluates memory addresses instead of text literal equity!",
+    "tip3": "Now that you have mastered procedural components, deep dive into robust corporate architectures studying <strong>Inheritance</strong>, <strong>Interfaces</strong>, and <strong>Polymorphism</strong>.",
+    "pill1_desc": "32-bit Integer",
+    "pill2_desc": "64-bit Float",
+    "pill3_desc": "Logical state",
+    "pill4_desc": "16-bit Unicode",
+    "pill5_desc": "Object literal",
+    "pill6_desc": "Local inference"
   },
   "it": {
     "back_coding": "Guide di Coding",
@@ -61,7 +72,18 @@
     "s5_intro": "Java impone la gestione o la propagazione esplicita delle eccezioni controllate (Checked Exceptions) per prevenire crash improvvisi.",
     "s6_intro": "Introdotta con Java 8, la Stream API permette di filtrare, mappare e ridurre collezioni di dati in stile funzionale e dichiarativo.",
     "s7_intro": "I Generics garantiscono il controllo dei tipi durante la compilazione, prevenendo errori di cast non sicuri a runtime.",
-    "s8_intro": "L'API <code>java.util.concurrent</code> automatizza la suddivisione di compiti paralleli riutilizzando thread tramite thread pool dedicati."
+    "s8_intro": "L'API <code>java.util.concurrent</code> automatizza la suddivisione di compiti paralleli riutilizzando thread tramite thread pool dedicati.",
+    "copy_btn": "Copia",
+    "copied_btn": "Copiato!",
+    "tip1": "In Java il nome della classe pubblica deve corrispondere esattamente al nome del file (es. <code>public class Main</code> in <code>Main.java</code>).",
+    "tip2": "Usa l'istruzione <code>try-with-resources</code> per chiudere automaticamente flussi e connessioni senza dover scrivere blocchi <code>finally</code> manuali.",
+    "tip3": "Dopo aver acquisito padronanza con le interfacce e i generics, esplora lo sviluppo enterprise con <strong>Spring Boot</strong> e la persistenza relazionale con Hibernate/JPA.",
+    "pill1_desc": "Intero a 32 bit",
+    "pill2_desc": "Numero decimale a 64 bit",
+    "pill3_desc": "Stato logico booleano",
+    "pill4_desc": "Carattere Unicode a 16 bit",
+    "pill5_desc": "Oggetto letterale per testo",
+    "pill6_desc": "Inferenza locale del tipo"
   },
   "es": {
     "back_coding": "Guías de Coding",
@@ -93,6 +115,17 @@
     "s5_intro": "Java implementa un mecanismo estricto donde las excepciones comprobadas deben ser capturadas con <code>try-catch</code> o declaradas.",
     "s6_intro": "Las funciones lambda y la Stream API permiten transformar, ordenar y consolidar grandes volúmenes de datos con código funcional.",
     "s7_intro": "Los genéricos refuerzan la consistencia del código asegurando que sólo elementos del tipo esperado ingresen a cada colección.",
-    "s8_intro": "El paquete de concurrencia administra grupos de hilos reutilizables para despachar tareas simultáneas sin sobrecargar la CPU."
+    "s8_intro": "El paquete de concurrencia administra grupos de hilos reutilizables para despachar tareas simultáneas sin sobrecargar la CPU.",
+    "copy_btn": "Copiar",
+    "copied_btn": "¡Copiado!",
+    "tip1": "En Java, el nombre de la clase pública debe coincidir exactamente con el nombre del archivo (por ejemplo, <code>public class Main</code> en <code>Main.java</code>).",
+    "tip2": "Usa la sentencia <code>try-with-resources</code> para cerrar automáticamente flujos y conexiones sin tener que escribir bloques <code>finally</code> manuales.",
+    "tip3": "Tras dominar interfaces y genéricos, explora el desarrollo empresarial con <strong>Spring Boot</strong> y la persistencia relacional con Hibernate/JPA.",
+    "pill1_desc": "Entero de 32 bits",
+    "pill2_desc": "Número decimal de 64 bits",
+    "pill3_desc": "Estado lógico booleano",
+    "pill4_desc": "Carácter Unicode de 16 bits",
+    "pill5_desc": "Objeto literal de cadena de texto",
+    "pill6_desc": "Inferencia local de tipo"
   }
 }

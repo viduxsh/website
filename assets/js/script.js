@@ -14,24 +14,64 @@ function getAutoTheme() {
   const h = new Date().getHours();
   return (h >= 20 || h < 8) ? "dark" : "light";
 }
-const currentTheme = localStorage.getItem("theme") || getAutoTheme();
 
-document.body.setAttribute("data-theme", currentTheme);
-if (currentTheme === "dark" && themeToggle) {
-  themeToggle.checked = true;
+const THEME_KEY = "theme";
+const THEME_EXPIRATION_KEY = "theme_expiration";
+const THEME_TTL_MS = 60 * 60 * 1000;
+
+function getSavedTheme() {
+  const savedTheme = localStorage.getItem(THEME_KEY);
+  const expiration = Number(localStorage.getItem(THEME_EXPIRATION_KEY));
+
+  if (savedTheme !== "dark" && savedTheme !== "light") {
+    clearSavedTheme();
+    return null;
+  }
+  if (!Number.isFinite(expiration) || expiration <= Date.now()) {
+    clearSavedTheme();
+    return null;
+  }
+  return savedTheme;
 }
+
+function clearSavedTheme() {
+  localStorage.removeItem(THEME_KEY);
+  localStorage.removeItem(THEME_EXPIRATION_KEY);
+}
+
+function saveTheme(theme) {
+  localStorage.setItem(THEME_KEY, theme);
+  localStorage.setItem(THEME_EXPIRATION_KEY, String(Date.now() + THEME_TTL_MS));
+}
+
+function applyTheme(theme) {
+  document.body.setAttribute("data-theme", theme);
+  if (themeToggle) {
+    themeToggle.checked = theme === "dark";
+  }
+}
+
+let currentTheme = getSavedTheme() || getAutoTheme();
+applyTheme(currentTheme);
 
 if (themeToggle) {
   themeToggle.addEventListener("change", (e) => {
     if (e.target.checked) {
-      document.body.setAttribute("data-theme", "dark");
-      localStorage.setItem("theme", "dark");
+      currentTheme = "dark";
     } else {
-      document.body.setAttribute("data-theme", "light");
-      localStorage.setItem("theme", "light");
+      currentTheme = "light";
     }
+    applyTheme(currentTheme);
+    saveTheme(currentTheme);
   });
 }
+
+window.setInterval(() => {
+  const savedTheme = getSavedTheme();
+  if (!savedTheme) {
+    applyTheme(getAutoTheme());
+  }
+}, 60 * 1000);
 
 const currentDate = new Date();
 const currentYear = currentDate.getFullYear();
@@ -42,11 +82,13 @@ const ageContainer = document.getElementById("my-age");
 const copyrightContainer = document.getElementById("copyright-year");
 
 if (ageContainer) {
-  ageContainer.textContent = `I'm a programmer and I'm ${age} years old.`;
+  ageContainer.dataset.i18n = "footer_age";
+  ageContainer.dataset.i18nAge = String(age);
 }
 
 if (copyrightContainer) {
-  copyrightContainer.textContent = `Copyright © ${currentYear} vidux.sh. All Rights Reserved.`;
+  copyrightContainer.dataset.i18n = "footer_copyright";
+  copyrightContainer.dataset.i18nYear = String(currentYear);
 }
 function updateLastModified() {
   const d = new Date(document.lastModified);
@@ -69,13 +111,22 @@ function updateLastModified() {
 }
 updateLastModified();
 
+document.querySelectorAll("[data-visitor-count]").forEach((element) => {
+  element.dataset.i18n = "footer_loading";
+});
+
 const footerBottom = document.querySelector("footer .footer-bottom");
 if (footerBottom && !footerBottom.querySelector("[data-visitor-count]")) {
   const visitorCount = document.createElement("p");
-  visitorCount.appendChild(document.createTextNode("Total visits: "));
+  const visitsLabel = document.createElement("span");
+  visitsLabel.dataset.i18n = "footer_visits";
+  visitsLabel.textContent = "Total visits:";
+  visitorCount.appendChild(visitsLabel);
+  visitorCount.appendChild(document.createTextNode(" "));
 
   const count = document.createElement("span");
   count.dataset.visitorCount = "";
+  count.dataset.i18n = "footer_loading";
   count.textContent = "Loading...";
   visitorCount.appendChild(count);
 
@@ -98,12 +149,14 @@ fetch(visitorCountUrl)
     }
     document.querySelectorAll("[data-visitor-count]").forEach((element) => {
       element.textContent = count.toLocaleString();
+      element.removeAttribute("data-i18n");
     });
   })
   .catch((error) => {
     console.error("Error fetching visitor count:", error);
     document.querySelectorAll("[data-visitor-count]").forEach((element) => {
       element.textContent = "N/A";
+      element.dataset.i18n = "footer_unavailable";
     });
   });
 

@@ -29,7 +29,17 @@
     "s5_intro": "Functions wrap definitions clearly. Named optional parameters are enclosed in curly brackets (<code>{}</code>) and support default fallback assignments.",
     "s6_intro": "Dart features implicit interfaces for all classes. Constructors use syntactic sugar to directly map parameters to internal instance properties.",
     "s7_intro": "Dart uses <code>Future</code> objects to handle non-blocking asynchronous operations, combining clean <code>async</code> and <code>await</code> syntactic workflows.",
-    "s8_intro": "The cascade operator (<code>..</code>) lets you chain multiple operations on the same object sequence, saving you from writing repetitive variable lookups."
+    "s8_intro": "The cascade operator (<code>..</code>) lets you chain multiple operations on the same object sequence, saving you from writing repetitive variable lookups.",
+    "copy_btn": "Copy",
+    "copied_btn": "Copied!",
+    "tip1": "Properties prefixed with an underscore (e.g., <code>_privateField</code>) are **strictly library-private**, meaning they are encapsulated and hidden from external file imports.",
+    "tip2": "With Dart fundamentals down, you are ready to construct fast, responsive cross-platform user interfaces using the **Flutter engine UI library framework**.",
+    "pill1_desc": "Numeric architectures (num)",
+    "pill2_desc": "UTF-16 string vectors",
+    "pill3_desc": "Compile boolean flags",
+    "pill4_desc": "Ordered array collections",
+    "pill5_desc": "Linked hash collection grids",
+    "pill6_desc": "Bypasses static type checks"
   },
   "it": {
     "back_coding": "Guide di Coding",
@@ -61,7 +71,17 @@
     "s5_intro": "Le operazioni a completamento differito restituiscono un <code>Future</code> e si gestiscono linearmente tramite la sintassi <code>async/await</code>.",
     "s6_intro": "Gli Stream gestiscono sequenze asincrone continue di eventi, come click dell'utente, websocket o aggiornamenti di sensori.",
     "s7_intro": "La parola chiave <code>mixin</code> permette di riutilizzare porzioni di codice tra diverse gerarchie di classi senza ereditarietà multipla.",
-    "s8_intro": "Dart esegue il codice in un singolo thread. Per calcoli intensivi paralleli crea Isolate separati con memoria isolata e scambio messaggi."
+    "s8_intro": "Dart esegue il codice in un singolo thread. Per calcoli intensivi paralleli crea Isolate separati con memoria isolata e scambio messaggi.",
+    "copy_btn": "Copia",
+    "copied_btn": "Copiato!",
+    "tip1": "L'operatore null-aware <code>??</code> fornisce un valore di fallback, mentre <code>?.</code> invoca metodi in sicurezza solo se il target non è nullo, prevenendo eccezioni a runtime.",
+    "tip2": "Con le fondamenta di Dart acquisite, il percorso naturale successivo è immergersi nel framework <strong>Flutter</strong> per realizzare applicazioni multipiattaforma native per iOS, Android, Web e Desktop.",
+    "pill1_desc": "Architettura numerica (num, int, double)",
+    "pill2_desc": "Stringhe di testo UTF-16",
+    "pill3_desc": "Flag booleani vero/falso",
+    "pill4_desc": "Collezioni di array ordinati",
+    "pill5_desc": "Mappe di chiavi e valori hash",
+    "pill6_desc": "Disabilita i controlli di tipo statici"
   },
   "es": {
     "back_coding": "Guías de Coding",
@@ -93,6 +113,16 @@
     "s5_intro": "Los cálculos que toman tiempo retornan instancias de <code>Future</code> y se resuelven de forma legible mediante <code>async/await</code>.",
     "s6_intro": "Los Streams transmiten secuencias continuas de eventos asíncronos en el tiempo, ideales para eventos de red o sensores en vivo.",
     "s7_intro": "Los mixins permiten incorporar funcionalidades en múltiples clases sin requerir jerarquías de herencia complejas.",
-    "s8_intro": "Para ejecutar tareas intensivas de procesador sin congelar la interfaz gráfica, Dart ejecuta tareas en Isolates con memoria independiente."
+    "s8_intro": "Para ejecutar tareas intensivas de procesador sin congelar la interfaz gráfica, Dart ejecuta tareas en Isolates con memoria independiente.",
+    "copy_btn": "Copiar",
+    "copied_btn": "¡Copiado!",
+    "tip1": "El operador null-aware <code>??</code> proporciona un valor de respaldo, mientras que <code>?.</code> invoca métodos de forma segura solo si el destino no es nulo, evitando excepciones en tiempo de ejecución.",
+    "tip2": "Con los fundamentos de Dart adquiridos, el siguiente paso natural es sumergirse en el framework <strong>Flutter</strong> para crear aplicaciones multiplataforma nativas para iOS, Android, Web y Desktop.",
+    "pill1_desc": "Arquitecturas numéricas (num, int, double)",
+    "pill2_desc": "Cadenas de texto UTF-16",
+    "pill3_desc": "Valores booleanos verdadero/falso",
+    "pill4_desc": "Colecciones ordenadas en array",
+    "pill5_desc": "Tablas hash de clave y valor",
+    "pill6_desc": "Omite los controles de tipos estáticos"
   }
 }
