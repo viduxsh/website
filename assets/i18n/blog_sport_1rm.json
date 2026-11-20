@@ -1,0 +1,20 @@
+{
+  "en": {
+    "page_title": "My 1RM Table",
+    "page_subtitle": "My personal records for various exercises.",
+    "back_blog": "Back to Blog",
+    "back_sport": "Back to Sport"
+  },
+  "it": {
+    "page_title": "Tabella 1RM",
+    "page_subtitle": "I miei record personali per vari esercizi.",
+    "back_blog": "Torna al Blog",
+    "back_sport": "Torna allo Sport"
+  },
+  "es": {
+    "page_title": "Mi Tabla 1RM",
+    "page_subtitle": "Mis récords personales para varios ejercicios.",
+    "back_blog": "Volver al Blog",
+    "back_sport": "Volver a Deportes"
+  }
+}

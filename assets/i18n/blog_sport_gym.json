@@ -1,0 +1,20 @@
+{
+  "en": {
+    "page_title": "My Weekly Split",
+    "page_subtitle": "My personal weekly split.",
+    "back_blog": "Back to Blog",
+    "back_sport": "Back to Sport"
+  },
+  "it": {
+    "page_title": "La mia Scheda Settimanale",
+    "page_subtitle": "La mia scheda di allenamento settimanale.",
+    "back_blog": "Torna al Blog",
+    "back_sport": "Torna allo Sport"
+  },
+  "es": {
+    "page_title": "Mi Rutina Semanal",
+    "page_subtitle": "Mi rutina semanal de entrenamiento personal.",
+    "back_blog": "Volver al Blog",
+    "back_sport": "Volver a Deportes"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "en": {
+    "page_title": "Military Test",
+    "page_subtitle": "Military Training Exercises.",
+    "back_blog": "Back to Blog",
+    "back_sport": "Back to Sport"
+  },
+  "it": {
+    "page_title": "Test Militare",
+    "page_subtitle": "Esercizi di allenamento militare.",
+    "back_blog": "Torna al Blog",
+    "back_sport": "Torna allo Sport"
+  },
+  "es": {
+    "page_title": "Test Militar",
+    "page_subtitle": "Ejercicios de Entrenamiento Militar.",
+    "back_blog": "Volver al Blog",
+    "back_sport": "Volver a Deportes"
+  }
+}

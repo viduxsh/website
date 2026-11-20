@@ -1,0 +1,29 @@
+{
+  "en": {
+    "page_title": "Sport I practice",
+    "page_subtitle": "List of sports I practice, progress tracking and statistics.",
+    "back_blog": "Back to Blog",
+    "sport_gym": "Gym",
+    "sport_1rm": "1-RM",
+    "sport_bodymeasurements": "Body measurements",
+    "sport_military": "Military"
+  },
+  "it": {
+    "page_title": "Sport che pratico",
+    "page_subtitle": "Lista degli sport che pratico, tracciamento progressi e statistiche.",
+    "back_blog": "Torna al Blog",
+    "sport_gym": "Palestra",
+    "sport_1rm": "1-RM",
+    "sport_bodymeasurements": "Misure corporee",
+    "sport_military": "Militare"
+  },
+  "es": {
+    "page_title": "Deportes que practico",
+    "page_subtitle": "Lista de deportes que practico, seguimiento de progresos y estadísticas.",
+    "back_blog": "Volver al Blog",
+    "sport_gym": "Gimnasio",
+    "sport_1rm": "1-RM",
+    "sport_bodymeasurements": "Medidas corporales",
+    "sport_military": "Militar"
+  }
+}

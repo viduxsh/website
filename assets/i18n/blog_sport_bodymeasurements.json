@@ -1,0 +1,20 @@
+{
+  "en": {
+    "page_title": "Body measurements",
+    "page_subtitle": "My body measurements over the years.",
+    "back_blog": "Back to Blog",
+    "back_sport": "Back to Sport"
+  },
+  "it": {
+    "page_title": "Misure corporee",
+    "page_subtitle": "Le mie misure corporee nel corso degli anni.",
+    "back_blog": "Torna al Blog",
+    "back_sport": "Torna allo Sport"
+  },
+  "es": {
+    "page_title": "Medidas Corporales",
+    "page_subtitle": "Mis medidas corporales a lo largo de los años.",
+    "back_blog": "Volver al Blog",
+    "back_sport": "Volver a Deportes"
+  }
+}
