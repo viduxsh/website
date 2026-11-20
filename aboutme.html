@@ -12,8 +12,15 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="manifest" href="manifest.json">
+        <meta name="theme-color" content="#0f1115">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="apple-mobile-web-app-title" content="vidux.sh">
+        <link rel="apple-touch-icon" href="assets/images/icons/apple-touch-icon.png">
     </head>
-    <body data-theme="light">
+    <body data-theme="light" data-page="aboutme">
         <div class="main-wrapper">
             <header>
                 <div class="header-container">
@@ -21,11 +28,16 @@
                         <img src="assets/images/viduxsh_logo_full.png" alt="Logo" class="nav-logo">
                     </div>
                     <nav class="nav-links">
-                        <a title="Home" href="index.html" class="nav-btn"><i class="fa-solid fa-house"></i><span>Home</span></a>
-                        <a title="Projects" href="projects.html" class="nav-btn"><i class="fa-solid fa-diagram-project"></i><span>Projects</span></a>
-                        <a title="Social" href="social.html" class="nav-btn"><i class="fa-solid fa-hashtag"></i><span>Social</span></a>
-                        <a title="About Me" href="aboutme.html" class="nav-btn active"><i class="fa-solid fa-address-card"></i><span>About Me</span></a>
+                        <a title="Home" href="index.html" class="nav-btn"><i class="fa-solid fa-house"></i><span data-i18n="nav_home">Home</span></a>
+                        <a title="Projects" href="projects.html" class="nav-btn"><i class="fa-solid fa-diagram-project"></i><span data-i18n="nav_projects">Projects</span></a>
+                        <a title="Social" href="social.html" class="nav-btn"><i class="fa-solid fa-hashtag"></i><span data-i18n="nav_social">Social</span></a>
+                        <a title="About Me" href="aboutme.html" class="nav-btn active"><i class="fa-solid fa-address-card"></i><span data-i18n="nav_aboutme">About Me</span></a>
                     </nav>
+                    <div class="lang-switcher" aria-label="Language selector">
+                        <button type="button" class="lang-btn" data-lang="en" aria-label="Switch to English"><span class="flag-emoji">🇬🇧</span> <span>EN</span></button>
+                        <button type="button" class="lang-btn" data-lang="it" aria-label="Switch to Italian"><span class="flag-emoji">🇮🇹</span> <span>IT</span></button>
+                        <button type="button" class="lang-btn" data-lang="es" aria-label="Switch to Spanish"><span class="flag-emoji">🇪🇸</span> <span>ES</span></button>
+                    </div>
                     <div class="theme-switcher">
                         <input type="checkbox" id="switcher">
                         <label for="switcher" title="Toggle Theme">Switch</label>
@@ -36,65 +48,61 @@
                 <section class="hero-section">
                     <div class="card-container">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
-                            <h1>About Me</h1>
+                            <h1 data-i18n="page_title">About Me</h1>
                             <a href="./blog/blog.html" class="cta-btn" style="padding: 8px 16px; font-size: 0.9rem;">
-                                Blog <i class="fa-solid fa-rss" style="margin-left: 8px;"></i>
+                                <span data-i18n="blog_btn">Blog</span> <i class="fa-solid fa-rss" style="margin-left: 8px;"></i>
                             </a>
                         </div>
                         <div class="divider"></div>
                         <section style="margin-bottom: 32px;">
-                            <h3 class="section-title"><i class="fa-solid fa-terminal"></i> Introduction</h3>
-                            <p class="text-muted" style="line-height: 1.7; font-size: 1.05rem;">
-                                Hi, I'm <strong>Ivan</strong>, a software developer based in Udine, Italy. My life and workflow are driven by three fundamental pillars: <strong>cutting-edge technology</strong>, the precision of <strong>automotive engineering</strong>, and the strict discipline of <strong>physical training</strong>. 
-                            </p>
-                            <p class="text-muted" style="line-height: 1.7; margin-top: 12px;">
-                                I don't just use technology—I break it down, optimize it, and build tools that solve practical problems.
-                            </p>
+                            <h3 class="section-title"><i class="fa-solid fa-terminal"></i> <span data-i18n="intro_title">Introduction</span></h3>
+                            <p class="text-muted" style="line-height: 1.7; font-size: 1.05rem;"><span data-i18n="intro_p1">Hi, I'm <strong>Ivan</strong>, a software developer based in Udine, Italy. My life and workflow are driven by three fundamental pillars: <strong>cutting-edge technology</strong>, the precision of <strong>automotive engineering</strong>, and the strict discipline of <strong>physical training</strong>. 
+                            </span></p>
+                            <p class="text-muted" style="line-height: 1.7; margin-top: 12px;"><span data-i18n="intro_p2">I don't just use technology—I break it down, optimize it, and build tools that solve practical problems.
+                            </span></p>
                         </section>
                         <div class="divider"></div>
                         <section style="margin-bottom: 32px;">
-                            <h3 class="section-title"><i class="fa-solid fa-timeline"></i> Background & Mindset</h3>
-                            <p class="text-muted" style="line-height: 1.7;">
-                                Born and raised in Udine, my relationship with computing started early, tearing apart hardware and exploring software mechanics. Over the years, this curiosity naturally evolved into full-stack development, automation scripts, and server deployment. 
-                            </p>
-                            <p class="text-muted" style="line-height: 1.7; margin-top: 12px;">
-                                Parallel to code, my mindset was shaped by two environments that don't allow excuses: the garage and the gym. Modifying, tracking metrics, and understanding mechanics taught me logic; the gym taught me consistency. I treat physical progression exactly like software iteration: you plan, execution must be flawless, and results are just a direct consequence of your data and efforts.
-                            </p>
+                            <h3 class="section-title"><i class="fa-solid fa-timeline"></i> <span data-i18n="bg_title">Background & Mindset</span></h3>
+                            <p class="text-muted" style="line-height: 1.7;"><span data-i18n="bg_p1">Born and raised in Udine, my relationship with computing started early, tearing apart hardware and exploring software mechanics. Over the years, this curiosity naturally evolved into full-stack development, automation scripts, and server deployment. 
+                            </span></p>
+                            <p class="text-muted" style="line-height: 1.7; margin-top: 12px;"><span data-i18n="bg_p2">Parallel to code, my mindset was shaped by two environments that don't allow excuses: the garage and the gym. Modifying, tracking metrics, and understanding mechanics taught me logic; the gym taught me consistency. I treat physical progression exactly like software iteration: you plan, execution must be flawless, and results are just a direct consequence of your data and efforts.
+                            </span></p>
                         </section>
                         <div class="divider"></div>
                         <section style="margin-bottom: 32px;">
-                            <h3 class="section-title"><i class="fa-solid fa-bullseye"></i> Core Goals</h3>
-                            <p class="text-muted" style="margin-bottom: 16px;">What drives my daily routine and focus:</p>
+                            <h3 class="section-title"><i class="fa-solid fa-bullseye"></i> <span data-i18n="goals_title">Core Goals</span></h3>
+                            <p class="text-muted" style="margin-bottom: 16px;" data-i18n="goals_intro">What drives my daily routine and focus:</p>
                             <ul class="contact-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
                                 <li style="align-items: flex-start;">
                                     <i class="fa-solid fa-layer-group" style="color: var(--text-muted); margin-top: 4px;"></i>
                                     <div>
-                                        <strong>Technical Mastery</strong>
-                                        <span style="display: block; font-size: 0.9rem; color: var(--text-muted);">Constantly discovering architectural patterns and automating system environments.</span>
+                                        <strong data-i18n="goal1_title">Technical Mastery</strong>
+                                        <span style="display: block; font-size: 0.9rem; color: var(--text-muted);"><span data-i18n="goal1_desc">Constantly discovering architectural patterns and automating system environments.</span></span>
                                     </div>
                                 </li>
                                 <li style="align-items: flex-start;">
                                     <i class="fa-solid fa-gauge-high" style="color: var(--text-muted); margin-top: 4px;"></i>
                                     <div>
-                                        <strong>Precision Driving</strong>
-                                        <span style="display: block; font-size: 0.9rem; color: var(--text-muted);">Improving vehicle dynamics understanding and analytical driving skills.</span>
+                                        <strong data-i18n="goal2_title">Precision Driving</strong>
+                                        <span style="display: block; font-size: 0.9rem; color: var(--text-muted);"><span data-i18n="goal2_desc">Improving vehicle dynamics understanding and analytical driving skills.</span></span>
                                     </div>
                                 </li>
                                 <li style="align-items: flex-start;">
                                     <i class="fa-solid fa-dumbbell" style="color: var(--text-muted); margin-top: 4px;"></i>
                                     <div>
-                                        <strong>Peak Performance</strong>
-                                        <span style="display: block; font-size: 0.9rem; color: var(--text-muted);">Pushing raw strength capabilities and tracking physique optimization targets.</span>
+                                        <strong data-i18n="goal3_title">Peak Performance</strong>
+                                        <span style="display: block; font-size: 0.9rem; color: var(--text-muted);"><span data-i18n="goal3_desc">Pushing raw strength capabilities and tracking physique optimization targets.</span></span>
                                     </div>
                                 </li>
                             </ul>
                         </section>
                         <div class="divider"></div>
                         <section style="text-align: center; padding: 16px 0;">
-                            <p class="text-muted" style="font-style: italic; font-size: 1.1rem; line-height: 1.6;">
+                            <p class="text-muted" style="font-style: italic; font-size: 1.1rem; line-height: 1.6;"><span data-i18n="quote">
                                 "Determined, rational, and completely focused on continuous optimization. <br>
                                 Always looking for the next challenge to build, test, and overcome."
-                            </p>
+                            </span></p>
                         </section>
                     </div>
                 </section>
@@ -103,7 +111,7 @@
                 <div class="footer-container">
                     <div class="footer-grid">
                         <div class="footer-widget">
-                            <h3><img width="20" height="20" src="https://img.icons8.com/3d-fluency/94/topic.png" alt="Contact"/>Contact</h3>
+                            <h3><img width="20" height="20" src="https://img.icons8.com/3d-fluency/94/topic.png" alt="Contact"/><span data-i18n="footer_contact">Contact</span></h3>
                             <ul class="contact-list">
                                 <li><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/location.png" alt="Location"/>Udine, Italy</li>
                                 <li><a href="https://t.me/viduxsh" target="_blank"><img width="18" height="18" src="https://img.icons8.com/3d-fluency/94/telegram.png" alt="Telegram"/>Telegram</a></li>
@@ -112,7 +120,7 @@
                             </ul>
                         </div>
                         <div class="footer-widget profile-widget">
-                            <h3>About Me</h3>
+                            <h3 data-i18n="footer_about">About Me</h3>
                             <div class="footer-profile-box">
                                 <img src="assets/images/viduxsh_logo_full.png" alt="Profile Logo" class="footer-avatar">
                                 <p id="my-age"></p>
@@ -121,12 +129,14 @@
                     </div>
                     <div class="footer-bottom">
                         <p id="copyright-year"></p>
-                        <p>Total visits: <span data-visitor-count>Loading...</span></p>
-                        <p class="credits">Design by <a href="https://github.com/viduxsh" target="_blank">vidux.sh</a></p>
+                        <p><span data-i18n="footer_modified">Last modified:</span> <span id="last-modified-date">20/11/2026 17:49</span></p>
+                        <p><span data-i18n="footer_visits">Total visits:</span> <span data-visitor-count>Loading...</span></p>
+                        <p class="credits"><span data-i18n="footer_design">Design by</span> <a href="https://github.com/viduxsh" target="_blank">vidux.sh</a></p>
                     </div>
                 </div>
             </footer>
         </div>
+        <script src="assets/js/i18n.js"></script>
         <script src="assets/js/script.js"></script>
     </body>
 </html>
